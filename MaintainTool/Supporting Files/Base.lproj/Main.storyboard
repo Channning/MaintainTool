@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="museosans.otf">
+            <string>MuseoSans-500</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="t8k-jd-VC0">
+            <objects>
+                <navigationController id="XB2-0h-VIh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tHj-hp-vYW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SEj-6S-97B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Voz-Tf-7SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="71"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uc-61-vaa">
+                                <rect key="frame" x="62.5" y="303.5" width="250" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera_livestream_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7uy-Kl-wMe">
+                                        <rect key="frame" x="35" y="17" width="35" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="vXI-zC-ztH"/>
+                                            <constraint firstAttribute="height" constant="26" id="xqF-9h-K6W"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频通话" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSP-ir-cYY">
+                                        <rect key="frame" x="70" y="13" width="160" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="s4g-mv-wAd"/>
+                                            <constraint firstAttribute="width" constant="160" id="x7a-ct-PUv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-Y4-cjO">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="titleEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="connectToCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCL-r2-nXP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.2666666667" blue="0.51372549020000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VP2-Y4-cjO" firstAttribute="top" secondItem="1uc-61-vaa" secondAttribute="top" id="Frk-MU-ZY7"/>
+                                    <constraint firstAttribute="trailing" secondItem="VP2-Y4-cjO" secondAttribute="trailing" id="L8g-M8-vRy"/>
+                                    <constraint firstItem="7uy-Kl-wMe" firstAttribute="leading" secondItem="1uc-61-vaa" secondAttribute="leading" constant="35" id="L9S-4L-JNd"/>
+                                    <constraint firstAttribute="width" constant="250" id="McY-x5-cfU"/>
+                                    <constraint firstItem="QSP-ir-cYY" firstAttribute="centerY" secondItem="1uc-61-vaa" secondAttribute="centerY" id="Wdo-5O-y90"/>
+                                    <constraint firstItem="QSP-ir-cYY" firstAttribute="leading" secondItem="7uy-Kl-wMe" secondAttribute="trailing" id="aK1-Th-ARz"/>
+                                    <constraint firstItem="VP2-Y4-cjO" firstAttribute="leading" secondItem="1uc-61-vaa" secondAttribute="leading" id="gqe-OU-EXZ"/>
+                                    <constraint firstItem="7uy-Kl-wMe" firstAttribute="centerY" secondItem="1uc-61-vaa" secondAttribute="centerY" id="nPb-gG-77f"/>
+                                    <constraint firstAttribute="height" constant="60" id="tYv-EA-j1e"/>
+                                    <constraint firstAttribute="bottom" secondItem="VP2-Y4-cjO" secondAttribute="bottom" id="ykP-sw-GjS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24513901840336583" green="0.72889914876091866" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1uc-61-vaa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FO8-uH-5Rc"/>
+                            <constraint firstItem="1uc-61-vaa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pzO-6v-FdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CZU-tc-1E2"/>
+                    <connections>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="uPd-ZL-AvC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Camera_livestream_icon" width="16" height="16"/>
+    </resources>
+</document>

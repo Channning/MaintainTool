@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MTCameraOptionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-Bm-wnK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sfk-dg-xUA">
+                        <rect key="frame" x="88" y="47.5" width="144" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="144" id="KCB-Vq-Qer"/>
+                            <constraint firstAttribute="height" constant="35" id="mwd-ug-DNZ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Sfk-dg-xUA" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7J8-A1-cbz"/>
+                    <constraint firstItem="vWC-Bm-wnK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7av-78-ZoR"/>
+                    <constraint firstItem="Sfk-dg-xUA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="F3J-QV-Uum"/>
+                    <constraint firstItem="vWC-Bm-wnK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZUV-dR-Wwa"/>
+                    <constraint firstAttribute="bottom" secondItem="vWC-Bm-wnK" secondAttribute="bottom" id="uFd-TO-Sz0"/>
+                    <constraint firstAttribute="trailing" secondItem="vWC-Bm-wnK" secondAttribute="trailing" id="xfA-r2-gOC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="modelImage" destination="vWC-Bm-wnK" id="Eyy-4B-lKb"/>
+                <outlet property="modelNameView" destination="Sfk-dg-xUA" id="0bi-NC-TUk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

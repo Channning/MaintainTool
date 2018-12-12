@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="museosans.otf">
+            <string>MuseoSans-500</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CamLivestreamStepOneViewController">
+            <connections>
+                <outlet property="changewifiButton" destination="YOZ-Mt-VHV" id="E99-Ni-VVL"/>
+                <outlet property="descriptionLabel" destination="V9c-nL-XPD" id="XMX-hd-Z1k"/>
+                <outlet property="descriptionLabelLeftX" destination="Gfj-2R-3Xf" id="KNN-8N-ICu"/>
+                <outlet property="descriptionLabelRightX" destination="Nsi-yy-NlV" id="MVU-VK-htC"/>
+                <outlet property="descriptionLabelTopY" destination="T9A-WJ-Gcc" id="XcE-sG-Hlc"/>
+                <outlet property="dropButton" destination="WcM-LE-4pX" id="PCb-7p-7HO"/>
+                <outlet property="inputView" destination="VE9-bC-8IY" id="5fe-3V-v0G"/>
+                <outlet property="nextButton" destination="z6z-r3-nSY" id="dTX-O6-Xcn"/>
+                <outlet property="passwordTextfield" destination="BUP-Rm-uum" id="bsm-bc-yOk"/>
+                <outlet property="scrollView" destination="t5S-Gl-Upb" id="Yec-qK-RWF"/>
+                <outlet property="ssidTextfield" destination="6Ir-jL-MFM" id="iiJ-ZY-2Mf"/>
+                <outlet property="titleLabel" destination="Mug-L6-jma" id="fcV-Xb-36F"/>
+                <outlet property="titleLabelTopY" destination="mGe-J7-OGK" id="VO5-IF-Edp"/>
+                <outlet property="topViewHeight" destination="ugL-xb-BzA" id="tfB-Kq-dqv"/>
+                <outlet property="usingMobileDataButton" destination="KT4-fr-yOi" id="cPq-5e-qvr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cam_live_rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="qW7-Oc-SwX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="De9-bb-EQi"/>
+                    </constraints>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5S-Gl-Upb" customClass="TPKeyboardAvoidingScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8K-cF-whQ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-ST-cEf" userLabel="topView">
+                            <rect key="frame" x="0.0" y="30" width="375" height="250"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-bC-8IY" userLabel="inputView">
+                                    <rect key="frame" x="40" y="100" width="295" height="114"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cam_live_ssid" translatesAutoresizingMaskIntoConstraints="NO" id="FZq-42-jtb" userLabel="Image View - user_name_icon">
+                                            <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cam_live_inputline" translatesAutoresizingMaskIntoConstraints="NO" id="fCK-nn-PPZ" userLabel="Image View - username">
+                                            <rect key="frame" x="49" y="29" width="230" height="5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cam_live_password" translatesAutoresizingMaskIntoConstraints="NO" id="rDZ-yQ-Cwu" userLabel="Image View - password_icon">
+                                            <rect key="frame" x="0.0" y="76" width="38" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cam_live_inputline" translatesAutoresizingMaskIntoConstraints="NO" id="4Zu-Of-4lR" userLabel="Image View - password">
+                                            <rect key="frame" x="49" y="104" width="230" height="5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-jL-MFM" userLabel="Text - UserName">
+                                            <rect key="frame" x="50" y="7" width="189" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" label=""/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="sdI-HT-9Jg"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-Rm-uum" userLabel="Text- Password">
+                                            <rect key="frame" x="50" y="82" width="226" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="nu3-jS-MVI"/>
+                                            </connections>
+                                        </textField>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOZ-Mt-VHV">
+                                            <rect key="frame" x="50" y="34" width="200" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <state key="normal" title="Change Wi-Fi Network"/>
+                                            <connections>
+                                                <action selector="changeToAnotherWifi:" destination="-1" eventType="touchUpInside" id="y1b-KR-QV3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcM-LE-4pX">
+                                            <rect key="frame" x="239" y="0.0" width="40" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="detail_arrow_down">
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="selected" image="detail_arrow_up"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="114" id="c7c-wa-5xA"/>
+                                        <constraint firstAttribute="width" constant="295" id="i0U-3m-9dp"/>
+                                    </constraints>
+                                </view>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-fr-yOi">
+                                    <rect key="frame" x="87.5" y="220" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="0b5-fK-Ni2"/>
+                                        <constraint firstAttribute="height" constant="30" id="hj1-sh-QhP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
+                                    <state key="normal" title="Use Mobile Data"/>
+                                    <connections>
+                                        <action selector="usingMobileDataToLivestream:" destination="-1" eventType="touchUpInside" id="drX-pn-Zlh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="KT4-fr-yOi" secondAttribute="bottom" id="BS9-Ab-W9x"/>
+                                <constraint firstItem="KT4-fr-yOi" firstAttribute="centerX" secondItem="W5f-ST-cEf" secondAttribute="centerX" id="GdQ-gO-Jgy"/>
+                                <constraint firstAttribute="bottom" secondItem="KT4-fr-yOi" secondAttribute="bottom" id="dSb-xX-2lt"/>
+                                <constraint firstItem="VE9-bC-8IY" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="top" constant="100" id="f18-2b-Ybd"/>
+                                <constraint firstAttribute="height" constant="250" id="ugL-xb-BzA"/>
+                                <constraint firstItem="VE9-bC-8IY" firstAttribute="centerX" secondItem="W5f-ST-cEf" secondAttribute="centerX" id="zRe-hI-ujp"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUy-aB-cM8" userLabel="bottomView">
+                            <rect key="frame" x="0.0" y="280" width="375" height="387"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR          WI-FI PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mug-L6-jma">
+                                    <rect key="frame" x="40" y="25" width="200" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="7B2-sB-Z8S"/>
+                                        <constraint firstAttribute="height" constant="64" id="pHb-Iy-vXn"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="V9c-nL-XPD">
+                                    <rect key="frame" x="30" y="89" width="315" height="208"/>
+                                    <string key="text">In oder to live steam, your Compass needs an internet connection. Enter your WiFi password, which will then be shared with your Compass. Note: if you are going to use phone's hotspot, please go to your phone's Settings-Personal Hotspot, make sure the hotspot is turned on and wait till message 'hotsport: 1 connection' appears, then go back the App.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6z-r3-nSY">
+                                    <rect key="frame" x="63.5" y="307" width="248" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="k2C-y8-ErJ"/>
+                                        <constraint firstAttribute="width" constant="248" id="ugc-cn-vWY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Next">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextButtonDidClick:" destination="-1" eventType="touchUpInside" id="q9O-0K-Nsf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="V9c-nL-XPD" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="30" id="Gfj-2R-3Xf"/>
+                                <constraint firstAttribute="trailing" secondItem="V9c-nL-XPD" secondAttribute="trailing" constant="30" id="Nsi-yy-NlV"/>
+                                <constraint firstItem="Mug-L6-jma" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="40" id="T8q-7n-OnH"/>
+                                <constraint firstItem="V9c-nL-XPD" firstAttribute="top" secondItem="Mug-L6-jma" secondAttribute="bottom" id="T9A-WJ-Gcc"/>
+                                <constraint firstAttribute="bottom" secondItem="z6z-r3-nSY" secondAttribute="bottom" constant="30" id="efT-hz-hZI"/>
+                                <constraint firstItem="z6z-r3-nSY" firstAttribute="top" secondItem="V9c-nL-XPD" secondAttribute="bottom" constant="10" id="f7r-uJ-WWz"/>
+                                <constraint firstItem="Mug-L6-jma" firstAttribute="top" secondItem="NUy-aB-cM8" secondAttribute="top" constant="25" id="mGe-J7-OGK"/>
+                                <constraint firstItem="z6z-r3-nSY" firstAttribute="centerX" secondItem="NUy-aB-cM8" secondAttribute="centerX" id="ra6-0a-ieF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="NUy-aB-cM8" secondAttribute="bottom" id="9zG-vL-toU"/>
+                        <constraint firstItem="NUy-aB-cM8" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="bottom" id="Erb-0H-nJe"/>
+                        <constraint firstItem="C8K-cF-whQ" firstAttribute="width" secondItem="t5S-Gl-Upb" secondAttribute="width" id="NVA-vB-fdY"/>
+                        <constraint firstItem="W5f-ST-cEf" firstAttribute="top" secondItem="t5S-Gl-Upb" secondAttribute="top" constant="30" id="Ufd-mw-6ba"/>
+                        <constraint firstItem="C8K-cF-whQ" firstAttribute="top" secondItem="t5S-Gl-Upb" secondAttribute="top" id="Xd6-2F-2gf"/>
+                        <constraint firstItem="C8K-cF-whQ" firstAttribute="leading" secondItem="t5S-Gl-Upb" secondAttribute="leading" id="bPB-7F-rfC"/>
+                        <constraint firstAttribute="trailing" secondItem="W5f-ST-cEf" secondAttribute="trailing" id="ctK-LE-Q8B"/>
+                        <constraint firstAttribute="bottom" secondItem="C8K-cF-whQ" secondAttribute="bottom" id="gHg-Qt-NvA"/>
+                        <constraint firstItem="C8K-cF-whQ" firstAttribute="height" secondItem="t5S-Gl-Upb" secondAttribute="height" id="haA-wV-SpN"/>
+                        <constraint firstItem="W5f-ST-cEf" firstAttribute="leading" secondItem="t5S-Gl-Upb" secondAttribute="leading" id="kFf-jS-F6v"/>
+                        <constraint firstItem="W5f-ST-cEf" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" id="nTh-lt-BTt"/>
+                        <constraint firstAttribute="trailing" secondItem="C8K-cF-whQ" secondAttribute="trailing" id="qMc-ab-chu"/>
+                        <constraint firstItem="W5f-ST-cEf" firstAttribute="trailing" secondItem="NUy-aB-cM8" secondAttribute="trailing" id="yjK-p5-mQ5"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qW7-Oc-SwX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2xb-W6-7LD"/>
+                <constraint firstAttribute="trailing" secondItem="t5S-Gl-Upb" secondAttribute="trailing" id="MWO-MZ-tdQ"/>
+                <constraint firstItem="qW7-Oc-SwX" firstAttribute="trailing" secondItem="sHT-8Q-cIC" secondAttribute="trailing" id="PiZ-x8-fw2"/>
+                <constraint firstAttribute="bottom" secondItem="t5S-Gl-Upb" secondAttribute="bottom" id="Vto-QZ-lFK"/>
+                <constraint firstItem="t5S-Gl-Upb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d2C-zS-seZ"/>
+                <constraint firstItem="qW7-Oc-SwX" firstAttribute="leading" secondItem="sHT-8Q-cIC" secondAttribute="leading" id="dGo-35-G9D"/>
+                <constraint firstItem="t5S-Gl-Upb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rC8-kL-bFv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="sHT-8Q-cIC"/>
+            <point key="canvasLocation" x="31.199999999999999" y="-318.89055472263868"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cam_live_inputline" width="233" height="5"/>
+        <image name="Cam_live_password" width="39" height="39"/>
+        <image name="Cam_live_rectangle" width="375" height="255"/>
+        <image name="Cam_live_ssid" width="39" height="39"/>
+        <image name="detail_arrow_down" width="80" height="60"/>
+        <image name="detail_arrow_up" width="80" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,24 @@
+//
+//  MaintainTool-Prefix.pch
+//  MaintainTool
+//
+//  Created by Channing_rong on 2018/12/11.
+//  Copyright © 2018 Channing_rong. All rights reserved.
+//
+
+//#ifndef MaintainTool_Prefix_pch
+//#define MaintainTool_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+//#import <UIKit/UIKit.h>
+#import "MacroDefinition.h"
+#import "AppDelegateHelper.h"
+// 定义这个常量,就可以在使用Masonry不必总带着前缀 `mas_`:
+#define MAS_SHORTHAND
+// 定义这个常量,以支持在 Masonry 语法中自动将基本类型转换为 object 类型:
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+#endif /* MaintainTool_Prefix_pch */

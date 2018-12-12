@@ -1,0 +1,580 @@
+//
+//  CamLivestreamStepOneViewController.m
+//  Foream
+//
+//  Created by rongbaohong on 16/4/18.
+//  Copyright © 2016年 Foream. All rights reserved.
+//
+
+#import "CamLivestreamStepOneViewController.h"
+#import "TPKeyboardAvoidingScrollView.h"
+#import "CamLivestreamStepTwoViewController.h"
+#import "AFNetworkReachabilityManager.h"
+#import "KxMenu.h"
+
+@interface CamLivestreamStepOneViewController ()
+{
+    CGFloat parentViewHeight;
+    CGFloat parentViewWidth;
+}
+
+@property (nonatomic,strong) NSMutableArray * ssidlistArray;
+@property (nonatomic,weak) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property (nonatomic,weak) IBOutlet UITextField *passwordTextfield;
+@property (nonatomic,weak) IBOutlet UITextField *ssidTextfield;
+@property (nonatomic,weak) IBOutlet UIButton *nextButton;
+@property (nonatomic,weak) IBOutlet UIButton *changewifiButton;
+@property (nonatomic,weak) IBOutlet UIButton *usingMobileDataButton;
+@property (nonatomic,weak) IBOutlet UIButton *dropButton;
+@property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic,weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic,weak) IBOutlet UIView *dotImageView;
+@property (nonatomic,weak) IBOutlet UIView *inputView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelLeftX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelRightX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewTopY;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopY;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelTopY;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nextButtonViewTopY;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dotImageViewTopY;
+@end
+
+@implementation CamLivestreamStepOneViewController
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    parentViewHeight = [[UIScreen mainScreen] bounds].size.height;
+    parentViewWidth = [[UIScreen mainScreen] bounds].size.width;
+    [self.view setFrame:CGRectMake(0, 0, parentViewWidth, parentViewHeight)];
+
+    [self initNavgationItemSubviews];
+    [self detectCurrentConnectedSSid];
+    [self initBasicContrlsSetup];
+    [_dotImageView setHidden:YES];
+    [_ssidTextfield setUserInteractionEnabled:YES];
+    [_ssidTextfield setClearButtonMode:UITextFieldViewModeAlways];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    
+    [_ssidTextfield resignFirstResponder];
+    [_passwordTextfield resignFirstResponder];
+    [super viewDidDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)updateViewConstraints
+{
+//    CGFloat parentViewHeight = [[UIScreen mainScreen] bounds].size.height;
+    if(parentViewHeight==480)
+    {
+        _topViewHeight.constant =220;
+//        _InputViewTopY.constant = 5;
+        _bottomViewTopY.constant = 220;
+        _titleLabelTopY.constant = 2;
+        _descriptionLabelTopY.constant = 1;
+        _nextButtonViewTopY.constant = 53;
+        _dotImageViewTopY.constant = 10;
+        _descriptionLabelLeftX.constant = 10;
+        _descriptionLabelRightX.constant = 10;
+    }
+    else if(parentViewHeight==568)
+    {
+        _topViewHeight.constant =220;
+//        _InputViewTopY.constant = 12;
+        _bottomViewTopY.constant = 220;
+        _titleLabelTopY.constant = 20;
+        _descriptionLabelTopY.constant = 20;
+        _nextButtonViewTopY.constant = 20;
+        _dotImageViewTopY.constant = 10;
+        _descriptionLabelLeftX.constant = 10;
+        _descriptionLabelRightX.constant = 10;
+    }
+    
+    [super updateViewConstraints];
+}
+
+
+#pragma mark - initialization
+- (void)initNavgationItemSubviews
+{
+    UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
+    backButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem = backButtonItem;
+    
+    self.navigationItem.title = MyLocal(@"输入WiFi密码");
+    
+    
+}
+
+-(void)detectCurrentConnectedSSid
+{
+    NSString* userPhoneName = [[UIDevice currentDevice] name];
+    NSLog(@"手机别名: %@", userPhoneName);
+    
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    NSInteger networkStatus = [manager networkReachabilityStatus];
+   
+    
+    NSDictionary *tempDic =[NSDictionary dictionaryWithContentsOfFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:LastLoginUserId]];
+    
+    if (tempDic)
+    {
+        NSMutableArray *newWifiArray = [NSMutableArray array];
+        NSMutableArray *wifiArray = [tempDic objectForKey:@"WifiLists"];
+        if(wifiArray.count<=0)
+        {
+            [_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
+            _ssidlistArray = [NSMutableArray arrayWithContentsOfFile:[AppDelegateHelper getSSIDArrayPlistDocumentPath]];
+            return;
+        }
+        [wifiArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+        {
+            DLog(@"networkStatus is %ld and [AppDelegateHelper fetchSSIDName] is %@, obj.ssid is %@",(long)networkStatus,[AppDelegateHelper fetchSSIDName],[obj objectForKey:@"ssid"]);
+            if ([[AppDelegateHelper fetchSSIDName] isEqualToString:[obj objectForKey:@"ssid"]])
+            {
+                
+                [self->_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
+                [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
+                
+            }
+            else if([AppDelegateHelper flagWithOpenHotSpot] && [userPhoneName isEqualToString:[obj objectForKey:@"ssid"]])
+            {
+                [self->_ssidTextfield setText:userPhoneName];
+                [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
+           
+            }
+            else if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [userPhoneName isEqualToString:[obj objectForKey:@"ssid"]])
+            {
+                [self->_ssidTextfield setText:userPhoneName];
+                [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
+            }
+            else if(networkStatus == AFNetworkReachabilityStatusReachableViaWiFi && [[AppDelegateHelper fetchSSIDName] isEqualToString:[obj objectForKey:@"ssid"]])
+            {
+                [self->_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
+                [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
+            }
+      
+            if (isStringNotNil([obj objectForKey:@"password"]))
+            {
+                [newWifiArray addObject:obj];
+            }
+        }];
+        _ssidlistArray = [NSMutableArray arrayWithArray:newWifiArray];
+        DLog(@"loacl wifi list is %@  all Wi-Fi List is %@",wifiArray,_ssidlistArray);
+    }else
+    {
+        
+        [_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
+    }
+    
+    if (_ssidlistArray.count == 0)
+    {
+        [_dropButton setHidden:YES];
+    }
+    else
+    {
+        
+        [_dropButton setHidden:NO];
+    }
+    
+    if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !isStringNotNil(_passwordTextfield.text))
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"You haven't connected to any Wi-Fi, would you like to use your mobile phone's hotspot for live stream? if so, please input the name and password of your phone's hotspot.") preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"NO") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
+                                    {
+                                        [self.navigationController popToRootViewControllerAnimated:YES];
+                                    }];
+        
+        [alert addAction:cancelAct];
+        
+        UIAlertAction *confirmAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                                     {
+                                         [self->_ssidTextfield setText:userPhoneName];
+                                         [self->_passwordTextfield becomeFirstResponder];
+                                     }];
+        
+        [alert addAction:confirmAct];
+        
+        [self presentViewController:alert animated:YES completion:^{}];
+
+    }
+  
+    
+   
+}
+
+-(void)initBasicContrlsSetup
+{
+    [self.titleLabel setText:MyLocal(@"ENTER YOUR          WI-FI PASSWORD")];
+    [self.nextButton setTitle:MyLocal(@"Next") forState:UIControlStateNormal];
+    [self.nextButton setBackgroundColor:UIColorFromRGB(0xe4b475)];  
+    [self.descriptionLabel setFont:StandardFONT(16)];
+    [self.descriptionLabel setTextColor:UIColorFromRGB(0x6f6f6f)];
+    [self.descriptionLabel setText:MyLocal(@"In order to live stream, your Camera needs an internet connection. Enter your WiFi password, which will then be shared with your Camera.")];
+    
+    self.nextButton.layer.shadowOffset = CGSizeMake(2,2);
+    self.nextButton.layer.shadowOpacity = 0.3f;
+    self.nextButton.layer.shadowRadius = 3.0;
+    
+    _passwordTextfield.placeholder =  MyLocal(@"Please input the password",nil);
+    [_passwordTextfield setValue:UIColorFromRGB(0x808080) forKeyPath:@"_placeholderLabel.textColor"];
+    [_passwordTextfield setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [_passwordTextfield setSpellCheckingType:UITextSpellCheckingTypeNo];
+    [_passwordTextfield setSecureTextEntry:NO];
+    
+//    _ssidTextfield.placeholder = MyLocal(@"Please input network name",nil);
+//    [_ssidTextfield setValue:UIColorFromRGB(0x808080) forKeyPath:@"_placeholderLabel.textColor"];
+//    [_ssidTextfield setAutocorrectionType:UITextAutocorrectionTypeNo];
+//    [_ssidTextfield setSpellCheckingType:UITextSpellCheckingTypeNo];
+    
+    _ssidTextfield.clearButtonMode = UITextFieldViewModeNever;  //全部删除按钮
+    _passwordTextfield.clearButtonMode = UITextFieldViewModeAlways;
+    
+    [_changewifiButton setTitle:MyLocal(@"Change Wi-Fi Network") forState:UIControlStateNormal];
+    [_changewifiButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
+    
+//    [_usingMobileDataButton setTitle:MyLocal(@"Use Mobile Data") forState:UIControlStateNormal];
+//    [_usingMobileDataButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
+    [_dropButton addTarget:self action:@selector(showPopover:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+  
+
+}
+
+
+
+#pragma mark - IBAction
+
+-(IBAction)returnButtonDidClick:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(IBAction)closeButtonDidClick:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(IBAction)nextButtonDidClick:(id)sender
+{
+    if (_ssidTextfield.text.length<=0) {
+    
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"SSIDNull") preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        }];
+        
+        [alert addAction:cancelAct];
+        
+        [self presentViewController:alert animated:YES completion:^{}];
+        return;
+        
+    }
+
+    else if([self containsChinese:_ssidTextfield.text])
+    {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"SSID can't contain Chinese") preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        }];
+        
+        [alert addAction:cancelAct];
+        
+        [self presentViewController:alert animated:YES completion:^{}];
+ 
+        return;
+        
+    }else
+    {
+        
+        //Some problems here, so cancel it temperory.
+        [self saveThePasswordIntoSandbox];
+        if(self.passwordTextfield.text.length==0)
+            self.passwordTextfield.text = @"";
+     
+        if (!LastLoginUserId)
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入用户昵称" preferredStyle:UIAlertControllerStyleAlert];
+            //以下方法就可以实现在提示框中输入文本；
+            
+            //在AlertView中添加一个输入框
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                
+                textField.placeholder = @"请输入用户昵称";
+            }];
+            
+            //添加一个确定按钮 并获取AlertView中的第一个输入框 将其文本赋值给BUTTON的title
+            [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UITextField *envirnmentNameTextField = alertController.textFields.firstObject;
+                [AppDelegateHelper saveData:envirnmentNameTextField.text forKey:@"LastLoginUserId"];
+                //输出 检查是否正确无误
+                NSLog(@"你输入的文本%@",envirnmentNameTextField.text);
+                
+                CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
+                [scanQRcodeView setTryQRcode:YES];
+                NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,self->_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
+                [scanQRcodeView setContentinfo:contentinfo];
+                [scanQRcodeView setSsidInfo:self->_ssidTextfield.text];
+                [scanQRcodeView setPasswordInfo:self->_passwordTextfield.text];
+                [self.navigationController pushViewController:scanQRcodeView animated:YES];
+                
+            }]];
+            
+            //添加一个取消按钮
+            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            
+            //present出AlertView
+            [self presentViewController:alertController animated:true completion:nil];
+        }
+        else
+        {
+            CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
+            [scanQRcodeView setTryQRcode:YES];
+            NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
+            [scanQRcodeView setContentinfo:contentinfo];
+            [scanQRcodeView setSsidInfo:_ssidTextfield.text];
+            [scanQRcodeView setPasswordInfo:_passwordTextfield.text];
+            [self.navigationController pushViewController:scanQRcodeView animated:YES];
+        }
+    }
+}
+
+-(IBAction)changeToAnotherWifi:(id)sender
+{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"Please go to your mobile phone's Settings Menu to change your Wi-Fi network") preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+    }];
+    
+    [alert addAction:cancelAct];
+    
+    [self presentViewController:alert animated:YES completion:^{}];
+
+}
+
+-(IBAction)usingMobileDataToLivestream:(id)sender
+{
+    
+//    CamConnectStepOneViewController *cameraModalView = [[CamConnectStepOneViewController alloc]init];
+//    [cameraModalView setTypeIndex:_modelType];
+//    cameraModalView.connectType = kMobileDateLiveType;
+//    [self.navigationController pushViewController:cameraModalView animated:YES];
+}
+
+-(void)showPopover:(UIButton *)sender forEvent:(UIEvent*)event
+{
+    NSMutableArray *menuItems = [[NSMutableArray alloc]init];
+    
+    [_ssidlistArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        if ([obj isKindOfClass:[NSString class]]) {
+            
+            [menuItems addObject:[KxMenuItem menuItem:[NSString stringWithFormat:@"%@",obj]
+                                                image:nil
+                                               target:self
+                                        selectedIndex:idx
+                                               action:@selector(pushMenuItem:)]];
+        }else{
+            [menuItems addObject:[KxMenuItem menuItem:[NSString stringWithFormat:@"%@",[obj objectForKey:@"ssid"]]
+                                                image:nil
+                                               target:self
+                                        selectedIndex:idx
+                                               action:@selector(pushMenuItem:)]];
+            
+        }
+        
+    }];
+    
+    [_ssidTextfield resignFirstResponder];
+    [_passwordTextfield resignFirstResponder];
+    
+    CGFloat xMargin = self.inputView.frame.origin.x;
+    CGFloat yMargin = self.inputView.frame.origin.y;
+    
+    [KxMenu showMenuInView:self.view
+                  fromRect:CGRectMake(xMargin+sender.frame.origin.x, yMargin+sender.frame.origin.y, sender.frame.size.width, sender.frame.size.height)
+                 menuItems:menuItems];
+}
+
+- (void) pushMenuItem:(KxMenuItem *)sender
+{
+    DLog(@"sender is %@",sender);
+    if ([[_ssidlistArray objectAtIndex:sender.selectedIndex] isKindOfClass:[NSString class]]) {
+        
+        _ssidTextfield.text = [_ssidlistArray objectAtIndex:sender.selectedIndex];
+        _passwordTextfield.text = @"";
+    }else{
+        
+        NSMutableDictionary *dic = [_ssidlistArray objectAtIndex:sender.selectedIndex];
+        _ssidTextfield.text =[dic objectForKey:@"ssid"];
+        _passwordTextfield.text =[dic objectForKey:@"password"];
+    }
+}
+
+#pragma mark - Private
+-(void)updateConnectedSSID
+{
+    [self detectCurrentConnectedSSid];
+    
+}
+
+- (BOOL) containsChinese:(NSString *)str {
+    for(int i = 0; i < [str length]; i++) {
+        int a = [str characterAtIndex:i];
+        if( a > 0x4e00 && a < 0x9fff)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+-(void)saveThePasswordIntoSandbox
+{
+    
+    if (_ssidlistArray)
+    {
+
+        [_ssidlistArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSMutableDictionary *dictionary = obj;
+            NSString *ssid =[dictionary objectForKey:@"ssid"];
+            if ([ssid isEqualToString:self->_ssidTextfield.text] && [self->_ssidlistArray containsObject:obj])
+            {
+                [self->_ssidlistArray removeObject:obj];
+                *stop = YES;
+            }
+            
+        }];
+       
+        
+        
+    }
+    else
+    {
+        _ssidlistArray = [NSMutableArray array];
+    }
+
+    [_ssidlistArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:_ssidTextfield.text,@"ssid",_passwordTextfield.text,@"password", nil]];
+    NSInteger timeStamp = [[[NSDate alloc] init] timeIntervalSince1970];
+    NSInteger mistiming = [AppDelegateHelper readData:@"Mistiming"].integerValue;
+    NSMutableDictionary *settingDic =[[NSMutableDictionary alloc]init];
+    [_ssidlistArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSMutableDictionary *dictionary = obj;
+        NSString *ssid =[dictionary objectForKey:@"ssid"];
+        NSString *password =[dictionary objectForKey:@"password"];
+        NSString *encodedssid = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, (__bridge CFStringRef)ssid, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 );
+        [encodedssid stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
+        
+        NSString *encodedPassword = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, (__bridge CFStringRef)password, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 );
+        [encodedPassword stringByReplacingOccurrencesOfString:@"%20" withString:@"+"];
+        if(!encodedPassword && !encodedssid)
+            [settingDic setObject:encodedPassword forKey:encodedssid];
+        
+    }];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:settingDic
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (error)
+    {
+        DLog(@"dic->%@",error);
+    }
+    
+    NSString *jsonString = [NSString stringWithUTF8String:[jsonData bytes]];
+    if (!isStringNotNil(jsonString)) {
+        return;
+    }
+    DLog(@"json string is %@ /r  %@",jsonString,@"");
+//    if (isStringNotNil([FOMAPPDELEGATE loginUser].sid))
+//    {
+//        UserSetWifiListApi *setWifiListApi = [[UserSetWifiListApi alloc] initWithSessionId:[FOMAPPDELEGATE loginUser].sid token:[FOMAPPDELEGATE loginUser].token lastTime:[NSString stringWithFormat:@"%ld",timeStamp+mistiming] ssid_password:[_ssidlistArray JSONString] camera_ids:nil];
+//        [setWifiListApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//
+//            NSDictionary *wifilistResponse = [request.responseString objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
+//            DLog(@"responseStr is %@",request.responseString);
+//            if([[NSNumber numberWithInt:1]isEqual:[wifilistResponse objectForKey:@"status"]])
+//            {
+//
+//                NSDictionary *dic =[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",timeStamp+mistiming],@"Last_modify",_ssidlistArray,@"WifiLists",[FOMAPPDELEGATE loginUser].userId,@"uid",nil];
+//
+//                NSFileManager *fm = [NSFileManager defaultManager];
+//                if(![fm fileExistsAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]]]){
+//                    [fm createFileAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] contents:nil attributes:nil];
+//                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] atomically:YES];
+//                    DLog(@"wifilists is %@",dic);
+//                }else{
+//                    DLog(@"wifilists is %@",dic);
+//                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] atomically:YES];
+//                }
+//                [FOMAPPDELEGATE setAvailableWifiLists:_ssidlistArray];
+//            }
+//            [AppDelegateHelper removLoadingMessage:self.view];
+//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            [AppDelegateHelper removLoadingMessage:self.view];
+//        }];
+//    }
+    
+    
+}
+
+#pragma mark - Screen rotation
+
+- (BOOL)shouldAutorotate
+{       //IOS6
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+
+
+#pragma mark - FOMBTScanViewControllerDelegate
+- (void)parentViewPopBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [_ssidTextfield resignFirstResponder];
+    [_passwordTextfield resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+@end

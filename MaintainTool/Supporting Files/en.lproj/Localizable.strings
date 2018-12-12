@@ -1,0 +1,1488 @@
+/* 
+  Localizable.strings
+  MaintainTool
+
+  Created by Channing_rong on 2018/12/12.
+  Copyright © 2018 Channing_rong. All rights reserved.
+*/
+/**
+ *   FOMAppDelegate
+ */
+"Please connect to Internet" = "Please connect to Internet";
+"Login..." = "Login...";
+"LoginFail"="Log In Failed";
+/**
+ *   FOMLeftMenuViewController
+ */
+
+"Please login first" = "Please login first";
+"ClickHereAndLogin" = "Click here to login";
+"Sign In"   = "Sign In";
+"Register Success" = "Register Success";
+"Go to improve the personal information" = "Go to improve the personal information?";
+"Cancel"="Cancel";
+"OK"="OK";
+
+/**
+ *   FOMProfileLineViewController
+ */
+
+"Following" = "Following";
+"Followers" = "Followers";
+"Videos"="Videos";
+"Channels" = "Channels";
+"Photos"="Photos";
+"User Center" = "User Center";
+"Begin Broadcast" = "Begin Broadcast";
+"Cloud Storage" = "Cloud Storage";
+"Local Files" = "Local Files";
+"Change front cover" = "Change front cover";
+"PhotoFromCamera"="Take a new photo";
+"PhotoFromLocal"="Select a photo from your phone";
+"Uploading..." = "Uploading...";
+"Alert" = "Alert";
+
+"Copy Success" = "Copy Success";
+"Coming Soon" = "Coming Soon";
+"Report Successfully" = "Report Successfully";
+"Operation failed" = "Operation failed";
+"Collect canceled" = "Collect canceled";
+"You have collected the post" = "You have favourited the post";
+"Collected" = "Favourited";
+"Deleted succesfully" = "Deleted succesfully";
+"Deleted Failed" = "Deleted Failed";
+"WeChat Friend Group" = "WeChat Friend Group";
+"WeChat" = "WeChat Friend";
+"QQ Friend" = "QQ Friend";
+"QQZone" = "QQZone";
+"Sina Weibo" = "Sina Weibo";
+"More" = "More";
+"Copy Link" = "Copy Link";
+"Collect" = "Collect";
+"Report" = "Report";
+"Remove" = "Remove";
+"Deleted Successfully" = "Deleted Successfully";
+"Deleted Failed" = "Deleted Failed";
+"Loading"="Loading...";
+"There’s nothing here. Synchronise a Drift camera or upload a (video) from your local files." = "There’s nothing here. Synchronise a Drift camera or upload a (video) from your local files.";
+"There’s nothing here. Synchronise a Drift camera or upload a (photo) from your local files." = "There’s nothing here. Synchronise a Drift camera or upload a (photo) from your local files.";
+"There’s nothing here. Synchronise a Drift camera to start a Livestream directly from preview." = "There’s nothing here. Synchronise a Drift camera to start a Livestream directly from preview.";
+"There’s nothing here. Synchronise a Drift camera or upload a (photo/video) from your local files." = "There’s nothing here. Synchronise a Drift camera or upload a (photo/video) from your local files.";
+"You have not subscribed to any other users yet. Start following other users to subscribe to them." = "You have not subscribed to any other users yet. Start following other users to subscribe to them.";
+"You have not favourited any posts yet. Favourited posts will appear here." = "You have not favourited any posts yet. Favourited posts will appear here.";
+/**
+ *   FOMOtherUserProfileViewController
+ */
+
+"Follow" = "Follow";
+"Followed" = "Followed";
+
+/**
+ *   FOMUserListViewController
+ */
+
+"Users" = "Users";
+
+/**
+ *   FOMFriendListViewController
+ */
+
+"Tap on one people's portrait, you can view all of his posts, if you are interested in this person, click on \"Follow\" button to add him/her as your friend." = "Tap on one people's portrait, you can view all of his posts, if you are interested in this person, click on \"Follow\" button to add him/her as your friend.";
+"Nobody follows you now, you can get attentions from people by posting some excellent videos." = "Nobody follows you now, you can get attentions from people by posting some excellent videos.";
+"He/she didn’t follow anyone." = "He/she didn’t follow anyone.";
+"There has no people following him/her." = "There has no people following him/her.";
+"Discover" = "Discover";
+
+/**
+ *   FOMSearchViewController
+ */
+
+"Empty"="Empty";
+"Search"="Search";
+"Search user or content" = "Search user or content";
+"Clear all history" = "Clear all history";
+"Relevant Users" = "Relevant Users";
+"Relevant Posts" = "Relevant Posts";
+
+/**
+ *   DCAboutViewController
+ */
+
+"Check Update"  =  "Check Update" ;
+"Current version is the latest one" = "Current version is the latest one";
+"An updated version is availiable,whether to update？" = "An updated version is availiable,whether to update？";
+"Close"="Close";
+"Update" = "Update";
+
+/**
+ *   FOMLoginViewController
+ */
+
+"China Service Area"="China Service";
+"International Service Area"="International Service";
+"Email or User Name" = "UserName/Email";
+"Register account" = "Sign up";
+"Forgot Password?"    = "Forgotten password";
+"Local Area Network"="Local Area Network";
+"Authorize Youtube" = "Authorize Google";
+"UserPasswordError"="Password incorrect!";
+"ComfirmOK"="OK";
+"UserNotExist"="Invalid User Name!";
+"Login Time Out" = "No internet connection found";
+"UserNotNull"="Name can't be blank!";
+"PasswordNotNull"="Password can't be blank!";
+"Authorization failure" = "Authorization failure";
+"Your email account is not valid" = "Your email account is not valid";
+"please check it and retry" = "please check it and retry";
+"Successful" = "Successful";
+"we have sent you instructions on how to reset your password, please check your email and finish the process." = "we have sent you instructions on how to reset your password, please check your email and finish the process.";
+/**
+ *   FOMRegisterViewController
+ */
+
+"Terms of Service"="Terms of Service";
+"Drift Terms of Use" = "Drift Terms of Use";
+"Profile Pic" = "Profile Pic";
+"Enter Email"   = "Enter Email";
+"Sign Up" = "Sign Up";
+"Create a User Name" = "Create a User Name";
+"Create a Password" = "Create a Password";
+"ChangeUserPhoto"="Edit User Photo";
+"Invalid Email Address"="Invalid Email Address";
+"RegisterFail"="Registration Failed";
+"You have to agree to Terms of Service before register"="You have to agree to Terms of Service before register";
+"NickName 3~20 characters and can only contain letters, numbers, or . and _"="Nickname 5~16 characters and can only contain letters, numbers, or . and _";
+"This Account was used"="Registration failed, this email account is already registered.";
+"This Username was used" = "This Username was used";
+"UpdatePhotoFail"="Upload Profile Photo Failed";
+
+/**
+ *   FOMRetrievePasswordViewController
+ */
+
+"Retrieve Password"="Retrieve Password";
+"Please enter email address" = "Please enter email address";
+"Please enter email or phone number address" = "Please enter email address";
+"Prompt"="Information";
+"Phone number is invalid" = "Phone number is invalid";
+
+/**
+ *   FOMViaEmailViewController
+ */
+
+"AcquireAuthcode" = "Acquire Authcode";
+"NextStep"="Next";
+"Authcode" = "Authcode";
+"VerifyCode has been send by email" = "VerifyCode has been send by email:";
+"VerifyCode has been send by Mobile" = "VerifyCode has been send by Mobile:";
+"Your email is not activated"="Your email is not activated";
+"AcquireAuthcodeAgain" = "Acquire Authcode again";
+
+
+/**
+ *   FOMResetPasswordViewController
+ */
+
+"Old Password"="Old Password";
+"New Password"="New Password";
+"Comfirm New Password"="Confirm New Password";
+"Done" = "Done";
+"Password is invalid"="Invalid Password";
+"ModifyPasswordSuccess" = "Password changed successfully";
+"Invaild verify code" = "Invaild verify code";
+"PasswordNotMatch"="Password Don't Match";
+
+/**
+ *   FOMDomesticRegisterViewController
+ */
+
+"Mobile No Register" = "Mobile No Register";
+"Input the phone number" = "Input the phone number";
+"Please input correct mobile number" = "Please input correct mobile number";
+"The number has been registered" = "The number has been registered";
+
+/**
+ *   FOMPasswordViewController
+ */
+
+"Input password" = "Input password";
+"PasswordDescription"="Password must contain6~16 characters";
+"ComfirmPassword"="Confirm Password";
+
+/**
+ *   FOMBindEmailViewController/FOMEmailBindViewController
+ */
+
+"BindMobile" = "Bind Mobile";
+"BindEmail" = "Register Email Address";
+"Please enter correct email" = "Please enter correct email";
+"Email address is registered to another account." = "Email address is registered to another account.";
+"Verify Email" = "Verify Email";
+"Verify info has been send by email, Please login and check it out." = "Verification email has been sent.";
+
+/**
+ *   FOMNewRightDeviceViewController
+ */
+
+"Connect your camera" = "Connect your camera";
+"Camera Management" = "Camera Management";
+"register failure" = "Registration failed";
+"the camera can’t be registered because it’s already registered by " = "the camera can’t be registered because it’s already registered by ";
+"please contact" = ", please contact ";
+"to remove the camera from his/her account and try again" = "to remove the camera from his/her account and try again";
+"Camera Registration Success"="Camera Registration Success";
+"please tap the camera icon on the upper right corner to check your camera" = "please tap the camera icon on the upper right corner to check your camera";
+"Offline" = "Offline";
+"Online" = "Online";
+"Streaming"="Streaming";
+"Syncing" = "Syncing";
+"Recording" = "Recording";
+"Total" = "Total ";
+"Person" = "";
+"Per" = "";
+"Finished" = "Finished ";
+"Wi-Fi Direct"="Find Camera";
+"Note" = "Note";
+"firmware version is too old, please connect to the camera to upgrade" = "firmware version is too old, please connect to the camera to upgrade";
+"UpdateCamera on PC part 1" = "";
+"UpdateCamera on PC part 2"= "Firmware Version Is too old, please download the firmware on http://www.foream.com/support.html.";
+"Register Timeout" = "Register Timeout";
+"please check your network and try again" = "please check your network and try again";
+
+/**
+ *   FOMDeviceOnlineViewController
+ */
+
+"Camera Online" = "Camera Online";
+"Preview Window"="Preview Window";
+"Gallery"="Gallery";
+"Settings" = "Settings";
+/**
+ *   DCCloudFileViewController
+ */
+
+"All"="All";
+"PHOTO" = "PHOTO";
+"VIDEO" = "VIDEO";
+"Uploading..."="Uploading...";
+"Camera is recording" = "Camera is recording";
+"Can't connect to camera, please try to reboot you camera." = "Can't connect to camera, please try to reboot you camera.";
+
+/**
+ *   DCWifiCloudViewController
+ */
+
+"Wi-Fi Cloud Cam" = "Wi-Fi Cloud Cam";
+"Please select yourt cameras' Wi-Fi network from your device settings menu." = "Please select yourt cameras' Wi-Fi network from your device settings menu.";
+"Download is going" = "Download is going";
+"Camera is uploading, are you sure stop uploading and preview live stream?" = "Camera is uploading, are you sure stop uploading and preview live stream?";
+"Camera Info" = "Camera Info";
+"Camera is switching" = "Camera is switching";
+"Please go to your mobile phone's Settings Menu to change your Wi-Fi network" = "Please go to your mobile phone's Settings Menu to change your Wi-Fi network";
+
+/**
+ *   WiFiDirectViewController
+ */
+
+"Capacity:" = "Capacity:";
+"Video" = "Video";
+"Photo" =  "Photo";
+"Timelapse_Photo" = "Timelapse Photo";
+"Timelapse_Video" = "Timelapse Video";
+"Loading stream" = "Loading stream";
+"Please insert an SD card into your camera to continue" = "Please insert an SD card into your camera to continue";
+"Please insert an SD card" = "Please insert an SD card";
+"Please ensure 100MB free space on camera before upgrade." = "Please ensure 100MB free space on camera before upgrade.";
+"Please insert an SD card" = "Please insert an SD card";
+"Low memory"="Insufficient Capacity";
+"Recording a timelapse will turn the camera Wi-Fi off, and app will return to Home page." = "Recording a timelapse will turn the camera Wi-Fi off, and app will return to Home page.";
+"Exit Wi-Fi Direct" = "Exit Wi-Fi Direct";
+"Camera Online Action" = "Camera Online Action";
+"No SD card" = "No SD card";
+"SD card inserted" = "SD card inserted";
+"Click 'Confirm' button, App will return back the preview.";
+"Error"="Error";
+"Please note:" = "Please note:";
+"WIFI Direct mode just shows the compressed image quality instead of HD image quality." = "WIFI Direct mode just shows the compressed image quality instead of HD image quality.";
+"You are going to stream live using your mobile data. If you prefer using an external Wi-Fi router, enter 'Start Live Stream' mode on the home screen." = "You are going to stream live using your mobile data. If you prefer using an external Wi-Fi router, enter 'Start Live Stream' mode on the home screen.";
+
+
+/**
+ *   GuideWiFiSettingViewController
+ */
+
+
+"Go to Wi-Fi Settings" = "Go to Wi-Fi Settings";
+"(Default Password is:1234567890)" = "(Default Password is:1234567890)";
+"1.Go to your Wi-Fi settings" = "1.Go to your Wi-Fi settings";
+"2.Select the Wi-Fi of your camera and then go back to the Drift Life app." = "2.Select the Wi-Fi of your camera and then go back to the Drift Life app.";
+"Go to Wi-Fi Settings" = "Go to Wi-Fi Settings";
+
+
+/**
+ *   FOMWifiDirectGuideViewController
+ */
+
+"Choose Camera" = "Choose Camera";
+
+/**
+ *   FOMFirmwareTransferViewController
+ */
+
+"Transfering" = "Transfering";
+"Please ensure 50% battery level on camera before upgrade." = "Please ensure 50% battery level on camera before upgrade.";
+"Start Update" = "Start Update";
+"The camera will disconnect from your mobile device while completing the update. It will restart automatically when finished." = "The camera will disconnect from your mobile device while completing the update. It will restart automatically when finished.";
+
+
+/**
+ *   FOMFirmwareNotificationViewController
+ */
+
+"Ghost S has new firmware" = "Ghost S has new firmware";
+"Stealth 2 has new firmware" = "Stealth 2 has new firmware";
+"X1 has new firmware" = "X1 has new firmware";
+"Compass has new firmware" = "Compass has new firmware";
+
+/**
+ *   CameraModalViewController
+ */
+
+"Press Wi-Fi button to open Wi-Fi" = "Press Wi-Fi button to open Wi-Fi";
+"Long Press MENU button to open Wi-Fi" = "Long Press MENU button to open Wi-Fi";
+"Press the Wi-Fi button once and wait for the Wi-Fi LED light to turn on and turn green." = "Press the Wi-Fi button once and wait for the Wi-Fi LED light to turn on and turn green.";
+"Open Wi-Fi Settings" = "Open Wi-Fi Settings";
+"Open Wi-Fi" = "Open Wi-Fi";
+"Add router info in WifiDirect mode" = "Add router info in WifiDirect mode";
+
+/**
+ *   FOMWifiDirectViewController
+ */
+
+"Wi-Fi Direct Mode" = "Wi-Fi Direct Mode";
+"Turning online failure, please ensure your camera have been registered." = "Turning online failure, please ensure your camera have been registered.";
+"Firmware is uploading, please don't disconnect your mobile phone from the camera in the process." = "Firmware is uploading, please don't disconnect your mobile phone from the camera in the process.";
+
+/**
+ *   FOMPostInfoViewController
+ */
+
+"Unable to access Internet, please check your network" = "Unable to access Internet, please check your network";
+"You can't send empty messages" = "You can't send empty messages";
+"Write a comment" = "Write a comment";
+"You could not share other's private post." = "You could not share other's private post.";
+
+/**
+ *   FOMLiveViewController
+ */
+
+"Current channel:" = "Current channel:";
+"Public" = "Public";
+"Private Live" = "Private Live";
+"Private" = "Private";
+"You have to create a channel at first" = "You have to create a channel at first";
+"Please select another free channel" = "Please select another free channel";
+"No free channel, please create a new one" = "No free channel, please create a new one";
+
+/**
+ *   FOMShootViewController
+ */
+
+"Preview is not supported on this version yet" = "Preview is not supported on this version yet";
+"Has exited Wi-Fi Direct mode, please check Wi-Fi connection" = "Has exited Wi-Fi Direct mode, please check Wi-Fi connection";
+
+/**
+ *   FOMWDFileViewController
+ */
+
+"Download"="Download";
+"Edit"="Edit";
+"the preview image quality is compressed, download original file for HD image quality if you like." = "the preview image quality is compressed, download original file for HD image quality if you like.";
+"tasks are downloading" = "tasks are downloading";
+"Do you want to stop downloading?" = "Do you want to stop downloading?";
+"Select Items" = "Select Items";
+
+/**
+ *   FOMRegisterCameraViewController
+ */
+
+"Register now"="Register now";
+"Notes:\n\r1. Select a nearby Wi-Fi Router, with the SSID name all in English characters\n\r2. Make sure the password you input is correct, and the router is connected to Internet." = "Notes:\n\r1. Select a nearby Wi-Fi Router, with the SSID name all in English characters\n\r2. Make sure the password you input is correct, and the router is connected to Internet.";
+"Current Account" = "Current Account";
+"Config Camera Network" = "Config Camera Network";
+"Register Camera" = "Register Camera";
+"Input router's SSID" = "Input router's SSID";
+"SSID list" = "SSID list";
+"SSID can't contain Chinese" = "SSID can't contain Chinese";
+"Camera is registering, it might take a few minutes" = "Your Camera is being registered, which will take a few minutes, you can go to Home page now and we will inform you once the registration process is done";
+"Want to register this camera to another account? please disconnect your mobile phone from this camera and connect to Internet, login and remove the camera from your account first, then login another account and register the camera." = "Want to register this camera to another account? please disconnect your mobile phone from this camera and connect to Internet, login and remove the camera from your account first, then login another account and register the camera.";
+"NoFindDevice"="Unable to find Camera";
+"GetInfoFailed"="Unable to gather data from Camera";
+"DeviceNameNull"="Device Name can't be blank!";
+"NickNameNull"="Nick Name can't be blank!";
+"SSIDNull"="SSID can't be blank!";
+"Wi-FiPwdNull"="Wi-Fi Password can't be Blank or less than 8 chars!";
+"Enter"="Confirm";
+"CheckAP"="Please check AP network!";
+"Would you like to Login and register your camera?" = "Would you like to Login and register your camera?";
+"DeviceName:"="Device name:";
+"Register your Camera to the cloud?"="Continue Register Your Camera";
+
+/**
+ *   FOMDownloadManagementViewController
+ */
+
+"Download Manager"="Download Manager";
+"Downloading" = "Downloading";
+"Downloaded" = "Downloaded";
+"Files will be downloaded to your phone's \"Photo\" Album" = "Files will be downloaded to your phone's \"Photo\" Album";
+
+/**
+ *   FOMCameraUseGuideViewController
+ */
+
+"Wi-Fi transfer file" = "Wi-Fi transfer file";
+"Files auto sync" = "Files auto sync";
+
+/**
+ *   BLChooseCameraViewController/BLScanQRCodeViewController/BLConnectingViewController/BLLivePreviewViewController/BLScanPromptViewController/BLWiFiBroadcastViewController
+ */
+
+"Click here to upgrade" = "Click here to upgrade";
+"Requires firmware V3.0.6.0" = "Requires firmware V3.0.6.0";
+"Choose camera" = "Choose camera";
+"No hear 'scan success'?" = "No hear 'scan success'?";
+"Hear 'scan success' message, then click Next" = "Hear 'scan success' message, then click Next";
+"Wait for the Wi-Fi status light to flash and the click ‘Next’" = "Wait for the Wi-Fi status light to flash and the click ‘Next’";
+"Wi-Fi status light not flashing? Click here" = "Wi-Fi status light not flashing? Click here";
+"Next" = "Next";
+"Wi-Fi Status lights go out?" = "Wi-Fi Status lights go out?";
+"Camera Wi-Fi connection" = "Camera Wi-Fi connection";
+"The camera is connecting to the Wi-Fi router" = "The camera is connecting to the Wi-Fi router";
+"The channel has been used." = "The channel has been used.";
+"Connect Wi-Fi Successful" = "Loading";
+"Low" = "Low";
+"SD" = "SD";
+"HD" = "HD";
+"Full HD" = "Full HD";
+"Go Live" = "Go Live";
+"Go Live (4G)" = "Go Live (4G)";
+"Add Cover" = "Choose cover photo";
+"Add a stream cover image by" = "Add a stream cover image by";
+"1.Ensure that the selected Wi-Fi network has a good upload speed." = "1.Ensure that the selected Wi-Fi network has a good upload speed.";
+"2.Ensure that the Wi-Fi network name and password are correctly spelt and do not contain any special characters." = "2.Ensure that the Wi-Fi network name and password are correctly spelt and do not contain any special characters.";
+"Video stream transmission was interrupted, the camera is trying on connecting" = "Video stream transmission was interrupted, the camera is trying on connecting";
+"Video stream transmission was interrupted" = "Video stream transmission was interrupted";
+"Be ready" = "Be ready";
+"Live stream is preparing" = "Live stream is preparing";
+"The camera is loging" = "The camera is loging";
+"LIVE on #DriftLife" = "LIVE on #DriftLife";
+"Create channel failed" = "Create channel failed";
+"Exit live preview?" = "Exit?";
+"Quit Broadcast? " = "Quit Broadcast? ";
+"Go on" = "No";
+"Quit" = "Yes";
+"Process" = "Loading";
+"Only visible for yourself" = "Only visible for yourself";
+"Friends" = "Friends";
+"Choose another device >" = "Choose another device >";
+"1. Turn on the camera, press the ‘Wi-Fi’ button until the light turns green." = "1. Turn on the camera, press the ‘Wi-Fi’ button until the light turns green.";
+"2. After the camera is slightly tilted camera is on the QRcode, keep the distance of about 20 cm scan QRcode" = "2. After the camera is slightly tilted camera is on the QRcode, keep the distance of about 20 cm scan QRcode";
+"1. Turn on the camera, press the ‘Wi-Fi’ button until the light blinks in white." =  "1. Turn on the camera, press the ‘Wi-Fi’ button until the light blinks in white." ;
+"2. Direct your camera towards the QR Code at a range of at least 20 cm." = "2. Direct your camera towards the QR Code at a range of at least 20 cm.";
+"Step 1: Press the Wi-Fi button until the indicator LED flashes blue." = "Step 1: Press the Wi-Fi button until the indicator LED flashes blue.";
+"Step 2: The indicator LED will turn green when the camera connection is successfully configured." = "Step 2: The indicator LED will turn green when the camera connection is successfully configured.";
+"Step 1: Press the Wi-Fi button, until the front indicator LED flashes blue. Your camera is now ready to scan the QR code. \rStep 2: Point the lens of the camera at the QR code, with no more than 20cm between them. \rStep 3: The indicator LED will turn from blue to green when the QR code has successfully been scanned." = "Step 1: Press the Wi-Fi button, until the front indicator LED flashes blue. Your camera is now ready to scan the QR code. \rStep 2: Point the lens of the camera at the QR code, with no more than 20cm between them. \rStep 3: The indicator LED will turn from blue to green when the QR code has successfully been scanned.";
+"When the Wi-Fi LED indicator stops flashing blue and turns green, click ‘Next’" = "When the Wi-Fi LED indicator stops flashing blue and turns green, click ‘Next’";
+"If the Wi-Fi LED indicator does not flash blue, click here." = "If the Wi-Fi LED indicator does not flash blue, click here.";
+"Or try connecting via the Standard Mode" = "Or try connecting via the Standard Mode";
+"Continue"     = "Continue";
+"Standard Mode" = "Standard Mode";
+"QR Scan Mode"  = "QR Scan Mode";
+"Please connect to a Wi-Fi network in your phone's settings to start live streaming. If you prefer using mobile data, change to your camera's live view ('Connect Camera') and select 'Go Live (4G)'." = "Please connect to a Wi-Fi network in your phone's settings to start live streaming. If you prefer using mobile data, change to your camera's live view ('Connect Camera') and select 'Go Live (4G)'.";
+"Exit to Settings" = "Exit to Settings";
+"Is this the wrong Wi-Fi? If so, click here to switch" = "Is this the wrong Wi-Fi? If so, click here to switch";
+"Please input the password" = " Please input the password";
+"Please input network name" = " Please input network name";
+"1.Ensure that the selected Wi-Fi network has a good upload speed.." = "1.Ensure that the selected Wi-Fi network has a good upload speed..";
+"2.Make sure that the selected Wi-Fi name does not contain any symbols or special characters." = "2.Make sure that the selected Wi-Fi name does not contain any symbols or special characters.";
+"Notice"="Warn";
+"WifiPwdNull"="Wi-Fi Password can't be less than 8 chars!";
+"If the Wi-Fi LED doesn’t turn to Red in 30s, \nplease check the firmware and try again" = "If the Wi-Fi LED doesn’t turn to Red in 30s, \nplease check the firmware and try again";
+"Auto sync setup" = "Auto Sync Setup";
+"File Synchronization Note: \n after charging synchronize files switch open \n 1, when the camera with the charger will automatically upload files to SD card foream your private network disk \n 2, cameraIt will automatically find and connect with the charger when the above-mentioned list of WI-Fi, you can set up to 5 \n 3,the phone app or camera, is bound with the current account and after logging on will get the wifi sync list." = "File Synchronization Note: \n after charging synchronize files switch open \n 1, when the camera with the charger will automatically upload files to SD card foream your private network disk \n 2, cameraIt will automatically find and connect with the charger when the above-mentioned list of WI-Fi, you can set up to 5 \n 3,the phone app or camera, is bound with the current account and after logging on will get the wifi sync list.";
+
+/**
+ *   FOMChannelDetailViewController/FOMVideoDetailViewController/FOMPhotoDetailViewController
+ */
+
+"Replay" = "Replay";
+"View" = "View";
+"Video Views"     = "Views";
+"Leave a comment" = "Leave a comment";
+"toLive" = "Live";
+"Hours" = "Hours";
+"Mins" = "Mins";
+
+/**
+ *   FOMFriendSuggestionViewController
+ */
+
+"Find others" = "Find others";
+"No friends here? Try what we recommended" = "No friends here? Try what we recommended";
+
+/**
+ *   FOMMessagesViewController
+ */
+
+"Notifications"="Notifications";
+"Clear" = "Clear";
+"commented on your post" = "commented on your post";
+"Replied to your comment" = "Replied to your comment";
+"Collected Your Post" = "added your post to their favorites";
+"is now following you." = "is now following you.";
+"has attempted to register your camera." = "has attempted to register your camera.";
+"Registered sucessfully" = "Registered sucessfully";
+"published new post" = "published new post";
+"Share a private channel to you" = "Share a private channel to you";
+"Camera is registered to another account." = "Camera is registered to another account.";
+"synchronous upload files failed" = "synchronous upload files failed";
+"Published Youku failure" = "Published Youku failure";
+"Published Youku success" = "Published Youku success";
+"Your video is ready, click here to watch." = "Your video is ready, click here to watch.";
+"Video clips is failure" = "Video clips is failure";
+"This post doesn't exist or has been deleted" = "This post doesn't exist or has been deleted";
+"You have not received any messages." = "You have not received any messages.";
+"No Messages" = "No Messages";
+"Check history messages" = "Check history messages";
+
+
+/**
+ *   FOMTimeShiftSelectViewController
+ */
+
+"play now" = "play now";
+"Please select time to play:" = "Please select time to play:";
+"Live" = "Live";
+
+/**
+ *   FOMPostTypeViewController/FOMSelectShareFriendsViewController/FOMShareGroupViewController
+ */
+
+"Drone" = "Drone";
+"Journey" = "Journey";
+"Pets" = "Pets";
+"Emotions" = "Emotions";
+"Fashion" = "Fashion";
+"Sports" = "Sports";
+"Others" = "Others";
+"Type" = "Type";
+"Activity" = "Activity";
+"Select your audience" = "Select your audience";
+"Remind who" = "Remind who";
+"Visible for Drift Community" = "Visible for Drift Community";
+"Your Friends and Followers" = "Your Friends and Followers";
+"Select friends" = "Select friends";
+
+/**
+ *   FOMCameraLoginGuideViewController
+ */
+
+"Camera connecting fail?" = "Camera connecting fail?";
+"Camera is connecting" = "Camera is connecting";
+"CameraLoginGuideX1" = "Wi-Fi LED being solid On and voice \"Start Cloud Mode\" being heard indicates your camera is successfully logged in.";
+"CameraLoginGuideGhostS" = "This icon being pop up indicates your camera has logged in successfully.";
+"CameraLoginGuideStealth2" = "\"Online\" being popup indicates your camera is logged in successfully.";
+"CameraLoginGuideCompass" = "Blue light turning on means \"Online successfully\"";
+
+/**
+ *   FOMCameraOnlineDisplayHtmlViewController
+ */
+
+"Cloud mode help" = "Cloud mode help";
+"Wi-Fi direct mode help" = "Wi-Fi direct mode help";
+"one of routers is nearly" = "one of routers is nearly";
+"Camera Upgrade" = "Camera Upgrade";
+"QR code error" = "QR code error";
+"nearby_router_help" = "nearby_router_help_en";
+"directcam_help" = "directcam_help_en";
+"cloudcam_help" = "cloudcam_help_en";
+"camera_upgrade_instruction" = "camera_upgrade_instruction";
+"QRcode_scan_instruction" = "QRcode_scan_instruction";
+
+
+/**
+ *   FOMCameraOnlineGuideMainViewController
+ */
+
+"Online Mode" = "Online Mode";
+"(Connect camera to the internet)" = "(Connect camera to the internet)";
+"(Camera direct connect to phone)" = "(Camera direct connect to phone)";
+"Please select operation" = "Please select operation";
+
+/**
+ *   FOMCameraWiFiListViewController
+ */
+
+"Opened" = "Opened";
+"router list in camera" = "router list in camera";
+"If one of routers is nearly?" = "If one of routers is nearly?";
+"isExist" = "Yes";
+"notExist" = "NO";
+
+"Save Successful"="Save Successful";
+"How to enable cloud mode" = "How to enable cloud mode";
+"CameraOnlineGuideX1" = "1.Turn on your camera, then press and hold \"Wi-Fi\" button for 2s, till you hear 2 Beep sound.\n2. Press \"Wi-Fi\" button again, Wi-Fi Cloud mode is activited \n(you can hear the voice \"Wi-Fi Cloud mode\".";
+"CameraOnlineGuideGhostS" = "1.Turn on camera and press \"Menu\" button to access the main menu window, highlight on the Gear icon.\n2.Enter into the Settings and select Wi-Fi menu.\n3.Choose the option of \"Cloud\" (if you didn't register the camera yet, \"Cloud\" option will not be visible, in this case, please register your camera first)";
+"CameraOnlineGuideStealth2" = "1.Following the quick guide of your camera to access the general settings menu.\n2.Highlight on Wi-Fi menu and enable the \"Cloud\" mode from the options.\n(If you didn't register the camera yet,“Cloud”option will not be visible, in this case, please register your camera first)";
+"CameraOnlineGuideCompass" = "1.Press Wi-Fi button to turn on the Wi-Fi.\n2.Press Wi-Fi button again when green light is turning on.\n(Wait for a few seconds, when blue light turns on,\nit means \"Wi-Fi cloud mode turns on\")";
+
+/**
+ *   FOMVideoFilterViewController
+ */
+
+"Generating..." = "Generating...";
+"Normal" = "Normal";
+"Amaro"  = "Amaro";
+"Rise" = "Rise";
+"Hudson" = "Hudson";
+"X-pro II" = "X-pro II";
+"Sierra" = "Sierra";
+"Lo-fi" = "Lo-fi";
+"Sutro" = "Sutro";
+"Toaster"= "Toaster";
+"Video Filter" = "Video Filter";
+"Completed" = "Completed";
+"Do you want to share to Drift Life" = "Do you want to share to Drift Life";
+
+/**
+ *   FOMVideoMomentViewController
+ */
+
+"Change" = "Change";
+"Moment" = "Moment";
+
+
+/**
+ *   FOMClipCoverViewController/FMSoundTrackViewController/FMTrimClipSecondStepViewController/FMVideoCompoundViewController
+ */
+
+"Select Cover" = "Select a Cover";
+"Add Music" = "Add Music";
+"Default Music" = "Default Music";
+"You didn't select a soundtrack."  = "You didn't select a soundtrack.";
+"Title_Back"="  Back";
+"Add Watermark and Say something" = "Add Watermark and Say something";
+"Add Watermark" = "Add Watermark";
+"Say something to the world" = "Say something to the world";
+"Video Edit" = "Video Edit";
+"Please enter a description (optional)" = "Please enter a description";
+"Video's name cann't contain emoji characters." = "Video's name cann't contain emoji characters.";
+"Please clip a video or add a background music" = "Please clip a video or add a background music.";
+"Do you want to go back and choose a music" = "Do you want to go back and choose a soundtrack?";
+"Unknow Special"    = "Unknow Special";
+"Unknow Duration"    = "Unknow Duration";
+"Duration:" = "Duration:";
+"The process will take about 5 minutes, we will notify you when completed." = "The process will take about 5 minutes, we will notify you when completed.";
+"You didn't add a title,please enter a new name" = "You didn't add a title,please enter a new name";
+"You didn't choose a music" = "You didn't choose a music";
+"Video name" = "Video name";
+"Are you sure you want to delete this item?" = "Are you sure you want to delete this item?";
+
+/**
+ *   FMUploadedFilesViewController/FOMCameraFileViewController/FOMNewLocalFileViewController
+ */
+
+"Synchronized Files" = "Synchronized Files";
+"File hasn’t been synced by Cam" = "File hasn’t been synced by Cam";
+"No Files in your Cloud space, you can:\n1.From the left menu panel, select \"My Files\" --- \"Files in my phone\", select some files and upload to your Cloud Space.\n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space." = "No Files in your Cloud space, you can:\n1.From the left menu panel, select \"My Files\" --- \"Files in my phone\", select some files and upload to your Cloud Space.\n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space.";
+"Image thumbnail load time dependants on local connection speed." = "Image thumbnail load time dependants on local connection speed.";
+"Allow Drift Life to access your album in \"Settings\"->\"Privacy\"->\"Photos\"" = "Allow Drift Life to access your album in \"Settings\"->\"Privacy\"->\"Photos\"";
+
+
+
+/**
+ *   FMSyncUploadViewController
+ */
+
+"View sync'd files>>" = "View sync'd files>>";
+"Synchronized" = "Synchronized";
+"of" = "of";
+"Total" = "Total";
+"There are none files are available to sync" = "None files are available to sync";
+"Pause Sync" = "Pause Sync";
+"Start Sync" = "Start Sync";
+"No files uploaded" = "No files uploaded";
+"The camera is offline, click 'Confirm' to exit" = "The camera is offline, click 'Confirm' to exit";
+"The files have sync completely" = "The files have sync completely";
+"Login server is failed, please return back and try again" = "Login server is failed, please return back and try again";
+
+/**
+ *   FOMLocalFileManagementViewController
+ */
+
+"Upload"="Upload";
+"My Local Files" = "My Local Files";
+"You are currently using cellular data, please confirm again." = "You are currently using cellular data, please confirm again.";
+"Upload Later" = "Upload Later";
+"Upload Right Now" = "Upload Now";
+
+/**
+ *   FOMNetdiskFileViewController
+ */
+
+"No Files in your Cloud space, you can:\n1.From the left menu panel, select \"My Files\" --- \"Files in my phone\", select some files and upload to your Cloud Space.\n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space." = "No Files in your Cloud space, you can:\n1.From the left menu panel, select \"My Files\" --- \"Files in my phone\", select some files and upload to your Cloud Space.\n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space.";
+"Continue? The files deleted won't be auto sync again." = "Continue? The files deleted won't be auto sync again.";
+
+/**
+ *   FOMQuickPostFileViewController/FOMTaskManagementViewController/FOMUploadListViewController/FOMDownloadListViewController/FOMFileManagementViewController
+ */
+
+"task is downloading" = "task is downloading";
+"Files in my Phone" = "Files in my Phone";
+"Files in cameras" = "Files in cameras";
+"Upload List" = "Upload List";
+"Download List" = "Download List";
+"Task Management" = "Task Management";
+"Paused" = "Paused";
+"Uploading: " = "Uploading: ";
+"Your Cloud Storage is not enough,please free some space" = "Your Cloud Storage is not enough,please free some space";
+"Waiting" = "Waiting";
+"Submit Success" = "Post Successful";
+"ClickAndCheck" = "Click and check";
+"Please input new name" = "Please input new name";
+
+
+/**
+ *   FOMPostViewController
+ */
+
+"After the video release synchronized to Youtube" = "After the video release synchronized to Youtube";
+"After the video release synchronized to Youku" = "After the video release synchronized to Youku";
+"Post" = "Post";
+"Share" = "Share";
+"@Someone" = "@Someone";
+"File Size:" = "File Size:";
+"Auto Compress" = "Auto Compress";
+"File name:"="File Name:";
+"Write a comment" =  "Write a comment";
+"PublicDescriptionNull"="Description Can Not Be Empty";
+"Authorize Youku" = "Authorize Youku";
+"Compressing" = "Compressing";
+"ComfirmOK" = "Done";
+
+/**
+ *   UIWebViewManagerController
+ */
+"This account has been bound by other user" = "This account has been bound by other user";
+
+
+/**
+ *   FOMCamPasswordHintViewController/FOMEditCamPasswordViewController/WiFiDirectCommonSettingViewController
+ /WiFiDirectContinuedShootViewController/WifiDirectSpeakerVolumeViewController/WiFiDirectVideoResolutionViewController
+ */
+
+"Your Wi-Fi settings are updated,but you need to reconnect to camera." = "Your Wi-Fi settings are updated,but you need to reconnect to camera.";
+"Visit your device’s Wi-Fi settings to reconnect to your camera’s network." = "Visit your device’s Wi-Fi settings to reconnect to your camera’s network.";
+"Your password is:" = "Your password is:";
+"Note：If you are unable to connect,you may have to \"Forget this network\" and then enter your new password." = "Note：If you are unable to connect,you may have to \"Forget this network\" and then enter your new password.";
+"Change Password" = "Change Password";
+"8-16 Number or Character" = "8-16 Number or Character";
+"This will be the password required to connect to your Drift camera in your device’s Wi-Fi Setting Menu." = "This will be the password required to connect to your Drift camera in your device’s Wi-Fi Setting Menu.";
+"Password length should be between 8 and 16" = "Password length should be between 8 and 16";
+"English" = "English";
+"Chinese" = "Chinese";
+"Live Resolution" = "Live Resolution";
+"Indication Language" = "Indication Language";
+"Choose to this interval, the camera won't activate sleeping mode automaticlly." = "Choose to this interval, the camera won't activate sleeping mode automaticlly.";
+"Mic_sensitivity" = "Mic Sensitivity";
+"Screen_saver" = "Screen Saver";
+"Camera Off" = "Camera Off";
+"Live_Stream" = "Live Stream";
+"Burst" = "Burst";
+"Photo Resolution" ="Photo Resolution";
+"Timelapse" = "Timelapse";
+"Single" = "Single";
+"Off" = "Off";
+"Low" = "Low";
+"Middle" = "Medium";
+"High" = "High";
+"Medium" ="Medium";
+"s" ="S";
+"Min" = "Min";
+"Timelapse Interval" = "Timelapse Interval";
+"Warning" = "Warning";
+"Speaker Volume" = "Speaker Volume";
+"Video Resolution" = "Video Resolution";
+"Firmware Upgrade" = "Firmware Upgrade";
+
+/**
+ *   FOMDirectResetPasswordViewController/FOMGenderViewController/FOMOnlineSettingsViewController
+ */
+
+"ChangePassword"="Setup Password";
+"Male"="Male";
+"Female"="Female";
+"Failed to fetch live URL" = "Failed to fetch live URL";
+"DeviceName"="Device Name";
+"IndicatorLight" = "LED";
+"Auto Sync" = "Auto Sync";
+"FirmwareVersion"="Firmware Version";
+"RC LED" = "RC LED";
+"Video Frame Rate" = "Video Frame Rate";
+"Timelapse Interval" = "Timelapse Interval";
+"PhotoBurstResolution" = "Photo Burst Resolution";
+"PhotoBurstCaptureRate" = "Photo Burst Capture Rate";
+"PhotoBurstDuration" = "Photo Burst Duration";
+"Photo Mode" = "Photo Mode";
+"OFF"="OFF";
+"AlreadyNewVersion"="Your camera firmware is the latest.";
+
+/**
+ *   FOMSettingViewController/FOMSettingDetailViewController
+ */
+
+"LOG OUT" = "Logout";
+"Infomation" = "Infomation";
+"Cloud Space" = "Cloud Space";
+"History Messages" = "History Messages";
+"Notification Option" = "Notification Option";
+"Version Info" = "Version Info";
+"App Setting" = "App Setting";
+"UpdatePhotoSuc"="Profile photo uploaded successfully";
+"User Name" = "Name";
+"Email" = "E-mail";
+"Email not verified" = "Email not verified";
+
+/**
+ *   FOMCameraNameViewController/FOMMyCameraViewController
+ */
+
+"SSID" = "SSID";
+"Refresh" = "Refresh";
+"Save" = "Save";
+"The change will only take effect after reboot" = "The change will only take effect after reboot";
+"ModyFail"="Modify Fail!";
+"Note:\n\rIf you want to remove a camera from your account, tap on \"Delete\" icon when it is not online (indicated by a gray camera icon)." = "Note:\n\rIf you want to remove a camera from your account, tap on \"Delete\" icon when it is not online (indicated by a gray camera icon).";
+"Registered Cameras" = "Registered Cameras";
+"Confirm the deletion"="Are you sure you want to remove this camera?";
+"Wifi list haven't been saved to server." = "Wifi list haven't been saved to server.";
+"Camera can be deleted only when offline."="Camera can only be removed from your account when it's offline.";
+
+
+/**
+ *   FOMNicknameViewController/DCChangePasswordViewController/FOMWifiDirectSettingsViewController
+ */
+
+"NickName"="Nickname";
+"UserExist"="User name already exists!";
+"Please input new password(6-32 Chars)" = "Please input new password (6-32 characters).";
+"Pick a name easy to remenber" = "Pick a name easy to remenber";
+"UnKnown Camera" = "UnKnown Camera";
+"Non-registered" = "This camera have not been registered";
+"Other one" = "has registered this camera";
+"Formatted Successfully" ="Formatted Successfully";
+"Recording Settings" = "Recording Settings";
+"LED Off Timer" = "LED Off Timer";
+"Format Memory" = "Format SD card";
+"Routers' List" = "Routers' List";
+"Wi-Fi Network" = "Wi-Fi Network";
+"Wi-Fi Auto On" = "Wi-Fi Auto On";
+"Touch Sensitivity" = "Touch Sensitivity";
+"if you need register camera,please login with Drift Life account online." = "if you need register camera,please login with Drift Life account online.";
+"Are you sure you want to format this SD card?" = "Are you sure you want to format this SD card?";
+"Are you sure you want to exit preview?" = "Are you sure you want to exit preview?";
+
+/**
+ *   OtherTranslate
+ */
+
+
+
+"Camera is in recording, Can't be accessed"="Camera is Busy, Unable to be accessed!";
+"Camera"="Camera";
+"Time-lapse fps"="Time-lapse fps";
+"Contrast"="Contrast";
+"Delete"="Delete";
+"Deleting..."="Deleting...";
+"Download Completed"="Downloaded Percentage:";
+"Length"="Time:";
+"Loading..."="Loading...";
+"NO"="NO";
+"Name is too long"="Name Too Long";
+"Name is too short"="Name Not Long Enough";
+"Name"="User Name";
+"Name:"="Name:";
+"No"="No";
+"On"="On";
+"Password is too long"="Password Too Long";
+"Password is too short"="Password Too Short";
+"Photo Setup"="Photo Setup";
+"Please Reboot Camera, Auto Reboot Now?"="Restart Camera?";
+"Please input SSID(1-32)"="Please Input SSID (1-32 Chars)";
+"Please input name(1-16)"="Please Input Name (1-16 Chars)";
+"Please input password(8-16)"="Please Input Password(8-16 Chars)";
+"Please input the category."="Please Input Category.";
+"Please input the description"="Please Input Description";
+"Please input the keyword"="Please Input Keyword";
+"Please input the title."="Please Input Title.";
+"Please restart your camera manually to make the configuration effective"="Please restart camera to make Settings Effected";
+"Prompt"="Information";
+
+"Resolution"="Resolution";
+"SSID is invalid"="Invalid SSID";
+"SSID is too long"="SSID Too Long";
+"SSID is too short"="SSID Not Long Enough";
+"Serial Number:"="Serial Number:";
+
+"Setup Camera"="Camera Settings";
+"Shoot"="Shoot";
+"Size"="Size:";
+"The change will only take effect after camera is restarted"="Settings will take into effect only after you restart camera";
+"The video has been downloaded"="File Already Downloaded";
+"Time Lapse"="Time Lapse";
+"Title is invalid"="Invalid Title";
+"To Start recording, Camera will turn off the Wi-Fi connection, are you sure?"="Recording Video will disable Wi-Fi, Continue?";
+"Unable to access remote camera"="Unable to access Camera!";
+"Unable to access remote device, would you like to use local camera?"="Unable to access remote device, would you like to use local camera?";
+
+
+"Version:"="Version:";
+
+
+"Wi-Fi Setting"="Wi-Fi Setup";
+"Wi-Fi Mode"="Wi-Fi Mode";
+"YES"="Yes";
+"You camera needs to be reconfigured"="Your Camera needs to be re-configured";
+"You can download WQVGA or HD video from the camera,WQVGA format is more convenient for video sharing, while HD format is better for playback on your Apple device"="You can download WQVGA and HD video from the camera, WQVGA format is more convenient for video sharing, while HD format is better for playback on your device";
+"Your session is expired."="Connection Expired.";
+"Info"="Information";
+"Firmware out of date"="Firmware version is not up to date";
+"Connecting"="Connecting";
+"Connected"="Connected";
+"Not connected"="Not Connected";
+"Setup successfully"="Setup Success";
+"The change will only take effect after reboot"="Settings will take into effect only after you restart camera";
+"btn_setting"="Settings";
+"Saving to Photo Album"="Saved To Photo Album";
+
+"Start"="Start";
+"CopyRight"="© 2013 Foream Network Technology Co., Ltd. All Rights Reserved.";
+"UserName"="User Name";
+"UserLoginFailure"="please check the account, password and Server area again";
+"ResetFail"="Reset Fail";
+"Old Password Incorrect"="Old Password Incorrect";
+"RegFail"="Registration Failed!";
+"Help"="Help";
+"Pull down to refresh..."="Pull-To-Refresh...";
+"Release to refresh..."="Release-To-Refresh...";
+"Last Updated"="Last Updated:";
+"Mobile Number"="Mobile Number";
+"Gender"="Gender";
+"Profession"="Career";
+"Country"="Country";
+"Hobby"="Hobby";
+
+"Explore"="Explore";
+"My Files"="My Files";
+"Camera Settings"="Camera Settings";
+"About"="About";
+"Saving"="Saving";
+"Failed"="Failed";
+"PromptStep1"="Please Connect To Your Camera.\nPlease check the following:\n1. Make sure your camera is in Wi-Fi Setup Mode (please check your camera user manual for how to start camera in Wi-Fi Setup mode)\r2. Make sure your iOS Device is connecting with your Camera - please go to your iOS device Settings/Wi-Fi and select your camera from the network list";
+"PromptStep2"="Please Connect your iOS device to Internet as the following:\nOn your iOS Device, Open Wi-Fi Settingss/Wi-Fi and select a suitable network which can enable you to access internet.";
+"Foream"="Foream";
+"Feedback"="Feedback";
+"Ratings"="Rate Foream";
+"Version"="Version";
+"Check New Version"="Check New Version";
+"Foream Web"="Foream Web";
+"Sync Time"="Sync Time";
+"OnLine"="Device On Line";
+
+"Device Delete failed"="Device Delete failed!";
+
+"File Name"="File Name";
+"Default"="Default";
+
+"Category"="Category";
+
+"There are files being uploaded,if plug flow Upload file will be suspended, whether the plug-flow?"="Upland is in progress, resuming live streaming will suspend upload, Continue?";
+"Device is recording, push streaming video will be stopped, whether the plug-flow?"="Recording is in progress, resuming live streaming will make recording stopped, Continue?";
+"Device is pushing stream,if upload file plug flow will be suspended, whether the upload?"="Live Streaming is in progress, Uploading file will make live streaming stopped, Continue?";
+"User Mail Format error"="User Mail Format error";
+"NewPasswordNotMatch"="New Passwords not match!";
+"My Favorites"="My Favorites";
+"Subscriptions"="Subscriptions";
+
+"UpdateCamera"="New Firmware Version Is Available, Upgrade?";
+"TheFireVerTooLow" = "New firmware for your camera is available, please access www.foream.com to acquire the latest version.";
+"TypeMan"="Male";
+"TypeLady"="Female";
+"Your friend"="Your friend";
+"shared with you his file:"="shared with you his file:";
+"Others"="Others";
+
+"SubmitCommentError"="Submit Failed";
+"Number of characters can not be greater than 300"="Number Of Characters Can Not Exceed 400";
+
+"QINIU Service"="QINIU Service";
+
+
+"Your invaluable suggestions enable us to improve and better serve you in future"="Your Suggestions will assist us continuously improve our service";
+"Cancelled"="Cancelled";
+
+"This camera has not sometimes shift fragment."="Fresh Camera, No Data";
+"Success"="Success";
+
+"moment ago" = "A moment ago";
+"seconds ago"="Seconds Ago";
+"minutes ago"="Minutes Ago";
+"hours ago"="Hours Ago";
+"days ago"="Days Ago";
+"weeks ago"="Weeks Ago";
+"More than one week"="More than one week";
+"Introduced later, so stay tuned."="Introduce Later, Stay Tuned";
+"Please check the Wi-Fi connection with the camera"="Please check the Wi-Fi connection with the camera";
+"Are you sure you want to retrieve the password?"="Are you sure you want to retrieve the password?";
+"Please enter your registered e-mail address"="Please enter your registered e-mail address";
+"You have not filled e-mail address,mailbox recover the password is lost only way,please complete data after account activation"="Please have a valid email address set, email address is the only way to recover your password when it's lost, we strongly recommend to make it set then activate your account";
+"E-mail has been sent to your mailbox, please check and click the link to activate"="E-mail has been sent to your mailbox, please check and click the link to activate";
+"Sending request"="Sending request";
+"Enter your e-mail is not registered in the system, you can not complete the request"="your email account is invalid";
+
+"camera_name"="Name, Description";
+"Auto Login"="Auto Login";
+"Auto Streaming"="Auto Streaming";
+"Wi-Fi Identity"="Wi-Fi Identity";
+"File itself belongs to you"="File itself belongs to you";
+"Input the name and password of the router you want your camera connecting to."="Input the name and password of the router you want your camera connecting to.";
+
+"DeviceName:"="Device Name:";
+
+
+"Later"="Later";
+"Login now"="Login now";
+
+"Unable to access Internet, please check your network"="Unable to access Internet, please check your network";
+
+
+"This file has been uploaded or already in the upload queue"="This file has been uploaded or already in the upload queue";
+"Please Open Wi-Fi Settingss/Wi-Fi and switch the network for internet accessing"="Please Open Wi-Fi Settingss/Wi-Fi and switch the network for internet accessing";
+"You have one step ahead of Camera"="You have one step ahead of Camera";
+"registration, Continue?"="registration, Continue?";
+"Make sure you agree"="if you agree, please come to the list of My Cameras,and remove this camera from your account, by doing this, all of this camera associated data will be clean up as well";
+"Your camera"="Your camera";
+"is being registered by"="is being registered by";
+"Mode"="Mode";
+"Exposure"="Exposure";
+
+"Vivid"="Vivid";
+"Low Light"="Low Light";
+
+
+
+"To reset your password, please enter your email address." = "To reset your password, please enter your email address.";
+
+"Skip"              = "Skip";
+"Your Device is connected with camera, access camera now"= "Your Device is connected with camera, access camera now?";
+
+"Local Cam" = "Local Cam";
+
+"Length"="Length:";
+"The camera has been registered by" = "The camera has been registered by";
+"Registered" = "Registered";
+"Create"     = "Create";
+"Enter moive title here" = "Enter moive title here";
+"Basic Information" = "Basic Information";
+"City" = "City";
+"My Files" = "My Files";
+"My Favorites" = "My Favorites";
+"My Subscriptions" = "My Subscriptions";
+"MESSAGE_TYPE_TIME_SHIFT_DOWNLOAD_COMPLETED" = "Time shift download completed.";
+"MESSAGE_TYPE_SOCIAL_POST_IS_COMMENTED" = "%@ commented on your post.";
+"MESSAGE_TYPE_SOCIAL_COMMENT_IS_REPLIED" = "%@ replied your comment";
+"MESSAGE_TYPE_SOCIAL_POST_IS_ADDED_TO_FAVOURITE" = "%@ has favourited your post.";
+"MEESAGE_TYPE_SOCIAL_BE_ADDED_AS_FRIEND" = "%@ is now following you.";
+"MEESAGE_TYPE_SOCIAL_NEW_POST_OF_SPECIAL_FRIEND" = "your friend %@ publish new post.";
+"MEESAGE_TYPE_CAMERA_REGISTER_BY_OTHER" = "%@ has attempted to register your camera.";
+"MEESAGE_TYPE_VIDEO_EDIT_COMPLETED"     = "Your video is ready, click here to watch.";
+"MEESAGE_TYPE_REMOTE_UPLOAD_FAILED"     = "The video %@ upload failed.";
+"MEESAGE_TYPE_REMOTE_UPLOAD_PUBLISHED"  = "The video %@ upload success.";
+"MEESAGE_TYPE_SOCIAL_YOUR_FRIEND_SHARED_A_POST_TO_YOU" = "You friend share a post to you.";
+"Rename" = "Rename";
+"Local Space" = "Local Space";
+"Add photo" = "Add photo";
+"Camera Tutorials" = "Camera Tutorials";
+"Ignore" = "Ignore";
+"Share" = "Share";
+"You haven't registered any cameras" = "You haven't registered any cameras";
+"Trends" = "Trends";
+"Add" = "Add";
+"Modify" = "Modify";
+"Saved Routers" = "Saved Routers";
+"Add a new Wi-Fi router" = "Add a new Wi-Fi router";
+"Save or quit?" = "Save or quit?";
+"Sync Failed" = "Sync Failed";
+"Sync Completed" = "Sync Completed";
+"Sync Successfully" = "Sync Successfully";
+"Switch to 3G/4G mode" = "Switch to 3G/4G mode";
+"You haven't registered a camera" = "You haven't registered a camera";
+"Pause sync failed" = "Pause sync failed";
+"Pause sync successfully" = "Pause sync successfully";
+"unread Notifications" = "Notifications";
+"The download link is created, which will be valid in 5 days" = "The download link is created, which will be valid in 5 days";
+"Notification" = "Notification";
+"Your device has been connected to camera, do you wanto enter Wi-Fi Direct?" = "A camera has connected to your device, will go to camera connection mode";
+"Wi-Fi connect is available, switch to online mode" = "your device has disconnected from camera and will go to Internet connection mode ";
+//"If you need register camera,please login with Drift account online." = "If you need register camera,please login with Drift account online.";
+"You are not the ower of camera,so you can't manage the camera." = "You are not the ower of camera,so you can't manage the camera.";
+"Registration Timeout"  =  "Registration Timeout";
+"Registered by other people"  =  "Registered by other people";
+"please tap the camera icon on the upper right corner to check your camera" = "please tap the camera icon on the upper right corner to check your camera";
+"File Name" = "File Name";
+"Notes:\n1. Select a nearby Wi-Fi Router, with the SSID name all in English characters\n2. Make sure the password you input is correct, and the router is connected to Internet." = "Notes:\n1. Select a nearby Wi-Fi Router, with the SSID name all in English characters\n2. Make sure the password you input is correct, and the router is connected to Internet.";
+"Notes:\n1Auto Sync is turned on, if the camera is in a network environment, camera will automatically sync its contents to your personal Cloud space if you connect the camera to DC adaptor when it's in Off mode." = "Notes:\n1Auto Sync is turned on, if the camera is in a network environment, camera will automatically sync its contents to your personal Cloud space if you connect the camera to DC adaptor when it's in Off mode.";
+"Account:" = "Account:";
+
+"Note:\n1. This camera is not registered under your account, you can't setup the Wi-Fi list here.\n2. Not sure whether the camera's owner has removed it from his/her account.\n3. If the camera's owner has removed it from his/her account, you can try to register it to your account" = "Note:\n1. This camera is not registered under your account, you can't setup the Wi-Fi list here.\n2. Not sure whether the camera's owner has removed it from his/her account.\n3. If the camera's owner has removed it from his/her account, you can try to register it to your account";
+"Can not access your camera, please check the connection and try again" = "Can not access your camera, please check the connection and try again";
+"Auto Sync will only take effect if below preconditions are met.\n1.A router connecting to Internet is nearby.\n2.The router’s information (SSID & Password) has been written to your camera before\n3.There have files in your camera which has not be synced to your Cloud space.\nTo start Auto sync, firstly set your camera in Off mode, then plug DC adaptor to its USB port, your camera will auto sync contents to your Cloud space." = "Auto Sync will only take effect if below preconditions are met.\n1.A router connecting to Internet is nearby.\n2.The router’s information (SSID & Password) has been written to your camera before\n3.There have files in your camera which has not be synced to your Cloud space.\nTo start Auto sync, firstly set your camera in Off mode, then plug DC adaptor to its USB port, your camera will auto sync contents to your Cloud space.";
+
+
+
+"You don’t have any favorite contents, try to find some good posts from the community and collect them to your Favorites list." = "You don’t have any favorite contents, try to find some good posts from the community and collect them to your Favorites list.";
+"Note:\nIf you want to remove a camera from your account, tap on the “X” icon.  (you can not delete your camera when it is online)." = "Note:\nIf you want to remove a camera from your account, tap on the “X” icon.  (you can not delete your camera when it is online).";
+"1.The router(s) listed are connected to your Foream account.\n2.You can connect maximum 5 routers to your Foream account.\n3.When you register your camera through this mobile phone, the router(s) listed will be synced to the camera automatically, means your camera can login foream service if any router in the list is nearly." = "1.The router(s) listed are connected to your Foream account.\n2.You can connect maximum 5 routers to your Foream account.\n3.When you register your camera through this mobile phone, the router(s) listed will be synced to the camera automatically, means your camera can login foream service if any router in the list is nearly.";
+"Support at most 5 routers." = "Support at most 5 routers.";
+"No Files in your Cloud space, you can:\n1.From Top menu button select \"Phone’s files\", select files from your mobile phone and upload to your Cloud Space. \n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space." = "No Files in your Cloud space, you can:\n1.From Top menu button select \"Phone’s files\", select files from your mobile phone and upload to your Cloud Space. \n2.If you have Foream certified camera, register it under your account, and set it to \"Auto Sync\" mode, camera will automatically upload its contents to your Cloud space.";
+
+"Turn On Auto Sync" = "Turn On Auto Sync";
+"You are setting your camera into Auto Sync mode, once setup, if you connect your camera to DC Adaptor when it’s in off mode, your camera will automatically sync its contents to your personal Cloud storage if it’s in a known network environment." = "You are setting your camera into Auto Sync mode, once setup, if you connect your camera to DC Adaptor when it’s in off mode, your camera will automatically sync its contents to your personal Cloud storage if it’s in a known network environment.";
+"Turn Off Auto Sync" = "Turn Off Auto Sync";
+"Auto Sync function will be turned off, once setup, if you connect your camera to DC Adaptor when it’s in off mode, your camera will go to normal charging mode, instead of syncing contents." = "Auto Sync function will be turned off, once setup, if you connect your camera to DC Adaptor when it’s in off mode, your camera will go to normal charging mode, instead of syncing contents.";
+"1. if you edit the router’s list, by clicking \"Save\" button, the modified router list will be saved to camera.\n2. The next time when you setup your camera to Cloud mode, it will try to connect nearly router with the saved router list info" = "1. if you edit the router’s list, by clicking \"Save\" button, the modified router list will be saved to camera.\n2. The next time when you setup your camera to Cloud mode, it will try to connect nearly router with the saved router list info";
+"The video format is not supported, we recommended to use Foream certified cameras to create videos." = "The video format is not supported, we recommended to use Foream certified cameras to create videos.";
+"It's detected that your mobile phone has disconnected from camera, please try to reconnect." = "It's detected that your mobile phone has disconnected from camera, please try to reconnect.";
+
+"MSG_SHARE_SUCCESS" = "Shared Successfully";
+"CheckOutYouWi-FiRetour"="Please check your ";
+"You are using celular data, do you want to post right now?" = "You are using celular data, do you want to post right now?";
+"Post Later" = "Post Later";
+"Post Right Now" = "Post Now";
+
+
+
+"Sync Finished" = "Sync Finished";
+"StartUpgrade"="Begin to upgrade fireware";
+"CheckCameraSDSpaceFail"="Your camera Storage/Battery is not enough";
+"UpdateingSuccess"="Camera's fireware upgrade success";
+"Camera Wi-Fi Off" = "Camera Wi-Fi Off";
+"Exited Wi-Fi Direct" = "Logout Direct";
+"You want the camera become which status"="The camera will become";
+"No New Files" = "No New Files need to upload";
+
+
+
+"The files sync completely,click and check them." = "The files sync completely,click and check them.";
+"Reply" = "Reply";
+
+
+"Uploading" = "Uploading";
+"Uploaded" = "Uploaded";
+"Publish to Youtube" = "Publish to Youtube";
+
+"This email address is registered to a different Drift Life account." = "This email address is registered to a different Drift Life account.";
+"Detecting Camera download environment" = "Detecting Camera download environment";
+
+"Added To Upload Queue" = "Added To Upload Queue";
+"ERROR_DESC_QZONE_NOT_INSTALLED" = "QZone not installed";
+"Cam is not living" = "Cam is not living";
+"Status:" = "Status:";
+"Live management" = "Live management";
+"Live setting" = "Live setting";
+"Add a new live" = "Add a new live";
+"Stop" = "Stop";
+"My Videos" = "My Videos";
+"My Photos" = "My Photos";
+"My Livestreams" = "My Livestreams";
+"Private Channel Share" = "Private Channel Share";
+"Create new channel" = "Create new channel";
+"has shared a private post with you." = "has shared a private post with you.";
+"You can only share to 5 friends." = "You can only share to 5 friends.";
+"Added to download list Successfully" = "Added to download list Successfully";
+"Live now" = "Live now";
+"Wi-Fi list haven't been saved to server." = "Wi-Fi list haven't been saved to server.";
+"Wi-Fi list have been saved to server."  = "Wi-Fi list have been saved to server.";
+"Avatar"  =  "Avatar" ;
+"Related Account" = "Related Account";
+"Wander around" = "Look around";
+"You can't report yourself post" = "You can't report yourself post";
+"Original" = "Original";
+"After Edit" = "After Edit";
+"Enter the phone number or email" = "Enter the phone number or email";
+"Email accound is invalid" = "Email accound is invalid";
+"Please enter correct mobile number or email" = "Please enter correct mobile number or email";
+"User Level" = "User Level";
+"Ranking of this month" = "Monthly ranking";
+"No integration，No ranking" = "No integration，No ranking";
+"Current Integration" = "Current Integration:";
+"Activeness"= "Activeness:";
+"The counts of your posts" = "The counts of your posts";
+"You've published posts"= "You've published posts";
+"The comment counts of your posts" ="The comment counts of your posts";
+"The counts of your fans" ="The counts of your fans";
+"The collection counts of your posts" = "The collection counts of your posts";
+"The favoured counts of your posts" ="The favoured counts of your posts";
+"Join date" = "Join date:";
+"If you are ranked in the top 20 can be upgraded" = "If you are ranked in the top 20 can be upgraded";
+"Score" =  "Score:";
+"monthlyRating" =  "Monthly Rating";
+"Are you sure you want to cancel follow?" = "Are you sure you want to cancel follow?";
+"Number" = "No.";
+"Ming" = "";
+"No ranking" ="No ranking";
+"Copy" = "Copy";
+"Sending authcode failure" = "Sending authcode failure";
+"Fans" = "Fans";
+"PopUsers" = "PopUsers";
+"Theme" = "Theme";
+"+ Follow" = "+ Follow";
+"Continue? The files deleted won't be auto sync again." = "Continue? The files deleted won't be auto sync again.";
+"Completed" = "Completed";
+"Enter discover" = "Enter discover";
+"No result" = "No result";
+"Do you want to update your firmware version now?" = "Do you want to update your firmware version now?";
+"Your camera will start update" = "Your camera will start update";
+"Firmware Uploading..." = "Firmware Uploading...";
+"The latest firmware version is" = "The latest firmware version is";
+"do you want to upgrade your camera"  = "do you want to upgrade your camera";
+"Add camera" = "Add camera";
+"Time-lapse fps" = "Time-lapse fps";
+"Create" = "Create";
+"is Living." = "is Living.";
+"is Live" = "Live";
+"Not Live" = "Preview";
+"You haven't create channel.Auto create it and broadcast?" = "You haven't create channel.Auto create it and broadcast?";
+"Exit and live in background?" = "Exit and live in background?";
+"Keep Live" = "Keep Live";
+"Cancel Live" = "Cancel Live";
+"Add router info in Wi-FiDirect mode" = "Add router info in Wi-FiDirect mode";
+"Direct Cam" = "Direct Cam";
+"Cam Registration" = "Cam Registration";
+"Cam Online" = "Cam Online";
+"Cam Broadcast" = "Cam Broadcast";
+"Manage Wi-Fi" = "Manage Wi-Fi";
+"Manage Cams" = "Manage Cams";
+"Contact Us" = "Contact Us";
+"Most Popular:" = "Most Popular:";
+"Clear List" = "Clear List";
+"Relative Users" = "Relative Users";
+"Relative Posts" = "Relative Posts";
+"I have created a channel" = "I have created a channel";
+"Select a created channel" = "Select a created channel";
+"Intruduction" = "Intruduction";
+"Channels" = "Channels";
+"Posts" = "Posts";
+"Mood" = "Mood";
+"It's nothing here" = "It's nothing here";
+"Intruduction" = "Profile";
+"Channels" = "Channels";
+"Posts" = "Posts";
+"Mood" = "Mood";
+"Address" = "Address";
+"Profession" = "Profession";
+"Basic Information" = "Basic Information";
+"It's nothing here" = "It's nothing here";
+"Edit Mood" = "Edit Mood";
+"Edit Address" = "Edit Address";
+"Edit Profession" = "Edit Profession";
+"Edit Intruduction" = "Edit Intruduction";
+"Who to follow:" = "Who to follow:";
+"No Login" = "No Login";
+"Cannot save the file into the album" = "This video's resolution isn't supported by your phone. Try shooting in 1080 at 30 fps for the best downloadable videos.";
+"Current Score" = "Current Score";
+"Current Score:" = "Current Score:";
+"Score Market" = "Score Market";
+"Rules?" = "Rules?";
+"Fen" = "";
+"Invite" = "Invite";
+"Replay is saving on cloud space, please wait." = "Replay is saving on cloud space, please wait.";
+"Help" = "Help";
+"Video Guide" = "Video Guide";
+"Phone number has bound by other people" = "Phone number has bound by other people";
+"Congratulations!" = "Congratulations!";
+"You have one prize draw chance!" = "You have one prize draw chance!";
+"Draw now" = "Draw now";
+"lucky draw" = "lucky draw";
+"ConfirmDelete" = "Confirm Delete";
+"Are you sure you want to delete?" = "Are you sure you want to delete?";
+"Are you sure you want to delete the post?" = "Are you sure you want to delete the post?";
+"Rules" = "Rules";
+"Edit Wi-Fi Password" = "Edit Wi-Fi Password";
+"Connect to camera via Wi-Fi Direct and register camera?" = "Connect to camera via Wi-Fi Direct and register camera?";
+"Continue to Drift Social Network" = "Continue to Drift Social Network";
+"Please connect to your cameras' network by opening your device's Wi-Fi Settings and selecting your cameras' Wi-Fi network. Once complete, return to the Drift Life app. Please tote connecting to the camera will disconnect you from the internet." = "Please connect to your cameras' network by opening your device's Wi-Fi Settings and selecting your cameras' Wi-Fi network. Once complete, return to the Drift Life app. Please tote connecting to the camera will disconnect you from the internet.";
+"Wi-Fi DIRECT allows a direct connection to the camera to record, review, media and change camera settings. To publish media to the Drift Social Network you mst first register your camera." = "Wi-Fi DIRECT allows a direct connection to the camera to record, review, media and change camera settings. To publish media to the Drift Social Network you mst first register your camera.";
+"Do not show again" = "Do not show again";
+"Check For Updates" = "Check For Updates";
+"Are you sure you want to leave Wi-Fi direct mode, and connect to the internet?" = "Are you sure you want to leave Wi-Fi direct mode, and connect to the internet?";
+"Please select yourt cameras' Wi-Fi network from your device settings menu." = "Please select yourt cameras' Wi-Fi network from your device settings menu.";
+"Camera is uploading, are you sure stop uploading and preview live stream?" = "Camera is uploading, are you sure stop uploading and preview live stream?";
+"This video's resolution isn't supported by your phone. Try shooting in 1080 at 30 fps for the best downloadable videos." = "This video's resolution isn't supported by your phone. Try shooting in 1080 at 30 fps for the best downloadable videos.";
+"To upload to cloud browse your LOCAL files on your mobile device. To download to device, browse your Wi-Fi direct camera files." = "To upload to cloud browse your LOCAL files on your mobile device. To download to device, browse your Wi-Fi direct camera files.";
+"No cameras registered. To register a camera, turn on its Wi-Fi. The camera will appear in the list below. Select the camera then proceed to register." = "No cameras registered. To register a camera, turn on its Wi-Fi. The camera will appear in the list below. Select the camera then proceed to register.";
+
+//Camera Setting Menus
+"VideoResolution" = "Video Resolution";
+"VideoFrameRate"  = "Frame Rate";
+"VideoResolution" = "Resolution";
+"VideoBitrate"    = "Video Bitrate";
+"PhotoMode"       = "Mode";
+"PhotoResolution" = "Photo Resolution";
+"GeneralFieldOfView"   = "Field of View";
+"GeneralExposure"      = "Exposure";
+"GeneralSelfTimer"     = "Self Timer";
+"GeneralSceneMode"     = "Scene Mode";
+"GeneralDate"          = "Date";
+"GeneralRCLED"         = "RC LED";
+"GeneralCameraLED"     = "Camera LED";
+"GeneralRemoteLED"     = "Remote LED";
+"GeneralMicSensitivity"       = "Mic sensitivity";
+"GeneralSpeakerVolume"        = "Speaker Volume";
+"GeneralDateAndTime"          = "Date and time";
+"GeneralLEDIndicator"         = "LED Off";
+"GeneralCameraOff"            = "Camera Off";
+"GeneralDateAndTimeStamp"     = "Date and time stamp";
+"GeneralFormatMemoryCard"     = "Format Memory Card";
+"GeneralFirmwareVersion"      = "Firmware Version";
+"StreamingDataRate"         = "Streaming Data Rate";
+"AutoSync"                  = "AutoSync";
+
+"Sharing" = "Post is being shared.";
+"Share Failure" = "Share Failure";
+"Share Successfully" = "Shared Successfully";
+
+"Camera" = "Camera";
+"Library" = "Library";
+"Explore" = "Explore";
+"Me" = "Me";
+"Connect Camera" = "Connect Camera";
+"Start Live Stream" = "Start Live Stream";
+"Camera Sync" = "Camera Sync";
+"Choose Camera" = "Choose Camera";
+"Visit your device settings and join the Ghost-S Wi-Fi network." = "Visit your device settings and join the Ghost-S Wi-Fi network.";
+"Visit your device settings and join the X1 Wi-Fi network.The default password is:foreamx1" = "Visit your device settings and join the X1 Wi-Fi network.The default password is:foreamx1";
+"Visit your device settings and join the Stealth 2 Wi-Fi network." = "Visit your device settings and join the Stealth 2 Wi-Fi network.";
+"Visit your device settings and join the Compass Wi-Fi network. The default password is: 1234567890" = "Visit your device settings and join the Compass Wi-Fi network. The default password is: 1234567890";
+"You can now control and manage your Camera from your device." = "You can now control and manage your Camera from your device.";
+"Get Started" = "Get Started";
+"Turn on WiFi by pressing the button on the side of the Compass. The indicator light will flash red and then turn green" = "Turn on WiFi by pressing the button on the side of the Compass. The indicator light will flash red and then turn green.";
+"Press Wi-Fi button, wait for the LED light, hit next." = "Press Wi-Fi button, wait for the LED light, hit next.";
+"Long Press MENU button to open Wi-Fi, hit next." = "Long Press MENU button to open Wi-Fi, hit next.";
+"Long Press MODE button to open Wi-Fi, hit next." = "Long Press MODE button to open Wi-Fi, hit next.";
+"NoticeMessage"="Notifications";
+"Persional Information" = "Profile";
+"Profile Photo" = "Profile Image";
+"ExplorePopular" = "Popular";
+"ExploreFollowing" = "Following";
+"SWITCH YOUR CAMERA TO LIVE STREAM MODE" = "SWITCH YOUR CAMERA TO LIVE STREAM";
+"SWITCH YOUR CAMERA TO SYNC FILES MODE" = "SWITCH YOUR CAMERA TO SYNC";
+"SWITCH YOUR CAMERA TO SCAN QR CODE MODE" = "SWITCH YOUR CAMERA TO QR CODE";
+"2. Or you can click the left button to try the QR code mode for starting live streaming." = "Unable to connect, please try again or connect using QR code mode";
+"Connect your YouTube account to your Drift Life account. Visit www.driftlife.co/youtube to get started" = "Connect your YouTube account to your Drift Life account. Visit www.driftlife.co/youtube to get started";
+"Publish" = "Post";
+"USER_ALREADY_HAS_A_PASSWORD" = "You already have a password.";
+"Upgrade" = "Upgrade";
+"ChangeLog" = "ChangeLog";
+"Transfer error, please try again." = "Transfer error, please try again.";
+"Stop Transfering and exit?" = "Stop Transfering and exit?";
+"Tap Function" = "Tap Function";
+"Double tap will be the mode switching,press the front button to start shooting" = "Double tap will be the mode switching,press the front button to start shooting";
+"Tap to record" = "Tap to record";
+"Tap to change mode" = "Tap to change mode";
+"Double tap to record, press the Drift button to change mode" = "Double tap to record, press the Drift button to change mode";
+"Double tap to change mode, press the Drift button to record" = "Double tap to change mode, press the Drift button to record";
+"Please Note:\n1.    Please keep your phone and camera connected during file transfers.\n2.    Do not turn off your phone or close the Drift Life app during file transfers.\n3.    Once the transfer has completed, click on ‘Start the Upgrade’. The camera will automatically commence the upgrade.\n4.    Once completed, the camera will disconnect the phone and automatically start the camera upgrade process." = "Please Note:\n1.    Please keep your phone and camera connected during file transfers.\n2.    Do not turn off your phone or close the Drift Life app during file transfers.\n3.    Once the transfer has completed, click on ‘Start the Upgrade’. The camera will automatically commence the upgrade.\n4.    Once completed, the camera will disconnect the phone and automatically start the camera upgrade process.";
+"SoundTrackMusic" = "Music";
+"Search Drift Life" = "Search Drift Life";
+"This file has been downloaded" = "This file has been downloaded";
+"LocalClip" = "Clip";
+"Stream setup fail." = "Stream setup fail.";
+"Allow app to download firmware using cellular data?" = "Allow app to download firmware using cellular data?";
+"It seems the Wi-Fi speed is not fast enough." = "It seems the Wi-Fi speed is not fast enough.";
+"Please turn on cellular data to download" = "Please turn on cellular data to download";
+"CameraDate" = "Date";
+"CameraWiFi" = "Wi-Fi";
+"Ghost 4K has new firmware" = "Ghost 4K has new firmware";
+"THM Files" = "THM Files";
+"Shooting" = "Shooting";
+"Shooting Timelapse" = "Shooting Timelapse";
+"Shooting Photoburst" = "Shooting Photoburst";
+"SD card is full" = "SD card is full";
+"Download HD file" = "Download HD file";
+"Download THM file" = "Download THM file";
+"Single Photo Sync" = "Auto Download";
+"Micro Video Sync" = "Auto Download";
+"Filter" = "Filter";
+"Please turn on the camera and turn on bluetooth on your iPhone's setting to continue." = "1.Turn on the camera and switch to setting menu by pressing ▼ button.\n2.Switch to \"BT Mode\" option by pressing ◀ ▶ button.\n 3.Press the ▼ button to turn on the \"RC App\" mode.";
+"Please make sure your mobile devices Bluetooth is turned on" = "Please make sure your mobile devices Bluetooth is turned on";
+"Connect Using Bluetooth." = "Connect Using Bluetooth.";
+"Visit your device settings and join the Ghost-4K Wi-Fi network.The default password is: 1234567890." = "Visit your device settings and join the Ghost-4K Wi-Fi network.The default password is: 1234567890.";
+"Visit your device settings and join the Ghost 4K Wi-Fi network." = "Visit your device settings and join the Ghost 4K Wi-Fi network.";
+"Camera List" = "Camera List";
+"Live Stream Details" = "Live Stream Details";
+"Not authorized" = "Not authorized";
+"Authorized" = "Authorized";
+"Custom" = "Custom";
+"Select Resolution" = "Select Resolution";
+"Connect" = "Connect";
+"No Ghost 4K Bluetooth network found" = "No Ghost 4K Bluetooth network found";
+"Settings - Switch camera to Video Mode" = "Settings - Switch camera to Video Mode";
+"Live Streaming failed, please try again" = "Live Streaming failed, please try again";
+"Upziping" = "Upziping";
+"Wi-Fi network not found. Please confirm Wi-Fi SSID and password." = "Wi-Fi network not found. Please confirm Wi-Fi SSID and password.";
+"Wi-Fi password is incorrect. Please try again." = "Wi-Fi password is incorrect. Please try again.";
+"The camera cannot connect to the server. Please check your Wi-Fi network" = "The camera cannot connect to the server. Please check your Wi-Fi network";
+"Connecting to Wi-Fi..." =  "Connecting to Wi-Fi...";
+"Connecting to Server..." =  "Connecting to Server...";
+"Saved Successfully" = "Saved Successfully";
+"Preview" = "Preview";
+"Processing" = "Processing";
+"Mobile Data" = "Mobile Data";
+"Not Support for Ghost 4K" = "Not Support for Ghost 4K";
+"For the best performance, please use one of the following MicroSD cards" = "For the best performance, please use one of the following MicroSD cards";
+"Recommended Micro SD Cards" = "Recommended Micro SD Cards";
+"Connected Failed" = "Connected Failed";
+"Unable Connect To Your Camera, Please Try To Restart Your Camera" = "Unable Connect To Your Camera, Please Try To Restart Your Camera";
+"input a RTMP stream url" = "input a RTMP stream url";
+"Giving access to Drift Life lets you view your downloaded photos and videos." = "Giving access to Drift Life lets you view your downloaded photos and videos.";
+"Giving access to Drift Life lets you select music on phone to edit videos." = "Giving access to Drift Life lets you select music on phone to edit videos.";
+"You can create live stream via Bluetooth" = "You can create live stream via Bluetooth";
+"Giving access to Drift Life lets you take photo and update your profile." = "Giving access to Drift Life lets you take photo and update your profile.";
+"Rate" = "Rate";
+"Auto" = "Auto";
+"Constant" = "Constant";
+"Currently Streaming" = "Currently Streaming";
+"Open Facebook" = "Open Facebook";
+"Back to Homepage" = "Back to Homepage";
+"Wi-Fi network not found. Please confirm Wi-Fi SSID." = "Wi-Fi network not found. Please confirm Wi-Fi SSID.";
+"Wi-Fi password is incorrect. Please check." = "Wi-Fi password is incorrect. Please check.";
+"The camera cannot connect to the server. Please check your Wi-Fi network." = "The camera cannot connect to the server. Please check your Wi-Fi network.";
+"Disconnect with camera, will back to homepage." = "Disconnect with camera, will back to homepage.";
+"Your camera has successfully connected and is streaming.\n\nPress 'Continue' to open the Facebook app or 'Back' to return to the app homepage.\n\nIt may take up to 15 seconds for your stream to be viewable in the Facebook app. If your stream does not appear immediately, please refresh the Facebook app.\n\nPress the camera's front button when you want to stop live streaming." = "Your camera has successfully connected and is streaming.\n\nPress 'Continue' to open the Facebook app or 'Back' to return to the app homepage.\n\nIt may take up to 15 seconds for your stream to be viewable in the Facebook app. If your stream does not appear immediately, please refresh the Facebook app.\n\nPress the camera's front button when you want to stop live streaming.";
+"Filter_None" = "None";
+"Package1" = "Star Fall";
+"CaptionOK" = "Confirm";
+"Start Picture" = "Start";
+"Area Picture" = "Area";
+"End Picture" = "End";
+"Path" = "Crop";
+"Arousic" = "Camera Audio";
+"Free Motion" = "Pan and Zoom";
+"Static" = "Static";
+"Area Static" = "Crop";
+"Oops！Something is wrong，please restart your App." = "Invalid Token";
+"Caption_Size" = "Size";
+"User Name/Email" = "Email";
+

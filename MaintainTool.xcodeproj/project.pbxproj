@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD705AEAF639D540BA16D68F /* libPods-MaintainTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE191D99DDD51F66B7045E14 /* libPods-MaintainTool.a */; };
+		D718611821BF4AD1002A709E /* MTCameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */; };
+		D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */; };
+		D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612621BF5451002A709E /* MTCameraOptionCell.m */; };
+		D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612721BF5451002A709E /* MTCameraOptionCell.xib */; };
+		D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */; };
+		D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */; };
+		D718613C21BF5CE5002A709E /* CamLivestreamStepTwoViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */; };
+		D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */; };
+		D718613E21BF5CE5002A709E /* CamLivestreamQRcodeViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */; };
+		D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */; };
+		D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */; };
+		D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */; };
+		D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614521BF6015002A709E /* AppDelegateHelper.m */; };
+		D718615121BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		D718615221BF624E002A709E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */; };
+		D718615321BF624E002A709E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */; };
+		D718615421BF624E002A709E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */; };
+		D718615821BF8D16002A709E /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D718615621BF8D16002A709E /* KxMenu.m */; };
+		D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */; };
+		D718615D21BF8FCE002A709E /* CamConnectFailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */; };
+		D718616F21BF909B002A709E /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616121BF909A002A709E /* bitstream.c */; };
+		D718617021BF909B002A709E /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616221BF909A002A709E /* qrencode.c */; };
+		D718617121BF909B002A709E /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616421BF909A002A709E /* split.c */; };
+		D718617221BF909B002A709E /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D718616621BF909A002A709E /* QRCodeGenerator.m */; };
+		D718617321BF909B002A709E /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616721BF909A002A709E /* qrinput.c */; };
+		D718617421BF909B002A709E /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616921BF909A002A709E /* mask.c */; };
+		D718617521BF909B002A709E /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616A21BF909A002A709E /* qrspec.c */; };
+		D718617621BF909B002A709E /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616E21BF909A002A709E /* rscode.c */; };
+		D718617E21BF91D3002A709E /* CCMBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617B21BF91D3002A709E /* CCMBorderView.m */; };
+		D718617F21BF91D3002A709E /* CCMPlayNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617C21BF91D3002A709E /* CCMPlayNDropView.m */; };
+		D718618021BF91D3002A709E /* UIViewController+MaryPopin.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */; };
+		D718618221BF9D92002A709E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718618121BF9D92002A709E /* RootViewController.xib */; };
+		D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D71B317621C0A50E005CFC53 /* Localizable.strings */; };
+		D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52921B90A9B005D1A7E /* AppDelegate.m */; };
+		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
+		D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53121B90AA3005D1A7E /* Assets.xcassets */; };
+		D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */; };
+		D7BDE53821B90AA3005D1A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE53721B90AA3005D1A7E /* main.m */; };
+		D7BDE54021B90AD9005D1A7E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE53F21B90AD9005D1A7E /* libz.tbd */; };
+		D7BDE54221B90AE4005D1A7E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54121B90AE4005D1A7E /* libc++.tbd */; };
+		D7BDE54421B90AED005D1A7E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54321B90AED005D1A7E /* libresolv.tbd */; };
+		D7BDE54621B90AFB005D1A7E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54521B90AFB005D1A7E /* libsqlite3.tbd */; };
+		D7BDE54821B90B06005D1A7E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54721B90B06005D1A7E /* Accelerate.framework */; };
+		D7BDE54F21B90DC8005D1A7E /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54E21B90DC8005D1A7E /* ReplayKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaintainTool/Pods-MaintainTool.debug.xcconfig"; sourceTree = "<group>"; };
+		C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaintainTool/Pods-MaintainTool.release.xcconfig"; sourceTree = "<group>"; };
+		D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionsViewController.h; sourceTree = "<group>"; };
+		D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionsViewController.m; sourceTree = "<group>"; };
+		D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTCameraOptionsViewController.xib; sourceTree = "<group>"; };
+		D718611B21BF4CB7002A709E /* MacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
+		D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MaintainTool-Prefix.pch"; sourceTree = "<group>"; };
+		D718612521BF5451002A709E /* MTCameraOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionCell.h; sourceTree = "<group>"; };
+		D718612621BF5451002A709E /* MTCameraOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionCell.m; sourceTree = "<group>"; };
+		D718612721BF5451002A709E /* MTCameraOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTCameraOptionCell.xib; sourceTree = "<group>"; };
+		D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepOneViewController.m; sourceTree = "<group>"; };
+		D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamQRcodeViewController.m; sourceTree = "<group>"; };
+		D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepOneViewController.h; sourceTree = "<group>"; };
+		D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController_4.0.xib; sourceTree = "<group>"; };
+		D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepOneViewController.xib; sourceTree = "<group>"; };
+		D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
+		D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController.xib; sourceTree = "<group>"; };
+		D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepTwoViewController.m; sourceTree = "<group>"; };
+		D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepTwoViewController.h; sourceTree = "<group>"; };
+		D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamQRcodeViewController.h; sourceTree = "<group>"; };
+		D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController.xib; sourceTree = "<group>"; };
+		D718614421BF6014002A709E /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
+		D718614521BF6015002A709E /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
+		D718614921BF624E002A709E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		D718614A21BF624E002A709E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		D718614E21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		D718615021BF624E002A709E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		D718615621BF8D16002A709E /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		D718615721BF8D16002A709E /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamConnectFailedViewController.h; sourceTree = "<group>"; };
+		D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamConnectFailedViewController.m; sourceTree = "<group>"; };
+		D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamConnectFailedViewController.xib; sourceTree = "<group>"; };
+		D718615F21BF909A002A709E /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		D718616021BF909A002A709E /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		D718616121BF909A002A709E /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		D718616221BF909A002A709E /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		D718616321BF909A002A709E /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		D718616421BF909A002A709E /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		D718616521BF909A002A709E /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		D718616621BF909A002A709E /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		D718616721BF909A002A709E /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		D718616821BF909A002A709E /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		D718616921BF909A002A709E /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		D718616A21BF909A002A709E /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		D718616B21BF909A002A709E /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		D718616C21BF909A002A709E /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		D718616D21BF909A002A709E /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		D718616E21BF909A002A709E /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		D718617821BF91D3002A709E /* CCMBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMBorderView.h; sourceTree = "<group>"; };
+		D718617921BF91D3002A709E /* UIViewController+MaryPopin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MaryPopin.h"; sourceTree = "<group>"; };
+		D718617A21BF91D3002A709E /* CCMPlayNDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPlayNDropView.h; sourceTree = "<group>"; };
+		D718617B21BF91D3002A709E /* CCMBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBorderView.m; sourceTree = "<group>"; };
+		D718617C21BF91D3002A709E /* CCMPlayNDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPlayNDropView.m; sourceTree = "<group>"; };
+		D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MaryPopin.m"; sourceTree = "<group>"; };
+		D718618121BF9D92002A709E /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		D71B317521C0A50E005CFC53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D71B317721C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		D71B317821C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BDE52821B90A9B005D1A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7BDE52921B90A9B005D1A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7BDE52B21B90A9B005D1A7E /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D7BDE52C21B90A9B005D1A7E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		D7BDE53121B90AA3005D1A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7BDE53421B90AA3005D1A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7BDE53621B90AA3005D1A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7BDE53721B90AA3005D1A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7BDE53F21B90AD9005D1A7E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D7BDE54121B90AE4005D1A7E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D7BDE54321B90AED005D1A7E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		D7BDE54521B90AFB005D1A7E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D7BDE54721B90B06005D1A7E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D7BDE54E21B90DC8005D1A7E /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		EE191D99DDD51F66B7045E14 /* libPods-MaintainTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MaintainTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7BDE52221B90A9B005D1A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BDE54F21B90DC8005D1A7E /* ReplayKit.framework in Frameworks */,
+				D7BDE54821B90B06005D1A7E /* Accelerate.framework in Frameworks */,
+				D7BDE54621B90AFB005D1A7E /* libsqlite3.tbd in Frameworks */,
+				D7BDE54421B90AED005D1A7E /* libresolv.tbd in Frameworks */,
+				D7BDE54221B90AE4005D1A7E /* libc++.tbd in Frameworks */,
+				D7BDE54021B90AD9005D1A7E /* libz.tbd in Frameworks */,
+				CD705AEAF639D540BA16D68F /* libPods-MaintainTool.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFC4C873815171B0A5F3E071 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */,
+				C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D718611421BF4A88002A709E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */,
+				D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */,
+				D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */,
+				D718612521BF5451002A709E /* MTCameraOptionCell.h */,
+				D718612621BF5451002A709E /* MTCameraOptionCell.m */,
+				D718612721BF5451002A709E /* MTCameraOptionCell.xib */,
+				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
+				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
+				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
+				D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */,
+				D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */,
+				D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */,
+				D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */,
+				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
+				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
+				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
+				D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */,
+				D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */,
+				D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */,
+				D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D718611A21BF4C96002A709E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				D718611B21BF4CB7002A709E /* MacroDefinition.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		D718611C21BF4D4E002A709E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */,
+				D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */,
+				D71B317621C0A50E005CFC53 /* Localizable.strings */,
+				D7BDE53621B90AA3005D1A7E /* Info.plist */,
+				D7BDE53721B90AA3005D1A7E /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D718614721BF6241002A709E /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				D718617721BF91D3002A709E /* CCMPlayNDropView */,
+				D718615E21BF909A002A709E /* libqrencode */,
+				D718615521BF8D16002A709E /* KxMenu */,
+				D718614821BF624E002A709E /* TPKeyboardAvoiding */,
+			);
+			name = Vender;
+			sourceTree = "<group>";
+		};
+		D718614821BF624E002A709E /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				D718614921BF624E002A709E /* TPKeyboardAvoidingScrollView.h */,
+				D718614A21BF624E002A709E /* TPKeyboardAvoidingCollectionView.h */,
+				D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */,
+				D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */,
+				D718614E21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */,
+				D718615021BF624E002A709E /* TPKeyboardAvoidingTableView.h */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		D718615521BF8D16002A709E /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D718615621BF8D16002A709E /* KxMenu.m */,
+				D718615721BF8D16002A709E /* KxMenu.h */,
+			);
+			path = KxMenu;
+			sourceTree = "<group>";
+		};
+		D718615E21BF909A002A709E /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				D718615F21BF909A002A709E /* mask.h */,
+				D718616021BF909A002A709E /* qrinput.h */,
+				D718616121BF909A002A709E /* bitstream.c */,
+				D718616221BF909A002A709E /* qrencode.c */,
+				D718616321BF909A002A709E /* qrspec.h */,
+				D718616421BF909A002A709E /* split.c */,
+				D718616521BF909A002A709E /* rscode.h */,
+				D718616621BF909A002A709E /* QRCodeGenerator.m */,
+				D718616721BF909A002A709E /* qrinput.c */,
+				D718616821BF909A002A709E /* bitstream.h */,
+				D718616921BF909A002A709E /* mask.c */,
+				D718616A21BF909A002A709E /* qrspec.c */,
+				D718616B21BF909A002A709E /* qrencode.h */,
+				D718616C21BF909A002A709E /* QRCodeGenerator.h */,
+				D718616D21BF909A002A709E /* split.h */,
+				D718616E21BF909A002A709E /* rscode.c */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
+		D718617721BF91D3002A709E /* CCMPlayNDropView */ = {
+			isa = PBXGroup;
+			children = (
+				D718617821BF91D3002A709E /* CCMBorderView.h */,
+				D718617921BF91D3002A709E /* UIViewController+MaryPopin.h */,
+				D718617A21BF91D3002A709E /* CCMPlayNDropView.h */,
+				D718617B21BF91D3002A709E /* CCMBorderView.m */,
+				D718617C21BF91D3002A709E /* CCMPlayNDropView.m */,
+				D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */,
+			);
+			path = CCMPlayNDropView;
+			sourceTree = "<group>";
+		};
+		D7BDE51C21B90A9B005D1A7E = {
+			isa = PBXGroup;
+			children = (
+				D7BDE53121B90AA3005D1A7E /* Assets.xcassets */,
+				D718614721BF6241002A709E /* Vender */,
+				D7BDE52721B90A9B005D1A7E /* MaintainTool */,
+				D7BDE52621B90A9B005D1A7E /* Products */,
+				D7BDE53E21B90AD9005D1A7E /* Frameworks */,
+				CFC4C873815171B0A5F3E071 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D7BDE52621B90A9B005D1A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7BDE52521B90A9B005D1A7E /* MaintainTool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7BDE52721B90A9B005D1A7E /* MaintainTool */ = {
+			isa = PBXGroup;
+			children = (
+				D7BDE52821B90A9B005D1A7E /* AppDelegate.h */,
+				D7BDE52921B90A9B005D1A7E /* AppDelegate.m */,
+				D718614421BF6014002A709E /* AppDelegateHelper.h */,
+				D718614521BF6015002A709E /* AppDelegateHelper.m */,
+				D7BDE52B21B90A9B005D1A7E /* RootViewController.h */,
+				D7BDE52C21B90A9B005D1A7E /* RootViewController.m */,
+				D718618121BF9D92002A709E /* RootViewController.xib */,
+				D718611421BF4A88002A709E /* Sections */,
+				D718611A21BF4C96002A709E /* Macro */,
+				D718611C21BF4D4E002A709E /* Supporting Files */,
+			);
+			path = MaintainTool;
+			sourceTree = "<group>";
+		};
+		D7BDE53E21B90AD9005D1A7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7BDE54E21B90DC8005D1A7E /* ReplayKit.framework */,
+				D7BDE54721B90B06005D1A7E /* Accelerate.framework */,
+				D7BDE54521B90AFB005D1A7E /* libsqlite3.tbd */,
+				D7BDE54321B90AED005D1A7E /* libresolv.tbd */,
+				D7BDE54121B90AE4005D1A7E /* libc++.tbd */,
+				D7BDE53F21B90AD9005D1A7E /* libz.tbd */,
+				EE191D99DDD51F66B7045E14 /* libPods-MaintainTool.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7BDE52421B90A9B005D1A7E /* MaintainTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BDE53B21B90AA3005D1A7E /* Build configuration list for PBXNativeTarget "MaintainTool" */;
+			buildPhases = (
+				10DDA3D5AC9ABAA36BDBE0A8 /* [CP] Check Pods Manifest.lock */,
+				D7BDE52121B90A9B005D1A7E /* Sources */,
+				D7BDE52221B90A9B005D1A7E /* Frameworks */,
+				D7BDE52321B90A9B005D1A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaintainTool;
+			productName = MaintainTool;
+			productReference = D7BDE52521B90A9B005D1A7E /* MaintainTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7BDE51D21B90A9B005D1A7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Channing_rong;
+				TargetAttributes = {
+					D7BDE52421B90A9B005D1A7E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = D7BDE52021B90A9B005D1A7E /* Build configuration list for PBXProject "MaintainTool" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = D7BDE51C21B90A9B005D1A7E;
+			productRefGroup = D7BDE52621B90A9B005D1A7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7BDE52421B90A9B005D1A7E /* MaintainTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7BDE52321B90A9B005D1A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D718613E21BF5CE5002A709E /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
+				D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */,
+				D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */,
+				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
+				D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */,
+				D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */,
+				D718615D21BF8FCE002A709E /* CamConnectFailedViewController.xib in Resources */,
+				D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */,
+				D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */,
+				D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */,
+				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
+				D718613C21BF5CE5002A709E /* CamLivestreamStepTwoViewController_4.0.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10DDA3D5AC9ABAA36BDBE0A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MaintainTool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7BDE52121B90A9B005D1A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D718615321BF624E002A709E /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */,
+				D718617621BF909B002A709E /* rscode.c in Sources */,
+				D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */,
+				D7BDE53821B90AA3005D1A7E /* main.m in Sources */,
+				D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */,
+				D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */,
+				D718615421BF624E002A709E /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				D718618021BF91D3002A709E /* UIViewController+MaryPopin.m in Sources */,
+				D718616F21BF909B002A709E /* bitstream.c in Sources */,
+				D718617021BF909B002A709E /* qrencode.c in Sources */,
+				D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */,
+				D718615121BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */,
+				D718617121BF909B002A709E /* split.c in Sources */,
+				D718617E21BF91D3002A709E /* CCMBorderView.m in Sources */,
+				D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */,
+				D718615221BF624E002A709E /* TPKeyboardAvoidingTableView.m in Sources */,
+				D718617F21BF91D3002A709E /* CCMPlayNDropView.m in Sources */,
+				D718617521BF909B002A709E /* qrspec.c in Sources */,
+				D718615821BF8D16002A709E /* KxMenu.m in Sources */,
+				D718611821BF4AD1002A709E /* MTCameraOptionsViewController.m in Sources */,
+				D718617321BF909B002A709E /* qrinput.c in Sources */,
+				D718617421BF909B002A709E /* mask.c in Sources */,
+				D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */,
+				D718617221BF909B002A709E /* QRCodeGenerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D71B317621C0A50E005CFC53 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71B317521C0A50E005CFC53 /* en */,
+				D71B317821C0A587005CFC53 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7BDE53421B90AA3005D1A7E /* Base */,
+				D71B317721C0A587005CFC53 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7BDE53921B90AA3005D1A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7BDE53A21B90AA3005D1A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7BDE53C21B90AA3005D1A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J597Y7BB3N;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "MaintainTool/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D7BDE53D21B90AA3005D1A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J597Y7BB3N;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "MaintainTool/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7BDE52021B90A9B005D1A7E /* Build configuration list for PBXProject "MaintainTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BDE53921B90AA3005D1A7E /* Debug */,
+				D7BDE53A21B90AA3005D1A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BDE53B21B90AA3005D1A7E /* Build configuration list for PBXNativeTarget "MaintainTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BDE53C21B90AA3005D1A7E /* Debug */,
+				D7BDE53D21B90AA3005D1A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7BDE51D21B90A9B005D1A7E /* Project object */;
+}
