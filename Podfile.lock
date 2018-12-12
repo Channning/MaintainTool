@@ -16,14 +16,14 @@ PODS:
     - AFNetworking/NSURLSession
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
-  - TXLiteAVSDK_Professional (5.3.6004)
+  - SocketRocket (0.5.1)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.1.0)
-  - TXLiteAVSDK_Professional (from `http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec`)
+  - SocketRocket
   - YTKNetwork (~> 2.0.4)
 
 SPEC REPOS:
@@ -31,19 +31,16 @@ SPEC REPOS:
     - AFNetworking
     - Masonry
     - MBProgressHUD
+    - SocketRocket
     - YTKNetwork
-
-EXTERNAL SOURCES:
-  TXLiteAVSDK_Professional:
-    :podspec: http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  TXLiteAVSDK_Professional: 605ff1a5221a1cc6a93fa238e23022bcf267a28c
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 78a810c3a117a019923c638cd58c148175b5c442
+PODFILE CHECKSUM: f07b2ec4bc887a8b20b0c4fcc706537f465f8ef5
 
 COCOAPODS: 1.5.3

@@ -7,12 +7,12 @@
 //
 
 #import "RootViewController.h"
-#import "TXLiteAVSDK_Professional/TXLiveBase.h"
+//#import "TXLiteAVSDK_Professional/TXLiveBase.h"
 #import "MTCameraOptionsViewController.h"
 
 @interface RootViewController ()
 
-@property (nonatomic, strong) TXLivePush * txLivePublisher;
+//@property (nonatomic, strong) TXLivePush * txLivePublisher;
 @end
 
 @implementation RootViewController
@@ -23,7 +23,7 @@
     [self initNavgationItemSubviews];
     NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     // 􏳌􏳍SDK􏰹􏰀􏰁􏱙􏱚
-    NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
+    //NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
     NSLog(@"Device UUID = %@", udid);
     // 创建 LivePushConfig 对象，该对象默认初始化为基础配置
     //TXLivePushConfig* _config = [[TXLivePushConfig alloc] init];

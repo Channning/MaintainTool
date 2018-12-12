@@ -204,7 +204,7 @@
 
 #pragma mark - Privite Metheds
 -(void)failedAndShowPromptInfoView
-{
+{ 
     
     CamConnectFailedViewController *popin = [[CamConnectFailedViewController alloc]init];
     [popin setFailureType:FailedTypeQRcode];

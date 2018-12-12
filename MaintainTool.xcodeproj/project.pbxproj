@@ -21,26 +21,26 @@
 		D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */; };
 		D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */; };
 		D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614521BF6015002A709E /* AppDelegateHelper.m */; };
-		D718615121BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		D718615221BF624E002A709E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */; };
-		D718615321BF624E002A709E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */; };
-		D718615421BF624E002A709E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */; };
-		D718615821BF8D16002A709E /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D718615621BF8D16002A709E /* KxMenu.m */; };
 		D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */; };
 		D718615D21BF8FCE002A709E /* CamConnectFailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */; };
-		D718616F21BF909B002A709E /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616121BF909A002A709E /* bitstream.c */; };
-		D718617021BF909B002A709E /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616221BF909A002A709E /* qrencode.c */; };
-		D718617121BF909B002A709E /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616421BF909A002A709E /* split.c */; };
-		D718617221BF909B002A709E /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D718616621BF909A002A709E /* QRCodeGenerator.m */; };
-		D718617321BF909B002A709E /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616721BF909A002A709E /* qrinput.c */; };
-		D718617421BF909B002A709E /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616921BF909A002A709E /* mask.c */; };
-		D718617521BF909B002A709E /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616A21BF909A002A709E /* qrspec.c */; };
-		D718617621BF909B002A709E /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = D718616E21BF909A002A709E /* rscode.c */; };
-		D718617E21BF91D3002A709E /* CCMBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617B21BF91D3002A709E /* CCMBorderView.m */; };
-		D718617F21BF91D3002A709E /* CCMPlayNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617C21BF91D3002A709E /* CCMPlayNDropView.m */; };
-		D718618021BF91D3002A709E /* UIViewController+MaryPopin.m in Sources */ = {isa = PBXBuildFile; fileRef = D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */; };
 		D718618221BF9D92002A709E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718618121BF9D92002A709E /* RootViewController.xib */; };
 		D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D71B317621C0A50E005CFC53 /* Localizable.strings */; };
+		D71B319E21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B317D21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		D71B319F21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B317E21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m */; };
+		D71B31A021C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B317F21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m */; };
+		D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B318121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m */; };
+		D71B31A221C0DE9E005CFC53 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B318421C0DE9E005CFC53 /* KxMenu.m */; };
+		D71B31A321C0DE9E005CFC53 /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B318921C0DE9E005CFC53 /* bitstream.c */; };
+		D71B31A421C0DE9E005CFC53 /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B318A21C0DE9E005CFC53 /* qrencode.c */; };
+		D71B31A521C0DE9E005CFC53 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B318C21C0DE9E005CFC53 /* split.c */; };
+		D71B31A621C0DE9E005CFC53 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B318E21C0DE9E005CFC53 /* QRCodeGenerator.m */; };
+		D71B31A721C0DE9E005CFC53 /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B318F21C0DE9E005CFC53 /* qrinput.c */; };
+		D71B31A821C0DE9E005CFC53 /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B319121C0DE9E005CFC53 /* mask.c */; };
+		D71B31A921C0DE9E005CFC53 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B319221C0DE9E005CFC53 /* qrspec.c */; };
+		D71B31AA21C0DE9E005CFC53 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = D71B319621C0DE9E005CFC53 /* rscode.c */; };
+		D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319B21C0DE9E005CFC53 /* CCMBorderView.m */; };
+		D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319C21C0DE9E005CFC53 /* CCMPlayNDropView.m */; };
+		D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319D21C0DE9E005CFC53 /* UIViewController+MaryPopin.m */; };
 		D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52921B90A9B005D1A7E /* AppDelegate.m */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
 		D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53121B90AA3005D1A7E /* Assets.xcassets */; };
@@ -78,45 +78,45 @@
 		D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController.xib; sourceTree = "<group>"; };
 		D718614421BF6014002A709E /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		D718614521BF6015002A709E /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
-		D718614921BF624E002A709E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		D718614A21BF624E002A709E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		D718614E21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		D718615021BF624E002A709E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		D718615621BF8D16002A709E /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
-		D718615721BF8D16002A709E /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamConnectFailedViewController.h; sourceTree = "<group>"; };
 		D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamConnectFailedViewController.m; sourceTree = "<group>"; };
 		D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamConnectFailedViewController.xib; sourceTree = "<group>"; };
-		D718615F21BF909A002A709E /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
-		D718616021BF909A002A709E /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
-		D718616121BF909A002A709E /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
-		D718616221BF909A002A709E /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
-		D718616321BF909A002A709E /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
-		D718616421BF909A002A709E /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
-		D718616521BF909A002A709E /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
-		D718616621BF909A002A709E /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
-		D718616721BF909A002A709E /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
-		D718616821BF909A002A709E /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
-		D718616921BF909A002A709E /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
-		D718616A21BF909A002A709E /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
-		D718616B21BF909A002A709E /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
-		D718616C21BF909A002A709E /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
-		D718616D21BF909A002A709E /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
-		D718616E21BF909A002A709E /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
-		D718617821BF91D3002A709E /* CCMBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMBorderView.h; sourceTree = "<group>"; };
-		D718617921BF91D3002A709E /* UIViewController+MaryPopin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MaryPopin.h"; sourceTree = "<group>"; };
-		D718617A21BF91D3002A709E /* CCMPlayNDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPlayNDropView.h; sourceTree = "<group>"; };
-		D718617B21BF91D3002A709E /* CCMBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBorderView.m; sourceTree = "<group>"; };
-		D718617C21BF91D3002A709E /* CCMPlayNDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPlayNDropView.m; sourceTree = "<group>"; };
-		D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MaryPopin.m"; sourceTree = "<group>"; };
 		D718618121BF9D92002A709E /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		D71B317521C0A50E005CFC53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D71B317721C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D71B317821C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D71B317B21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		D71B317C21C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		D71B317D21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		D71B317E21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		D71B317F21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		D71B318021C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		D71B318121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		D71B318221C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		D71B318421C0DE9E005CFC53 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		D71B318521C0DE9E005CFC53 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		D71B318721C0DE9E005CFC53 /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		D71B318821C0DE9E005CFC53 /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		D71B318921C0DE9E005CFC53 /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		D71B318A21C0DE9E005CFC53 /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		D71B318B21C0DE9E005CFC53 /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		D71B318C21C0DE9E005CFC53 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		D71B318D21C0DE9E005CFC53 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		D71B318E21C0DE9E005CFC53 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		D71B318F21C0DE9E005CFC53 /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		D71B319021C0DE9E005CFC53 /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		D71B319121C0DE9E005CFC53 /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		D71B319221C0DE9E005CFC53 /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		D71B319321C0DE9E005CFC53 /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		D71B319421C0DE9E005CFC53 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		D71B319521C0DE9E005CFC53 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		D71B319621C0DE9E005CFC53 /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		D71B319821C0DE9E005CFC53 /* CCMBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMBorderView.h; sourceTree = "<group>"; };
+		D71B319921C0DE9E005CFC53 /* UIViewController+MaryPopin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MaryPopin.h"; sourceTree = "<group>"; };
+		D71B319A21C0DE9E005CFC53 /* CCMPlayNDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPlayNDropView.h; sourceTree = "<group>"; };
+		D71B319B21C0DE9E005CFC53 /* CCMBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBorderView.m; sourceTree = "<group>"; };
+		D71B319C21C0DE9E005CFC53 /* CCMPlayNDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPlayNDropView.m; sourceTree = "<group>"; };
+		D71B319D21C0DE9E005CFC53 /* UIViewController+MaryPopin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MaryPopin.m"; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BDE52821B90A9B005D1A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7BDE52921B90A9B005D1A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -209,73 +209,74 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D718614721BF6241002A709E /* Vender */ = {
+		D71B317921C0DE9E005CFC53 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				D718617721BF91D3002A709E /* CCMPlayNDropView */,
-				D718615E21BF909A002A709E /* libqrencode */,
-				D718615521BF8D16002A709E /* KxMenu */,
-				D718614821BF624E002A709E /* TPKeyboardAvoiding */,
+				D71B317A21C0DE9E005CFC53 /* TPKeyboardAvoiding */,
+				D71B318321C0DE9E005CFC53 /* KxMenu */,
+				D71B318621C0DE9E005CFC53 /* libqrencode */,
+				D71B319721C0DE9E005CFC53 /* CCMPlayNDropView */,
 			);
 			name = Vender;
+			path = MaintainTool/Vender;
 			sourceTree = "<group>";
 		};
-		D718614821BF624E002A709E /* TPKeyboardAvoiding */ = {
+		D71B317A21C0DE9E005CFC53 /* TPKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
-				D718614921BF624E002A709E /* TPKeyboardAvoidingScrollView.h */,
-				D718614A21BF624E002A709E /* TPKeyboardAvoidingCollectionView.h */,
-				D718614B21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				D718614C21BF624E002A709E /* TPKeyboardAvoidingTableView.m */,
-				D718614D21BF624E002A709E /* TPKeyboardAvoidingScrollView.m */,
-				D718614E21BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				D718614F21BF624E002A709E /* TPKeyboardAvoidingCollectionView.m */,
-				D718615021BF624E002A709E /* TPKeyboardAvoidingTableView.h */,
+				D71B317B21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.h */,
+				D71B317C21C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.h */,
+				D71B317D21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				D71B317E21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m */,
+				D71B317F21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m */,
+				D71B318021C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				D71B318121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m */,
+				D71B318221C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.h */,
 			);
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
-		D718615521BF8D16002A709E /* KxMenu */ = {
+		D71B318321C0DE9E005CFC53 /* KxMenu */ = {
 			isa = PBXGroup;
 			children = (
-				D718615621BF8D16002A709E /* KxMenu.m */,
-				D718615721BF8D16002A709E /* KxMenu.h */,
+				D71B318421C0DE9E005CFC53 /* KxMenu.m */,
+				D71B318521C0DE9E005CFC53 /* KxMenu.h */,
 			);
 			path = KxMenu;
 			sourceTree = "<group>";
 		};
-		D718615E21BF909A002A709E /* libqrencode */ = {
+		D71B318621C0DE9E005CFC53 /* libqrencode */ = {
 			isa = PBXGroup;
 			children = (
-				D718615F21BF909A002A709E /* mask.h */,
-				D718616021BF909A002A709E /* qrinput.h */,
-				D718616121BF909A002A709E /* bitstream.c */,
-				D718616221BF909A002A709E /* qrencode.c */,
-				D718616321BF909A002A709E /* qrspec.h */,
-				D718616421BF909A002A709E /* split.c */,
-				D718616521BF909A002A709E /* rscode.h */,
-				D718616621BF909A002A709E /* QRCodeGenerator.m */,
-				D718616721BF909A002A709E /* qrinput.c */,
-				D718616821BF909A002A709E /* bitstream.h */,
-				D718616921BF909A002A709E /* mask.c */,
-				D718616A21BF909A002A709E /* qrspec.c */,
-				D718616B21BF909A002A709E /* qrencode.h */,
-				D718616C21BF909A002A709E /* QRCodeGenerator.h */,
-				D718616D21BF909A002A709E /* split.h */,
-				D718616E21BF909A002A709E /* rscode.c */,
+				D71B318721C0DE9E005CFC53 /* mask.h */,
+				D71B318821C0DE9E005CFC53 /* qrinput.h */,
+				D71B318921C0DE9E005CFC53 /* bitstream.c */,
+				D71B318A21C0DE9E005CFC53 /* qrencode.c */,
+				D71B318B21C0DE9E005CFC53 /* qrspec.h */,
+				D71B318C21C0DE9E005CFC53 /* split.c */,
+				D71B318D21C0DE9E005CFC53 /* rscode.h */,
+				D71B318E21C0DE9E005CFC53 /* QRCodeGenerator.m */,
+				D71B318F21C0DE9E005CFC53 /* qrinput.c */,
+				D71B319021C0DE9E005CFC53 /* bitstream.h */,
+				D71B319121C0DE9E005CFC53 /* mask.c */,
+				D71B319221C0DE9E005CFC53 /* qrspec.c */,
+				D71B319321C0DE9E005CFC53 /* qrencode.h */,
+				D71B319421C0DE9E005CFC53 /* QRCodeGenerator.h */,
+				D71B319521C0DE9E005CFC53 /* split.h */,
+				D71B319621C0DE9E005CFC53 /* rscode.c */,
 			);
 			path = libqrencode;
 			sourceTree = "<group>";
 		};
-		D718617721BF91D3002A709E /* CCMPlayNDropView */ = {
+		D71B319721C0DE9E005CFC53 /* CCMPlayNDropView */ = {
 			isa = PBXGroup;
 			children = (
-				D718617821BF91D3002A709E /* CCMBorderView.h */,
-				D718617921BF91D3002A709E /* UIViewController+MaryPopin.h */,
-				D718617A21BF91D3002A709E /* CCMPlayNDropView.h */,
-				D718617B21BF91D3002A709E /* CCMBorderView.m */,
-				D718617C21BF91D3002A709E /* CCMPlayNDropView.m */,
-				D718617D21BF91D3002A709E /* UIViewController+MaryPopin.m */,
+				D71B319821C0DE9E005CFC53 /* CCMBorderView.h */,
+				D71B319921C0DE9E005CFC53 /* UIViewController+MaryPopin.h */,
+				D71B319A21C0DE9E005CFC53 /* CCMPlayNDropView.h */,
+				D71B319B21C0DE9E005CFC53 /* CCMBorderView.m */,
+				D71B319C21C0DE9E005CFC53 /* CCMPlayNDropView.m */,
+				D71B319D21C0DE9E005CFC53 /* UIViewController+MaryPopin.m */,
 			);
 			path = CCMPlayNDropView;
 			sourceTree = "<group>";
@@ -284,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BDE53121B90AA3005D1A7E /* Assets.xcassets */,
-				D718614721BF6241002A709E /* Vender */,
+				D71B317921C0DE9E005CFC53 /* Vender */,
 				D7BDE52721B90A9B005D1A7E /* MaintainTool */,
 				D7BDE52621B90A9B005D1A7E /* Products */,
 				D7BDE53E21B90AD9005D1A7E /* Frameworks */,
@@ -433,32 +434,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D718615321BF624E002A709E /* TPKeyboardAvoidingScrollView.m in Sources */,
+				D71B31A021C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */,
-				D718617621BF909B002A709E /* rscode.c in Sources */,
+				D71B31AA21C0DE9E005CFC53 /* rscode.c in Sources */,
 				D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */,
 				D7BDE53821B90AA3005D1A7E /* main.m in Sources */,
 				D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */,
 				D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */,
-				D718615421BF624E002A709E /* TPKeyboardAvoidingCollectionView.m in Sources */,
-				D718618021BF91D3002A709E /* UIViewController+MaryPopin.m in Sources */,
-				D718616F21BF909B002A709E /* bitstream.c in Sources */,
-				D718617021BF909B002A709E /* qrencode.c in Sources */,
+				D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */,
+				D71B31A321C0DE9E005CFC53 /* bitstream.c in Sources */,
+				D71B31A421C0DE9E005CFC53 /* qrencode.c in Sources */,
+				D71B31A221C0DE9E005CFC53 /* KxMenu.m in Sources */,
+				D71B319E21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */,
-				D718615121BF624E002A709E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				D71B31A521C0DE9E005CFC53 /* split.c in Sources */,
+				D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */,
 				D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */,
-				D718617121BF909B002A709E /* split.c in Sources */,
-				D718617E21BF91D3002A709E /* CCMBorderView.m in Sources */,
 				D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */,
-				D718615221BF624E002A709E /* TPKeyboardAvoidingTableView.m in Sources */,
-				D718617F21BF91D3002A709E /* CCMPlayNDropView.m in Sources */,
-				D718617521BF909B002A709E /* qrspec.c in Sources */,
-				D718615821BF8D16002A709E /* KxMenu.m in Sources */,
+				D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */,
+				D71B31A921C0DE9E005CFC53 /* qrspec.c in Sources */,
+				D71B319F21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m in Sources */,
 				D718611821BF4AD1002A709E /* MTCameraOptionsViewController.m in Sources */,
-				D718617321BF909B002A709E /* qrinput.c in Sources */,
-				D718617421BF909B002A709E /* mask.c in Sources */,
+				D71B31A721C0DE9E005CFC53 /* qrinput.c in Sources */,
+				D71B31A821C0DE9E005CFC53 /* mask.c in Sources */,
 				D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */,
-				D718617221BF909B002A709E /* QRCodeGenerator.m in Sources */,
+				D71B31A621C0DE9E005CFC53 /* QRCodeGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
