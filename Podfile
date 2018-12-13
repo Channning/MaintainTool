@@ -12,5 +12,6 @@ pod 'YTKNetwork', '~> 2.0.4'
 pod 'Masonry'
 pod 'SocketRocket'
 pod 'MBProgressHUD', '~> 1.1.0'
+pod 'WechatOpenSDK_NoPay', '~> 1.8.0'
 
 end

@@ -48,7 +48,6 @@
 		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
 		D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */; };
 		D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */; };
-		D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52921B90A9B005D1A7E /* AppDelegate.m */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
 		D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53121B90AA3005D1A7E /* Assets.xcassets */; };
 		D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */; };
@@ -139,9 +138,6 @@
 		D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
 		D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MTLiveConversationViewController.xib; path = SubCells/MTLiveConversationViewController.xib; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7BDE52821B90A9B005D1A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D7BDE52921B90A9B005D1A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7BDE52B21B90A9B005D1A7E /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		D7BDE52C21B90A9B005D1A7E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D7BDE53121B90AA3005D1A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7BDE53421B90AA3005D1A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -355,11 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */,
-				D7BDE52821B90A9B005D1A7E /* AppDelegate.h */,
-				D7BDE52921B90A9B005D1A7E /* AppDelegate.m */,
 				D718614421BF6014002A709E /* AppDelegateHelper.h */,
 				D718614521BF6015002A709E /* AppDelegateHelper.m */,
-				D7BDE52B21B90A9B005D1A7E /* RootViewController.h */,
 				D7BDE52C21B90A9B005D1A7E /* RootViewController.m */,
 				D718618121BF9D92002A709E /* RootViewController.xib */,
 				D718611421BF4A88002A709E /* Sections */,
@@ -501,7 +494,6 @@
 				D7BDE53821B90AA3005D1A7E /* main.m in Sources */,
 				D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */,
 				D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */,
-				D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */,
 				D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */,
 				D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */,
