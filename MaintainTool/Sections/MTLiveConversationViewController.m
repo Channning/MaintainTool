@@ -11,6 +11,7 @@
 #import "AFNetworkReachabilityManager.h"
 #import "TXLivePlayer.h"
 #import <SocketRocket/SRWebSocket.h>
+#import "WXApi.h"
 
 @interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
 
@@ -89,6 +90,30 @@
     [_cameraLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
     //设置完成之后再启动播放
     [_cameraLivePlayer startPlay:_rtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
+}
+
+#pragma mark -IBActions
+-(IBAction)inviteWechatFriend:(id)sender
+{
+    WXMiniProgramObject *object = [WXMiniProgramObject object];
+    object.webpageUrl = @"www.foream.com";
+    object.userName = @"gh_885fb1cdacb2";
+    object.path = @"pages/livestart/live_main/livemain";
+    object.hdImageData = nil;
+    object.withShareTicket = YES;
+    
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"维保印记";
+    message.description = @"维保视频会议小程序";
+    message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
+    //使用WXMiniProgramObject的hdImageData属性
+    message.mediaObject = object;
+    
+    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneSession;  //目前只支持会话
+    [WXApi sendReq:req];
 }
 
 #pragma mark -SRWebSocketDelegate
