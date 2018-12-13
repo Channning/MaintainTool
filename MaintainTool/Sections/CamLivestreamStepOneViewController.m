@@ -91,7 +91,6 @@
 }
 -(void)updateViewConstraints
 {
-//    CGFloat parentViewHeight = [[UIScreen mainScreen] bounds].size.height;
     if(parentViewHeight==480)
     {
         _topViewHeight.constant =220;
@@ -322,7 +321,19 @@
         if(self.passwordTextfield.text.length==0)
             self.passwordTextfield.text = @"";
      
-        if (!LastLoginUserId)
+        DLog(@"LastLoginUserId is %@",[AppDelegateHelper readData:@"LastLoginUserId"]);
+        if (isStringNotNil([AppDelegateHelper readData:@"LastLoginUserId"]))
+        {
+            CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
+            [scanQRcodeView setTryQRcode:YES];
+            NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
+            [scanQRcodeView setContentinfo:contentinfo];
+            [scanQRcodeView setSsidInfo:_ssidTextfield.text];
+            [scanQRcodeView setPasswordInfo:_passwordTextfield.text];
+            [self.navigationController pushViewController:scanQRcodeView animated:YES];
+            
+        }
+        else
         {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入用户昵称" preferredStyle:UIAlertControllerStyleAlert];
             //以下方法就可以实现在提示框中输入文本；
@@ -355,16 +366,6 @@
             
             //present出AlertView
             [self presentViewController:alertController animated:true completion:nil];
-        }
-        else
-        {
-            CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
-            [scanQRcodeView setTryQRcode:YES];
-            NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
-            [scanQRcodeView setContentinfo:contentinfo];
-            [scanQRcodeView setSsidInfo:_ssidTextfield.text];
-            [scanQRcodeView setPasswordInfo:_passwordTextfield.text];
-            [self.navigationController pushViewController:scanQRcodeView animated:YES];
         }
     }
 }
@@ -525,18 +526,17 @@
 //            if([[NSNumber numberWithInt:1]isEqual:[wifilistResponse objectForKey:@"status"]])
 //            {
 //
-//                NSDictionary *dic =[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",timeStamp+mistiming],@"Last_modify",_ssidlistArray,@"WifiLists",[FOMAPPDELEGATE loginUser].userId,@"uid",nil];
-//
-//                NSFileManager *fm = [NSFileManager defaultManager];
-//                if(![fm fileExistsAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]]]){
-//                    [fm createFileAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] contents:nil attributes:nil];
-//                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] atomically:YES];
-//                    DLog(@"wifilists is %@",dic);
-//                }else{
-//                    DLog(@"wifilists is %@",dic);
-//                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[FOMAPPDELEGATE loginUser].userId]] atomically:YES];
-//                }
-//                [FOMAPPDELEGATE setAvailableWifiLists:_ssidlistArray];
+                NSDictionary *dic =[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",timeStamp+mistiming],@"Last_modify",_ssidlistArray,@"WifiLists",[AppDelegateHelper readData:SavedOpenID],@"uid",nil];
+
+                NSFileManager *fm = [NSFileManager defaultManager];
+                if(![fm fileExistsAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]]]){
+                    [fm createFileAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] contents:nil attributes:nil];
+                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
+                    DLog(@"wifilists is %@",dic);
+                }else{
+                    DLog(@"wifilists is %@",dic);
+                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
+                }
 //            }
 //            [AppDelegateHelper removLoadingMessage:self.view];
 //        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {

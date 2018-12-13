@@ -25,6 +25,7 @@
     // 􏳌􏳍SDK􏰹􏰀􏰁􏱙􏱚
     //NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
     NSLog(@"Device UUID = %@", udid);
+    [AppDelegateHelper saveData:udid forKey:SavedOpenID];
     // 创建 LivePushConfig 对象，该对象默认初始化为基础配置
     //TXLivePushConfig* _config = [[TXLivePushConfig alloc] init];
     //在 _config中您可以对推流的参数（如：美白，硬件加速，前后置摄像头等）做一些初始化操作，需要注意 _config不能为nil

@@ -150,6 +150,12 @@ description:__VA_ARGS__];                             \
 #define IOS10_OR_LATER  ( [[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0 )
 #define SYSTEM_RUNS_IOS8_OR_LATER IOS8_OR_LATER
 #define IS_IPHONE_X (SCREEN_HEIGHT == 812.0f) ? YES : NO
+#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+#define IS_IPHONE_Xs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+#define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+
+#define IS_iPhoneX_Series ((IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES) ? YES : NO)
+
 #define SafeAreaTopHeight (SCREEN_HEIGHT == 812.0 ? 88 : 64)
 #define SafeAreaBottomHeight (SCREEN_HEIGHT == 812.0 ? 34 : 0)
 //判断是否支持新的Api
@@ -352,8 +358,11 @@ typedef NS_ENUM(NSInteger, ConnectType) {
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
 #define DidChooseTheCamera @"DidChooseTheCamera"
 #define DidChooseNetdistType @"DidChooseNetdistType"
+#define SavedOpenID @"UserStreamOpenID"
+#define APPStreamKey @"APPStreamKey"
 #define LastLoginUserId  [AppDelegateHelper readData:@"LastLoginUserId"]
 
 //接口HOST地址
 #define ServerAddress @"wx.driftlife.co"
+#define MTLiveApiKey @"foream2018"
 #endif

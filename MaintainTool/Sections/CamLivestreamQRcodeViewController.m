@@ -11,8 +11,12 @@
 //#import "BLLivePreviewViewController.h"
 #import "UIViewController+MaryPopin.h"
 #import "QRCodeGenerator.h"
+#import <SocketRocket/SRWebSocket.h>
+#import "MTGetAppStreamApi.h"
+#import "MTOwnerRoomInfoApi.h"
+#import "MTCreateLiveRoomApi.h"
 
-@interface CamLivestreamQRcodeViewController ()<CamConnectFailedDelegate>
+@interface CamLivestreamQRcodeViewController ()<CamConnectFailedDelegate,SRWebSocketDelegate>
 {
     NSTimer *checkCameraRegisterTimer;
     long tag;
@@ -21,11 +25,14 @@
     BOOL didDeleteMessage;
     NSString *messageId;
     
+    NSString *pushUrlString;
+    
 }
 @property (nonatomic,weak) IBOutlet UIView *connectingView;
 @property (nonatomic,weak) IBOutlet UIImageView *QRcodeImageView;
 @property (nonatomic,weak) IBOutlet UIView *maskView;
 @property (nonatomic,weak) IBOutlet UIView *codeBGView;
+@property (nonatomic,weak) IBOutlet UIView *contentView;
 @property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic,weak) IBOutlet UILabel *connectingLabel;
@@ -37,18 +44,19 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-
-    if(iPhone5 || isRetina)
-    {
-        self = [super initWithNibName:@"CamLivestreamQRcodeViewController_4.0" bundle:nibBundleOrNil];
-        
-    }else
-    {
-        
-        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-        
-        
-    }
+//
+//    if(iPhone5 || isRetina)
+//    {
+//        self = [super initWithNibName:@"CamLivestreamQRcodeViewController_4.0" bundle:nibBundleOrNil];
+//
+//    }else
+//    {
+//
+//        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//
+//
+//    }
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
         // Custom initialization
@@ -59,31 +67,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tabBarController.tabBar setHidden:YES];
     [self initBasicContrlsSetup];
     [self initNavgationItemSubviews];
-    if (![[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:GhostX])
+    if (![AppDelegateHelper readData:APPStreamKey])
     {
-        checkCameraRegisterTimer=[NSTimer scheduledTimerWithTimeInterval:5
-                                                                  target:self
-                                                                selector:@selector(registerLoopThread)
-                                                                userInfo:nil
-                                                                 repeats:YES];
-    
+        [self getUserAppStreamInfo];
     }
-    else
-    {
+    [self getOwnerRoomInfo];
 
-        [self.maskView setAlpha:0.2];
-//        if (iPhone6 || iPhone6plus)
-//        {
-//            [self.QRcodeImageView mas_makeConstraints:^(MASConstraintMaker *make)
-//             {
-//                 make.bottomMargin.mas_equalTo(self.codeBGView).offset(-30);
-//             }];
-//        }
-     
-    }
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     // Do any additional setup after loading the view from its nib.
@@ -106,6 +97,98 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)getUserAppStreamInfo
+{
+    DLog(@"SavedOpenID is %@, and LastLoginUserId is %@",[AppDelegateHelper readData:SavedOpenID],[AppDelegateHelper readData:@"LastLoginUserId"]);
+    MTGetAppStreamApi *generalCmdApi = [[MTGetAppStreamApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID] nickName:[AppDelegateHelper readData:@"LastLoginUserId"]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             
+             NSDictionary *dataDic = obj[@"data"];
+             [AppDelegateHelper saveData:dataDic[@"stream_key"] forKey:APPStreamKey];
+             
+        
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+}
+
+-(void)getOwnerRoomInfo
+{
+    MTOwnerRoomInfoApi *generalCmdApi = [[MTOwnerRoomInfoApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             NSDictionary *dataDic = obj[@"data"];
+             NSDictionary *roomDic = dataDic[@"room"];
+             NSDictionary *owner_streamDic = roomDic[@"owner_stream"];
+             self->pushUrlString = owner_streamDic[@"push"];
+             DLog(@"pushUrlString is %@",self->pushUrlString);
+             
+             if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
+             {
+                 self.contentInfo = [NSString stringWithFormat:@"6|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
+                 
+                 
+             }else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:Compass])
+             {
+                 self.contentInfo = [NSString stringWithFormat:@"6|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
+             }
+             else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:GhostX])
+             {
+                 self.contentInfo = [NSString stringWithFormat:@"3|%@|%@|%@|%@|%@",@"720P",@"2000000",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
+                 
+             }
+
+             NSString *tips = obj[@"tips"];
+             if ([tips isEqualToString:@"no room"])
+             {
+                 [self createLiveRoom];
+             }
+             else
+             {
+                 [self initSRWebSocket];
+             }
+             
+             DLog(@"current contentinfo is %@",self->_contentInfo);
+             MAIN(^{
+                 self.QRcodeImageView.image = [QRCodeGenerator qrImageForString:self->_contentInfo imageSize:self->_QRcodeImageView.bounds.size.width];
+             });
+    
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+}
+
+-(void)createLiveRoom
+{
+    MTCreateLiveRoomApi *generalCmdApi = [[MTCreateLiveRoomApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+           [self initSRWebSocket];
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+    
 }
 
 #pragma mark - IBAction
@@ -154,6 +237,16 @@
 }
 
 #pragma mark - initialization
+
+-(void)initSRWebSocket
+{
+    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"wss://wx.driftlife.co?open_id=%@",[AppDelegateHelper readData:SavedOpenID]]]]];
+    // 实现这个 SRWebSocketDelegate 协议啊
+    socket.delegate = self;
+    [socket open];    // open 就是直接连接了
+}
+
+
 - (void)initNavgationItemSubviews
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
@@ -197,8 +290,52 @@
     [self.titleLabel setFont:[UIFont fontWithName:@"HaginCapsMedium" size:18]];
     [self.titleLabel setText:MyLocal(@"温馨提示： 如果使用手机热点进行视频直播，请进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示“设备已经连接热点”后，再返回App")];
     
-    self.QRcodeImageView.image = [QRCodeGenerator qrImageForString:_contentInfo imageSize:_QRcodeImageView.bounds.size.width];
     
+//    self.QRcodeImageView.image = [QRCodeGenerator qrImageForString:_contentInfo imageSize:_QRcodeImageView.bounds.size.width];
+    
+    
+}
+#pragma mark -SRWebSocketDelegate
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    NSLog(@"连接成功，可以立刻登录你公司后台的服务器了，还有开启心跳");
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@"连接失败，这里可以实现掉线自动重连，要注意以下几点");
+    NSLog(@"1.判断当前网络环境，如果断网了就不要连了，等待网络到来，在发起重连");
+    NSLog(@"2.判断调用层是否需要连接，例如用户都没在聊天界面，连接上去浪费流量");
+    NSLog(@"3.连接次数限制，如果连接失败了，重试10次左右就可以了，不然就死循环了。或者每隔1，2，4，8，10，10秒重连...f(x) = f(x-1) * 2, (x=5)");
+          
+    
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+    NSLog(@"连接断开，清空socket对象，清空该清空的东西，还有关闭心跳！");
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    DLog(@"Received Message Is %@",message);
+    if ([message[@"type"] isEqualToString:@"stream_status"])
+    {
+        NSDictionary *dataDic = message[@"data"];
+        if ([dataDic[@"stream_status"] intValue] == 2)
+        {
+            //推流中
+            
+        }
+    }
+    else if ([message[@"type"] isEqualToString:@"join_session"])
+    {
+        
+    }
+    else if ([message[@"type"] isEqualToString:@"close_session"])
+    {
+        
+    }
     
 }
 

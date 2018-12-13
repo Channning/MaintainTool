@@ -41,6 +41,13 @@
 		D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319B21C0DE9E005CFC53 /* CCMBorderView.m */; };
 		D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319C21C0DE9E005CFC53 /* CCMPlayNDropView.m */; };
 		D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B319D21C0DE9E005CFC53 /* UIViewController+MaryPopin.m */; };
+		D71B31B121C0E7D7005CFC53 /* MTGetAppStreamApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B021C0E7D7005CFC53 /* MTGetAppStreamApi.m */; };
+		D71B31B421C0F1D5005CFC53 /* MTCreateLiveRoomApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B321C0F1D5005CFC53 /* MTCreateLiveRoomApi.m */; };
+		D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */; };
+		D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */; };
+		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
+		D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */; };
+		D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */; };
 		D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52921B90A9B005D1A7E /* AppDelegate.m */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
 		D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53121B90AA3005D1A7E /* Assets.xcassets */; };
@@ -117,6 +124,20 @@
 		D71B319B21C0DE9E005CFC53 /* CCMBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBorderView.m; sourceTree = "<group>"; };
 		D71B319C21C0DE9E005CFC53 /* CCMPlayNDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPlayNDropView.m; sourceTree = "<group>"; };
 		D71B319D21C0DE9E005CFC53 /* UIViewController+MaryPopin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MaryPopin.m"; sourceTree = "<group>"; };
+		D71B31AF21C0E7D7005CFC53 /* MTGetAppStreamApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGetAppStreamApi.h; sourceTree = "<group>"; };
+		D71B31B021C0E7D7005CFC53 /* MTGetAppStreamApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGetAppStreamApi.m; sourceTree = "<group>"; };
+		D71B31B221C0F1D5005CFC53 /* MTCreateLiveRoomApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCreateLiveRoomApi.h; sourceTree = "<group>"; };
+		D71B31B321C0F1D5005CFC53 /* MTCreateLiveRoomApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCreateLiveRoomApi.m; sourceTree = "<group>"; };
+		D71B31B521C0F25A005CFC53 /* MTOwnerRoomInfoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTOwnerRoomInfoApi.h; sourceTree = "<group>"; };
+		D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTOwnerRoomInfoApi.m; sourceTree = "<group>"; };
+		D71B31B821C0F372005CFC53 /* MTCreateSessionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCreateSessionApi.h; sourceTree = "<group>"; };
+		D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCreateSessionApi.m; sourceTree = "<group>"; };
+		D71B31BB21C0F4AC005CFC53 /* MTCloseSesstionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCloseSesstionApi.h; sourceTree = "<group>"; };
+		D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCloseSesstionApi.m; sourceTree = "<group>"; };
+		D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaintainTool.entitlements; sourceTree = "<group>"; };
+		D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTLiveConversationViewController.h; sourceTree = "<group>"; };
+		D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
+		D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MTLiveConversationViewController.xib; path = SubCells/MTLiveConversationViewController.xib; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BDE52821B90A9B005D1A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7BDE52921B90A9B005D1A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -168,9 +189,9 @@
 				D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */,
 				D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */,
 				D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */,
-				D718612521BF5451002A709E /* MTCameraOptionCell.h */,
-				D718612621BF5451002A709E /* MTCameraOptionCell.m */,
-				D718612721BF5451002A709E /* MTCameraOptionCell.xib */,
+				D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */,
+				D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */,
+				D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */,
 				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
 				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
 				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
@@ -185,6 +206,7 @@
 				D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */,
 				D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */,
 				D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */,
+				D7519BC121C2074000A5C9EC /* SubCells */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -281,6 +303,34 @@
 			path = CCMPlayNDropView;
 			sourceTree = "<group>";
 		};
+		D71B31AE21C0E7A8005CFC53 /* YTKNetworkApi */ = {
+			isa = PBXGroup;
+			children = (
+				D71B31AF21C0E7D7005CFC53 /* MTGetAppStreamApi.h */,
+				D71B31B021C0E7D7005CFC53 /* MTGetAppStreamApi.m */,
+				D71B31B221C0F1D5005CFC53 /* MTCreateLiveRoomApi.h */,
+				D71B31B321C0F1D5005CFC53 /* MTCreateLiveRoomApi.m */,
+				D71B31B521C0F25A005CFC53 /* MTOwnerRoomInfoApi.h */,
+				D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */,
+				D71B31B821C0F372005CFC53 /* MTCreateSessionApi.h */,
+				D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */,
+				D71B31BB21C0F4AC005CFC53 /* MTCloseSesstionApi.h */,
+				D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */,
+			);
+			name = YTKNetworkApi;
+			path = MaintainTool/YTKNetworkApi;
+			sourceTree = SOURCE_ROOT;
+		};
+		D7519BC121C2074000A5C9EC /* SubCells */ = {
+			isa = PBXGroup;
+			children = (
+				D718612521BF5451002A709E /* MTCameraOptionCell.h */,
+				D718612621BF5451002A709E /* MTCameraOptionCell.m */,
+				D718612721BF5451002A709E /* MTCameraOptionCell.xib */,
+			);
+			path = SubCells;
+			sourceTree = "<group>";
+		};
 		D7BDE51C21B90A9B005D1A7E = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +354,7 @@
 		D7BDE52721B90A9B005D1A7E /* MaintainTool */ = {
 			isa = PBXGroup;
 			children = (
+				D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */,
 				D7BDE52821B90A9B005D1A7E /* AppDelegate.h */,
 				D7BDE52921B90A9B005D1A7E /* AppDelegate.m */,
 				D718614421BF6014002A709E /* AppDelegateHelper.h */,
@@ -313,6 +364,7 @@
 				D718618121BF9D92002A709E /* RootViewController.xib */,
 				D718611421BF4A88002A709E /* Sections */,
 				D718611A21BF4C96002A709E /* Macro */,
+				D71B31AE21C0E7A8005CFC53 /* YTKNetworkApi */,
 				D718611C21BF4D4E002A709E /* Supporting Files */,
 			);
 			path = MaintainTool;
@@ -364,6 +416,11 @@
 				TargetAttributes = {
 					D7BDE52421B90A9B005D1A7E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -402,6 +459,7 @@
 				D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */,
 				D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */,
 				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
+				D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */,
 				D718613C21BF5CE5002A709E /* CamLivestreamStepTwoViewController_4.0.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,18 +494,24 @@
 			files = (
 				D71B31A021C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */,
+				D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */,
 				D71B31AA21C0DE9E005CFC53 /* rscode.c in Sources */,
+				D71B31B121C0E7D7005CFC53 /* MTGetAppStreamApi.m in Sources */,
 				D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */,
 				D7BDE53821B90AA3005D1A7E /* main.m in Sources */,
 				D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */,
+				D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */,
 				D7BDE52A21B90A9B005D1A7E /* AppDelegate.m in Sources */,
 				D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */,
 				D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */,
 				D71B31A321C0DE9E005CFC53 /* bitstream.c in Sources */,
 				D71B31A421C0DE9E005CFC53 /* qrencode.c in Sources */,
+				D71B31B421C0F1D5005CFC53 /* MTCreateLiveRoomApi.m in Sources */,
 				D71B31A221C0DE9E005CFC53 /* KxMenu.m in Sources */,
 				D71B319E21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */,
+				D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */,
 				D71B31A521C0DE9E005CFC53 /* split.c in Sources */,
 				D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */,
 				D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */,
@@ -606,6 +670,7 @@
 			baseConfigurationReference = 0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = YES;
@@ -630,6 +695,7 @@
 			baseConfigurationReference = C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = YES;

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +17,7 @@
                 <outlet property="connectDescribeLabel" destination="Wiz-vw-yw9" id="k6H-99-qZ7"/>
                 <outlet property="connectingLabel" destination="ndG-wW-Pyw" id="QCd-NO-8DF"/>
                 <outlet property="connectingView" destination="Wu4-nW-VOC" id="Pos-Ae-dBu"/>
+                <outlet property="contentView" destination="c9y-IV-eW7" id="YEx-sv-60l"/>
                 <outlet property="descriptionLabel" destination="fPR-jJ-yi4" id="e25-Te-YV4"/>
                 <outlet property="maskView" destination="Utm-kV-a6G" id="TRg-dx-ns3"/>
                 <outlet property="titleLabel" destination="hK3-Od-JMv" id="YYW-Ti-VrC"/>
@@ -162,10 +164,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9y-IV-eW7">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-oV-qWo" userLabel="BottomView">
-                            <rect key="frame" x="0.0" y="453" width="375" height="214"/>
+                            <rect key="frame" x="0.0" y="409" width="375" height="238"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温馨提示： 如果使用手机热点进行视频直播，请进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示“设备已经连接热点”后，再返回App" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Od-JMv">
                                     <rect key="frame" x="20" y="0.0" width="335" height="100"/>
@@ -176,10 +178,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0di-kB-2LU">
-                                    <rect key="frame" x="0.0" y="100" width="375" height="114"/>
+                                    <rect key="frame" x="0.0" y="100" width="375" height="138"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功,相机开始连接网络，连接成功后会自动进入视频通话界面。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-jJ-yi4">
-                                            <rect key="frame" x="20" y="5" width="335" height="104"/>
+                                            <rect key="frame" x="20" y="5" width="335" height="128"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -206,7 +208,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wat-jh-FAq">
-                            <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                            <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gso-lx-diy" userLabel="QRcodeArea">
                                     <rect key="frame" x="20" y="20" width="335" height="335"/>
@@ -215,7 +217,7 @@
                                         <constraint firstAttribute="width" secondItem="gso-lx-diy" secondAttribute="height" multiplier="1:1" id="Dkg-e7-FOt"/>
                                     </constraints>
                                 </imageView>
-                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-kV-a6G" userLabel="QRCode-Mask">
+                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-kV-a6G" userLabel="QRCode-Mask">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
@@ -236,10 +238,10 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="Wat-jh-FAq" firstAttribute="top" secondItem="c9y-IV-eW7" secondAttribute="top" constant="20" id="4RO-cc-ISn"/>
                         <constraint firstItem="Wat-jh-FAq" firstAttribute="leading" secondItem="c9y-IV-eW7" secondAttribute="leading" id="D61-vE-Gf3"/>
                         <constraint firstAttribute="trailing" secondItem="Wat-jh-FAq" secondAttribute="trailing" id="IRk-4g-Tvs"/>
                         <constraint firstItem="Ypu-oV-qWo" firstAttribute="leading" secondItem="c9y-IV-eW7" secondAttribute="leading" id="Kys-T4-lJq"/>
-                        <constraint firstItem="Wat-jh-FAq" firstAttribute="top" secondItem="c9y-IV-eW7" secondAttribute="top" constant="64" id="QHB-rb-Nzg"/>
                         <constraint firstItem="Ypu-oV-qWo" firstAttribute="top" secondItem="Wat-jh-FAq" secondAttribute="bottom" constant="14" id="mmJ-ld-iSg"/>
                         <constraint firstAttribute="bottom" secondItem="Ypu-oV-qWo" secondAttribute="bottom" id="tOf-IZ-7wv"/>
                         <constraint firstAttribute="trailing" secondItem="Ypu-oV-qWo" secondAttribute="trailing" id="y12-fz-GUO"/>
@@ -249,14 +251,15 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="c9y-IV-eW7" firstAttribute="leading" secondItem="puf-mE-NfC" secondAttribute="leading" id="25C-M6-zqw"/>
+                <constraint firstAttribute="bottom" secondItem="c9y-IV-eW7" secondAttribute="bottom" id="EG1-dh-WHR"/>
                 <constraint firstItem="Wu4-nW-VOC" firstAttribute="top" secondItem="puf-mE-NfC" secondAttribute="top" id="HGo-76-DNs"/>
                 <constraint firstAttribute="trailing" secondItem="Wu4-nW-VOC" secondAttribute="trailing" id="MIX-ze-enL"/>
-                <constraint firstAttribute="bottom" secondItem="c9y-IV-eW7" secondAttribute="bottom" id="Uyg-a3-Thb"/>
                 <constraint firstItem="Wu4-nW-VOC" firstAttribute="leading" secondItem="puf-mE-NfC" secondAttribute="leading" id="YKv-su-CwP"/>
+                <constraint firstItem="c9y-IV-eW7" firstAttribute="top" secondItem="17s-6j-ICG" secondAttribute="top" id="mSV-02-kWq"/>
                 <constraint firstAttribute="bottom" secondItem="Wu4-nW-VOC" secondAttribute="bottom" id="qWp-7f-rOt"/>
-                <constraint firstItem="c9y-IV-eW7" firstAttribute="top" secondItem="puf-mE-NfC" secondAttribute="top" id="xVO-tc-n1e"/>
                 <constraint firstAttribute="trailing" secondItem="c9y-IV-eW7" secondAttribute="trailing" id="zYP-Yh-1hm"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="17s-6j-ICG"/>
             <point key="canvasLocation" x="-7.2000000000000002" y="102.09895052473765"/>
         </view>
     </objects>
