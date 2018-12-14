@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTLiveConversationViewController">
             <connections>
+                <outlet property="bottomPlayerView" destination="H3t-pn-UCC" id="7Be-5e-Fed"/>
+                <outlet property="topPlayerView" destination="QPm-JH-0Hz" id="CWn-lQ-8OF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7It-YV-cxP"/>
             </connections>
         </placeholder>
@@ -19,8 +21,43 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-JH-0Hz">
+                    <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_loading_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9NK-cO-G1z">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="9NK-cO-G1z" firstAttribute="leading" secondItem="QPm-JH-0Hz" secondAttribute="leading" id="JzO-Hx-N0K"/>
+                        <constraint firstAttribute="bottom" secondItem="9NK-cO-G1z" secondAttribute="bottom" id="OWx-sr-g2a"/>
+                        <constraint firstAttribute="trailing" secondItem="9NK-cO-G1z" secondAttribute="trailing" id="hlZ-UD-K3P"/>
+                        <constraint firstItem="9NK-cO-G1z" firstAttribute="top" secondItem="QPm-JH-0Hz" secondAttribute="top" id="t3i-TF-m80"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-pn-UCC">
+                    <rect key="frame" x="0.0" y="343.5" width="375" height="323.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="H3t-pn-UCC" firstAttribute="height" secondItem="QPm-JH-0Hz" secondAttribute="height" id="Aeo-dN-WKM"/>
+                <constraint firstItem="QPm-JH-0Hz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="G4T-sB-fJz"/>
+                <constraint firstItem="H3t-pn-UCC" firstAttribute="top" secondItem="QPm-JH-0Hz" secondAttribute="bottom" id="ZmT-FN-k54"/>
+                <constraint firstItem="QPm-JH-0Hz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="asU-Tz-vZg"/>
+                <constraint firstItem="H3t-pn-UCC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bhx-IG-itm"/>
+                <constraint firstAttribute="bottom" secondItem="H3t-pn-UCC" secondAttribute="bottom" id="gbL-6A-gVP"/>
+                <constraint firstItem="QPm-JH-0Hz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hSs-pb-aeQ"/>
+                <constraint firstItem="H3t-pn-UCC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="xCB-iA-BzE"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="160.56971514242881"/>
         </view>
     </objects>
+    <resources>
+        <image name="Live_loading_bg" width="376" height="289.5"/>
+    </resources>
 </document>

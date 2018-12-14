@@ -8,7 +8,7 @@
 
 #import "CamLivestreamQRcodeViewController.h"
 #import "CamConnectFailedViewController.h"
-//#import "BLLivePreviewViewController.h"
+#import "MTLiveConversationViewController.h"
 #import "UIViewController+MaryPopin.h"
 #import "QRCodeGenerator.h"
 #import <SocketRocket/SRWebSocket.h>
@@ -26,6 +26,10 @@
     NSString *messageId;
     
     NSString *pushUrlString;
+    NSString *playRtmpUrlString;
+    NSString *playFlvUrlString;
+    
+    SRWebSocket *socket;
     
 }
 @property (nonatomic,weak) IBOutlet UIView *connectingView;
@@ -91,6 +95,7 @@
 
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 
+    [socket close];
     [super viewWillDisappear:animated];
 }
 
@@ -135,6 +140,8 @@
              NSDictionary *roomDic = dataDic[@"room"];
              NSDictionary *owner_streamDic = roomDic[@"owner_stream"];
              self->pushUrlString = owner_streamDic[@"push"];
+             self->playRtmpUrlString = owner_streamDic[@"rtmp"];
+             self->playFlvUrlString = owner_streamDic[@"flv"];
              DLog(@"pushUrlString is %@",self->pushUrlString);
              
              if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
@@ -240,7 +247,7 @@
 
 -(void)initSRWebSocket
 {
-    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"wss://wx.driftlife.co?open_id=%@",[AppDelegateHelper readData:SavedOpenID]]]]];
+    socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"wss://wx.driftlife.co?open_id=%@",[AppDelegateHelper readData:SavedOpenID]]]]];
     // 实现这个 SRWebSocketDelegate 协议啊
     socket.delegate = self;
     [socket open];    // open 就是直接连接了
@@ -325,7 +332,10 @@
         if ([dataDic[@"stream_status"] intValue] == 2)
         {
             //推流中
-            
+            MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
+            [liveViewController setRtmpLiveUrlString:playRtmpUrlString];
+            [liveViewController setFlvLiveUrlString:playFlvUrlString];
+            [self.navigationController pushViewController:liveViewController animated:YES];
         }
     }
     else if ([message[@"type"] isEqualToString:@"join_session"])

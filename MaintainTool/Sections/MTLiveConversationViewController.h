@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTLiveConversationViewController : UIViewController
 
+@property (nonatomic,copy) NSString *rtmpLiveUrlString;
+@property (nonatomic,copy) NSString *flvLiveUrlString;
 @end
 
 NS_ASSUME_NONNULL_END
