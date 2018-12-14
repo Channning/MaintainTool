@@ -32,7 +32,7 @@
 
 - (NSString *)requestUrl
 {
-    return @"/getAppStream";
+    return @"/appRegister";
 }
 
 - (YTKRequestMethod)requestMethod

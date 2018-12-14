@@ -11,10 +11,15 @@
 #import "AFNetworkReachabilityManager.h"
 #import "TXLivePlayer.h"
 #import <SocketRocket/SRWebSocket.h>
+#import "MTCreateSessionApi.h"
 #import "WXApi.h"
 
-@interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
+#define kCharCount 6
 
+@interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
+{
+    NSString *liveSessionKey;
+}
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *bottomPlayerView;
 
@@ -30,6 +35,8 @@
     [self initNavgationItemSubviews];
     [self initCameraLivePlayer];
     [self initSRWebSocket];
+    [self generateSessionKey];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -59,7 +66,7 @@
 {
     _cameraLivePlayer = [[TXLivePlayer alloc] init];
     _cameraLivePlayer.delegate = self;
-    [_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:0];
+    [_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:1];
     
     TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
     //自动模式
@@ -68,7 +75,7 @@
 //    _config.maxAutoAdjustCacheTime = 5;
     //极速模式
     _config.bAutoAdjustCacheTime   = YES;
-    _config.minAutoAdjustCacheTime = 1;
+    _config.minAutoAdjustCacheTime = 0.3;
     _config.maxAutoAdjustCacheTime = 1;
     //流畅模式
 //    _config.bAutoAdjustCacheTime   = NO;
@@ -89,7 +96,91 @@
      */
     [_cameraLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
     //设置完成之后再启动播放
-    [_cameraLivePlayer startPlay:_rtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
+    [_cameraLivePlayer startPlay:@"rtmp://liveplay.driftlife.co/live/Ov0AMP55XtD3" type:PLAY_TYPE_LIVE_RTMP];
+}
+
+
+-(void)initPhoneLivePlayer
+{
+    TXLivePlayer *_phoneLivePlayer = [[TXLivePlayer alloc] init];
+    _phoneLivePlayer.delegate = self;
+    [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:2];
+    
+    TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
+    //自动模式
+    //    _config.bAutoAdjustCacheTime   = YES;
+    //    _config.minAutoAdjustCacheTime = 1;
+    //    _config.maxAutoAdjustCacheTime = 5;
+    //极速模式
+    _config.bAutoAdjustCacheTime   = YES;
+    _config.minAutoAdjustCacheTime = 0.3;
+    _config.maxAutoAdjustCacheTime = 1;
+    //流畅模式
+    //    _config.bAutoAdjustCacheTime   = NO;
+    //    _config.minAutoAdjustCacheTime = 5;
+    //    _config.maxAutoAdjustCacheTime = 5;
+    
+    [_phoneLivePlayer setConfig:_config];
+    /**
+     * 设置画面的裁剪模式
+     * @param renderMode 裁剪
+     * @see TX_Enum_Type_RenderMode
+     */
+    [_phoneLivePlayer setRenderRotation:HOME_ORIENTATION_DOWN];
+    /**
+     * 设置画面的方向
+     * @param rotation 方向
+     * @see TX_Enum_Type_HomeOrientation
+     */
+    [_phoneLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
+    //设置完成之后再启动播放
+    [_phoneLivePlayer startPlay:@"rtmp://liveplay.driftlife.co/live/Ov0AMP55XtD3" type:PLAY_TYPE_LIVE_RTMP];
+}
+
+- (void)generateSessionKey
+{
+    //字符串素材
+    NSArray *_dataArray = [[NSArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z",nil];
+    
+    //Step one
+    NSMutableString *_authCodeStr = [[NSMutableString alloc] initWithString:@"IOS_"];
+    //Step Two
+    //随机从数组中选取需要个数的字符串，拼接为验证码字符串
+    for (int i = 0; i < kCharCount; i++)
+    {
+        NSInteger index = arc4random() % (_dataArray.count-1);
+        NSString *tempStr = [_dataArray objectAtIndex:index];
+        _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:tempStr];
+    }
+    //Step Three
+    NSDate *datenow = [NSDate date];
+    NSString *timeNowString = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+    _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:[NSString stringWithFormat:@"_%@",timeNowString]];
+    DLog(@"SessionKey is %@",_authCodeStr);
+    liveSessionKey = _authCodeStr;
+    
+    if (liveSessionKey)
+    {
+        [self createLiveSession];
+    }
+}
+
+-(void)createLiveSession
+{
+    MTCreateSessionApi *generalCmdApi = [[MTCreateSessionApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID] roomID:_roomid sessionKey:liveSessionKey];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             //[self initSRWebSocket];
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+    
 }
 
 #pragma mark -IBActions
@@ -98,13 +189,13 @@
     WXMiniProgramObject *object = [WXMiniProgramObject object];
     object.webpageUrl = @"www.foream.com";
     object.userName = @"gh_885fb1cdacb2";
-    object.path = @"pages/livestart/live_main/livemain";
+    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@,title:%@%@",_roomid,[AppDelegateHelper readData:SavedOpenID],liveSessionKey,LastLoginUserId,@"邀请你进行视频通话"];
     object.hdImageData = nil;
     object.withShareTicket = YES;
     
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"维保印记";
-    message.description = @"维保视频会议小程序";
+    message.description = @"维修印记";
     message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
     //使用WXMiniProgramObject的hdImageData属性
     message.mediaObject = object;

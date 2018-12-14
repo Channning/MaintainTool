@@ -7,12 +7,18 @@
 //
 
 #import "RootViewController.h"
-//#import "TXLiteAVSDK_Professional/TXLiveBase.h"
+#import "MTLiveConversationViewController.h"
 #import "MTCameraOptionsViewController.h"
+#import "MTOwnerRoomInfoApi.h"
 
 @interface RootViewController ()
-
-//@property (nonatomic, strong) TXLivePush * txLivePublisher;
+{
+    NSString *playRtmpUrlString;
+    NSString *playFlvUrlString;
+    NSString *roomid;
+    
+    BOOL isExistLiveRoom;
+}
 @end
 
 @implementation RootViewController
@@ -20,17 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isExistLiveRoom = NO;
     [self initNavgationItemSubviews];
     NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    // 􏳌􏳍SDK􏰹􏰀􏰁􏱙􏱚
-    //NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
     NSLog(@"Device UUID = %@", udid);
     [AppDelegateHelper saveData:udid forKey:SavedOpenID];
-    // 创建 LivePushConfig 对象，该对象默认初始化为基础配置
-    //TXLivePushConfig* _config = [[TXLivePushConfig alloc] init];
-    //在 _config中您可以对推流的参数（如：美白，硬件加速，前后置摄像头等）做一些初始化操作，需要注意 _config不能为nil
-    //_txLivePush = [[TXLivePush alloc] initWithConfig: _config];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self getOwnerRoomInfo];
 }
 
 
@@ -47,6 +48,36 @@
     
 }
 
+-(void)getOwnerRoomInfo
+{
+    MTOwnerRoomInfoApi *generalCmdApi = [[MTOwnerRoomInfoApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             NSDictionary *dataDic = obj[@"data"];
+             NSDictionary *roomDic = dataDic[@"room"];
+             NSDictionary *userDic = dataDic[@"user"];
+             NSDictionary *owner_streamDic = roomDic[@"owner_stream"];
+             self->playRtmpUrlString = owner_streamDic[@"rtmp"];
+             self->playFlvUrlString = owner_streamDic[@"flv"];
+             self->roomid = roomDic[@"room_id"];
+ 
+             NSNumber *status = userDic[@"stream_status"];
+             if (status.intValue == 2)
+             {
+                 self->isExistLiveRoom = YES;
+             }
+             
+         }
+   
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+}
 
 
 
@@ -54,7 +85,20 @@
 
 -(IBAction)connectToCamera:(id)sender
 {
-    MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
-    [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+    if (isExistLiveRoom)
+    {
+        MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
+        [liveConversationView setRtmpLiveUrlString:playRtmpUrlString];
+        [liveConversationView setFlvLiveUrlString:playFlvUrlString];
+        [liveConversationView setRoomid:roomid];
+        [self.navigationController pushViewController:liveConversationView animated:YES];
+    }
+   else
+   {
+       MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
+       [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+       
+   }
+    
 }
 @end

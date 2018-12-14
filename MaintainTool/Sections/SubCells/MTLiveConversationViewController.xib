@@ -26,30 +26,38 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_loading_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9NK-cO-G1z">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                            <rect key="frame" x="0.0" y="34" width="375" height="256"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="9NK-cO-G1z" secondAttribute="height" multiplier="375:256" id="xuG-8j-XFX"/>
+                            </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="9NK-cO-G1z" firstAttribute="centerY" secondItem="QPm-JH-0Hz" secondAttribute="centerY" id="9wX-qB-2qe"/>
                         <constraint firstItem="9NK-cO-G1z" firstAttribute="leading" secondItem="QPm-JH-0Hz" secondAttribute="leading" id="JzO-Hx-N0K"/>
-                        <constraint firstAttribute="bottom" secondItem="9NK-cO-G1z" secondAttribute="bottom" id="OWx-sr-g2a"/>
                         <constraint firstAttribute="trailing" secondItem="9NK-cO-G1z" secondAttribute="trailing" id="hlZ-UD-K3P"/>
-                        <constraint firstItem="9NK-cO-G1z" firstAttribute="top" secondItem="QPm-JH-0Hz" secondAttribute="top" id="t3i-TF-m80"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-pn-UCC">
                     <rect key="frame" x="0.0" y="343.5" width="375" height="323.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="还未有人参与进来，快来邀请Ta吧~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-NO-cV9">
-                            <rect key="frame" x="48" y="53" width="290" height="26"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还未有人参与进来，快来邀请Ta吧~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-NO-cV9">
+                            <rect key="frame" x="42.5" y="50" width="290" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="26" id="YgS-8p-sDR"/>
+                                <constraint firstAttribute="width" constant="290" id="sW0-p1-SuF"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdD-Bq-3DX">
-                            <rect key="frame" x="103" y="96" width="166" height="36"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdD-Bq-3DX">
+                            <rect key="frame" x="104.5" y="96" width="166" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="166" id="50A-ah-IVx"/>
+                                <constraint firstAttribute="height" constant="36" id="bub-iX-QbG"/>
+                            </constraints>
                             <state key="normal" title="邀请好友" backgroundImage="Live_invite_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -59,6 +67,12 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="tdD-Bq-3DX" firstAttribute="centerX" secondItem="H3t-pn-UCC" secondAttribute="centerX" id="R7z-x4-oBw"/>
+                        <constraint firstItem="tdD-Bq-3DX" firstAttribute="top" secondItem="9IC-NO-cV9" secondAttribute="bottom" constant="20" id="UbA-A3-RMp"/>
+                        <constraint firstItem="9IC-NO-cV9" firstAttribute="centerX" secondItem="H3t-pn-UCC" secondAttribute="centerX" id="tTN-e7-0sS"/>
+                        <constraint firstItem="9IC-NO-cV9" firstAttribute="top" secondItem="H3t-pn-UCC" secondAttribute="top" constant="50" id="zS3-8M-edr"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

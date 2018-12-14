@@ -28,6 +28,8 @@
     NSString *pushUrlString;
     NSString *playRtmpUrlString;
     NSString *playFlvUrlString;
+    NSString *roomIDString;
+    NSString *session_key;
     
     SRWebSocket *socket;
     
@@ -142,7 +144,9 @@
              self->pushUrlString = owner_streamDic[@"push"];
              self->playRtmpUrlString = owner_streamDic[@"rtmp"];
              self->playFlvUrlString = owner_streamDic[@"flv"];
-             DLog(@"pushUrlString is %@",self->pushUrlString);
+             self->roomIDString = roomDic[@"room_id"];
+             self->session_key = roomDic[@"session_key"];
+             DLog(@"pushUrlString is %@,roomIDString is %@,session_key is %@",self->pushUrlString,self->roomIDString,self->session_key);
              
              if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
              {
@@ -326,9 +330,12 @@
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
     DLog(@"Received Message Is %@",message);
-    if ([message[@"type"] isEqualToString:@"stream_status"])
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    NSDictionary *messageDic = obj;
+    if ([messageDic[@"type"] isEqualToString:@"stream_status"])
     {
-        NSDictionary *dataDic = message[@"data"];
+        NSDictionary *dataDic = messageDic[@"data"];
         if ([dataDic[@"stream_status"] intValue] == 2)
         {
             //推流中
@@ -338,11 +345,11 @@
             [self.navigationController pushViewController:liveViewController animated:YES];
         }
     }
-    else if ([message[@"type"] isEqualToString:@"join_session"])
+    else if ([messageDic[@"type"] isEqualToString:@"join_session"])
     {
         
     }
-    else if ([message[@"type"] isEqualToString:@"close_session"])
+    else if ([messageDic[@"type"] isEqualToString:@"close_session"])
     {
         
     }
