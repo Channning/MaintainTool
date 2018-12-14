@@ -13,5 +13,6 @@ pod 'Masonry'
 pod 'SocketRocket'
 pod 'MBProgressHUD', '~> 1.1.0'
 pod 'WechatOpenSDK_NoPay', '~> 1.8.0'
+pod 'SDWebImage'
 
 end

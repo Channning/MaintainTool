@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy) NSString *rtmpLiveUrlString;
 @property (nonatomic,copy) NSString *flvLiveUrlString;
+@property (nonatomic,copy) NSString *guestRtmpLiveUrlString;
+@property (nonatomic,copy) NSString *guestFlvLiveUrlString;
 @property (nonatomic,copy) NSString *roomid;
 @end
 

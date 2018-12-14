@@ -36,6 +36,10 @@
     [self initCameraLivePlayer];
     [self initSRWebSocket];
     [self generateSessionKey];
+    if (_guestRtmpLiveUrlString)
+    {
+        [self initPhoneLivePlayer];
+    }
     
     // Do any additional setup after loading the view.
 }
@@ -45,13 +49,15 @@
 
 - (void)initNavgationItemSubviews
 {
+    
+    self.navigationController.navigationBarHidden = NO;
+    
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     self.navigationItem.title = MyLocal(@"我的直播");
-    
-    
+
 }
 
 -(void)initSRWebSocket
@@ -96,13 +102,13 @@
      */
     [_cameraLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
     //设置完成之后再启动播放
-    [_cameraLivePlayer startPlay:@"rtmp://liveplay.driftlife.co/live/Ov0AMP55XtD3" type:PLAY_TYPE_LIVE_RTMP];
+    [_cameraLivePlayer startPlay:_rtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
 }
 
 
 -(void)initPhoneLivePlayer
 {
-    TXLivePlayer *_phoneLivePlayer = [[TXLivePlayer alloc] init];
+    _phoneLivePlayer = [[TXLivePlayer alloc] init];
     _phoneLivePlayer.delegate = self;
     [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:2];
     
@@ -134,7 +140,7 @@
      */
     [_phoneLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
     //设置完成之后再启动播放
-    [_phoneLivePlayer startPlay:@"rtmp://liveplay.driftlife.co/live/Ov0AMP55XtD3" type:PLAY_TYPE_LIVE_RTMP];
+    [_phoneLivePlayer startPlay:_guestRtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
 }
 
 - (void)generateSessionKey
@@ -189,13 +195,14 @@
     WXMiniProgramObject *object = [WXMiniProgramObject object];
     object.webpageUrl = @"www.foream.com";
     object.userName = @"gh_885fb1cdacb2";
-    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@,title:%@%@",_roomid,[AppDelegateHelper readData:SavedOpenID],liveSessionKey,LastLoginUserId,@"邀请你进行视频通话"];
-    object.hdImageData = nil;
+    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",_roomid,[AppDelegateHelper readData:SavedOpenID],liveSessionKey];
+    
+    object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
     object.withShareTicket = YES;
     
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"维保印记";
-    message.description = @"维修印记";
+    message.title = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
+    message.description = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
     message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
     //使用WXMiniProgramObject的hdImageData属性
     message.mediaObject = object;
@@ -237,6 +244,10 @@
         if ([dataDic[@"stream_status"] intValue] == 2)
         {
             //推流中
+            
+        }
+        else if([dataDic[@"stream_status"] intValue] == 1)
+        {
             
         }
     }

@@ -159,7 +159,7 @@
              }
              else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:GhostX])
              {
-                 self.contentInfo = [NSString stringWithFormat:@"3|%@|%@|%@|%@|%@",@"720P",@"2000000",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
+                 self.contentInfo = [NSString stringWithFormat:@"3|%@|%@|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,@"720P",@"2000000",self->pushUrlString];
                  
              }
 
@@ -342,6 +342,7 @@
             MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
             [liveViewController setRtmpLiveUrlString:playRtmpUrlString];
             [liveViewController setFlvLiveUrlString:playFlvUrlString];
+            [liveViewController setRoomid:roomIDString];
             [self.navigationController pushViewController:liveViewController animated:YES];
         }
     }

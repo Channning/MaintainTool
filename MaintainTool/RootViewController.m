@@ -17,7 +17,11 @@
     NSString *playFlvUrlString;
     NSString *roomid;
     
+    NSString *guestPlayRtmpUrlString;
+    NSString *guestPlayFlvUrlString;
+    
     BOOL isExistLiveRoom;
+    BOOL isExistGuestLiveRoom;
 }
 @end
 
@@ -27,6 +31,7 @@
 {
     [super viewDidLoad];
     isExistLiveRoom = NO;
+    isExistGuestLiveRoom = NO;
     [self initNavgationItemSubviews];
     NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSLog(@"Device UUID = %@", udid);
@@ -65,13 +70,19 @@
              self->playRtmpUrlString = owner_streamDic[@"rtmp"];
              self->playFlvUrlString = owner_streamDic[@"flv"];
              self->roomid = roomDic[@"room_id"];
- 
+             
              NSNumber *status = userDic[@"stream_status"];
              if (status.intValue == 2)
              {
                  self->isExistLiveRoom = YES;
              }
              
+             NSDictionary *guest_streamDic = roomDic[@"guest_stream"];
+             NSNumber *guest_status = guest_streamDic[@"status"];
+             if (guest_status.intValue == 2)
+             {
+                 self->isExistGuestLiveRoom = YES;
+             }
          }
    
      } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -91,6 +102,11 @@
         [liveConversationView setRtmpLiveUrlString:playRtmpUrlString];
         [liveConversationView setFlvLiveUrlString:playFlvUrlString];
         [liveConversationView setRoomid:roomid];
+        if (isExistGuestLiveRoom)
+        {
+            [liveConversationView setGuestRtmpLiveUrlString:guestPlayRtmpUrlString];
+            [liveConversationView setGuestFlvLiveUrlString:guestPlayFlvUrlString];
+        }
         [self.navigationController pushViewController:liveConversationView animated:YES];
     }
    else
