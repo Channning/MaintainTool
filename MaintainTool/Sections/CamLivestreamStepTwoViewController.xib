@@ -35,18 +35,18 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cam_live_rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-LL-A53">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cam_live_light_status" translatesAutoresizingMaskIntoConstraints="NO" id="oT9-xQ-k2W">
-                            <rect key="frame" x="104" y="42" width="167" height="190"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_guide_compass_scan" translatesAutoresizingMaskIntoConstraints="NO" id="oT9-xQ-k2W">
+                            <rect key="frame" x="22" y="42" width="331" height="174"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="190" id="Gvq-GD-AY4"/>
-                                <constraint firstAttribute="width" constant="167" id="Hi4-UU-hNo"/>
+                                <constraint firstAttribute="height" constant="174" id="Gvq-GD-AY4"/>
+                                <constraint firstAttribute="width" constant="331" id="Hi4-UU-hNo"/>
                             </constraints>
                         </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cam_live_X1" translatesAutoresizingMaskIntoConstraints="NO" id="ey3-SH-8gp">
-                            <rect key="frame" x="67.5" y="65" width="240" height="145"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_guide_ghost4k_scan" translatesAutoresizingMaskIntoConstraints="NO" id="ey3-SH-8gp">
+                            <rect key="frame" x="72" y="22" width="231" height="188"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="145" id="0eg-mz-roS"/>
-                                <constraint firstAttribute="width" constant="240" id="c2J-Us-92x"/>
+                                <constraint firstAttribute="height" constant="188" id="0eg-mz-roS"/>
+                                <constraint firstAttribute="width" constant="231" id="c2J-Us-92x"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -67,20 +67,20 @@
                     <rect key="frame" x="0.0" y="322" width="375" height="345"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWITCH YOUR COMPASS TO LIVE STREAM MODE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIl-9q-aGV">
-                            <rect key="frame" x="40" y="30" width="285" height="60"/>
+                            <rect key="frame" x="30" y="30" width="285" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="285" id="PdY-eT-GKH"/>
                                 <constraint firstAttribute="height" constant="60" id="nya-bO-fLr"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-JB-mVs">
-                            <rect key="frame" x="67.5" y="223" width="240" height="50"/>
+                            <rect key="frame" x="62.5" y="185" width="250" height="48"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="5bw-y6-23m"/>
-                                <constraint firstAttribute="width" constant="240" id="Q6F-z5-1kX"/>
+                                <constraint firstAttribute="height" constant="48" id="5bw-y6-23m"/>
+                                <constraint firstAttribute="width" constant="250" id="Q6F-z5-1kX"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Next">
@@ -91,23 +91,21 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold down the WiFi button until the front indicator light turns blue. When it does, hit next." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-uE-8xx">
-                            <rect key="frame" x="40" y="127" width="305" height="56"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="305" id="cMf-fq-WLc"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="16"/>
+                            <rect key="frame" x="30" y="90" width="315" height="52.5"/>
+                            <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="Gd6-uE-8xx" firstAttribute="leading" secondItem="II0-7Q-YOD" secondAttribute="leading" constant="40" id="6Tm-mj-0Zc"/>
+                        <constraint firstItem="Gd6-uE-8xx" firstAttribute="leading" secondItem="II0-7Q-YOD" secondAttribute="leading" constant="30" id="6Tm-mj-0Zc"/>
                         <constraint firstItem="JIl-9q-aGV" firstAttribute="top" secondItem="II0-7Q-YOD" secondAttribute="top" constant="30" id="8T2-1b-uCY"/>
-                        <constraint firstItem="Gd6-uE-8xx" firstAttribute="top" secondItem="JIl-9q-aGV" secondAttribute="bottom" constant="37" id="Ooh-j4-dq5"/>
+                        <constraint firstAttribute="bottom" secondItem="aTD-JB-mVs" secondAttribute="bottom" constant="112" id="Hb2-xg-p3q"/>
+                        <constraint firstItem="Gd6-uE-8xx" firstAttribute="top" secondItem="JIl-9q-aGV" secondAttribute="bottom" id="Ooh-j4-dq5"/>
                         <constraint firstItem="aTD-JB-mVs" firstAttribute="centerX" secondItem="II0-7Q-YOD" secondAttribute="centerX" id="QLH-tb-GbD"/>
-                        <constraint firstItem="JIl-9q-aGV" firstAttribute="leading" secondItem="II0-7Q-YOD" secondAttribute="leading" constant="40" id="b2n-dT-oR1"/>
-                        <constraint firstItem="aTD-JB-mVs" firstAttribute="top" secondItem="Gd6-uE-8xx" secondAttribute="bottom" constant="40" id="hK8-1u-ezg"/>
+                        <constraint firstAttribute="trailing" secondItem="Gd6-uE-8xx" secondAttribute="trailing" constant="30" id="UIQ-vR-xAl"/>
+                        <constraint firstItem="JIl-9q-aGV" firstAttribute="leading" secondItem="II0-7Q-YOD" secondAttribute="leading" constant="30" id="b2n-dT-oR1"/>
                     </constraints>
                 </view>
             </subviews>
@@ -126,8 +124,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Cam_live_X1" width="459" height="270"/>
-        <image name="Cam_live_light_status" width="171.5" height="202"/>
         <image name="Cam_live_rectangle" width="375" height="255"/>
+        <image name="Live_guide_compass_scan" width="661" height="348"/>
+        <image name="Live_guide_ghost4k_scan" width="461" height="375"/>
     </resources>
 </document>

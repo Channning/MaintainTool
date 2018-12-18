@@ -50,18 +50,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-//
-//    if(iPhone5 || isRetina)
-//    {
-//        self = [super initWithNibName:@"CamLivestreamQRcodeViewController_4.0" bundle:nibBundleOrNil];
-//
-//    }else
-//    {
-//
-//        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//
-//
-//    }
+
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -382,82 +371,6 @@
     [self presentPopinController:popin animated:YES completion:^{
         NSLog(@"Popin presented !");
     }];
-}
-
-
-
--(void) checkCameraIsBeenRegistered
-{
-    
-    
-//    if(![FOMAPPDELEGATE loginUser])
-//        return;
-//
-//    NSDictionary *parasDic;
-//    NSDictionary *searchDir;
-//
-//    searchDir = [NSDictionary dictionaryWithObject:@"0" forKey:@"state"];
-//    parasDic =[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],searchDir, nil] forKeys:[NSArray arrayWithObjects:@"limit", @"search",nil]];
-//    NSString *paraString = [parasDic JSONString];
-//
-//    NetdiskGeneralSendCmdApi *generalCmdApi = [[NetdiskGeneralSendCmdApi alloc]initWithSessionId:[FOMAPPDELEGATE loginUser].sid token:[FOMAPPDELEGATE loginUser].token commandString:@"fetchReceivedMessageList" commandParameters:paraString];
-//    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-//        NSDictionary *regResponse = [request.responseString objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
-//        DLog(@"fetchReceivedMessageList is %@",regResponse);
-//        if ([[NSNumber numberWithInt:1] isEqual: [regResponse objectForKey : @"status"]]){
-//            NSDictionary * deviceData = [regResponse objectForKey : @"data"];
-//            if ([[deviceData objectForKey : @"list"] isKindOfClass:[NSNull class]]) {
-//
-//            }else{
-//                NSArray * listData =  [deviceData objectForKey : @"list"];
-//
-//                for (NSDictionary *dInfo in listData) {
-//
-//                    MessageInfo *messageInfo = [[MessageInfo alloc]init];
-//                    messageInfo.type =  [dInfo objectForKey:@"type"];
-//                    messageInfo.appName =  [dInfo objectForKey:@"appName"];
-//                    messageInfo.content =  [dInfo objectForKey:@"content"];
-//                    messageInfo.iid =  [dInfo objectForKey:@"id"];
-//                    messageId = messageInfo.iid;
-//
-//                    NSDictionary *contentDic = [messageInfo.content objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
-//                    if (messageInfo.type.intValue == 301) {
-//                        messageInfo.status = [contentDic objectForKey:@"status"];
-//                        messageInfo.cause = [contentDic objectForKey:@"cause"];
-//                        if([[NSNumber numberWithInt:1] isEqual: [contentDic objectForKey : @"status"]]){
-//
-//                            //                            [AppDelegateHelper showLoadingWithTitle:MyLocal(@"Loading") withMessage:nil view:self.view];
-//                            _registerCameraId = [contentDic objectForKey:@"cameraId"];
-//                            [self getRemoteDeviceList:_registerCameraId];
-//                            [self markMessageAsRead:[NSArray arrayWithObject:messageInfo.iid]];
-//                            //                            [checkCameraRegisterTimer invalidate];
-//                            //                            checkCameraRegisterTimer = nil;
-//                        }
-//
-//
-//                    }
-//
-//                }
-//
-//            }
-//        }
-//
-//
-//
-//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-//    }];
-    
-}
-
--(void)registerLoopThread
-{
-    if(_registerCameraId)
-    {
-        MyLocal(@"kc smartConfig test: still checking the camera online status.");
-        //[self getRemoteDeviceList:_registerCameraId];
-    }
-    else
-        [self checkCameraIsBeenRegistered];
 }
 
 

@@ -24,20 +24,16 @@
 @property (nonatomic,weak) IBOutlet UITextField *ssidTextfield;
 @property (nonatomic,weak) IBOutlet UIButton *nextButton;
 @property (nonatomic,weak) IBOutlet UIButton *changewifiButton;
-@property (nonatomic,weak) IBOutlet UIButton *usingMobileDataButton;
-@property (nonatomic,weak) IBOutlet UIButton *dropButton;
+
 @property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
-@property (nonatomic,weak) IBOutlet UIView *dotImageView;
 @property (nonatomic,weak) IBOutlet UIView *inputView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelLeftX;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelRightX;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewTopY;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopY;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelTopY;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nextButtonViewTopY;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dotImageViewTopY;
+
 @end
 
 @implementation CamLivestreamStepOneViewController
@@ -65,7 +61,6 @@
     [self initNavgationItemSubviews];
     [self detectCurrentConnectedSSid];
     [self initBasicContrlsSetup];
-    [_dotImageView setHidden:YES];
     [_ssidTextfield setUserInteractionEnabled:YES];
     [_ssidTextfield setClearButtonMode:UITextFieldViewModeAlways];
     // Do any additional setup after loading the view from its nib.
@@ -94,25 +89,18 @@
     if(parentViewHeight==480)
     {
         _topViewHeight.constant =220;
-//        _InputViewTopY.constant = 5;
-        _bottomViewTopY.constant = 220;
+
         _titleLabelTopY.constant = 2;
         _descriptionLabelTopY.constant = 1;
-        _nextButtonViewTopY.constant = 53;
-        _dotImageViewTopY.constant = 10;
         _descriptionLabelLeftX.constant = 10;
         _descriptionLabelRightX.constant = 10;
     }
     else if(parentViewHeight==568)
     {
         _topViewHeight.constant =220;
-//        _InputViewTopY.constant = 12;
-        _bottomViewTopY.constant = 220;
         _titleLabelTopY.constant = 20;
         _descriptionLabelTopY.constant = 20;
-        _nextButtonViewTopY.constant = 20;
-        _dotImageViewTopY.constant = 10;
-        _descriptionLabelLeftX.constant = 10;
+          _descriptionLabelLeftX.constant = 10;
         _descriptionLabelRightX.constant = 10;
     }
     
@@ -193,15 +181,6 @@
         [_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
     }
     
-    if (_ssidlistArray.count == 0)
-    {
-        [_dropButton setHidden:YES];
-    }
-    else
-    {
-        
-        [_dropButton setHidden:NO];
-    }
     
     if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !isStringNotNil(_passwordTextfield.text))
     {
@@ -232,13 +211,16 @@
 
 -(void)initBasicContrlsSetup
 {
-    [self.titleLabel setText:MyLocal(@"ENTER YOUR          WI-FI PASSWORD")];
-    [self.nextButton setTitle:MyLocal(@"Next") forState:UIControlStateNormal];
-    [self.nextButton setBackgroundColor:UIColorFromRGB(0xe4b475)];  
-    [self.descriptionLabel setFont:StandardFONT(16)];
-    [self.descriptionLabel setTextColor:UIColorFromRGB(0x6f6f6f)];
+    
+    [self.titleLabel setTextColor:[UIColor colorWithRed:36/255.0 green:36/255.0 blue:36/255.0 alpha:1.0]];
+    [self.titleLabel setText:@"输入Wi-Fi密码"];
+    
+    [self.descriptionLabel setTextColor:[UIColor colorWithRed:111/255.0 green:111/255.0 blue:111/255.0 alpha:1.0]];
     [self.descriptionLabel setText:MyLocal(@"In order to live stream, your Camera needs an internet connection. Enter your WiFi password, which will then be shared with your Camera.")];
     
+    [self.nextButton setTitle:MyLocal(@"Next") forState:UIControlStateNormal];
+    [self.nextButton setBackgroundColor:[UIColor colorWithRed:40/255.0 green:68/255.0 blue:131/255.0 alpha:1.0]];
+
     self.nextButton.layer.shadowOffset = CGSizeMake(2,2);
     self.nextButton.layer.shadowOpacity = 0.3f;
     self.nextButton.layer.shadowRadius = 3.0;
@@ -249,22 +231,12 @@
     [_passwordTextfield setSpellCheckingType:UITextSpellCheckingTypeNo];
     [_passwordTextfield setSecureTextEntry:NO];
     
-//    _ssidTextfield.placeholder = MyLocal(@"Please input network name",nil);
-//    [_ssidTextfield setValue:UIColorFromRGB(0x808080) forKeyPath:@"_placeholderLabel.textColor"];
-//    [_ssidTextfield setAutocorrectionType:UITextAutocorrectionTypeNo];
-//    [_ssidTextfield setSpellCheckingType:UITextSpellCheckingTypeNo];
-    
     _ssidTextfield.clearButtonMode = UITextFieldViewModeNever;  //全部删除按钮
     _passwordTextfield.clearButtonMode = UITextFieldViewModeAlways;
     
     [_changewifiButton setTitle:MyLocal(@"Change Wi-Fi Network") forState:UIControlStateNormal];
     [_changewifiButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
-    
-//    [_usingMobileDataButton setTitle:MyLocal(@"Use Mobile Data") forState:UIControlStateNormal];
-//    [_usingMobileDataButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
-    [_dropButton addTarget:self action:@selector(showPopover:forEvent:) forControlEvents:UIControlEventTouchUpInside];
 
-    
   
 
 }

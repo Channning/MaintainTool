@@ -23,6 +23,9 @@
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *bottomPlayerView;
 
+@property (nonatomic,weak) IBOutlet UILabel *inviteLabel;
+@property (nonatomic,weak) IBOutlet UIButton *inviteButton;
+
 @property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 @property (nonatomic,strong) TXLivePlayer * phoneLivePlayer;
 @end
@@ -34,8 +37,8 @@
     [super viewDidLoad];
     [self initNavgationItemSubviews];
     [self initCameraLivePlayer];
-    [self initSRWebSocket];
-    [self generateSessionKey];
+//    [self initSRWebSocket];
+//    [self generateSessionKey];
     if (_guestRtmpLiveUrlString)
     {
         [self initPhoneLivePlayer];
@@ -56,7 +59,7 @@
     backButtonItem.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem = backButtonItem;
     
-    self.navigationItem.title = MyLocal(@"我的直播");
+    self.navigationItem.title = MyLocal(@"视频通话");
 
 }
 
@@ -110,7 +113,7 @@
 {
     _phoneLivePlayer = [[TXLivePlayer alloc] init];
     _phoneLivePlayer.delegate = self;
-    [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:2];
+    [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_bottomPlayerView insertIndex:2];
     
     TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
     //自动模式
@@ -262,8 +265,7 @@
     
 }
 
-
-#pragma ###TXLivePlayListener
+#pragma mark - TXLivePlayListener
 
 -(void) onPlayEvent:(int)EvtID withParam:(NSDictionary*)param
 {

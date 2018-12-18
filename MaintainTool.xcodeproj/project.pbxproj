@@ -14,9 +14,7 @@
 		D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612721BF5451002A709E /* MTCameraOptionCell.xib */; };
 		D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */; };
 		D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */; };
-		D718613C21BF5CE5002A709E /* CamLivestreamStepTwoViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */; };
 		D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */; };
-		D718613E21BF5CE5002A709E /* CamLivestreamQRcodeViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */; };
 		D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */; };
 		D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */; };
 		D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */; };
@@ -74,9 +72,7 @@
 		D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepOneViewController.m; sourceTree = "<group>"; };
 		D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamQRcodeViewController.m; sourceTree = "<group>"; };
 		D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepOneViewController.h; sourceTree = "<group>"; };
-		D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController_4.0.xib; sourceTree = "<group>"; };
 		D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepOneViewController.xib; sourceTree = "<group>"; };
-		D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
 		D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController.xib; sourceTree = "<group>"; };
 		D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepTwoViewController.m; sourceTree = "<group>"; };
 		D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepTwoViewController.h; sourceTree = "<group>"; };
@@ -194,11 +190,9 @@
 				D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */,
 				D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */,
 				D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */,
-				D718612E21BF5CE3002A709E /* CamLivestreamStepTwoViewController_4.0.xib */,
 				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
 				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
 				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
-				D718613021BF5CE3002A709E /* CamLivestreamQRcodeViewController_4.0.xib */,
 				D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */,
 				D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */,
 				D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */,
@@ -441,7 +435,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D718613E21BF5CE5002A709E /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
 				D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */,
 				D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */,
 				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
@@ -453,7 +446,6 @@
 				D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */,
 				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
 				D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */,
-				D718613C21BF5CE5002A709E /* CamLivestreamStepTwoViewController_4.0.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

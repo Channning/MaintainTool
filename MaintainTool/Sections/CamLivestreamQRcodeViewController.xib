@@ -169,6 +169,31 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-oV-qWo" userLabel="BottomView">
                             <rect key="frame" x="0.0" y="409" width="375" height="238"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0di-kB-2LU">
+                                    <rect key="frame" x="0.0" y="85" width="375" height="153"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_guide_qrcode_bg" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-25-FuO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功,相机开始连接网络，连接成功后会自动进入视频通话界面。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-jJ-yi4">
+                                            <rect key="frame" x="20" y="25" width="335" height="123"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="fPR-jJ-yi4" firstAttribute="top" secondItem="0di-kB-2LU" secondAttribute="top" constant="25" id="8Gj-q7-a8A"/>
+                                        <constraint firstAttribute="bottom" secondItem="fPR-jJ-yi4" secondAttribute="bottom" constant="5" id="KhM-op-TgQ"/>
+                                        <constraint firstItem="UFc-25-FuO" firstAttribute="top" secondItem="0di-kB-2LU" secondAttribute="top" id="MrH-6I-9Ez"/>
+                                        <constraint firstAttribute="bottom" secondItem="UFc-25-FuO" secondAttribute="bottom" id="TCl-yC-11I"/>
+                                        <constraint firstAttribute="trailing" secondItem="fPR-jJ-yi4" secondAttribute="trailing" constant="20" id="dik-mc-Ebh"/>
+                                        <constraint firstItem="fPR-jJ-yi4" firstAttribute="leading" secondItem="0di-kB-2LU" secondAttribute="leading" constant="20" id="f1E-Cc-kbq"/>
+                                        <constraint firstItem="UFc-25-FuO" firstAttribute="leading" secondItem="0di-kB-2LU" secondAttribute="leading" id="jgz-JE-KcY"/>
+                                        <constraint firstAttribute="trailing" secondItem="UFc-25-FuO" secondAttribute="trailing" id="u55-Fx-lgG"/>
+                                    </constraints>
+                                </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温馨提示： 如果使用手机热点进行视频直播，请进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示“设备已经连接热点”后，再返回App" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Od-JMv">
                                     <rect key="frame" x="20" y="0.0" width="335" height="100"/>
                                     <constraints>
@@ -177,24 +202,6 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0di-kB-2LU">
-                                    <rect key="frame" x="0.0" y="100" width="375" height="138"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功,相机开始连接网络，连接成功后会自动进入视频通话界面。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-jJ-yi4">
-                                            <rect key="frame" x="20" y="5" width="335" height="128"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.24513901839999999" green="0.72889914879999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="fPR-jJ-yi4" firstAttribute="top" secondItem="0di-kB-2LU" secondAttribute="top" constant="5" id="8Gj-q7-a8A"/>
-                                        <constraint firstAttribute="bottom" secondItem="fPR-jJ-yi4" secondAttribute="bottom" constant="5" id="KhM-op-TgQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="fPR-jJ-yi4" secondAttribute="trailing" constant="20" id="dik-mc-Ebh"/>
-                                        <constraint firstItem="fPR-jJ-yi4" firstAttribute="leading" secondItem="0di-kB-2LU" secondAttribute="leading" constant="20" id="f1E-Cc-kbq"/>
-                                    </constraints>
-                                </view>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -203,7 +210,7 @@
                                 <constraint firstAttribute="trailing" secondItem="0di-kB-2LU" secondAttribute="trailing" id="H0F-20-cFe"/>
                                 <constraint firstAttribute="trailing" secondItem="hK3-Od-JMv" secondAttribute="trailing" constant="20" id="fj9-Fk-eZc"/>
                                 <constraint firstItem="0di-kB-2LU" firstAttribute="leading" secondItem="Ypu-oV-qWo" secondAttribute="leading" id="gFy-E1-9BI"/>
-                                <constraint firstItem="0di-kB-2LU" firstAttribute="top" secondItem="hK3-Od-JMv" secondAttribute="bottom" id="pel-Yc-0Th"/>
+                                <constraint firstItem="0di-kB-2LU" firstAttribute="top" secondItem="hK3-Od-JMv" secondAttribute="bottom" constant="-15" id="pel-Yc-0Th"/>
                                 <constraint firstItem="hK3-Od-JMv" firstAttribute="leading" secondItem="Ypu-oV-qWo" secondAttribute="leading" constant="20" id="wxG-Hz-b4j"/>
                             </constraints>
                         </view>
@@ -269,6 +276,7 @@
         <image name="Cam_live_ellipse_gray" width="9.5" height="9.5"/>
         <image name="Cam_live_ellipse_orange" width="9.5" height="9.5"/>
         <image name="Cam_live_rectangle" width="375" height="255"/>
+        <image name="Live_guide_qrcode_bg" width="750" height="296"/>
         <image name="common_return_arrow" width="9" height="17"/>
     </resources>
 </document>

@@ -353,6 +353,7 @@ typedef NS_ENUM(NSInteger, ConnectType) {
 #define HDSpider      @"HD Spider"
 #define HDFinder      @"HD Finder"
 #define ForeamX1      @"X1"
+#define LocalPhoneCamera      @"LocalPhoneCamera"
 
 //NSUserDefaults 实例化
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]

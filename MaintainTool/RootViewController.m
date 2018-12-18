@@ -23,6 +23,11 @@
     BOOL isExistLiveRoom;
     BOOL isExistGuestLiveRoom;
 }
+@property (nonatomic,weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic,weak) IBOutlet UIImageView *statusImageView;
+@property (nonatomic,weak) IBOutlet UIButton *videoConversationButton;
+
+@property (nonatomic,weak) IBOutlet UILabel *scanTitleLabel;
 @end
 
 @implementation RootViewController
@@ -39,17 +44,26 @@
     [self getOwnerRoomInfo];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    self.navigationController.navigationBarHidden = YES;
+    [super viewWillAppear:animated];
+}
+
 
 #pragma mark - initialization
 - (void)initNavgationItemSubviews
 {
-    
-    self.navigationController.navigationBarHidden = YES;
-    
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem = backButtonItem;
-
+    
+    [self.titleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
+    [self.titleLabel setText:@"视频通话"];
+    
+    [self.scanTitleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
+    [self.scanTitleLabel setText:@"扫码二维码拍摄"];
     
 }
 
@@ -79,6 +93,10 @@
              
              NSDictionary *guest_streamDic = roomDic[@"guest_stream"];
              NSNumber *guest_status = guest_streamDic[@"status"];
+             
+             self->guestPlayRtmpUrlString = guest_streamDic[@"rtmp"];
+             self->guestPlayFlvUrlString = guest_streamDic[@"flv"];
+             
              if (guest_status.intValue == 2)
              {
                  self->isExistGuestLiveRoom = YES;
@@ -96,6 +114,11 @@
 
 -(IBAction)connectToCamera:(id)sender
 {
+    isExistLiveRoom = YES;
+    isExistGuestLiveRoom = YES;
+    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
+    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
+    roomid = @"f8ucVWyz";
     if (isExistLiveRoom)
     {
         MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
@@ -116,5 +139,10 @@
        
    }
     
+}
+
+-(IBAction)scanQRcodeAndShot:(id)sender
+{
+    [AppDelegateHelper showSuccessWithTitle:@"即将推出,敬请期待" withMessage:nil view:self.view];
 }
 @end

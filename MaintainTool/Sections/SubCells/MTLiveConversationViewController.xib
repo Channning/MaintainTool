@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTLiveConversationViewController">
             <connections>
                 <outlet property="bottomPlayerView" destination="H3t-pn-UCC" id="7Be-5e-Fed"/>
+                <outlet property="inviteButton" destination="tdD-Bq-3DX" id="vZY-Kg-jE6"/>
+                <outlet property="inviteLabel" destination="9IC-NO-cV9" id="bhy-IH-WEU"/>
                 <outlet property="topPlayerView" destination="QPm-JH-0Hz" id="CWn-lQ-8OF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7It-YV-cxP"/>
             </connections>

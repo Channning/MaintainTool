@@ -10,6 +10,8 @@
 #import "CamLivestreamStepOneViewController.h"
 #import "MTCameraOptionCell.h"
 
+#define CellWidthHeigthRatio 375/138
+
 @interface MTCameraOptionsViewController ()
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
 @end
@@ -55,7 +57,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
     
 }
 
@@ -67,13 +69,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
+    if (section == 2)
+    {
+        return 0.1;
+    }
     return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return (self.view.frame.size.height-SafeAreaTopHeight-40)/4;
+    DLog(@"SCREEN_WIDTH/CellWidthHeigthRatio is %f",138*SCREEN_WIDTH/375);
+    return 138*SCREEN_WIDTH/375;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,18 +95,18 @@
     NSString *modelNameString = nil;
     switch (indexPath.section)
     {
-        case 3:
-            modelImageName = @"Connect_ghost4k";
-            modelNameString = @"Connect_model_Ghost4K";
+        case 2:
+            modelImageName = @"Connect_phonecamera";
+            modelNameString = @"Connect_model_phonecamera";
             break;
         case 1:
             modelImageName = @"Connect_X1";
             modelNameString = @"Connect_model_x1";
             break;
-        case 2:
-            modelImageName = @"Connect_compass";
-            modelNameString = @"Connect_model_compass";
-            break;
+//        case 2:
+//            modelImageName = @"Connect_compass";
+//            modelNameString = @"Connect_model_compass";
+//            break;
         case 0:
             modelImageName = @"Connect_ghostX";
             modelNameString = @"Connect_model_GhostX";
@@ -125,25 +131,38 @@
     switch (indexPath.section)
     {
         case 0:
+        {
             [AppDelegateHelper saveData:GhostX forKey:DidChooseTheCamera];
+            CamLivestreamStepOneViewController *cameraModalView = [[CamLivestreamStepOneViewController alloc]init];
+            [self.navigationController pushViewController:cameraModalView animated:YES];
+        }
             break;
         case 1:
+        {
             [AppDelegateHelper saveData:ForeamX1 forKey:DidChooseTheCamera];
+            CamLivestreamStepOneViewController *cameraModalView = [[CamLivestreamStepOneViewController alloc]init];
+            [self.navigationController pushViewController:cameraModalView animated:YES];
+            
+        }
             break;
         case 2:
-            [AppDelegateHelper saveData:Compass forKey:DidChooseTheCamera];
+        {
+            [AppDelegateHelper saveData:LocalPhoneCamera forKey:DidChooseTheCamera];
+            [AppDelegateHelper showSuccessWithTitle:@"即将推出,敬请期待" withMessage:nil view:self.view];
+
+        }
+            
             break;
-        case 3:
-            [AppDelegateHelper saveData:Ghost4K forKey:DidChooseTheCamera];
-            break;
+//        case 3:
+//            [AppDelegateHelper saveData:Ghost4K forKey:DidChooseTheCamera];
+//            break;
 
             
         default:
             break;
     }
     
-    CamLivestreamStepOneViewController *cameraModalView = [[CamLivestreamStepOneViewController alloc]init];
-    [self.navigationController pushViewController:cameraModalView animated:YES];
+    
 }
 
 

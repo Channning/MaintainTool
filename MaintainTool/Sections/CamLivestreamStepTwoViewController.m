@@ -26,17 +26,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 
-    if(iPhone5 || isRetina)
-    {
-        self = [super initWithNibName:@"CamLivestreamStepTwoViewController_4.0" bundle:nibBundleOrNil];
-        
-    }else
-    {
-        
-        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-        
-        
-    }
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
         // Custom initialization
@@ -79,7 +69,11 @@
 
 -(void)initBasicContrlsSetup
 {
-    if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1]) {
+    [self.titleLabel setTextColor:[UIColor colorWithRed:36/255.0 green:36/255.0 blue:36/255.0 alpha:1.0]];
+    [self.descriptionLabel setTextColor:[UIColor colorWithRed:111/255.0 green:111/255.0 blue:111/255.0 alpha:1.0]];
+    
+    if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
+    {
         [self.bgImageView setHidden:YES];
         [self.bgX1ImageView setHidden:NO];
         [self.bgX1ImageView setImage:[UIImage imageNamed:@"Cam_live_X1"]];
@@ -97,45 +91,25 @@
         
     }else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:Compass])
     {
-        [self.bgImageView setHidden:NO];
-        [self.bgX1ImageView setHidden:YES];
-        [self.bgImageView setImage:[UIImage imageNamed:@"Cam_live_light_status"]];
-        if ([AppDelegateHelper readBool:DidChooseNetdistType])
-        {
-            
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO SYNC FILES MODE")];
-        }else
-        {
-            
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO LIVE STREAM MODE")];
-        }
+        [self.bgImageView setHidden:YES];
+        [self.bgX1ImageView setHidden:NO];
+        [self.bgX1ImageView setImage:[UIImage imageNamed:@"Live_guide_compass_scan"]];
+        [self.titleLabel setText:@"长按Wi-Fi按钮"];
         [self.descriptionLabel setText:MyLocal(@"Hold down the Wi-Fi button until the front indicator light turns blue. When it does, hit next.")];
     }
     else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:GhostX])
     {
         [self.bgImageView setHidden:YES];
         [self.bgX1ImageView setHidden:NO];
-        [self.bgX1ImageView setImage:[UIImage imageNamed:@"Cam_Scan_GhostX"]];
-        if ([AppDelegateHelper readBool:DidChooseNetdistType])
-        {
-            
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO SYNC FILES MODE")];
-        }else
-        {
-            
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO LIVE STREAM MODE")];
-        }
+        [self.bgX1ImageView setImage:[UIImage imageNamed:@"Live_guide_ghost4k_scan"]];
+        [self.titleLabel setText:@"长按中间键按钮"];
         [self.descriptionLabel setText:MyLocal(@"Please set camera to Video Mode(Green Light). Press and hold camera's Middle Button for two seconds. Release button when you hear 'Start scanning'. Then, click Next.")];
 
     }
     
     [self.nextButton setTitle:MyLocal(@"Next") forState:UIControlStateNormal];
-    [self.nextButton setBackgroundColor:UIColorFromRGB(0xe4b475)];
-    [self.descriptionLabel setFont:StandardFONT(16)];
-    [self.descriptionLabel setTextColor:UIColorFromRGB(0x6f6f6f)];
+    [self.nextButton setBackgroundColor:[UIColor colorWithRed:40/255.0 green:68/255.0 blue:131/255.0 alpha:1.0]];
     
-    
-    [self.titleLabel setFont:[UIFont fontWithName:@"HaginCapsMedium" size:29]];
     self.nextButton.layer.shadowOffset = CGSizeMake(2,2);
     self.nextButton.layer.shadowOpacity = 0.3f;
     self.nextButton.layer.shadowRadius = 3.0;
@@ -146,10 +120,7 @@
     _anotheCameraLabel.numberOfLines = 0;
     _anotheCameraLabel.textColor = UIColorFromRGB(0xe4b475);
     _anotheCameraLabel.attributedText = content;
-    
-    if (self.tryQRcode) {
-        [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO SCAN QR CODE MODE")];
-    }
+
     
 }
 

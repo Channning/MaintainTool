@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="museosans.otf">
-            <string>MuseoSans-500</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CamLivestreamStepOneViewController">
             <connections>
@@ -22,16 +17,14 @@
                 <outlet property="descriptionLabelLeftX" destination="Gfj-2R-3Xf" id="KNN-8N-ICu"/>
                 <outlet property="descriptionLabelRightX" destination="Nsi-yy-NlV" id="MVU-VK-htC"/>
                 <outlet property="descriptionLabelTopY" destination="T9A-WJ-Gcc" id="XcE-sG-Hlc"/>
-                <outlet property="dropButton" destination="WcM-LE-4pX" id="PCb-7p-7HO"/>
                 <outlet property="inputView" destination="VE9-bC-8IY" id="5fe-3V-v0G"/>
                 <outlet property="nextButton" destination="z6z-r3-nSY" id="dTX-O6-Xcn"/>
                 <outlet property="passwordTextfield" destination="BUP-Rm-uum" id="bsm-bc-yOk"/>
                 <outlet property="scrollView" destination="t5S-Gl-Upb" id="Yec-qK-RWF"/>
                 <outlet property="ssidTextfield" destination="6Ir-jL-MFM" id="iiJ-ZY-2Mf"/>
-                <outlet property="titleLabel" destination="Mug-L6-jma" id="fcV-Xb-36F"/>
+                <outlet property="titleLabel" destination="Mug-L6-jma" id="NA1-zA-rBs"/>
                 <outlet property="titleLabelTopY" destination="mGe-J7-OGK" id="VO5-IF-Edp"/>
                 <outlet property="topViewHeight" destination="ugL-xb-BzA" id="tfB-Kq-dqv"/>
-                <outlet property="usingMobileDataButton" destination="KT4-fr-yOi" id="cPq-5e-qvr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,9 +34,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cam_live_rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="qW7-Oc-SwX">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="280" id="De9-bb-EQi"/>
+                        <constraint firstAttribute="height" constant="330" id="De9-bb-EQi"/>
                     </constraints>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5S-Gl-Upb" customClass="TPKeyboardAvoidingScrollView">
@@ -54,10 +47,10 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-ST-cEf" userLabel="topView">
-                            <rect key="frame" x="0.0" y="30" width="375" height="250"/>
+                            <rect key="frame" x="0.0" y="30" width="375" height="300"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-bC-8IY" userLabel="inputView">
-                                    <rect key="frame" x="40" y="100" width="295" height="114"/>
+                                    <rect key="frame" x="40" y="120" width="295" height="114"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cam_live_ssid" translatesAutoresizingMaskIntoConstraints="NO" id="FZq-42-jtb" userLabel="Image View - user_name_icon">
                                             <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
@@ -78,7 +71,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-jL-MFM" userLabel="Text - UserName">
-                                            <rect key="frame" x="50" y="7" width="189" height="26"/>
+                                            <rect key="frame" x="50" y="7" width="226" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label=""/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -105,14 +98,6 @@
                                                 <action selector="changeToAnotherWifi:" destination="-1" eventType="touchUpInside" id="y1b-KR-QV3"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcM-LE-4pX">
-                                            <rect key="frame" x="239" y="0.0" width="40" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="detail_arrow_down">
-                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <state key="selected" image="detail_arrow_up"/>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -120,54 +105,39 @@
                                         <constraint firstAttribute="width" constant="295" id="i0U-3m-9dp"/>
                                     </constraints>
                                 </view>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-fr-yOi">
-                                    <rect key="frame" x="87.5" y="220" width="200" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="0b5-fK-Ni2"/>
-                                        <constraint firstAttribute="height" constant="30" id="hj1-sh-QhP"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
-                                    <state key="normal" title="Use Mobile Data"/>
-                                    <connections>
-                                        <action selector="usingMobileDataToLivestream:" destination="-1" eventType="touchUpInside" id="drX-pn-Zlh"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="KT4-fr-yOi" secondAttribute="bottom" id="BS9-Ab-W9x"/>
-                                <constraint firstItem="KT4-fr-yOi" firstAttribute="centerX" secondItem="W5f-ST-cEf" secondAttribute="centerX" id="GdQ-gO-Jgy"/>
-                                <constraint firstAttribute="bottom" secondItem="KT4-fr-yOi" secondAttribute="bottom" id="dSb-xX-2lt"/>
-                                <constraint firstItem="VE9-bC-8IY" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="top" constant="100" id="f18-2b-Ybd"/>
-                                <constraint firstAttribute="height" constant="250" id="ugL-xb-BzA"/>
+                                <constraint firstItem="VE9-bC-8IY" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="top" constant="120" id="Rpc-8J-xdf"/>
+                                <constraint firstAttribute="height" constant="300" id="ugL-xb-BzA"/>
                                 <constraint firstItem="VE9-bC-8IY" firstAttribute="centerX" secondItem="W5f-ST-cEf" secondAttribute="centerX" id="zRe-hI-ujp"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUy-aB-cM8" userLabel="bottomView">
-                            <rect key="frame" x="0.0" y="280" width="375" height="387"/>
+                            <rect key="frame" x="0.0" y="330" width="375" height="337"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR          WI-FI PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mug-L6-jma">
-                                    <rect key="frame" x="40" y="25" width="200" height="64"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入Wi-Fi密码" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mug-L6-jma">
+                                    <rect key="frame" x="30" y="25" width="200" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="7B2-sB-Z8S"/>
                                         <constraint firstAttribute="height" constant="64" id="pHb-Iy-vXn"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="V9c-nL-XPD">
-                                    <rect key="frame" x="30" y="89" width="315" height="208"/>
+                                    <rect key="frame" x="30" y="89" width="315" height="161.5"/>
                                     <string key="text">In oder to live steam, your Compass needs an internet connection. Enter your WiFi password, which will then be shared with your Compass. Note: if you are going to use phone's hotspot, please go to your phone's Settings-Personal Hotspot, make sure the hotspot is turned on and wait till message 'hotsport: 1 connection' appears, then go back the App.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6z-r3-nSY">
-                                    <rect key="frame" x="63.5" y="307" width="248" height="50"/>
+                                    <rect key="frame" x="62.5" y="177" width="250" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="k2C-y8-ErJ"/>
-                                        <constraint firstAttribute="width" constant="248" id="ugc-cn-vWY"/>
+                                        <constraint firstAttribute="height" constant="48" id="k2C-y8-ErJ"/>
+                                        <constraint firstAttribute="width" constant="250" id="ugc-cn-vWY"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="Next">
@@ -181,11 +151,10 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="V9c-nL-XPD" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="30" id="Gfj-2R-3Xf"/>
+                                <constraint firstAttribute="bottom" secondItem="z6z-r3-nSY" secondAttribute="bottom" constant="112" id="I6x-gj-jTs"/>
                                 <constraint firstAttribute="trailing" secondItem="V9c-nL-XPD" secondAttribute="trailing" constant="30" id="Nsi-yy-NlV"/>
-                                <constraint firstItem="Mug-L6-jma" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="40" id="T8q-7n-OnH"/>
+                                <constraint firstItem="Mug-L6-jma" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="30" id="T8q-7n-OnH"/>
                                 <constraint firstItem="V9c-nL-XPD" firstAttribute="top" secondItem="Mug-L6-jma" secondAttribute="bottom" id="T9A-WJ-Gcc"/>
-                                <constraint firstAttribute="bottom" secondItem="z6z-r3-nSY" secondAttribute="bottom" constant="30" id="efT-hz-hZI"/>
-                                <constraint firstItem="z6z-r3-nSY" firstAttribute="top" secondItem="V9c-nL-XPD" secondAttribute="bottom" constant="10" id="f7r-uJ-WWz"/>
                                 <constraint firstItem="Mug-L6-jma" firstAttribute="top" secondItem="NUy-aB-cM8" secondAttribute="top" constant="25" id="mGe-J7-OGK"/>
                                 <constraint firstItem="z6z-r3-nSY" firstAttribute="centerX" secondItem="NUy-aB-cM8" secondAttribute="centerX" id="ra6-0a-ieF"/>
                             </constraints>
@@ -227,7 +196,5 @@
         <image name="Cam_live_password" width="39" height="39"/>
         <image name="Cam_live_rectangle" width="375" height="255"/>
         <image name="Cam_live_ssid" width="39" height="39"/>
-        <image name="detail_arrow_down" width="80" height="60"/>
-        <image name="detail_arrow_up" width="80" height="60"/>
     </resources>
 </document>
