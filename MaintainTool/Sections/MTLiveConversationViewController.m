@@ -12,6 +12,9 @@
 #import "TXLivePlayer.h"
 #import <SocketRocket/SRWebSocket.h>
 #import "MTCreateSessionApi.h"
+#import "MTCloseSesstionApi.h"
+#import <YLGIFImage.h>
+#import <YLImageView.h>
 #import "WXApi.h"
 
 #define kCharCount 6
@@ -25,9 +28,16 @@
 
 @property (nonatomic,weak) IBOutlet UILabel *inviteLabel;
 @property (nonatomic,weak) IBOutlet UIButton *inviteButton;
+@property (nonatomic,weak) IBOutlet UIButton *hangupButton;
+@property (nonatomic,weak) IBOutlet UIButton *cameraVolumeButton;
+@property (nonatomic,weak) IBOutlet YLImageView *gifImageView;
+@property (nonatomic,weak) IBOutlet UIImageView *playerbgImageView;
+@property (nonatomic,weak) IBOutlet UIView *controlView;
 
 @property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 @property (nonatomic,strong) TXLivePlayer * phoneLivePlayer;
+
+
 @end
 
 @implementation MTLiveConversationViewController
@@ -37,8 +47,8 @@
     [super viewDidLoad];
     [self initNavgationItemSubviews];
     [self initCameraLivePlayer];
-//    [self initSRWebSocket];
-//    [self generateSessionKey];
+    [self initSRWebSocket];
+    [self generateSessionKey];
     if (_guestRtmpLiveUrlString)
     {
         [self initPhoneLivePlayer];
@@ -60,6 +70,9 @@
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     self.navigationItem.title = MyLocal(@"视频通话");
+    
+    self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shareLiveTicketRespond:) name:INFORMLIVECONVERSATIONUPDATEUI object:nil];
 
 }
 
@@ -75,7 +88,7 @@
 {
     _cameraLivePlayer = [[TXLivePlayer alloc] init];
     _cameraLivePlayer.delegate = self;
-    [_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:1];
+    [_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:2];
     
     TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
     //自动模式
@@ -113,7 +126,7 @@
 {
     _phoneLivePlayer = [[TXLivePlayer alloc] init];
     _phoneLivePlayer.delegate = self;
-    [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_bottomPlayerView insertIndex:2];
+    [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_bottomPlayerView insertIndex:1];
     
     TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
     //自动模式
@@ -141,7 +154,7 @@
      * @param rotation 方向
      * @see TX_Enum_Type_HomeOrientation
      */
-    [_phoneLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
+    [_phoneLivePlayer setRenderMode:RENDER_MODE_FILL_SCREEN];
     //设置完成之后再启动播放
     [_phoneLivePlayer startPlay:_guestRtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
 }
@@ -193,28 +206,102 @@
 }
 
 #pragma mark -IBActions
--(IBAction)inviteWechatFriend:(id)sender
+-(IBAction)inviteWechatFriend:(UIButton *)sender
 {
     WXMiniProgramObject *object = [WXMiniProgramObject object];
     object.webpageUrl = @"www.foream.com";
     object.userName = @"gh_885fb1cdacb2";
     object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",_roomid,[AppDelegateHelper readData:SavedOpenID],liveSessionKey];
-    
+
     object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
     object.withShareTicket = YES;
-    
+
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
     message.description = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
     message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
     //使用WXMiniProgramObject的hdImageData属性
     message.mediaObject = object;
-    
+
     SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
     req.bText = NO;
     req.message = message;
     req.scene = WXSceneSession;  //目前只支持会话
     [WXApi sendReq:req];
+    
+ 
+
+
+}
+
+-(IBAction)hangupLiveInvite:(UIButton *)sender
+{
+    self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
+
+    _gifImageView.hidden = YES;
+    self.hangupButton.hidden = YES;
+    self.inviteButton.hidden = NO;
+
+    
+
+}
+
+-(IBAction)cameraVolumeButton:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    if (sender.selected)
+    {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
+        [_cameraLivePlayer setMute:YES];
+    }
+    else
+    {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
+        [_cameraLivePlayer setMute:NO];
+    }
+}
+
+-(IBAction)phoneVolumeButton:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    if (sender.selected)
+    {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
+        [_phoneLivePlayer setMute:YES];
+    }
+    else
+    {
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
+        [_phoneLivePlayer setMute:NO];
+    }
+}
+
+-(IBAction)hangupButtonAction:(UIButton *)sender
+{
+    MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:liveSessionKey];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             [self.navigationController popToRootViewControllerAnimated:YES];
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+}
+
+-(void)shareLiveTicketRespond:(NSNotification *)resp
+{
+    self.inviteLabel.text = @"等待对方进入...";
+    
+    _gifImageView.hidden = NO;
+    _gifImageView.image = [YLGIFImage imageNamed:@"invite_loading.gif"];
+    
+    self.inviteButton.hidden = YES;
+    self.hangupButton.hidden = NO;
 }
 
 #pragma mark -SRWebSocketDelegate
@@ -240,10 +327,14 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    DLog(@"Received Message Is %@",message);
-    if ([message[@"type"] isEqualToString:@"stream_status"])
+    
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    NSDictionary *messageDic = obj;
+    DLog(@"Received Message Is %@",messageDic);
+    if ([messageDic[@"type"] isEqualToString:@"stream_status"])
     {
-        NSDictionary *dataDic = message[@"data"];
+        NSDictionary *dataDic = messageDic[@"data"];
         if ([dataDic[@"stream_status"] intValue] == 2)
         {
             //推流中
@@ -254,13 +345,41 @@
             
         }
     }
-    else if ([message[@"type"] isEqualToString:@"join_session"])
+    else if ([messageDic[@"type"] isEqualToString:@"join_session"])
     {
+        NSDictionary *dataDic = messageDic[@"data"];
+        NSDictionary *dataDic2 = dataDic[@"data"];
+        NSDictionary *roomDic = dataDic2[@"room"];
+        NSDictionary *guestStreamDic = roomDic[@"guest_stream"];
+        self.roomid = roomDic[@"room_id"];
+        self.guestRtmpLiveUrlString = guestStreamDic[@"rtmp"];
+        self.guestFlvLiveUrlString = guestStreamDic[@"flv"];
         
+        DLog(@"guestRtmpLiveUrlString is %@, and self.roomid is %@",self.guestRtmpLiveUrlString,self.roomid);
+        _gifImageView.hidden = YES;
+        self.hangupButton.hidden = YES;
+        self.inviteButton.hidden = YES;
+        self.inviteLabel.hidden = YES;
+        self.playerbgImageView.hidden = YES;
+        self.cameraVolumeButton.hidden = NO;
+        [UIView animateWithDuration:1 animations:^
+         {
+             [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
+             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
+             [self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
+         } completion:^(BOOL finished)
+         {
+             if (finished)
+             {
+                 [self initPhoneLivePlayer];
+                 self.controlView.hidden = NO;
+                 
+             }
+         }];
     }
-    else if ([message[@"type"] isEqualToString:@"close_session"])
+    else if ([messageDic[@"type"] isEqualToString:@"close_session"])
     {
-        
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
 }

@@ -212,6 +212,7 @@
 		D718611C21BF4D4E002A709E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D75D2F9021C898DC00AB9530 /* Gifs */,
 				D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */,
 				D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */,
 				D71B317621C0A50E005CFC53 /* Localizable.strings */,
@@ -319,6 +320,14 @@
 				D718612721BF5451002A709E /* MTCameraOptionCell.xib */,
 			);
 			path = SubCells;
+			sourceTree = "<group>";
+		};
+		D75D2F9021C898DC00AB9530 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				D75D2F9321C8C0B500AB9530 /* invite_loading.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		D7BDE51C21B90A9B005D1A7E = {
@@ -442,6 +451,7 @@
 				D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */,
 				D718615D21BF8FCE002A709E /* CamConnectFailedViewController.xib in Resources */,
 				D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */,
+				D75D2F9421C8C0B500AB9530 /* invite_loading.gif in Resources */,
 				D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */,
 				D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */,
 				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
@@ -655,9 +665,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
@@ -670,6 +681,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -680,9 +692,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
@@ -695,6 +708,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

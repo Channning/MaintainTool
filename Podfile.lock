@@ -22,6 +22,7 @@ PODS:
   - SocketRocket (0.5.1)
   - TXLiteAVSDK_Player (5.3.6004)
   - WechatOpenSDK_NoPay (1.8.0)
+  - YLGIFImage (0.11)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
 
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - SocketRocket
   - TXLiteAVSDK_Player (from `http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Player.podspec`)
   - WechatOpenSDK_NoPay (~> 1.8.0)
+  - YLGIFImage
   - YTKNetwork (~> 2.0.4)
 
 SPEC REPOS:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - SDWebImage
     - SocketRocket
     - WechatOpenSDK_NoPay
+    - YLGIFImage
     - YTKNetwork
 
 EXTERNAL SOURCES:
@@ -56,8 +59,9 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   TXLiteAVSDK_Player: 0ae5dbfa79619f53265d88cc990b1baf7abe1d97
   WechatOpenSDK_NoPay: 27366a152202a6a7c8a15fad4d07261e87fb2389
+  YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 3d72521ab7aba2bec41ab4dc5ed0073017e3110d
+PODFILE CHECKSUM: 8f1cdca3a6f4d58cbe13099e5b94d202699a1177
 
 COCOAPODS: 1.5.3

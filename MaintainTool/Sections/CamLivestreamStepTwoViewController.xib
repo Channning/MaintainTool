@@ -36,10 +36,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_guide_compass_scan" translatesAutoresizingMaskIntoConstraints="NO" id="oT9-xQ-k2W">
-                            <rect key="frame" x="22" y="42" width="331" height="174"/>
+                            <rect key="frame" x="37" y="42" width="300" height="188"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="174" id="Gvq-GD-AY4"/>
-                                <constraint firstAttribute="width" constant="331" id="Hi4-UU-hNo"/>
+                                <constraint firstAttribute="height" constant="188" id="Gvq-GD-AY4"/>
+                                <constraint firstAttribute="width" constant="300" id="Hi4-UU-hNo"/>
                             </constraints>
                         </imageView>
                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_guide_ghost4k_scan" translatesAutoresizingMaskIntoConstraints="NO" id="ey3-SH-8gp">

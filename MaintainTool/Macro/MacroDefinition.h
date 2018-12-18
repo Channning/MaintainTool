@@ -363,6 +363,9 @@ typedef NS_ENUM(NSInteger, ConnectType) {
 #define APPStreamKey @"APPStreamKey"
 #define LastLoginUserId  [AppDelegateHelper readData:@"LastLoginUserId"]
 
+//NSNotification
+#define INFORMLIVECONVERSATIONUPDATEUI @"InformLiveConversationUpdateUI"
+
 //接口HOST地址
 #define ServerAddress @"wx.driftlife.co"
 #define MTLiveApiKey @"foream2018"

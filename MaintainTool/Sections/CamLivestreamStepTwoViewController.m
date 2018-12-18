@@ -74,9 +74,9 @@
     
     if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
     {
-        [self.bgImageView setHidden:YES];
-        [self.bgX1ImageView setHidden:NO];
-        [self.bgX1ImageView setImage:[UIImage imageNamed:@"Cam_live_X1"]];
+        [self.bgImageView setHidden:NO];
+        [self.bgX1ImageView setHidden:YES];
+        [self.bgImageView setImage:[UIImage imageNamed:@"Live_guide_x1_scan"]];
         if ([AppDelegateHelper readBool:DidChooseNetdistType])
         {
         

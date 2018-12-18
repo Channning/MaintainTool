@@ -114,11 +114,11 @@
 
 -(IBAction)connectToCamera:(id)sender
 {
-    isExistLiveRoom = YES;
-    isExistGuestLiveRoom = YES;
-    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
-    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
-    roomid = @"f8ucVWyz";
+//    isExistLiveRoom = YES;
+//    //isExistGuestLiveRoom = YES;
+//    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
+//    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
+//    roomid = @"f8ucVWyz";
     if (isExistLiveRoom)
     {
         MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
