@@ -77,15 +77,7 @@
         [self.bgImageView setHidden:NO];
         [self.bgX1ImageView setHidden:YES];
         [self.bgImageView setImage:[UIImage imageNamed:@"Live_guide_x1_scan"]];
-        if ([AppDelegateHelper readBool:DidChooseNetdistType])
-        {
-        
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO SYNC FILES MODE")];
-        }else
-        {
-        
-            [self.titleLabel setText:MyLocal(@"SWITCH YOUR CAMERA TO LIVE STREAM MODE")];
-        }
+        [self.titleLabel setText:@"长按REC按钮"];
         [self.descriptionLabel setText:MyLocal(@"Hold down the REC button until the front indicator light turns blue. When it does, hit next.")];
         
         

@@ -23,14 +23,14 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5y8-TU-U9g">
                     <rect key="frame" x="0.0" y="40" width="375" height="627"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="DSP-QC-GkC"/>
                         <outlet property="delegate" destination="-1" id="Bvx-ms-Ncf"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5y8-TU-U9g" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="6ZU-RS-A6i"/>
                 <constraint firstItem="5y8-TU-U9g" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="OMc-fB-Lcd"/>

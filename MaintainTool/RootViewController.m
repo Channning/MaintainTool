@@ -63,7 +63,7 @@
     [self.titleLabel setText:@"视频通话"];
     
     [self.scanTitleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
-    [self.scanTitleLabel setText:@"扫码二维码拍摄"];
+    [self.scanTitleLabel setText:@"扫描二维码拍摄"];
     
 }
 
@@ -143,6 +143,6 @@
 
 -(IBAction)scanQRcodeAndShot:(id)sender
 {
-    [AppDelegateHelper showSuccessWithTitle:@"即将推出,敬请期待" withMessage:nil view:self.view];
+    [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
 }
 @end

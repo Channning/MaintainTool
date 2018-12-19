@@ -276,16 +276,7 @@
     }
     
     [self.descriptionLabel setFont:StandardFONT(22)];
-
-    if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
-    {
-        
-        [self.descriptionLabel setText:MyLocal(@"请将相机正对二维码并保持20cm左右的距离，当听到Wi-Fi Cloud mode即扫描成功，相机开始连接网络，连接成功后会自动进入视频通话界面。")];
-    }else
-    {
-        
-        [self.descriptionLabel setText:MyLocal(@"请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功，相机开始连接网络，连接成功后会自动进入视频通话界面。")];
-    }
+    [self.descriptionLabel setText:MyLocal(@"请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功，相机开始连接网络，连接成功后会自动进入视频通话界面。")];
     
     [self.titleLabel setFont:[UIFont fontWithName:@"HaginCapsMedium" size:18]];
     [self.titleLabel setText:MyLocal(@"温馨提示： 如果使用手机热点进行视频直播，请进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示“设备已经连接热点”后，再返回App")];

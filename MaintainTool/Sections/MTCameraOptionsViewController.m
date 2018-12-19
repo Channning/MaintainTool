@@ -69,10 +69,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    if (section == 2)
-    {
-        return 0.1;
-    }
     return 10;
 }
 
@@ -95,18 +91,18 @@
     NSString *modelNameString = nil;
     switch (indexPath.section)
     {
-        case 2:
-            modelImageName = @"Connect_phonecamera";
-            modelNameString = @"Connect_model_phonecamera";
-            break;
+//        case 3:
+//            modelImageName = @"Connect_phonecamera";
+//            modelNameString = @"Connect_model_phonecamera";
+//            break;
         case 1:
             modelImageName = @"Connect_X1";
             modelNameString = @"Connect_model_x1";
             break;
-//        case 2:
-//            modelImageName = @"Connect_compass";
-//            modelNameString = @"Connect_model_compass";
-//            break;
+        case 2:
+            modelImageName = @"Connect_compass";
+            modelNameString = @"Connect_model_compass";
+            break;
         case 0:
             modelImageName = @"Connect_ghostX";
             modelNameString = @"Connect_model_GhostX";
@@ -147,14 +143,15 @@
             break;
         case 2:
         {
-            [AppDelegateHelper saveData:LocalPhoneCamera forKey:DidChooseTheCamera];
-            [AppDelegateHelper showSuccessWithTitle:@"即将推出,敬请期待" withMessage:nil view:self.view];
+            [AppDelegateHelper saveData:Compass forKey:DidChooseTheCamera];
+            [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
 
         }
             
             break;
 //        case 3:
-//            [AppDelegateHelper saveData:Ghost4K forKey:DidChooseTheCamera];
+//            [AppDelegateHelper saveData:LocalPhoneCamera forKey:DidChooseTheCamera];
+//            [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
 //            break;
 
             
