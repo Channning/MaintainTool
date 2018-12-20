@@ -24,11 +24,14 @@
 @property (nonatomic,weak) IBOutlet UITextField *ssidTextfield;
 @property (nonatomic,weak) IBOutlet UIButton *nextButton;
 @property (nonatomic,weak) IBOutlet UIButton *changewifiButton;
+@property (nonatomic,weak) IBOutlet UIButton *dropButton;
 
 @property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic,weak) IBOutlet UIView *inputView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputViewMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nextButtonBottomMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelLeftX;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLabelRightX;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopY;
@@ -51,7 +54,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     parentViewHeight = [[UIScreen mainScreen] bounds].size.height;
@@ -63,6 +67,7 @@
     [self initBasicContrlsSetup];
     [_ssidTextfield setUserInteractionEnabled:YES];
     [_ssidTextfield setClearButtonMode:UITextFieldViewModeAlways];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -89,14 +94,17 @@
     if(parentViewHeight==480)
     {
         _topViewHeight.constant =220;
-
+        _inputViewMargin.constant = 50;
         _titleLabelTopY.constant = 2;
         _descriptionLabelTopY.constant = 1;
         _descriptionLabelLeftX.constant = 10;
         _descriptionLabelRightX.constant = 10;
+        _nextButtonBottomMargin.constant = 50;
     }
     else if(parentViewHeight==568)
     {
+        _inputViewMargin.constant = 70;
+        _nextButtonBottomMargin.constant = 50;
         _topViewHeight.constant =220;
         _titleLabelTopY.constant = 20;
         _descriptionLabelTopY.constant = 20;
@@ -113,6 +121,7 @@
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
+    backButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     self.navigationItem.title = MyLocal(@"输入WiFi密码");
@@ -129,7 +138,7 @@
     NSInteger networkStatus = [manager networkReachabilityStatus];
    
     
-    NSDictionary *tempDic =[NSDictionary dictionaryWithContentsOfFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:LastLoginUserId]];
+    NSDictionary *tempDic =[NSDictionary dictionaryWithContentsOfFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[AppDelegateHelper readData:SavedOpenID]]];
     
     if (tempDic)
     {
@@ -181,7 +190,15 @@
         [_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
     }
     
-    
+    if (_ssidlistArray.count == 0)
+    {
+        [_dropButton setHidden:YES];
+    }
+    else
+    {
+        
+        [_dropButton setHidden:NO];
+    }
     if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !isStringNotNil(_passwordTextfield.text))
     {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"You haven't connected to any Wi-Fi, would you like to use your mobile phone's hotspot for live stream? if so, please input the name and password of your phone's hotspot.") preferredStyle:UIAlertControllerStyleAlert];
@@ -237,7 +254,7 @@
     [_changewifiButton setTitle:MyLocal(@"Change Wi-Fi Network") forState:UIControlStateNormal];
     [_changewifiButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
 
-  
+    [_dropButton addTarget:self action:@selector(showPopover:forEvent:) forControlEvents:UIControlEventTouchUpInside];
 
 }
 
@@ -394,9 +411,21 @@
     
     CGFloat xMargin = self.inputView.frame.origin.x;
     CGFloat yMargin = self.inputView.frame.origin.y;
-    
+    CGFloat topMargin;
+    if (iPhone5 || isRetina)
+    {
+        topMargin = 44;
+    }
+    else if (IS_iPhoneX_Series)
+    {
+        topMargin = 88;
+    }
+    else
+    {
+        topMargin = 64;
+    }
     [KxMenu showMenuInView:self.view
-                  fromRect:CGRectMake(xMargin+sender.frame.origin.x, yMargin+sender.frame.origin.y, sender.frame.size.width, sender.frame.size.height)
+                  fromRect:CGRectMake(xMargin+sender.frame.origin.x, yMargin+sender.frame.origin.y+topMargin, sender.frame.size.width, sender.frame.size.height)
                  menuItems:menuItems];
 }
 

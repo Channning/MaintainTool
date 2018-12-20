@@ -17,8 +17,11 @@
                 <outlet property="descriptionLabelLeftX" destination="Gfj-2R-3Xf" id="KNN-8N-ICu"/>
                 <outlet property="descriptionLabelRightX" destination="Nsi-yy-NlV" id="MVU-VK-htC"/>
                 <outlet property="descriptionLabelTopY" destination="T9A-WJ-Gcc" id="XcE-sG-Hlc"/>
+                <outlet property="dropButton" destination="KoZ-nj-VzA" id="TiM-ac-Vjf"/>
                 <outlet property="inputView" destination="VE9-bC-8IY" id="5fe-3V-v0G"/>
+                <outlet property="inputViewMargin" destination="Rpc-8J-xdf" id="k8D-C7-LtV"/>
                 <outlet property="nextButton" destination="z6z-r3-nSY" id="dTX-O6-Xcn"/>
+                <outlet property="nextButtonBottomMargin" destination="I6x-gj-jTs" id="BHN-Qq-CbR"/>
                 <outlet property="passwordTextfield" destination="BUP-Rm-uum" id="bsm-bc-yOk"/>
                 <outlet property="scrollView" destination="t5S-Gl-Upb" id="Yec-qK-RWF"/>
                 <outlet property="ssidTextfield" destination="6Ir-jL-MFM" id="iiJ-ZY-2Mf"/>
@@ -71,7 +74,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ir-jL-MFM" userLabel="Text - UserName">
-                                            <rect key="frame" x="50" y="7" width="226" height="26"/>
+                                            <rect key="frame" x="50" y="7" width="189" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label=""/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -98,6 +101,14 @@
                                                 <action selector="changeToAnotherWifi:" destination="-1" eventType="touchUpInside" id="y1b-KR-QV3"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoZ-nj-VzA">
+                                            <rect key="frame" x="239" y="1" width="40" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="detail_arrow_down">
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="selected" image="detail_arrow_up"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -108,7 +119,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="VE9-bC-8IY" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="top" constant="120" id="Rpc-8J-xdf"/>
+                                <constraint firstItem="VE9-bC-8IY" firstAttribute="top" secondItem="W5f-ST-cEf" secondAttribute="top" priority="300" constant="120" id="Rpc-8J-xdf"/>
                                 <constraint firstAttribute="height" constant="300" id="ugL-xb-BzA"/>
                                 <constraint firstItem="VE9-bC-8IY" firstAttribute="centerX" secondItem="W5f-ST-cEf" secondAttribute="centerX" id="zRe-hI-ujp"/>
                             </constraints>
@@ -151,7 +162,7 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="V9c-nL-XPD" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="30" id="Gfj-2R-3Xf"/>
-                                <constraint firstAttribute="bottom" secondItem="z6z-r3-nSY" secondAttribute="bottom" constant="112" id="I6x-gj-jTs"/>
+                                <constraint firstAttribute="bottom" secondItem="z6z-r3-nSY" secondAttribute="bottom" priority="300" constant="112" id="I6x-gj-jTs"/>
                                 <constraint firstAttribute="trailing" secondItem="V9c-nL-XPD" secondAttribute="trailing" constant="30" id="Nsi-yy-NlV"/>
                                 <constraint firstItem="Mug-L6-jma" firstAttribute="leading" secondItem="NUy-aB-cM8" secondAttribute="leading" constant="30" id="T8q-7n-OnH"/>
                                 <constraint firstItem="V9c-nL-XPD" firstAttribute="top" secondItem="Mug-L6-jma" secondAttribute="bottom" id="T9A-WJ-Gcc"/>
@@ -196,5 +207,7 @@
         <image name="Cam_live_password" width="39" height="39"/>
         <image name="Cam_live_rectangle" width="375" height="255"/>
         <image name="Cam_live_ssid" width="39" height="39"/>
+        <image name="detail_arrow_down" width="80" height="60"/>
+        <image name="detail_arrow_up" width="80" height="60"/>
     </resources>
 </document>

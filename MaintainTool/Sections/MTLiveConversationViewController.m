@@ -22,6 +22,7 @@
 @interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
 {
     NSString *liveSessionKey;
+    SRWebSocket *socket;
 }
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *bottomPlayerView;
@@ -33,9 +34,12 @@
 @property (nonatomic,weak) IBOutlet YLImageView *gifImageView;
 @property (nonatomic,weak) IBOutlet UIImageView *playerbgImageView;
 @property (nonatomic,weak) IBOutlet UIView *controlView;
+@property (nonatomic,weak) IBOutlet UIView *topVolumeView;
 
 @property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 @property (nonatomic,strong) TXLivePlayer * phoneLivePlayer;
+
+
 
 
 @end
@@ -57,7 +61,25 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    [super viewWillAppear:animated];
+}
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+    
+    [socket close];
+    [_phoneLivePlayer stopPlay];
+    [_phoneLivePlayer removeVideoWidget];
+    
+    [_cameraLivePlayer stopPlay];
+    [_cameraLivePlayer removeVideoWidget];
+    [super viewWillDisappear:animated];
+}
 #pragma mark - Init
 
 - (void)initNavgationItemSubviews
@@ -78,7 +100,7 @@
 
 -(void)initSRWebSocket
 {
-    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"wss://wx.driftlife.co?open_id=%@",[AppDelegateHelper readData:SavedOpenID]]]]];
+    socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"wss://wx.driftlife.co?open_id=%@",[AppDelegateHelper readData:SavedOpenID]]]]];
     // 实现这个 SRWebSocketDelegate 协议啊
     socket.delegate = self;
     [socket open];    // open 就是直接连接了
@@ -99,6 +121,7 @@
     _config.bAutoAdjustCacheTime   = YES;
     _config.minAutoAdjustCacheTime = 0.3;
     _config.maxAutoAdjustCacheTime = 1;
+    _config.enableAEC = YES;
     //流畅模式
 //    _config.bAutoAdjustCacheTime   = NO;
 //    _config.minAutoAdjustCacheTime = 5;
@@ -137,6 +160,7 @@
     _config.bAutoAdjustCacheTime   = YES;
     _config.minAutoAdjustCacheTime = 0.3;
     _config.maxAutoAdjustCacheTime = 1;
+    _config.enableAEC = YES;
     //流畅模式
     //    _config.bAutoAdjustCacheTime   = NO;
     //    _config.minAutoAdjustCacheTime = 5;
@@ -208,6 +232,11 @@
 #pragma mark -IBActions
 -(IBAction)inviteWechatFriend:(UIButton *)sender
 {
+    if (!liveSessionKey)
+    {
+        [self generateSessionKey];
+    }
+    
     WXMiniProgramObject *object = [WXMiniProgramObject object];
     object.webpageUrl = @"www.foream.com";
     object.userName = @"gh_885fb1cdacb2";
@@ -251,13 +280,14 @@
     sender.selected = !sender.selected;
     if (sender.selected)
     {
-        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
-        [_cameraLivePlayer setMute:YES];
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
+        [_cameraLivePlayer setMute:NO];
     }
     else
     {
-        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
-        [_cameraLivePlayer setMute:NO];
+        [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
+        [_cameraLivePlayer setMute:YES];
+        
     }
 }
 
@@ -268,11 +298,17 @@
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
         [_phoneLivePlayer setMute:YES];
+        [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
+        [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
+        [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self.bottomPlayerView insertIndex:1];
     }
     else
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
         [_phoneLivePlayer setMute:NO];
+        [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
+        [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
+        [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self.bottomPlayerView insertIndex:1];
     }
 }
 
@@ -286,7 +322,28 @@
          DLog(@"regResponse is %@",request.responseString);
          if(status.intValue == 1)
          {
-             [self.navigationController popToRootViewControllerAnimated:YES];
+             self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
+             
+             self->_gifImageView.hidden = YES;
+             self.hangupButton.hidden = YES;
+             self.inviteButton.hidden = NO;
+             self.inviteLabel.hidden = NO;
+             self.controlView.hidden = YES;
+             self.cameraVolumeButton.hidden = YES;
+             [UIView animateWithDuration:1 animations:^
+              {
+                  [self.topPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+                  [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight+(SCREEN_HEIGHT-SafeAreaTopHeight)/2, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+                  //[self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
+              } completion:^(BOOL finished)
+              {
+                  if (finished)
+                  {
+                      [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_topPlayerView insertIndex:2];
+                      [self->_phoneLivePlayer removeVideoWidget];
+                      self->liveSessionKey = nil;
+                  }
+              }];
          }
      } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
          DLog(@"failure!%@",request.responseObject);
@@ -342,7 +399,11 @@
         }
         else if([dataDic[@"stream_status"] intValue] == 1)
         {
+            self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
             
+            _gifImageView.hidden = YES;
+            self.hangupButton.hidden = YES;
+            self.inviteButton.hidden = NO;
         }
     }
     else if ([messageDic[@"type"] isEqualToString:@"join_session"])
@@ -361,25 +422,73 @@
         self.inviteButton.hidden = YES;
         self.inviteLabel.hidden = YES;
         self.playerbgImageView.hidden = YES;
-        self.cameraVolumeButton.hidden = NO;
+        [self.topPlayerView addSubview:self.cameraVolumeButton];
+        float height = 135/self.topPlayerView.frame.size.height;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.topPlayerView.transform = CGAffineTransformMake(0.75, 0, 0, height, 40, 20);
+            self.bottomPlayerView.transform = CGAffineTransformMakeScale(1, 2); //缩小1/3
+            [self.cameraVolumeButton setFrame:CGRectMake(SCREEN_WIDTH-50, SafeAreaTopHeight+40+85, 40,40)];
+            [self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
+        }
+         completion:^(BOOL finished)
+         {
+             if (finished)
+             {
+                 [self->_cameraLivePlayer removeVideoWidget];
+                 [self->_phoneLivePlayer removeVideoWidget];
+
+                 [self->_cameraLivePlayer setupVideoWidget:CGRectZero containView:self->_topPlayerView insertIndex:0];
+                 [self initPhoneLivePlayer];
+                 self.controlView.hidden = NO;
+                 [self->_cameraLivePlayer setMute:YES];
+             }
+         }];
+//        [UIView animateWithDuration:1 animations:^
+//         {
+//             [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
+//             [self.topVolumeView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
+//             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
+//             [self.cameraVolumeButton setFrame:CGRectMake(SCREEN_WIDTH-50, SafeAreaTopHeight+40+85, 40,40)];
+//         }
+//    completion:^(BOOL finished)
+//         {
+//             if (finished)
+//             {
+//
+//                 [self->_cameraLivePlayer removeVideoWidget];
+//                 [self->_phoneLivePlayer removeVideoWidget];
+//                 [self->_cameraLivePlayer setupVideoWidget:CGRectZero containView:self->_topPlayerView insertIndex:0];
+//                 [self initPhoneLivePlayer];
+//                 self.controlView.hidden = NO;
+//                 self.cameraVolumeButton.hidden = NO;
+//                 [self->_cameraLivePlayer setMute:YES];
+//             }
+//         }];
+    }
+    else if ([messageDic[@"type"] isEqualToString:@"close_session"])
+    {
+        self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
+        
+        _gifImageView.hidden = YES;
+        self.hangupButton.hidden = YES;
+        self.inviteButton.hidden = NO;
+        self.inviteLabel.hidden = NO;
+        self.controlView.hidden = YES;
+        self.cameraVolumeButton.hidden = YES;
         [UIView animateWithDuration:1 animations:^
          {
-             [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
-             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
-             [self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
+             [self.topPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight+(SCREEN_HEIGHT-SafeAreaTopHeight)/2, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+             //[self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
          } completion:^(BOOL finished)
          {
              if (finished)
              {
-                 [self initPhoneLivePlayer];
-                 self.controlView.hidden = NO;
-                 
+                 [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_topPlayerView insertIndex:2];
+                 [self->_phoneLivePlayer removeVideoWidget];
+                 self->liveSessionKey = nil;
              }
          }];
-    }
-    else if ([messageDic[@"type"] isEqualToString:@"close_session"])
-    {
-        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
 }
@@ -388,8 +497,8 @@
 
 -(void) onPlayEvent:(int)EvtID withParam:(NSDictionary*)param
 {
-//    NSDictionary* dict = param;
-//
+    NSDictionary* dict = param;
+
     dispatch_async(dispatch_get_main_queue(), ^{
         
         if (EvtID == PLAY_EVT_RCV_FIRST_I_FRAME)
@@ -484,7 +593,7 @@
         }else if (EvtID == PLAY_EVT_CHANGE_ROTATION) {
             return;
         }
-        //        NSLog(@"evt:%d,%@", EvtID, dict);
+        NSLog(@"evt:%d,%@", EvtID, dict);
 //        long long time = [(NSNumber*)[dict valueForKey:EVT_TIME] longLongValue];
 //        int mil = time % 1000;
 //        NSDate* date = [NSDate dateWithTimeIntervalSince1970:time/1000];

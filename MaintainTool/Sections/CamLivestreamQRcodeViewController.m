@@ -51,7 +51,15 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(iPhone5 || isRetina)
+    {
+        self = [super initWithNibName:@"CamLivestreamQRcodeViewController_4.0" bundle:nibBundleOrNil];
+        
+    }else
+    {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        
+    }
     if (self) {
         
         // Custom initialization
@@ -204,32 +212,6 @@
     [self failedAndShowPromptInfoView];
     
 }
--(IBAction)nextButtonDidClick:(id)sender
-{
-    DLog(@"_contentInfo is %@ _ssidInfo si %@",_contentInfo,_ssidInfo);
-    if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:GhostX])
-    {
-//        CamLivestreamStepThreeViewController *scanQRcodeView = [[CamLivestreamStepThreeViewController alloc]init];
-//        [scanQRcodeView setConnectType:ConnectingTypeBTLiveOnDriftLife];
-//        [scanQRcodeView setContentInfo:_contentInfo];
-//        [scanQRcodeView setSsidInfo:_ssidInfo];
-//        [scanQRcodeView setPasswordInfo:_passwordInfo];
-//        [scanQRcodeView setStreamCreatTime:_streamCreatTime];
-//        [self.navigationController pushViewController:scanQRcodeView animated:YES];
-    }
-    else
-    {
-//        CamLivestreamStepThreeViewController *scanQRcodeView = [[CamLivestreamStepThreeViewController alloc]init];
-//        [scanQRcodeView setConnectType:ConnectingTypeQRcode];
-//        [scanQRcodeView setContentInfo:_contentInfo];
-//        [scanQRcodeView setSsidInfo:_ssidInfo];
-//        [scanQRcodeView setPasswordInfo:_passwordInfo];
-//        [self.navigationController pushViewController:scanQRcodeView animated:YES];
-    }
-
-
-    
-}
 
 -(IBAction)returnButtonDidClick:(id)sender
 {
@@ -251,6 +233,7 @@
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
+    backButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     self.navigationItem.title = MyLocal(@"扫描二维码");
@@ -281,9 +264,7 @@
     [self.titleLabel setFont:[UIFont fontWithName:@"HaginCapsMedium" size:18]];
     [self.titleLabel setText:MyLocal(@"温馨提示： 如果使用手机热点进行视频直播，请进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示“设备已经连接热点”后，再返回App")];
     
-    
-//    self.QRcodeImageView.image = [QRCodeGenerator qrImageForString:_contentInfo imageSize:_QRcodeImageView.bounds.size.width];
-    
+
     
 }
 #pragma mark -SRWebSocketDelegate

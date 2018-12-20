@@ -130,6 +130,7 @@
 		D71B31BB21C0F4AC005CFC53 /* MTCloseSesstionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCloseSesstionApi.h; sourceTree = "<group>"; };
 		D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCloseSesstionApi.m; sourceTree = "<group>"; };
 		D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaintainTool.entitlements; sourceTree = "<group>"; };
+		D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
 		D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTLiveConversationViewController.h; sourceTree = "<group>"; };
 		D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
 		D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MTLiveConversationViewController.xib; path = SubCells/MTLiveConversationViewController.xib; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
 				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
 				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
+				D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */,
 				D718615921BF8FC1002A709E /* CamConnectFailedViewController.h */,
 				D718615A21BF8FC1002A709E /* CamConnectFailedViewController.m */,
 				D718615C21BF8FCD002A709E /* CamConnectFailedViewController.xib */,
@@ -449,6 +451,7 @@
 				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
 				D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */,
 				D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */,
+				D73C4C9C21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
 				D718615D21BF8FCE002A709E /* CamConnectFailedViewController.xib in Resources */,
 				D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */,
 				D75D2F9421C8C0B500AB9530 /* invite_loading.gif in Resources */,

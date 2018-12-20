@@ -40,6 +40,7 @@
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
+    backButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = backButtonItem;
 
     self.navigationItem.title = MyLocal(@"Choose Camera");
@@ -144,14 +145,14 @@
         case 2:
         {
             [AppDelegateHelper saveData:Compass forKey:DidChooseTheCamera];
-            [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
+            [AppDelegateHelper showSuccessWithTitle:nil withMessage:@"程序猿正在马不停蹄调试中，敬请期待....." view:self.view];
 
         }
             
             break;
 //        case 3:
 //            [AppDelegateHelper saveData:LocalPhoneCamera forKey:DidChooseTheCamera];
-//            [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
+//            [AppDelegateHelper showSuccessWithTitle:nil withMessage:@"程序猿正在马不停蹄调试中，敬请期待....." view:self.view];
 //            break;
 
             
@@ -162,5 +163,14 @@
     
 }
 
+#pragma mark - Screen rotation
+- (BOOL)shouldAutorotate
+{       //IOS6
+    return NO;
+}
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 @end

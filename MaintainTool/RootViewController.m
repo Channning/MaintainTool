@@ -57,6 +57,7 @@
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
+    backButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     [self.titleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
@@ -143,6 +144,18 @@
 
 -(IBAction)scanQRcodeAndShot:(id)sender
 {
-    [AppDelegateHelper showSuccessWithTitle:@"程序猿正在马不停蹄调试中，敬请期待....." withMessage:nil view:self.view];
+    [AppDelegateHelper showSuccessWithTitle:nil withMessage:@"程序猿正在马不停蹄调试中，敬请期待....." view:self.view];
+}
+
+
+#pragma mark - Screen rotation
+- (BOOL)shouldAutorotate
+{       //IOS6
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

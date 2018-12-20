@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-pn-UCC">
-                    <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                    <rect key="frame" x="0.0" y="353.5" width="375" height="313.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdD-Bq-3DX">
                             <rect key="frame" x="104.5" y="96" width="166" height="36"/>
@@ -61,7 +61,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQW-46-URP">
                             <rect key="frame" x="113.5" y="40" width="148" height="26"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待对方进入..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-NO-cV9">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待对方进入..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-NO-cV9">
                                     <rect key="frame" x="0.0" y="0.0" width="118" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,35 +98,30 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-JH-0Hz">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="313.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Live_loading_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9NK-cO-G1z">
-                            <rect key="frame" x="0.0" y="39" width="375" height="256"/>
+                            <rect key="frame" x="0.0" y="29" width="375" height="256"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="9NK-cO-G1z" secondAttribute="height" multiplier="375:256" id="xuG-8j-XFX"/>
                             </constraints>
                         </imageView>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-7P-J43">
-                            <rect key="frame" x="325" y="283.5" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="dIR-qs-lGT"/>
-                                <constraint firstAttribute="height" constant="40" id="qAF-iP-3IB"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="Conversation_volume_off"/>
-                            <connections>
-                                <action selector="cameraVolumeButton:" destination="-1" eventType="touchUpInside" id="Zd6-rr-CAA"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="9NK-cO-G1z" firstAttribute="centerY" secondItem="QPm-JH-0Hz" secondAttribute="centerY" id="9wX-qB-2qe"/>
-                        <constraint firstAttribute="trailing" secondItem="Rfv-7P-J43" secondAttribute="trailing" constant="10" id="IOm-fE-3oL"/>
                         <constraint firstItem="9NK-cO-G1z" firstAttribute="leading" secondItem="QPm-JH-0Hz" secondAttribute="leading" id="JzO-Hx-N0K"/>
-                        <constraint firstAttribute="bottom" secondItem="Rfv-7P-J43" secondAttribute="bottom" constant="10" id="PrR-cI-ceK"/>
                         <constraint firstAttribute="trailing" secondItem="9NK-cO-G1z" secondAttribute="trailing" id="hlZ-UD-K3P"/>
                     </constraints>
                 </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-7P-J43">
+                    <rect key="frame" x="167" y="313" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="Conversation_volume_off"/>
+                    <connections>
+                        <action selector="cameraVolumeButton:" destination="-1" eventType="touchUpInside" id="Zd6-rr-CAA"/>
+                    </connections>
+                </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZA4-Og-We9">
                     <rect key="frame" x="97.5" y="567" width="180" height="70"/>
                     <subviews>
@@ -168,10 +163,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="QPm-JH-0Hz" firstAttribute="top" secondItem="Ek5-sS-WAj" secondAttribute="top" constant="20" id="0Az-vc-QJo"/>
                 <constraint firstItem="ZA4-Og-We9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="65r-gA-zvG"/>
                 <constraint firstItem="Ek5-sS-WAj" firstAttribute="bottom" secondItem="ZA4-Og-We9" secondAttribute="bottom" constant="30" id="9P2-8q-T3G"/>
                 <constraint firstItem="H3t-pn-UCC" firstAttribute="height" secondItem="QPm-JH-0Hz" secondAttribute="height" id="Aeo-dN-WKM"/>
-                <constraint firstItem="QPm-JH-0Hz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G4T-sB-fJz"/>
                 <constraint firstItem="H3t-pn-UCC" firstAttribute="top" secondItem="QPm-JH-0Hz" secondAttribute="bottom" id="ZmT-FN-k54"/>
                 <constraint firstItem="QPm-JH-0Hz" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="asU-Tz-vZg"/>
                 <constraint firstItem="H3t-pn-UCC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bhx-IG-itm"/>

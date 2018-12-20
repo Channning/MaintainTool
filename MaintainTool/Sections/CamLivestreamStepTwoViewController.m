@@ -15,7 +15,7 @@
 @property (nonatomic,weak) IBOutlet UIButton *nextButton;
 @property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
-@property (nonatomic,weak) IBOutlet UILabel *anotheCameraLabel;
+@property (nonatomic,weak) IBOutlet UIView *bottomView;
 @property (nonatomic,weak) IBOutlet UIImageView *bgX1ImageView;
 @end
 
@@ -60,6 +60,7 @@
 {
     UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
     backButtonItem.tintColor = [UIColor whiteColor];
+    backButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = backButtonItem;
     
     self.navigationItem.title = MyLocal(@"启动扫描");
@@ -105,15 +106,15 @@
     self.nextButton.layer.shadowOffset = CGSizeMake(2,2);
     self.nextButton.layer.shadowOpacity = 0.3f;
     self.nextButton.layer.shadowRadius = 3.0;
-    
-    NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:MyLocal(@"Exit")]];
-    NSRange contentRange = {0,[content length]};
-    [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
-    _anotheCameraLabel.numberOfLines = 0;
-    _anotheCameraLabel.textColor = UIColorFromRGB(0xe4b475);
-    _anotheCameraLabel.attributedText = content;
 
-    
+
+    if (iPhone5 || isRetina)
+    {
+        [self.nextButton mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.bottom.equalTo(self.bottomView.mas_bottom).offset(-50);
+         }];
+    }
 }
 
 #pragma mark - IBAction
