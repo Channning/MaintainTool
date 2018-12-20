@@ -1,9 +1,0 @@
-diff a/MaintainTool.xcodeproj/project.pbxproj b/MaintainTool.xcodeproj/project.pbxproj	(rejected hunks)
-@@ -44,6 +44,7 @@
- 		D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */; };
- 		D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */; };
- 		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
-+		D73C4C9C21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */; };
- 		D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */; };
- 		D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */; };
- 		D75D2F9421C8C0B500AB9530 /* invite_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D75D2F9321C8C0B500AB9530 /* invite_loading.gif */; };
