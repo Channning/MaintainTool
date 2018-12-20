@@ -35,18 +35,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    isExistLiveRoom = NO;
-    isExistGuestLiveRoom = NO;
+
     [self initNavgationItemSubviews];
     NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSLog(@"Device UUID = %@", udid);
     [AppDelegateHelper saveData:udid forKey:SavedOpenID];
-    [self getOwnerRoomInfo];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    isExistLiveRoom = NO;
+    isExistGuestLiveRoom = NO;
+    [self getOwnerRoomInfo];
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
 }
@@ -116,7 +117,7 @@
 -(IBAction)connectToCamera:(id)sender
 {
 //    isExistLiveRoom = YES;
-//    //isExistGuestLiveRoom = YES;
+//    isExistGuestLiveRoom = YES;
 //    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
 //    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
 //    roomid = @"f8ucVWyz";

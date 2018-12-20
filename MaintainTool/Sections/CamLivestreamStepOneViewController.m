@@ -16,6 +16,7 @@
 {
     CGFloat parentViewHeight;
     CGFloat parentViewWidth;
+    __block NSInteger networkStatus;
 }
 
 @property (nonatomic,strong) NSMutableArray * ssidlistArray;
@@ -61,9 +62,19 @@
     parentViewHeight = [[UIScreen mainScreen] bounds].size.height;
     parentViewWidth = [[UIScreen mainScreen] bounds].size.width;
     [self.view setFrame:CGRectMake(0, 0, parentViewWidth, parentViewHeight)];
+    
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    //检测的结果
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status)
+     {
+         self->networkStatus = status;
+         [self detectCurrentConnectedSSid];
+     }];
+    
+    [manager startMonitoring];
 
     [self initNavgationItemSubviews];
-    [self detectCurrentConnectedSSid];
+    
     [self initBasicContrlsSetup];
     [_ssidTextfield setUserInteractionEnabled:YES];
     [_ssidTextfield setClearButtonMode:UITextFieldViewModeAlways];
@@ -133,11 +144,7 @@
 {
     NSString* userPhoneName = [[UIDevice currentDevice] name];
     NSLog(@"手机别名: %@", userPhoneName);
-    
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    NSInteger networkStatus = [manager networkReachabilityStatus];
-   
-    
+ 
     NSDictionary *tempDic =[NSDictionary dictionaryWithContentsOfFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[AppDelegateHelper readData:SavedOpenID]]];
     
     if (tempDic)
@@ -152,7 +159,7 @@
         }
         [wifiArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
         {
-            DLog(@"networkStatus is %ld and [AppDelegateHelper fetchSSIDName] is %@, obj.ssid is %@",(long)networkStatus,[AppDelegateHelper fetchSSIDName],[obj objectForKey:@"ssid"]);
+            DLog(@"networkStatus is %ld and [AppDelegateHelper fetchSSIDName] is %@, obj.ssid is %@",(long)self->networkStatus,[AppDelegateHelper fetchSSIDName],[obj objectForKey:@"ssid"]);
             if ([[AppDelegateHelper fetchSSIDName] isEqualToString:[obj objectForKey:@"ssid"]])
             {
                 
@@ -166,12 +173,12 @@
                 [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
            
             }
-            else if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [userPhoneName isEqualToString:[obj objectForKey:@"ssid"]])
+            else if(self->networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [userPhoneName isEqualToString:[obj objectForKey:@"ssid"]])
             {
                 [self->_ssidTextfield setText:userPhoneName];
                 [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
             }
-            else if(networkStatus == AFNetworkReachabilityStatusReachableViaWiFi && [[AppDelegateHelper fetchSSIDName] isEqualToString:[obj objectForKey:@"ssid"]])
+            else if(self->networkStatus == AFNetworkReachabilityStatusReachableViaWiFi && [[AppDelegateHelper fetchSSIDName] isEqualToString:[obj objectForKey:@"ssid"]])
             {
                 [self->_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
                 [self->_passwordTextfield setText:[obj objectForKey:@"password"]];
@@ -199,6 +206,8 @@
         
         [_dropButton setHidden:NO];
     }
+    
+    
     if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !isStringNotNil(_passwordTextfield.text))
     {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"You haven't connected to any Wi-Fi, would you like to use your mobile phone's hotspot for live stream? if so, please input the name and password of your phone's hotspot.") preferredStyle:UIAlertControllerStyleAlert];
@@ -220,6 +229,10 @@
         
         [self presentViewController:alert animated:YES completion:^{}];
 
+    }
+    else if (_ssidTextfield.text.length < 3 && networkStatus == AFNetworkReachabilityStatusReachableViaWiFi)
+    {
+        [_ssidTextfield setText:[AppDelegateHelper fetchSSIDName]];
     }
   
     

@@ -23,11 +23,14 @@
 {
     NSString *liveSessionKey;
     SRWebSocket *socket;
+    
+    BOOL isExistGuestLiveStream;
 }
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *bottomPlayerView;
 
 @property (nonatomic,weak) IBOutlet UILabel *inviteLabel;
+@property (nonatomic,weak) IBOutlet UIView *titleView;
 @property (nonatomic,weak) IBOutlet UIButton *inviteButton;
 @property (nonatomic,weak) IBOutlet UIButton *hangupButton;
 @property (nonatomic,weak) IBOutlet UIButton *cameraVolumeButton;
@@ -49,13 +52,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self initNavgationItemSubviews];
+    [self setConstraintsForSubviews];
     [self initCameraLivePlayer];
     [self initSRWebSocket];
-    [self generateSessionKey];
+    
     if (_guestRtmpLiveUrlString)
     {
+        isExistGuestLiveStream = YES;
+        [self updateControlsStatusWith:YES];
+        [UIView animateWithDuration:1 animations:^{
+            [self updateViewConstraintsWith:YES];
+        }];
         [self initPhoneLivePlayer];
+    }
+    else
+    {
+        [self generateSessionKey];
     }
     
     // Do any additional setup after loading the view.
@@ -79,6 +93,199 @@
     [_cameraLivePlayer stopPlay];
     [_cameraLivePlayer removeVideoWidget];
     [super viewWillDisappear:animated];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [socket close];
+    [_phoneLivePlayer stopPlay];
+    [_phoneLivePlayer removeVideoWidget];
+    
+    [_cameraLivePlayer stopPlay];
+    [_cameraLivePlayer removeVideoWidget];
+#if !__has_feature(objc_arc)
+    [super dealloc];
+#endif
+}
+
+#pragma mark - updateViewConstraints
+-(void)setConstraintsForSubviews
+{
+    float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
+    [self.topPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.and.right.equalTo(self.view);
+         make.top.equalTo(self.view).offset(SafeAreaTopHeight);
+         make.height.mas_equalTo(playerContrainerHeight);
+     }];
+    
+    float playerbgImageViewHeight = 256*SCREEN_WIDTH/375;
+    [self.playerbgImageView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerY.equalTo(self->_topPlayerView);
+         make.left.and.right.equalTo(self->_topPlayerView);
+         make.height.mas_equalTo(playerbgImageViewHeight);
+    }];
+    
+    [self.bottomPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.and.right.equalTo(self.view);
+         make.top.equalTo(self.topPlayerView.mas_bottom);
+         make.height.mas_equalTo(playerContrainerHeight);
+     }];
+    
+    [self.titleView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.centerX.equalTo(self->_bottomPlayerView);
+         make.top.equalTo(self->_bottomPlayerView).offset(40);
+         make.height.mas_equalTo(26);
+     }];
+    
+    [self.inviteLabel mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.equalTo(self->_titleView);
+         make.right.equalTo(self->_titleView.mas_right).offset(26);
+         make.top.and.bottom.equalTo(self->_titleView);
+     }];
+    
+    [self.gifImageView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.equalTo(self->_inviteLabel.mas_right);
+         make.centerY.equalTo(self->_titleView);
+         make.width.mas_equalTo(20);
+         make.height.mas_equalTo(15);
+     }];
+    [self.inviteButton mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.top.equalTo(self->_titleView.mas_bottom).offset(30);
+         make.centerX.equalTo(self->_bottomPlayerView);
+         make.width.mas_equalTo(166);
+         make.height.mas_equalTo(36);
+     }];
+    
+    [self.hangupButton mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.top.equalTo(self->_titleView.mas_bottom).offset(30);
+         make.centerX.equalTo(self->_bottomPlayerView);
+         make.width.mas_equalTo(110);
+         make.height.mas_equalTo(35);
+     }];
+    
+    [self.controlView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.bottom.equalTo(self.view.mas_bottom).offset(-30);
+         make.centerX.equalTo(self.view);
+         make.width.mas_equalTo(180);
+         make.height.mas_equalTo(70);
+     }];
+    
+    float cameraVolumeY = SafeAreaTopHeight+20+85;
+    [self.cameraVolumeButton mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.right.equalTo(self.view.mas_right).offset(-30);
+         make.top.equalTo(self.view.mas_top).offset(cameraVolumeY);
+         make.width.mas_equalTo(40);
+         make.height.mas_equalTo(40);
+     }];
+    
+    
+    
+}
+
+- (void)updateViewConstraintsWith:(BOOL)needUpdate
+{
+    if (needUpdate)
+    {
+        float topPlayerViewLeftX = SCREEN_WIDTH-240-10;
+        [self.topPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.right.equalTo(self.view.mas_right).offset(-20);
+             make.left.equalTo(self.view.mas_left).offset(topPlayerViewLeftX);
+             make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight+20);
+             make.width.mas_equalTo(240);
+             make.height.mas_equalTo(135);
+         }];
+        
+        [self.playerbgImageView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+         }];
+        
+        [self.bottomPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.left.and.right.equalTo(self.view);
+             make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight);
+             make.height.mas_equalTo(SCREEN_HEIGHT-SafeAreaTopHeight);
+         }];
+        
+    }
+    else
+    {
+        float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
+        [self.topPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.left.and.right.equalTo(self.view);
+             make.top.equalTo(self.view).offset(SafeAreaTopHeight);
+             make.height.mas_equalTo(playerContrainerHeight);
+         }];
+        
+        float playerbgImageViewHeight = 256*SCREEN_WIDTH/375;
+        [self.playerbgImageView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.centerY.equalTo(self->_topPlayerView);
+             make.left.and.right.equalTo(self->_topPlayerView);
+             make.height.mas_equalTo(playerbgImageViewHeight);
+         }];
+        float bottomPlayerViewY = SafeAreaTopHeight+playerContrainerHeight;
+        [self.bottomPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+         {
+             make.left.and.right.equalTo(self.view);
+             make.top.equalTo(self.view).offset(bottomPlayerViewY);
+             make.height.mas_equalTo(playerContrainerHeight);
+         }];
+        
+//        [self.titleView mas_updateConstraints:^(MASConstraintMaker *make)
+//         {
+//             make.centerX.equalTo(self->_bottomPlayerView);
+//             make.top.equalTo(self->_bottomPlayerView).offset(40);
+//             make.height.mas_equalTo(26);
+//         }];
+//
+//        [self.inviteLabel mas_updateConstraints:^(MASConstraintMaker *make)
+//         {
+//             make.left.equalTo(self->_titleView);
+//             make.right.equalTo(self->_titleView.mas_right).offset(26);
+//             make.top.and.bottom.equalTo(self->_titleView);
+//         }];
+//
+//        [self.gifImageView mas_updateConstraints:^(MASConstraintMaker *make)
+//         {
+//             make.left.equalTo(self->_inviteLabel.mas_right);
+//             make.right.equalTo(self->_titleView.mas_right);
+//             make.centerY.equalTo(self->_titleView);
+//             make.width.mas_equalTo(20);
+//             make.height.mas_equalTo(15);
+//         }];
+//        [self.inviteButton mas_updateConstraints:^(MASConstraintMaker *make)
+//         {
+//             make.top.equalTo(self->_titleView.mas_bottom).offset(30);
+//             make.centerX.equalTo(self->_bottomPlayerView);
+//             make.width.mas_equalTo(166);
+//             make.height.mas_equalTo(36);
+//         }];
+//
+//        [self.hangupButton mas_updateConstraints:^(MASConstraintMaker *make)
+//         {
+//             make.top.equalTo(self->_titleView.mas_bottom).offset(30);
+//             make.centerX.equalTo(self->_bottomPlayerView);
+//             make.width.mas_equalTo(110);
+//             make.height.mas_equalTo(35);
+//         }];
+        
+  
+    }
+
 }
 #pragma mark - Init
 
@@ -361,6 +568,30 @@
     self.hangupButton.hidden = NO;
 }
 
+-(void)updateControlsStatusWith:(BOOL)isExistGuestLive
+{
+    if (isExistGuestLive)
+    {
+        self.gifImageView.hidden = YES;
+        self.hangupButton.hidden = YES;
+        self.inviteButton.hidden = YES;
+        self.inviteLabel.hidden = YES;
+        self.playerbgImageView.hidden = YES;
+        self.controlView.hidden = NO;
+        self.cameraVolumeButton.hidden = NO;
+    }
+    else
+    {
+        self.gifImageView.hidden = YES;
+        self.hangupButton.hidden = YES;
+        self.inviteButton.hidden = NO;
+        self.inviteLabel.hidden = NO;
+        self.controlView.hidden = YES;
+        self.cameraVolumeButton.hidden = YES;
+    }
+
+}
+
 #pragma mark -SRWebSocketDelegate
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
@@ -417,78 +648,41 @@
         self.guestFlvLiveUrlString = guestStreamDic[@"flv"];
         
         DLog(@"guestRtmpLiveUrlString is %@, and self.roomid is %@",self.guestRtmpLiveUrlString,self.roomid);
-        _gifImageView.hidden = YES;
-        self.hangupButton.hidden = YES;
-        self.inviteButton.hidden = YES;
-        self.inviteLabel.hidden = YES;
-        self.playerbgImageView.hidden = YES;
-        [self.topPlayerView addSubview:self.cameraVolumeButton];
-        float height = 135/self.topPlayerView.frame.size.height;
-        [UIView animateWithDuration:0.5 animations:^{
-            self.topPlayerView.transform = CGAffineTransformMake(0.75, 0, 0, height, 40, 20);
-            self.bottomPlayerView.transform = CGAffineTransformMakeScale(1, 2); //缩小1/3
-            [self.cameraVolumeButton setFrame:CGRectMake(SCREEN_WIDTH-50, SafeAreaTopHeight+40+85, 40,40)];
-            [self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
-        }
-         completion:^(BOOL finished)
-         {
-             if (finished)
-             {
-                 [self->_cameraLivePlayer removeVideoWidget];
-                 [self->_phoneLivePlayer removeVideoWidget];
+        [self updateControlsStatusWith:YES];
+        isExistGuestLiveStream = YES;
 
-                 [self->_cameraLivePlayer setupVideoWidget:CGRectZero containView:self->_topPlayerView insertIndex:0];
-                 [self initPhoneLivePlayer];
-                 self.controlView.hidden = NO;
-                 [self->_cameraLivePlayer setMute:YES];
-             }
-         }];
-//        [UIView animateWithDuration:1 animations:^
-//         {
-//             [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
-//             [self.topVolumeView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
-//             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
-//             [self.cameraVolumeButton setFrame:CGRectMake(SCREEN_WIDTH-50, SafeAreaTopHeight+40+85, 40,40)];
-//         }
-//    completion:^(BOOL finished)
-//         {
-//             if (finished)
-//             {
-//
-//                 [self->_cameraLivePlayer removeVideoWidget];
-//                 [self->_phoneLivePlayer removeVideoWidget];
-//                 [self->_cameraLivePlayer setupVideoWidget:CGRectZero containView:self->_topPlayerView insertIndex:0];
-//                 [self initPhoneLivePlayer];
-//                 self.controlView.hidden = NO;
-//                 self.cameraVolumeButton.hidden = NO;
-//                 [self->_cameraLivePlayer setMute:YES];
-//             }
-//         }];
+        [UIView animateWithDuration:1 animations:^{
+            [self updateViewConstraintsWith:YES];
+        }];
+        if (!self.phoneLivePlayer)
+        {
+            [self initPhoneLivePlayer];
+        }
+        else
+        {
+            [self->_phoneLivePlayer removeVideoWidget];
+            [self->_phoneLivePlayer setupVideoWidget:CGRectZero containView:self->_bottomPlayerView insertIndex:0];
+        }
+        
+
     }
     else if ([messageDic[@"type"] isEqualToString:@"close_session"])
     {
         self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
         
-        _gifImageView.hidden = YES;
-        self.hangupButton.hidden = YES;
-        self.inviteButton.hidden = NO;
-        self.inviteLabel.hidden = NO;
-        self.controlView.hidden = YES;
-        self.cameraVolumeButton.hidden = YES;
-        [UIView animateWithDuration:1 animations:^
-         {
-             [self.topPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
-             [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight+(SCREEN_HEIGHT-SafeAreaTopHeight)/2, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
-             //[self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
-         } completion:^(BOOL finished)
-         {
-             if (finished)
-             {
-                 [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_topPlayerView insertIndex:2];
-                 [self->_phoneLivePlayer removeVideoWidget];
-                 self->liveSessionKey = nil;
-             }
-         }];
+        [self updateControlsStatusWith:NO];
+        isExistGuestLiveStream = NO;
+        [UIView animateWithDuration:1 animations:^{
+            [self updateViewConstraintsWith:NO];
+        }];
+        self->liveSessionKey = nil;
+        if (self.phoneLivePlayer)
+        {
+            [self->_phoneLivePlayer stopPlay];
+            [self->_phoneLivePlayer removeVideoWidget];
+        }
+
+
     }
     
 }
@@ -593,7 +787,7 @@
         }else if (EvtID == PLAY_EVT_CHANGE_ROTATION) {
             return;
         }
-        NSLog(@"evt:%d,%@", EvtID, dict);
+        NSLog(@"evt:%d,%@,EVT_MSG is %@", EvtID, dict,dict[@"EVT_MSG"]);
 //        long long time = [(NSNumber*)[dict valueForKey:EVT_TIME] longLongValue];
 //        int mil = time % 1000;
 //        NSDate* date = [NSDate dateWithTimeIntervalSince1970:time/1000];
