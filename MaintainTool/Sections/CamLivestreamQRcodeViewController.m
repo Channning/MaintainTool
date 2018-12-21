@@ -78,6 +78,13 @@
     }
     [self getOwnerRoomInfo];
 
+    if (iPhone6plus)
+    {
+        [self.codeBGView mas_updateConstraints:^(MASConstraintMaker *make)
+        {
+            make.top.equalTo(self.view).offset(SafeAreaTopHeight);
+        }];
+    }
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     // Do any additional setup after loading the view from its nib.

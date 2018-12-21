@@ -249,7 +249,7 @@
     [self.descriptionLabel setText:MyLocal(@"In order to live stream, your Camera needs an internet connection. Enter your WiFi password, which will then be shared with your Camera.")];
     
     [self.nextButton setTitle:MyLocal(@"Next") forState:UIControlStateNormal];
-    [self.nextButton setBackgroundColor:[UIColor colorWithRed:40/255.0 green:68/255.0 blue:131/255.0 alpha:1.0]];
+    [self.nextButton setBackgroundColor:COLOR(40, 68, 131, 0.7)];
 
     self.nextButton.layer.shadowOffset = CGSizeMake(2,2);
     self.nextButton.layer.shadowOpacity = 0.3f;
