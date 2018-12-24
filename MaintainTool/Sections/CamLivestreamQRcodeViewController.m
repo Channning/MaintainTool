@@ -278,16 +278,15 @@
     [self.connectingLabel setFont:[UIFont fontWithName:@"HaginCapsMedium" size:29]];
     [self.connectDescribeLabel setFont:StandardFONT(17)];
     [self.connectDescribeLabel setTextColor:UIColorFromRGB(0x6f6f6f)];
-    if ([AppDelegateHelper readBool:DidChooseNetdistType])
+    [self.connectDescribeLabel setText:MyLocal(@"Once your Camera is connected you'll be ready to start live streaming!")];
+    if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
     {
-        
-        [self.connectDescribeLabel setText:MyLocal(@"Once your Camera is connected you'll be ready to start sync!")];
-    }else
-    {
-        
-        [self.connectDescribeLabel setText:MyLocal(@"Once your Camera is connected you'll be ready to start live streaming!")];
+        self.maskView.hidden = NO;
     }
-    
+    else
+    {
+        self.maskView.hidden = YES;
+    }
     [self.descriptionLabel setFont:StandardFONT(22)];
     [self.descriptionLabel setText:MyLocal(@"请将相机正对二维码并保持20cm左右的距离，当Wi-Fi灯开始红色闪烁即扫描成功，相机开始连接网络，连接成功后会自动进入视频通话界面。")];
     

@@ -86,7 +86,7 @@
                                         <constraint firstAttribute="width" secondItem="gso-lx-diy" secondAttribute="height" multiplier="1:1" id="Dkg-e7-FOt"/>
                                     </constraints>
                                 </imageView>
-                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-kV-a6G" userLabel="QRCode-Mask">
+                                <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-kV-a6G" userLabel="QRCode-Mask">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
