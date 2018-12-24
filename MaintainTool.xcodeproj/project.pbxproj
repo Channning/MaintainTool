@@ -195,6 +195,8 @@
 				D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */,
 				D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */,
 				D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */,
+				D778C63B21CCDAB900157106 /* MTCameraPlayerContainerView.h */,
+				D778C63C21CCDAB900157106 /* MTCameraPlayerContainerView.m */,
 				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
 				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
 				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
@@ -520,6 +522,7 @@
 				D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */,
 				D71B31A521C0DE9E005CFC53 /* split.c in Sources */,
 				D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */,
+				D778C63D21CCDAB900157106 /* MTCameraPlayerContainerView.m in Sources */,
 				D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */,
 				D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */,
 				D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */,
@@ -683,6 +686,7 @@
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -711,6 +715,7 @@
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
