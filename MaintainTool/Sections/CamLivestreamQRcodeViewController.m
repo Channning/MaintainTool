@@ -35,6 +35,8 @@
     NSTimer * heartBeat;
     NSTimeInterval reConnectTime;
     
+    NSTimer * checkRoomInfoTimer;
+    
 }
 @property (nonatomic,weak) IBOutlet UIView *connectingView;
 @property (nonatomic,weak) IBOutlet UIImageView *QRcodeImageView;
@@ -74,6 +76,7 @@
 {
     [super viewDidLoad];
     [self addNotifications];
+    [self openCheckRoomInfoTimer];
     [self initBasicContrlsSetup];
     [self initNavgationItemSubviews];
     if (![AppDelegateHelper readData:APPStreamKey])
@@ -110,7 +113,9 @@
     if (didEnterLivepReviewPage)
     {
         [[NSNotificationCenter defaultCenter] removeObserver:self];
+        
     }
+    [self closeRoomInfoTimer];
     [super viewWillDisappear:animated];
 }
 
@@ -333,12 +338,19 @@
              NSNumber *status = userDic[@"stream_status"];
              if (status.intValue == 2)
              {
-                 //推流中
-                 MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
-                 [liveViewController setRtmpLiveUrlString:self->playRtmpUrlString];
-                 [liveViewController setFlvLiveUrlString:self->playFlvUrlString];
-                 [liveViewController setRoomid:self->roomIDString];
-                 [self.navigationController pushViewController:liveViewController animated:YES];
+                 
+                 if (self->didEnterLivepReviewPage == NO)
+                 {
+                     self->didEnterLivepReviewPage = YES;
+                     //推流中
+                     MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
+                     [liveViewController setRtmpLiveUrlString:self->playRtmpUrlString];
+                     [liveViewController setFlvLiveUrlString:self->playFlvUrlString];
+                     [liveViewController setRoomid:self->roomIDString];
+                     [self.navigationController pushViewController:liveViewController animated:YES];
+                 }
+                 
+                 
              }
              
         
@@ -404,13 +416,17 @@
         NSDictionary *dataDic = messageDic[@"data"];
         if ([dataDic[@"stream_status"] intValue] == 2)
         {
-            didEnterLivepReviewPage = YES;
-            //推流中
-            MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
-            [liveViewController setRtmpLiveUrlString:playRtmpUrlString];
-            [liveViewController setFlvLiveUrlString:playFlvUrlString];
-            [liveViewController setRoomid:roomIDString];
-            [self.navigationController pushViewController:liveViewController animated:YES];
+            if (didEnterLivepReviewPage == NO)
+            {
+                didEnterLivepReviewPage = YES;
+                //推流中
+                MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
+                [liveViewController setRtmpLiveUrlString:playRtmpUrlString];
+                [liveViewController setFlvLiveUrlString:playFlvUrlString];
+                [liveViewController setRoomid:roomIDString];
+                [self.navigationController pushViewController:liveViewController animated:YES];
+            }
+    
         }
     }
     else if ([messageDic[@"type"] isEqualToString:@"join_session"])
@@ -513,6 +529,77 @@
             NSLog(@"没网络，发送失败，一旦断网 socket 会被我设置 nil 的");
         }
     });
+}
+
+
+-(void)openCheckRoomInfoTimer
+{
+    [self destoryHeartBeat];
+    
+    __weak typeof(self) weakSelf = self;
+    if (@available(iOS 10.0, *))
+    {
+        checkRoomInfoTimer = [NSTimer scheduledTimerWithTimeInterval:15 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            [weakSelf checkRoomInfoAndPresentPreviewPage];
+        }];
+    }
+    else
+    {
+        // Fallback on earlier versions
+        checkRoomInfoTimer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(checkRoomInfoAndPresentPreviewPage) userInfo:nil repeats:YES];
+    }
+    [[NSRunLoop currentRunLoop] addTimer:self->checkRoomInfoTimer forMode:NSRunLoopCommonModes];
+}
+
+
+- (void)closeRoomInfoTimer
+{
+    if (self->checkRoomInfoTimer)
+    {
+        [self->checkRoomInfoTimer invalidate];
+        self->checkRoomInfoTimer = nil;
+    }
+}
+
+-(void)checkRoomInfoAndPresentPreviewPage
+{
+    MTOwnerRoomInfoApi *generalCmdApi = [[MTOwnerRoomInfoApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             NSDictionary *dataDic = obj[@"data"];
+             NSDictionary *roomDic = dataDic[@"room"];
+             NSDictionary *userDic = dataDic[@"user"];
+             NSDictionary *owner_streamDic = roomDic[@"owner_stream"];
+             self->playRtmpUrlString = owner_streamDic[@"rtmp"];
+             self->playFlvUrlString = owner_streamDic[@"flv"];
+             self->roomIDString = roomDic[@"room_id"];
+             
+             NSNumber *status = userDic[@"stream_status"];
+             if (status.intValue == 2)
+             {
+                 if (self->didEnterLivepReviewPage == NO)
+                 {
+                     self->didEnterLivepReviewPage = YES;
+                     //推流中
+                     MTLiveConversationViewController *liveViewController = [[MTLiveConversationViewController alloc]init];
+                     [liveViewController setRtmpLiveUrlString:self->playRtmpUrlString];
+                     [liveViewController setFlvLiveUrlString:self->playFlvUrlString];
+                     [liveViewController setRoomid:self->roomIDString];
+                     [self.navigationController pushViewController:liveViewController animated:YES];
+                 }
+             }
+             
+             
+         }
+         
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
 }
 
 
