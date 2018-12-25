@@ -15,5 +15,6 @@ pod 'MBProgressHUD', '~> 1.1.0'
 pod 'WechatOpenSDK_NoPay', '~> 1.8.0'
 pod 'SDWebImage'
 pod 'YLGIFImage'
+#pod 'zhPopupController', '~> 1.0'
 
 end

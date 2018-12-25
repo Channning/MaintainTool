@@ -362,6 +362,7 @@ typedef NS_ENUM(NSInteger, ConnectType) {
 #define SavedOpenID @"UserStreamOpenID"
 #define APPStreamKey @"APPStreamKey"
 #define LastLoginUserId  [AppDelegateHelper readData:@"LastLoginUserId"]
+#define IsShowTheAlertForHotspotLive @"IsShowTheAlertForHotspotLive"
 
 //NSNotification
 #define INFORMLIVECONVERSATIONUPDATEUI @"InformLiveConversationUpdateUI"

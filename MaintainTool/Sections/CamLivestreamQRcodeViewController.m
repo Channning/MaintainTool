@@ -92,6 +92,28 @@
             make.top.equalTo(self.view).offset(SafeAreaTopHeight);
         }];
     }
+    if (![AppDelegateHelper readBool:IsShowTheAlertForHotspotLive])
+    {
+        NSString* userPhoneName = [[UIDevice currentDevice] name];
+        if ([userPhoneName isEqualToString:_ssidInfo])
+        {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                           message:@"使用手机热点进行视频直播，请在扫码成功后，进入手机设置-个人热点界面，确保手机热点开启，并等待手机出现提示”设备已经连接热点“后，再返回APP。"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"不再提示" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                  [AppDelegateHelper saveBool:YES forKey:IsShowTheAlertForHotspotLive];
+                                  
+                              }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                              {
+                              }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }
+    
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     // Do any additional setup after loading the view from its nib.

@@ -208,26 +208,10 @@
     }
     
     
-    if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !isStringNotNil(_passwordTextfield.text))
+    if(networkStatus == AFNetworkReachabilityStatusReachableViaWWAN)
     {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"You haven't connected to any Wi-Fi, would you like to use your mobile phone's hotspot for live stream? if so, please input the name and password of your phone's hotspot.") preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"NO") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
-                                    {
-                                        [self.navigationController popToRootViewControllerAnimated:YES];
-                                    }];
-        
-        [alert addAction:cancelAct];
-        
-        UIAlertAction *confirmAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
-                                     {
-                                         [self->_ssidTextfield setText:userPhoneName];
-                                         [self->_passwordTextfield becomeFirstResponder];
-                                     }];
-        
-        [alert addAction:confirmAct];
-        
-        [self presentViewController:alert animated:YES completion:^{}];
+        [self->_ssidTextfield setText:userPhoneName];
+        [self->_passwordTextfield becomeFirstResponder];
 
     }
     else if (_ssidTextfield.text.length < 3 && networkStatus == AFNetworkReachabilityStatusReachableViaWiFi)
