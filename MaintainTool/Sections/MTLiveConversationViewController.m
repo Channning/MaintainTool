@@ -758,7 +758,7 @@
     __weak typeof(self) weakSelf = self;
     //心跳设置为3分钟，NAT超时一般为5分钟
     if (@available(iOS 10.0, *)) {
-        self->heartBeat = [NSTimer scheduledTimerWithTimeInterval:30 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        self->heartBeat = [NSTimer scheduledTimerWithTimeInterval:3*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
             NSLog(@"heart");
             //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
             [weakSelf ping];
