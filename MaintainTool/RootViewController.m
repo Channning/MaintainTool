@@ -20,6 +20,8 @@
     NSString *guestPlayRtmpUrlString;
     NSString *guestPlayFlvUrlString;
     
+    NSString *session_key;
+    
     BOOL isExistLiveRoom;
     BOOL isExistGuestLiveRoom;
 }
@@ -86,6 +88,7 @@
              self->playRtmpUrlString = owner_streamDic[@"rtmp"];
              self->playFlvUrlString = owner_streamDic[@"flv"];
              self->roomid = roomDic[@"room_id"];
+             self->session_key = roomDic[@"session_key"];
              
              NSNumber *status = userDic[@"stream_status"];
              if (status.intValue == 2)
@@ -127,6 +130,7 @@
         [liveConversationView setRtmpLiveUrlString:playRtmpUrlString];
         [liveConversationView setFlvLiveUrlString:playFlvUrlString];
         [liveConversationView setRoomid:roomid];
+        [liveConversationView setLiveSessionKey:session_key];
         if (isExistGuestLiveRoom)
         {
             [liveConversationView setGuestRtmpLiveUrlString:guestPlayRtmpUrlString];

@@ -366,6 +366,7 @@ typedef NS_ENUM(NSInteger, ConnectType) {
 
 //NSNotification
 #define INFORMLIVECONVERSATIONUPDATEUI @"InformLiveConversationUpdateUI"
+#define INFORMLIVECONVERSATIONSHOWALERT @"InformLiveConversationShowAlert"
 
 //接口HOST地址
 #define ServerAddress @"wx.driftlife.co"

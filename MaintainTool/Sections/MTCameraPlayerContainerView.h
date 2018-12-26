@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTCameraPlayerContainerView : UIView
 
+-(id)initWithFrame:(CGRect)frame PlayUrl:(NSString *)rtmpUrl;
 @end
 
 NS_ASSUME_NONNULL_END

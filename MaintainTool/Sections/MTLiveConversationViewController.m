@@ -11,23 +11,26 @@
 #import "AFNetworkReachabilityManager.h"
 #import "TXLivePlayer.h"
 #import <SocketRocket/SRWebSocket.h>
+#import "MTCameraPlayerContainerView.h"
 #import "MTCreateSessionApi.h"
 #import "MTCloseSesstionApi.h"
 #import <YLGIFImage.h>
 #import <YLImageView.h>
+#import "FeThreeDotGlow.h"
 #import "WXApi.h"
 
 #define kCharCount 6
 
 @interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
 {
-    NSString *liveSessionKey;
+    
     
     BOOL isExistGuestLiveStream;
     
     NSTimer * heartBeat;
     NSTimeInterval reConnectTime;
 }
+@property (nonatomic,strong) MTCameraPlayerContainerView *cameraPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *bottomPlayerView;
 
@@ -46,7 +49,7 @@
 
 @property (nonatomic,strong) SRWebSocket *socket;
 
-
+@property (strong, nonatomic) FeThreeDotGlow *threeDot;
 @end
 
 @implementation MTLiveConversationViewController
@@ -56,8 +59,8 @@
     [super viewDidLoad];
     [self.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self initNavgationItemSubviews];
-    [self setConstraintsForSubviews];
     [self initCameraLivePlayer];
+    [self setConstraintsForSubviews];
     [self initSRWebSocket];
     
     if (_guestRtmpLiveUrlString)
@@ -115,7 +118,7 @@
 -(void)setConstraintsForSubviews
 {
     float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
-    [self.topPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
+    [self.cameraPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
      {
          make.left.and.right.equalTo(self.view);
          make.top.equalTo(self.view).offset(SafeAreaTopHeight);
@@ -125,15 +128,15 @@
     float playerbgImageViewHeight = 256*SCREEN_WIDTH/375;
     [self.playerbgImageView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerY.equalTo(self->_topPlayerView);
-         make.left.and.right.equalTo(self->_topPlayerView);
+         make.centerY.equalTo(self->_cameraPlayerView);
+         make.left.and.right.equalTo(self->_cameraPlayerView);
          make.height.mas_equalTo(playerbgImageViewHeight);
     }];
     
     [self.bottomPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
      {
          make.left.and.right.equalTo(self.view);
-         make.top.equalTo(self.topPlayerView.mas_bottom);
+         make.top.equalTo(self.cameraPlayerView.mas_bottom);
          make.height.mas_equalTo(playerContrainerHeight);
      }];
     
@@ -200,7 +203,7 @@
     if (needUpdate)
     {
         float topPlayerViewLeftX = SCREEN_WIDTH-240-10;
-        [self.topPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+        [self.cameraPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
          {
              make.right.equalTo(self.view.mas_right).offset(-20);
              make.left.equalTo(self.view.mas_left).offset(topPlayerViewLeftX);
@@ -225,7 +228,7 @@
     else
     {
         float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
-        [self.topPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
+        [self.cameraPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
          {
              make.left.and.right.equalTo(self.view);
              make.top.equalTo(self.view).offset(SafeAreaTopHeight);
@@ -235,8 +238,8 @@
         float playerbgImageViewHeight = 256*SCREEN_WIDTH/375;
         [self.playerbgImageView mas_updateConstraints:^(MASConstraintMaker *make)
          {
-             make.centerY.equalTo(self->_topPlayerView);
-             make.left.and.right.equalTo(self->_topPlayerView);
+             make.centerY.equalTo(self->_cameraPlayerView);
+             make.left.and.right.equalTo(self->_cameraPlayerView);
              make.height.mas_equalTo(playerbgImageViewHeight);
          }];
         float bottomPlayerViewY = SafeAreaTopHeight+playerContrainerHeight;
@@ -305,6 +308,7 @@
     self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shareLiveTicketRespond:) name:INFORMLIVECONVERSATIONUPDATEUI object:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAlertForCameraIsOffline:) name:INFORMLIVECONVERSATIONSHOWALERT object:nil];
 }
 
 -(void)initSRWebSocket
@@ -329,45 +333,16 @@
 
 -(void)initCameraLivePlayer
 {
-    _cameraLivePlayer = [[TXLivePlayer alloc] init];
-    _cameraLivePlayer.delegate = self;
-    [_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_topPlayerView insertIndex:2];
+    float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
+    _cameraPlayerView = [[MTCameraPlayerContainerView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, playerContrainerHeight) PlayUrl:_rtmpLiveUrlString];
+    [self.view insertSubview:_cameraPlayerView aboveSubview:_bottomPlayerView];
     
-    TXLivePlayConfig* _config = [[TXLivePlayConfig alloc] init];
-    //自动模式
-//    _config.bAutoAdjustCacheTime   = YES;
-//    _config.minAutoAdjustCacheTime = 1;
-//    _config.maxAutoAdjustCacheTime = 5;
-    //极速模式
-    _config.bAutoAdjustCacheTime   = YES;
-    _config.minAutoAdjustCacheTime = 0.3;
-    _config.maxAutoAdjustCacheTime = 1;
-    _config.enableAEC = YES;
-    //流畅模式
-//    _config.bAutoAdjustCacheTime   = NO;
-//    _config.minAutoAdjustCacheTime = 5;
-//    _config.maxAutoAdjustCacheTime = 5;
-    
-    [_cameraLivePlayer setConfig:_config];
-    /**
-     * 设置画面的裁剪模式
-     * @param renderMode 裁剪
-     * @see TX_Enum_Type_RenderMode
-     */
-    [_cameraLivePlayer setRenderRotation:HOME_ORIENTATION_DOWN];
-    /**
-     * 设置画面的方向
-     * @param rotation 方向
-     * @see TX_Enum_Type_HomeOrientation
-     */
-    [_cameraLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
-    //设置完成之后再启动播放
-    [_cameraLivePlayer startPlay:_rtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
 }
 
 
 -(void)initPhoneLivePlayer
 {
+    
     _phoneLivePlayer = [[TXLivePlayer alloc] init];
     _phoneLivePlayer.delegate = self;
     [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:_bottomPlayerView insertIndex:1];
@@ -402,6 +377,13 @@
     [_phoneLivePlayer setRenderMode:RENDER_MODE_FILL_SCREEN];
     //设置完成之后再启动播放
     [_phoneLivePlayer startPlay:_guestRtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
+    
+    _threeDot = [[FeThreeDotGlow alloc] initWithView:self.view blur:NO];
+    [self.view addSubview:_threeDot];
+    [_threeDot showWhileExecutingBlock:^{
+        
+    }];
+  
 }
 
 - (void)generateSessionKey
@@ -424,9 +406,9 @@
     NSString *timeNowString = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
     _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:[NSString stringWithFormat:@"_%@",timeNowString]];
     DLog(@"SessionKey is %@",_authCodeStr);
-    liveSessionKey = _authCodeStr;
+    _liveSessionKey = _authCodeStr;
     
-    if (liveSessionKey)
+    if (_liveSessionKey)
     {
         [self createLiveSession];
     }
@@ -434,7 +416,7 @@
 
 -(void)createLiveSession
 {
-    MTCreateSessionApi *generalCmdApi = [[MTCreateSessionApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID] roomID:_roomid sessionKey:liveSessionKey];
+    MTCreateSessionApi *generalCmdApi = [[MTCreateSessionApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID] roomID:_roomid sessionKey:_liveSessionKey];
     [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
      {
          id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
@@ -453,7 +435,7 @@
 #pragma mark - IBActions
 -(IBAction)inviteWechatFriend:(UIButton *)sender
 {
-    if (!liveSessionKey)
+    if (!_liveSessionKey)
     {
         [self generateSessionKey];
     }
@@ -461,7 +443,7 @@
     WXMiniProgramObject *object = [WXMiniProgramObject object];
     object.webpageUrl = @"www.foream.com";
     object.userName = @"gh_885fb1cdacb2";
-    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",_roomid,[AppDelegateHelper readData:SavedOpenID],liveSessionKey];
+    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",_roomid,[AppDelegateHelper readData:SavedOpenID],_liveSessionKey];
 
     object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
     object.withShareTicket = YES;
@@ -519,23 +501,19 @@
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
         [_phoneLivePlayer setMute:YES];
-        [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
-        [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
-        [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self.bottomPlayerView insertIndex:1];
+    
     }
     else
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
         [_phoneLivePlayer setMute:NO];
-        [self.topPlayerView setFrame:CGRectMake(SCREEN_WIDTH-240-10, SafeAreaTopHeight+40, 240, 135)];
-        [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight)];
-        [_phoneLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self.bottomPlayerView insertIndex:1];
+        
     }
 }
 
 -(IBAction)hangupButtonAction:(UIButton *)sender
 {
-    MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:liveSessionKey];
+    MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:_liveSessionKey];
     [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
      {
          id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
@@ -553,18 +531,36 @@
              self.cameraVolumeButton.hidden = YES;
              [UIView animateWithDuration:1 animations:^
               {
-                  [self.topPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+                  [self.cameraPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
                   [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight+(SCREEN_HEIGHT-SafeAreaTopHeight)/2, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
                   //[self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
               } completion:^(BOOL finished)
               {
                   if (finished)
                   {
-                      [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_topPlayerView insertIndex:2];
+                      [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_cameraPlayerView insertIndex:2];
                       [self->_phoneLivePlayer removeVideoWidget];
-                      self->liveSessionKey = nil;
+                      self->_liveSessionKey = nil;
                   }
               }];
+         }
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+         DLog(@"failure!%@",request.responseObject);
+     }];
+}
+
+
+-(void)liveCloseSessionRequest
+{
+    MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:_liveSessionKey];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             [self.navigationController popToRootViewControllerAnimated:YES];
          }
      } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
          DLog(@"failure!%@",request.responseObject);
@@ -581,6 +577,22 @@
     self.inviteButton.hidden = YES;
     self.hangupButton.hidden = NO;
 }
+
+-(void)showAlertForCameraIsOffline:(NSNotification *)resp
+{
+    __weak __typeof(self) weakSelf = self;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"通话中断"
+                                                                   message:@"相机已经离线或者关机"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                      
+                      {
+                          [weakSelf liveCloseSessionRequest];
+                      }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 -(void)updateControlsStatusWith:(BOOL)isExistGuestLive
 {
@@ -623,7 +635,6 @@
     NSLog(@"1.判断当前网络环境，如果断网了就不要连了，等待网络到来，在发起重连");
     NSLog(@"2.判断调用层是否需要连接，例如用户都没在聊天界面，连接上去浪费流量");
     NSLog(@"3.连接次数限制，如果连接失败了，重试10次左右就可以了，不然就死循环了。或者每隔1，2，4，8，10，10秒重连...f(x) = f(x-1) * 2, (x=5)");
-    _socket = nil;
     //连接失败就重连
     [self reConnect];
     
@@ -632,8 +643,8 @@
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
 {
     NSLog(@"连接断开，清空socket对象，清空该清空的东西，还有关闭心跳！");
-    //断开连接 同时销毁心跳
-    [self SRWebSocketClose];
+    //连接失败就重连
+    [self reConnect];
 }
 
 /*
@@ -697,8 +708,15 @@
         }
         else
         {
+            
             [self->_phoneLivePlayer removeVideoWidget];
             [self->_phoneLivePlayer setupVideoWidget:CGRectZero containView:self->_bottomPlayerView insertIndex:0];
+            [self->_phoneLivePlayer startPlay:_guestRtmpLiveUrlString type:PLAY_TYPE_LIVE_RTMP];
+            _threeDot = [[FeThreeDotGlow alloc] initWithView:self.view blur:NO];
+            [self.view addSubview:_threeDot];
+            [_threeDot showWhileExecutingBlock:^{
+
+            }];
         }
         
         
@@ -709,10 +727,12 @@
         
         [self updateControlsStatusWith:NO];
         isExistGuestLiveStream = NO;
+        [_threeDot removeFromSuperview];
+        _threeDot = nil;
         [UIView animateWithDuration:1 animations:^{
             [self updateViewConstraintsWith:NO];
         }];
-        self->liveSessionKey = nil;
+        self->_liveSessionKey = nil;
         if (self.phoneLivePlayer)
         {
             [self->_phoneLivePlayer stopPlay];
@@ -826,11 +846,21 @@
         
         if (EvtID == PLAY_EVT_RCV_FIRST_I_FRAME)
         {
-            //            _publishParam = nil;
+            if (!self->_threeDot)
+            {
+                self->_threeDot = [[FeThreeDotGlow alloc] initWithView:self.view blur:NO];
+                [self.view addSubview:self->_threeDot];
+                [self->_threeDot showWhileExecutingBlock:^{
+                    
+                }];
+            }
+            
         }
         
         if (EvtID == PLAY_EVT_PLAY_BEGIN)
         {
+            [self->_threeDot dismiss];
+            self->_threeDot.hidden = YES;
 //            [self stopLoadingAnimation];
 //            long long playDelay = [[NSDate date]timeIntervalSince1970]*1000 - _startPlayTS;
 //            AppDemoLog(@"AutoMonitor:PlayFirstRender,cost=%lld", playDelay);
@@ -868,23 +898,46 @@
         }
         else if (EvtID == PLAY_ERR_NET_DISCONNECT || EvtID == PLAY_EVT_PLAY_END)
         {
-//            [self stopRtmp];
-//            _play_switch = NO;
-//            [_btnPlay setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
-//            [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
-//            [_playProgress setValue:0];
-//            _playStart.text = @"00:00";
-//            _videoPause = NO;
-//
-//            if (EvtID == PLAY_ERR_NET_DISCONNECT) {
-//                NSString* Msg = (NSString*)[dict valueForKey:EVT_MSG];
-//                [self toastTip:Msg];
-//            }
+
+            __weak __typeof(self) weakSelf = self;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"通话中断"
+                                                                           message:@"对方已经结束通话"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+            {
+            
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
+                              
+            {
+                self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
+                
+                [self updateControlsStatusWith:NO];
+                self->isExistGuestLiveStream = NO;
+                [self->_threeDot removeFromSuperview];
+                self->_threeDot = nil;
+                
+                [UIView animateWithDuration:1 animations:^{
+                    [self updateViewConstraintsWith:NO];
+                }];
+                self->_liveSessionKey = nil;
+                if (self.phoneLivePlayer)
+                {
+                    [self->_phoneLivePlayer stopPlay];
+                    [self->_phoneLivePlayer removeVideoWidget];
+                }
+                
+            }]];
+            [weakSelf presentViewController:alert animated:YES completion:nil];
             
         }
         else if (EvtID == PLAY_EVT_PLAY_LOADING)
         {
-            //[self startLoadingAnimation];
+            self->_threeDot.hidden = NO;
+            [self->_threeDot showWhileExecutingBlock:^{
+                
+            }];
         }
         else if (EvtID == PLAY_EVT_CONNECT_SUCC)
         {
@@ -916,7 +969,7 @@
         }else if (EvtID == PLAY_EVT_CHANGE_ROTATION) {
             return;
         }
-        NSLog(@"evt:%d,%@,EVT_MSG is %@", EvtID, dict,dict[@"EVT_MSG"]);
+        NSLog(@"MTLiveConversationViewController evt:%d,%@,EVT_MSG is %@", EvtID, dict,dict[@"EVT_MSG"]);
 //        long long time = [(NSNumber*)[dict valueForKey:EVT_TIME] longLongValue];
 //        int mil = time % 1000;
 //        NSDate* date = [NSDate dateWithTimeIntervalSince1970:time/1000];
@@ -972,7 +1025,7 @@
 //                         vbitrate,
 //                         serverIP,
 //                         audioInfo];
-        DLog(@"Current status, VideoBitrate:%d, AudioBitrate:%d, FPS:%d, RES:%d*%d, netspeed:%d", vbitrate, abitrate, fps, width, height, netspeed);
+//        DLog(@"Current status, VideoBitrate:%d, AudioBitrate:%d, FPS:%d, RES:%d*%d, netspeed:%d", vbitrate, abitrate, fps, width, height, netspeed);
     });
 }
 
