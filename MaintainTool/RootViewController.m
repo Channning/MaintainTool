@@ -49,7 +49,7 @@
 {
     isExistLiveRoom = NO;
     isExistGuestLiveRoom = NO;
-    [self getOwnerRoomInfo];
+    //[self getOwnerRoomInfo];
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
 }
@@ -119,31 +119,101 @@
 
 -(IBAction)connectToCamera:(id)sender
 {
-//    isExistLiveRoom = YES;
-//    isExistGuestLiveRoom = YES;
-//    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
-//    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
-//    roomid = @"f8ucVWyz";
-    if (isExistLiveRoom)
+ 
+    MTOwnerRoomInfoApi *generalCmdApi = [[MTOwnerRoomInfoApi alloc] initWithKey:MTLiveApiKey openID:[AppDelegateHelper readData:SavedOpenID]];
+    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
+     {
+         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+         NSNumber *status = obj[@"status"];
+         DLog(@"regResponse is %@",request.responseString);
+         if(status.intValue == 1)
+         {
+             NSDictionary *dataDic = obj[@"data"];
+             NSDictionary *roomDic = dataDic[@"room"];
+             NSDictionary *userDic = dataDic[@"user"];
+             NSDictionary *owner_streamDic = roomDic[@"owner_stream"];
+             self->playRtmpUrlString = owner_streamDic[@"rtmp"];
+             self->playFlvUrlString = owner_streamDic[@"flv"];
+             self->roomid = roomDic[@"room_id"];
+             self->session_key = roomDic[@"session_key"];
+             
+             NSNumber *status = userDic[@"stream_status"];
+             if (status.intValue == 2)
+             {
+                 self->isExistLiveRoom = YES;
+             }
+             
+             NSDictionary *guest_streamDic = roomDic[@"guest_stream"];
+             NSNumber *guest_status = guest_streamDic[@"status"];
+             
+             self->guestPlayRtmpUrlString = guest_streamDic[@"rtmp"];
+             self->guestPlayFlvUrlString = guest_streamDic[@"flv"];
+             
+             if (guest_status.intValue == 2)
+             {
+                 self->isExistGuestLiveRoom = YES;
+             }
+             
+             if (self->isExistLiveRoom)
+             {
+                 MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
+                 [liveConversationView setRtmpLiveUrlString:self->playRtmpUrlString];
+                 [liveConversationView setFlvLiveUrlString:self->playFlvUrlString];
+                 [liveConversationView setRoomid:self->roomid];
+                 [liveConversationView setLiveSessionKey:self->session_key];
+                 if (self->isExistGuestLiveRoom)
+                 {
+                     [liveConversationView setGuestRtmpLiveUrlString:self->guestPlayRtmpUrlString];
+                     [liveConversationView setGuestFlvLiveUrlString:self->guestPlayFlvUrlString];
+                 }
+                 [self.navigationController pushViewController:liveConversationView animated:YES];
+             }
+             else
+             {
+                 MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
+                 [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+                 
+             }
+         }
+         else
+         {
+             MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
+             [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+         }
+         
+     } failure:^(__kindof YTKBaseRequest * _Nonnull request)
     {
-        MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
-        [liveConversationView setRtmpLiveUrlString:playRtmpUrlString];
-        [liveConversationView setFlvLiveUrlString:playFlvUrlString];
-        [liveConversationView setRoomid:roomid];
-        [liveConversationView setLiveSessionKey:session_key];
-        if (isExistGuestLiveRoom)
-        {
-            [liveConversationView setGuestRtmpLiveUrlString:guestPlayRtmpUrlString];
-            [liveConversationView setGuestFlvLiveUrlString:guestPlayFlvUrlString];
-        }
-        [self.navigationController pushViewController:liveConversationView animated:YES];
-    }
-   else
-   {
-       MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
-       [self.navigationController pushViewController:cameraOptionsVC animated:YES];
-       
-   }
+         DLog(@"failure!%@",request.responseObject);
+        MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
+        [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+     }];
+    
+    
+    //    isExistLiveRoom = YES;
+    //    isExistGuestLiveRoom = YES;
+    //    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
+    //    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
+    //    roomid = @"f8ucVWyz";
+//    if (isExistLiveRoom)
+//    {
+//        MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
+//        [liveConversationView setRtmpLiveUrlString:playRtmpUrlString];
+//        [liveConversationView setFlvLiveUrlString:playFlvUrlString];
+//        [liveConversationView setRoomid:roomid];
+//        [liveConversationView setLiveSessionKey:session_key];
+//        if (isExistGuestLiveRoom)
+//        {
+//            [liveConversationView setGuestRtmpLiveUrlString:guestPlayRtmpUrlString];
+//            [liveConversationView setGuestFlvLiveUrlString:guestPlayFlvUrlString];
+//        }
+//        [self.navigationController pushViewController:liveConversationView animated:YES];
+//    }
+//   else
+//   {
+//       MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
+//       [self.navigationController pushViewController:cameraOptionsVC animated:YES];
+//
+//   }
     
 }
 
