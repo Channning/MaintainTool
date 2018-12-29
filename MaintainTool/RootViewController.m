@@ -27,6 +27,7 @@
     BOOL isExistGuestLiveRoom;
 }
 @property (nonatomic,weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic,weak) IBOutlet UILabel *versionLabel;
 @property (nonatomic,weak) IBOutlet UIImageView *statusImageView;
 @property (nonatomic,weak) IBOutlet UIButton *videoConversationButton;
 
@@ -69,6 +70,9 @@
     
     [self.scanTitleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
     [self.scanTitleLabel setText:@"扫描二维码拍摄"];
+    
+    NSString *string = [NSString stringWithFormat:@"V%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]];
+    self.versionLabel.text = string;
     
 }
 
