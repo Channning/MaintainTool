@@ -7,7 +7,6 @@
 //
 
 #import "CamLivestreamQRcodeViewController.h"
-#import "CamConnectFailedViewController.h"
 #import "MTLiveConversationViewController.h"
 #import "UIViewController+MaryPopin.h"
 #import "QRCodeGenerator.h"
@@ -16,7 +15,7 @@
 #import "MTOwnerRoomInfoApi.h"
 #import "MTCreateLiveRoomApi.h"
 
-@interface CamLivestreamQRcodeViewController ()<CamConnectFailedDelegate,SRWebSocketDelegate>
+@interface CamLivestreamQRcodeViewController ()<SRWebSocketDelegate>
 {
     NSTimer *checkCameraRegisterTimer;
     long tag;

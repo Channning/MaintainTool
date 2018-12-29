@@ -285,21 +285,22 @@
         
     }
 
-    else if([self containsChinese:_ssidTextfield.text])
-    {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"SSID can't contain Chinese") preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
-        }];
-        
-        [alert addAction:cancelAct];
-        
-        [self presentViewController:alert animated:YES completion:^{}];
- 
-        return;
-        
-    }else
+//    else if([self containsChinese:_ssidTextfield.text])
+//    {
+//
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"SSID can't contain Chinese") preferredStyle:UIAlertControllerStyleAlert];
+//
+//        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+//        }];
+//
+//        [alert addAction:cancelAct];
+//
+//        [self presentViewController:alert animated:YES completion:^{}];
+//
+//        return;
+//
+//    }
+    else
     {
         
         //Some problems here, so cancel it temperory.

@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "MTLiveConversationViewController.h"
 #import "MTCameraOptionsViewController.h"
+#import "MTUserInfoInputViewController.h"
 #import "MTOwnerRoomInfoApi.h"
 
 @interface RootViewController ()
@@ -219,7 +220,11 @@
 
 -(IBAction)scanQRcodeAndShot:(id)sender
 {
-    [AppDelegateHelper showSuccessWithTitle:nil withMessage:@"程序猿正在马不停蹄调试中，敬请期待....." view:self.view];
+    MTUserInfoInputViewController *userInfoVC = [[MTUserInfoInputViewController alloc]init];
+    [userInfoVC setBAddMode:YES];
+    [self.navigationController pushViewController:userInfoVC animated:YES];
+
+    //[AppDelegateHelper showSuccessWithTitle:nil withMessage:@"程序猿正在马不停蹄调试中，敬请期待....." view:self.view];
 }
 
 

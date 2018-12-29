@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTUserInfoInputViewController">
+            <connections>
+                <outlet property="saveButton" destination="BBG-1G-Vee" id="BIT-Uq-99S"/>
+                <outlet property="userIDTextField" destination="YUI-kS-cw8" id="HZI-mJ-ngh"/>
+                <outlet property="view" destination="Uls-Z8-yPw" id="cOE-gC-daY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Uls-Z8-yPw">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_user_icon_small_de" translatesAutoresizingMaskIntoConstraints="NO" id="GSp-Hz-PqD" userLabel="Image View - user_name_icon">
+                    <rect key="frame" x="35" y="184" width="19" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="19" id="ZHJ-an-kJA"/>
+                        <constraint firstAttribute="height" constant="20" id="mzv-XI-Evn"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="HZ05001HMM" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YUI-kS-cw8" userLabel="Text - UserID">
+                    <rect key="frame" x="80" y="174" width="260" height="40"/>
+                    <accessibility key="accessibilityConfiguration" label=""/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="2mB-Zn-5uB"/>
+                    </connections>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sU-C2-i0U">
+                    <rect key="frame" x="35" y="217" width="305" height="1"/>
+                    <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="PWc-4p-C63"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBG-1G-Vee" userLabel="Button - save">
+                    <rect key="frame" x="35" y="245" width="305" height="45"/>
+                    <color key="backgroundColor" red="0.14901960780000001" green="0.66666666669999997" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="jb1-e7-nnz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="员工ID的格式为：HZ-105201-HMM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78H-jb-PI7">
+                    <rect key="frame" x="35" y="317" width="305" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="LnS-15-Agk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="leading" secondItem="78H-jb-PI7" secondAttribute="leading" id="7FD-dH-uBx"/>
+                <constraint firstItem="GSp-Hz-PqD" firstAttribute="top" secondItem="Uls-Z8-yPw" secondAttribute="top" constant="184" id="BeQ-Dg-q8B"/>
+                <constraint firstItem="78H-jb-PI7" firstAttribute="top" secondItem="Uls-Z8-yPw" secondAttribute="top" constant="317" id="GGn-fn-i5h"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="trailing" secondItem="BBG-1G-Vee" secondAttribute="trailing" id="Ht4-0V-agY"/>
+                <constraint firstItem="BBG-1G-Vee" firstAttribute="top" secondItem="0sU-C2-i0U" secondAttribute="bottom" constant="27" id="IRJ-tB-Lom"/>
+                <constraint firstItem="78H-jb-PI7" firstAttribute="top" secondItem="BBG-1G-Vee" secondAttribute="bottom" constant="27" id="Ndy-qZ-o7d"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="trailing" secondItem="78H-jb-PI7" secondAttribute="trailing" id="P1b-9v-VOa"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="leading" secondItem="BBG-1G-Vee" secondAttribute="leading" id="TXF-j1-Vo4"/>
+                <constraint firstAttribute="trailing" secondItem="YUI-kS-cw8" secondAttribute="trailing" constant="35" id="V2f-nP-L5S"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="top" secondItem="Uls-Z8-yPw" secondAttribute="top" constant="217" id="dP8-Am-Ppb"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="top" secondItem="YUI-kS-cw8" secondAttribute="bottom" constant="3" id="dbk-bA-vYa"/>
+                <constraint firstItem="GSp-Hz-PqD" firstAttribute="leading" secondItem="Uls-Z8-yPw" secondAttribute="leading" constant="35" id="fEU-Qe-WMD"/>
+                <constraint firstItem="YUI-kS-cw8" firstAttribute="top" secondItem="Uls-Z8-yPw" secondAttribute="top" constant="174" id="lAG-cQ-Uqj"/>
+                <constraint firstItem="YUI-kS-cw8" firstAttribute="leading" secondItem="GSp-Hz-PqD" secondAttribute="trailing" constant="26" id="oJ6-lg-mOR"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="trailing" secondItem="YUI-kS-cw8" secondAttribute="trailing" id="p4r-BA-knz"/>
+                <constraint firstItem="0sU-C2-i0U" firstAttribute="leading" secondItem="GSp-Hz-PqD" secondAttribute="leading" id="rUG-c9-hoF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="aOe-hl-UUW"/>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_user_icon_small_de" width="19" height="20"/>
+    </resources>
+</document>
