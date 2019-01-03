@@ -35,7 +35,7 @@
     
     [self.navigationItem setLeftBarButtonItem:menuNavItem];
 
-    self.navigationItem.title = MyLocal(@"请输入电梯信息");
+    self.navigationItem.title = MyLocal(@"请输入设备信息");
     
 }
 

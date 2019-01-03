@@ -69,7 +69,7 @@
     [self.titleLabel setText:@"视频通话"];
     
     [self.scanTitleLabel setFont:[UIFont fontWithName:@"Adobe Heiti Std R" size: 14.5]];
-    [self.scanTitleLabel setText:@"扫描二维码拍摄"];
+    [self.scanTitleLabel setText:@"扫码拍摄"];
     
     NSString *string = [NSString stringWithFormat:@"V%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]];
     self.versionLabel.text = string;

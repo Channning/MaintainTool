@@ -133,7 +133,7 @@
         [self.descriptionLabel setFont:StandardFONT(15)];
         [self.descriptionLabel setTextColor:UIColorFromRGB(0x6f6f6f)];
 
-        [self.descriptionLabel setText:[NSString stringWithFormat:@"电梯编号: %@", _ssidInfo]];
+        [self.descriptionLabel setText:[NSString stringWithFormat:@"设备编号: %@", _ssidInfo]];
         
         [self.userIDLabel setFont:StandardFONT(15)];
         [self.userIDLabel setTextColor:UIColorFromRGB(0x6f6f6f)];

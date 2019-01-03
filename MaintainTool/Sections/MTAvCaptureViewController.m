@@ -121,7 +121,7 @@
     
     [self.navigationItem setLeftBarButtonItem:menuNavItem];
     
-    self.navigationItem.title = MyLocal(@"扫描电梯二维码");
+    self.navigationItem.title = MyLocal(@"扫描设备二维码");
 
 }
 
