@@ -8,45 +8,58 @@
 
 /* Begin PBXBuildFile section */
 		CD705AEAF639D540BA16D68F /* libPods-MaintainTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE191D99DDD51F66B7045E14 /* libPods-MaintainTool.a */; };
-		D70428DC21D71E39001C1ABC /* MTAvCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70428DB21D71E39001C1ABC /* MTAvCaptureViewController.m */; };
-		D70428E021D7214E001C1ABC /* MTManualInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70428DE21D7214E001C1ABC /* MTManualInputViewController.m */; };
-		D70428E121D7214E001C1ABC /* MTManualInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70428DF21D7214E001C1ABC /* MTManualInputViewController.xib */; };
-		D713FA3521D31E4E009C0001 /* Feasd.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA0821D31E4E009C0001 /* Feasd.m */; };
-		D713FA3621D31E4E009C0001 /* FeWifiManHub.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA0921D31E4E009C0001 /* FeWifiManHub.m */; };
-		D713FA3721D31E4E009C0001 /* FeThreeDotGlow.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA0D21D31E4E009C0001 /* FeThreeDotGlow.m */; };
-		D713FA3821D31E4E009C0001 /* FeTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA0E21D31E4E009C0001 /* FeTenDot.m */; };
-		D713FA3921D31E4E009C0001 /* FeVietNamLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1121D31E4E009C0001 /* FeVietNamLoader.m */; };
-		D713FA3A21D31E4E009C0001 /* FeRollingLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1221D31E4E009C0001 /* FeRollingLoader.m */; };
-		D713FA3B21D31E4E009C0001 /* FeHandwriting.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1321D31E4E009C0001 /* FeHandwriting.m */; };
-		D713FA3C21D31E4E009C0001 /* FeSpinnerTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1421D31E4E009C0001 /* FeSpinnerTenDot.m */; };
-		D713FA3D21D31E4E009C0001 /* FeLoadingIconBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1521D31E4E009C0001 /* FeLoadingIconBox.m */; };
-		D713FA3E21D31E4E009C0001 /* FeLoadingIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1621D31E4E009C0001 /* FeLoadingIcon.m */; };
-		D713FA3F21D31E4E009C0001 /* FeHourGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1821D31E4E009C0001 /* FeHourGlass.m */; };
-		D713FA4021D31E4E009C0001 /* FeVietNamBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1921D31E4E009C0001 /* FeVietNamBar.m */; };
-		D713FA4121D31E4E009C0001 /* FeZeroLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1A21D31E4E009C0001 /* FeZeroLoader.m */; };
-		D713FA4221D31E4E009C0001 /* FeWifiManHub.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713FA1B21D31E4E009C0001 /* FeWifiManHub.xib */; };
-		D713FA4321D31E4E009C0001 /* FeEqualize.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1E21D31E4E009C0001 /* FeEqualize.m */; };
-		D713FA4421D31E4E009C0001 /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA1F21D31E4E009C0001 /* FeViewController.m */; };
-		D713FA4521D31E4E009C0001 /* CabinCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2521D31E4E009C0001 /* CabinCondensed-Bold.ttf */; };
-		D713FA4621D31E4E009C0001 /* WifiMan_Sign_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2621D31E4E009C0001 /* WifiMan_Sign_1@2x.png */; };
-		D713FA4721D31E4E009C0001 /* Neou-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2721D31E4E009C0001 /* Neou-Thin.ttf */; };
-		D713FA4821D31E4E009C0001 /* WifiMan_Sign_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2821D31E4E009C0001 /* WifiMan_Sign_3@2x.png */; };
-		D713FA4921D31E4E009C0001 /* WifiMan_Sign_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2921D31E4E009C0001 /* WifiMan_Sign_4@2x.png */; };
-		D713FA4A21D31E4E009C0001 /* wifimanhub@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2A21D31E4E009C0001 /* wifimanhub@2x.png */; };
-		D713FA4B21D31E4E009C0001 /* wifimanhub_grayscale@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2B21D31E4E009C0001 /* wifimanhub_grayscale@2x.png */; };
-		D713FA4C21D31E4E009C0001 /* WifiMan_Sign_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D713FA2C21D31E4E009C0001 /* WifiMan_Sign_2@2x.png */; };
-		D713FA4D21D31E4E009C0001 /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA3121D31E4E009C0001 /* UIColor+flat.m */; };
-		D713FA4E21D31E4E009C0001 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D713FA3221D31E4E009C0001 /* FXBlurView.m */; };
-		D718611821BF4AD1002A709E /* MTCameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */; };
-		D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */; };
-		D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612621BF5451002A709E /* MTCameraOptionCell.m */; };
-		D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612721BF5451002A709E /* MTCameraOptionCell.xib */; };
-		D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */; };
-		D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */; };
-		D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */; };
-		D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */; };
-		D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */; };
-		D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */; };
+		D7117ED521E71C7D00E601CB /* MTAvCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EB421E71C7D00E601CB /* MTAvCaptureViewController.m */; };
+		D7117ED621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EB621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib */; };
+		D7117ED721E71C7D00E601CB /* MTManualInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EB821E71C7D00E601CB /* MTManualInputViewController.m */; };
+		D7117ED821E71C7D00E601CB /* MTManualInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EB921E71C7D00E601CB /* MTManualInputViewController.xib */; };
+		D7117ED921E71C7D00E601CB /* MTUserInfoInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EBB21E71C7D00E601CB /* MTUserInfoInputViewController.xib */; };
+		D7117EDA21E71C7D00E601CB /* MTScanQRcodeShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EBC21E71C7D00E601CB /* MTScanQRcodeShotViewController.m */; };
+		D7117EDB21E71C7D00E601CB /* MTUserInfoInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EBD21E71C7D00E601CB /* MTUserInfoInputViewController.m */; };
+		D7117EDC21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */; };
+		D7117EDD21E71C7D00E601CB /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */; };
+		D7117EDE21E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */; };
+		D7117EDF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */; };
+		D7117EE021E71C7D00E601CB /* MTCameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */; };
+		D7117EE121E71C7D00E601CB /* MTCameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */; };
+		D7117EE221E71C7D00E601CB /* CamLivestreamQRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */; };
+		D7117EE321E71C7D00E601CB /* MTCameraPlayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */; };
+		D7117EE421E71C7D00E601CB /* CamLivestreamStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */; };
+		D7117EE521E71C7D00E601CB /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ECA21E71C7D00E601CB /* MTLiveConversationViewController.xib */; };
+		D7117EE621E71C7D00E601CB /* MTCameraOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117ECB21E71C7D00E601CB /* MTCameraOptionCell.m */; };
+		D7117EE721E71C7D00E601CB /* MTCameraOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ECC21E71C7D00E601CB /* MTCameraOptionCell.xib */; };
+		D7117EE821E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */; };
+		D7117EE921E71C7D00E601CB /* CamLivestreamStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */; };
+		D7117EED21E71CBA00E601CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EEA21E71CBA00E601CB /* AppDelegate.m */; };
+		D7117EF321E71CE500E601CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7117EEF21E71CE500E601CB /* Assets.xcassets */; };
+		D7117EF421E71CE500E601CB /* invite_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7117EF121E71CE500E601CB /* invite_loading.gif */; };
+		D7117EF721E71D3100E601CB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7117EF521E71D3100E601CB /* Info.plist */; };
+		D7117EF821E71D3100E601CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EF621E71D3100E601CB /* main.m */; };
+		D7117F2721E71D4800E601CB /* Feasd.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EFA21E71D4800E601CB /* Feasd.m */; };
+		D7117F2821E71D4800E601CB /* FeWifiManHub.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EFB21E71D4800E601CB /* FeWifiManHub.m */; };
+		D7117F2921E71D4800E601CB /* FeThreeDotGlow.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EFF21E71D4800E601CB /* FeThreeDotGlow.m */; };
+		D7117F2A21E71D4800E601CB /* FeTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0021E71D4800E601CB /* FeTenDot.m */; };
+		D7117F2B21E71D4800E601CB /* FeVietNamLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0321E71D4800E601CB /* FeVietNamLoader.m */; };
+		D7117F2C21E71D4800E601CB /* FeRollingLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0421E71D4800E601CB /* FeRollingLoader.m */; };
+		D7117F2D21E71D4800E601CB /* FeHandwriting.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0521E71D4800E601CB /* FeHandwriting.m */; };
+		D7117F2E21E71D4800E601CB /* FeSpinnerTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0621E71D4800E601CB /* FeSpinnerTenDot.m */; };
+		D7117F2F21E71D4800E601CB /* FeLoadingIconBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0721E71D4800E601CB /* FeLoadingIconBox.m */; };
+		D7117F3021E71D4800E601CB /* FeLoadingIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0821E71D4800E601CB /* FeLoadingIcon.m */; };
+		D7117F3121E71D4800E601CB /* FeHourGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0A21E71D4800E601CB /* FeHourGlass.m */; };
+		D7117F3221E71D4800E601CB /* FeVietNamBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0B21E71D4800E601CB /* FeVietNamBar.m */; };
+		D7117F3321E71D4800E601CB /* FeZeroLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F0C21E71D4800E601CB /* FeZeroLoader.m */; };
+		D7117F3421E71D4800E601CB /* FeWifiManHub.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117F0D21E71D4800E601CB /* FeWifiManHub.xib */; };
+		D7117F3521E71D4800E601CB /* FeEqualize.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F1021E71D4800E601CB /* FeEqualize.m */; };
+		D7117F3621E71D4800E601CB /* FeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F1121E71D4800E601CB /* FeViewController.m */; };
+		D7117F3721E71D4800E601CB /* CabinCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1721E71D4800E601CB /* CabinCondensed-Bold.ttf */; };
+		D7117F3821E71D4800E601CB /* WifiMan_Sign_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1821E71D4800E601CB /* WifiMan_Sign_1@2x.png */; };
+		D7117F3921E71D4800E601CB /* Neou-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1921E71D4800E601CB /* Neou-Thin.ttf */; };
+		D7117F3A21E71D4800E601CB /* WifiMan_Sign_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1A21E71D4800E601CB /* WifiMan_Sign_3@2x.png */; };
+		D7117F3B21E71D4800E601CB /* WifiMan_Sign_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1B21E71D4800E601CB /* WifiMan_Sign_4@2x.png */; };
+		D7117F3C21E71D4800E601CB /* wifimanhub@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1C21E71D4800E601CB /* wifimanhub@2x.png */; };
+		D7117F3D21E71D4800E601CB /* wifimanhub_grayscale@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1D21E71D4800E601CB /* wifimanhub_grayscale@2x.png */; };
+		D7117F3E21E71D4800E601CB /* WifiMan_Sign_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1E21E71D4800E601CB /* WifiMan_Sign_2@2x.png */; };
+		D7117F3F21E71D4800E601CB /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F2321E71D4800E601CB /* UIColor+flat.m */; };
+		D7117F4021E71D4800E601CB /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F2421E71D4800E601CB /* FXBlurView.m */; };
 		D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614521BF6015002A709E /* AppDelegateHelper.m */; };
 		D718618221BF9D92002A709E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718618121BF9D92002A709E /* RootViewController.xib */; };
 		D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D71B317621C0A50E005CFC53 /* Localizable.strings */; };
@@ -71,92 +84,104 @@
 		D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */; };
 		D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */; };
 		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
-		D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */; };
-		D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
-		D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53121B90AA3005D1A7E /* Assets.xcassets */; };
 		D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */; };
-		D7BDE53821B90AA3005D1A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE53721B90AA3005D1A7E /* main.m */; };
 		D7BDE54021B90AD9005D1A7E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE53F21B90AD9005D1A7E /* libz.tbd */; };
 		D7BDE54221B90AE4005D1A7E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54121B90AE4005D1A7E /* libc++.tbd */; };
 		D7BDE54421B90AED005D1A7E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54321B90AED005D1A7E /* libresolv.tbd */; };
 		D7BDE54621B90AFB005D1A7E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54521B90AFB005D1A7E /* libsqlite3.tbd */; };
 		D7BDE54821B90B06005D1A7E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54721B90B06005D1A7E /* Accelerate.framework */; };
 		D7BDE54F21B90DC8005D1A7E /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54E21B90DC8005D1A7E /* ReplayKit.framework */; };
-		D7E5EA7521D5F17300BE37DB /* MTUserInfoInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E5EA7321D5F17300BE37DB /* MTUserInfoInputViewController.m */; };
-		D7E5EA7621D5F17300BE37DB /* MTUserInfoInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E5EA7421D5F17300BE37DB /* MTUserInfoInputViewController.xib */; };
-		D7E5EA7A21D5F33500BE37DB /* MTScanQRcodeShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E5EA7821D5F33500BE37DB /* MTScanQRcodeShotViewController.m */; };
-		D7E5EA7B21D5F33500BE37DB /* MTScanQRcodeShotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E5EA7921D5F33500BE37DB /* MTScanQRcodeShotViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaintainTool/Pods-MaintainTool.debug.xcconfig"; sourceTree = "<group>"; };
 		C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaintainTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaintainTool/Pods-MaintainTool.release.xcconfig"; sourceTree = "<group>"; };
-		D70428DA21D71E39001C1ABC /* MTAvCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAvCaptureViewController.h; sourceTree = "<group>"; };
-		D70428DB21D71E39001C1ABC /* MTAvCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAvCaptureViewController.m; sourceTree = "<group>"; };
-		D70428DD21D7214E001C1ABC /* MTManualInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTManualInputViewController.h; sourceTree = "<group>"; };
-		D70428DE21D7214E001C1ABC /* MTManualInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTManualInputViewController.m; sourceTree = "<group>"; };
-		D70428DF21D7214E001C1ABC /* MTManualInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTManualInputViewController.xib; sourceTree = "<group>"; };
-		D713FA0821D31E4E009C0001 /* Feasd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feasd.m; sourceTree = "<group>"; };
-		D713FA0921D31E4E009C0001 /* FeWifiManHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeWifiManHub.m; sourceTree = "<group>"; };
-		D713FA0A21D31E4E009C0001 /* FeVietNamBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeVietNamBar.h; sourceTree = "<group>"; };
-		D713FA0B21D31E4E009C0001 /* FeZeroLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeZeroLoader.h; sourceTree = "<group>"; };
-		D713FA0C21D31E4E009C0001 /* FeHourGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeHourGlass.h; sourceTree = "<group>"; };
-		D713FA0D21D31E4E009C0001 /* FeThreeDotGlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeThreeDotGlow.m; sourceTree = "<group>"; };
-		D713FA0E21D31E4E009C0001 /* FeTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeTenDot.m; sourceTree = "<group>"; };
-		D713FA0F21D31E4E009C0001 /* FeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
-		D713FA1021D31E4E009C0001 /* FeEqualize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeEqualize.h; sourceTree = "<group>"; };
-		D713FA1121D31E4E009C0001 /* FeVietNamLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeVietNamLoader.m; sourceTree = "<group>"; };
-		D713FA1221D31E4E009C0001 /* FeRollingLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeRollingLoader.m; sourceTree = "<group>"; };
-		D713FA1321D31E4E009C0001 /* FeHandwriting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeHandwriting.m; sourceTree = "<group>"; };
-		D713FA1421D31E4E009C0001 /* FeSpinnerTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeSpinnerTenDot.m; sourceTree = "<group>"; };
-		D713FA1521D31E4E009C0001 /* FeLoadingIconBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeLoadingIconBox.m; sourceTree = "<group>"; };
-		D713FA1621D31E4E009C0001 /* FeLoadingIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeLoadingIcon.m; sourceTree = "<group>"; };
-		D713FA1721D31E4E009C0001 /* FeThreeDotGlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeThreeDotGlow.h; sourceTree = "<group>"; };
-		D713FA1821D31E4E009C0001 /* FeHourGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeHourGlass.m; sourceTree = "<group>"; };
-		D713FA1921D31E4E009C0001 /* FeVietNamBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeVietNamBar.m; sourceTree = "<group>"; };
-		D713FA1A21D31E4E009C0001 /* FeZeroLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeZeroLoader.m; sourceTree = "<group>"; };
-		D713FA1B21D31E4E009C0001 /* FeWifiManHub.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeWifiManHub.xib; sourceTree = "<group>"; };
-		D713FA1C21D31E4E009C0001 /* Feasd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feasd.h; sourceTree = "<group>"; };
-		D713FA1D21D31E4E009C0001 /* FeWifiManHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeWifiManHub.h; sourceTree = "<group>"; };
-		D713FA1E21D31E4E009C0001 /* FeEqualize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeEqualize.m; sourceTree = "<group>"; };
-		D713FA1F21D31E4E009C0001 /* FeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
-		D713FA2021D31E4E009C0001 /* FeTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeTenDot.h; sourceTree = "<group>"; };
-		D713FA2121D31E4E009C0001 /* FeSpinnerTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeSpinnerTenDot.h; sourceTree = "<group>"; };
-		D713FA2221D31E4E009C0001 /* FeHandwriting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeHandwriting.h; sourceTree = "<group>"; };
-		D713FA2321D31E4E009C0001 /* FeRollingLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeRollingLoader.h; sourceTree = "<group>"; };
-		D713FA2521D31E4E009C0001 /* CabinCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CabinCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		D713FA2621D31E4E009C0001 /* WifiMan_Sign_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_1@2x.png"; sourceTree = "<group>"; };
-		D713FA2721D31E4E009C0001 /* Neou-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neou-Thin.ttf"; sourceTree = "<group>"; };
-		D713FA2821D31E4E009C0001 /* WifiMan_Sign_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_3@2x.png"; sourceTree = "<group>"; };
-		D713FA2921D31E4E009C0001 /* WifiMan_Sign_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_4@2x.png"; sourceTree = "<group>"; };
-		D713FA2A21D31E4E009C0001 /* wifimanhub@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifimanhub@2x.png"; sourceTree = "<group>"; };
-		D713FA2B21D31E4E009C0001 /* wifimanhub_grayscale@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifimanhub_grayscale@2x.png"; sourceTree = "<group>"; };
-		D713FA2C21D31E4E009C0001 /* WifiMan_Sign_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_2@2x.png"; sourceTree = "<group>"; };
-		D713FA2D21D31E4E009C0001 /* FeVietNamLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeVietNamLoader.h; sourceTree = "<group>"; };
-		D713FA2F21D31E4E009C0001 /* UIColor+flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flat.h"; sourceTree = "<group>"; };
-		D713FA3021D31E4E009C0001 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		D713FA3121D31E4E009C0001 /* UIColor+flat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flat.m"; sourceTree = "<group>"; };
-		D713FA3221D31E4E009C0001 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
-		D713FA3321D31E4E009C0001 /* FeLoadingIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIcon.h; sourceTree = "<group>"; };
-		D713FA3421D31E4E009C0001 /* FeLoadingIconBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIconBox.h; sourceTree = "<group>"; };
-		D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionsViewController.h; sourceTree = "<group>"; };
-		D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionsViewController.m; sourceTree = "<group>"; };
-		D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTCameraOptionsViewController.xib; sourceTree = "<group>"; };
+		D7117EB321E71C7D00E601CB /* MTManualInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTManualInputViewController.h; sourceTree = "<group>"; };
+		D7117EB421E71C7D00E601CB /* MTAvCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAvCaptureViewController.m; sourceTree = "<group>"; };
+		D7117EB521E71C7D00E601CB /* MTScanQRcodeShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScanQRcodeShotViewController.h; sourceTree = "<group>"; };
+		D7117EB621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTScanQRcodeShotViewController.xib; sourceTree = "<group>"; };
+		D7117EB721E71C7D00E601CB /* MTUserInfoInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUserInfoInputViewController.h; sourceTree = "<group>"; };
+		D7117EB821E71C7D00E601CB /* MTManualInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTManualInputViewController.m; sourceTree = "<group>"; };
+		D7117EB921E71C7D00E601CB /* MTManualInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTManualInputViewController.xib; sourceTree = "<group>"; };
+		D7117EBA21E71C7D00E601CB /* MTAvCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAvCaptureViewController.h; sourceTree = "<group>"; };
+		D7117EBB21E71C7D00E601CB /* MTUserInfoInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTUserInfoInputViewController.xib; sourceTree = "<group>"; };
+		D7117EBC21E71C7D00E601CB /* MTScanQRcodeShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScanQRcodeShotViewController.m; sourceTree = "<group>"; };
+		D7117EBD21E71C7D00E601CB /* MTUserInfoInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUserInfoInputViewController.m; sourceTree = "<group>"; };
+		D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController.xib; sourceTree = "<group>"; };
+		D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
+		D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController.xib; sourceTree = "<group>"; };
+		D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepTwoViewController.m; sourceTree = "<group>"; };
+		D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionsViewController.m; sourceTree = "<group>"; };
+		D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCameraOptionsViewController.xib; sourceTree = "<group>"; };
+		D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamQRcodeViewController.m; sourceTree = "<group>"; };
+		D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraPlayerContainerView.m; sourceTree = "<group>"; };
+		D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepOneViewController.m; sourceTree = "<group>"; };
+		D7117EC921E71C7D00E601CB /* MTCameraOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionCell.h; sourceTree = "<group>"; };
+		D7117ECA21E71C7D00E601CB /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTLiveConversationViewController.xib; sourceTree = "<group>"; };
+		D7117ECB21E71C7D00E601CB /* MTCameraOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionCell.m; sourceTree = "<group>"; };
+		D7117ECC21E71C7D00E601CB /* MTCameraOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCameraOptionCell.xib; sourceTree = "<group>"; };
+		D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLiveConversationViewController.h; sourceTree = "<group>"; };
+		D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionsViewController.h; sourceTree = "<group>"; };
+		D7117ECF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepTwoViewController.h; sourceTree = "<group>"; };
+		D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
+		D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraPlayerContainerView.h; sourceTree = "<group>"; };
+		D7117ED221E71C7D00E601CB /* CamLivestreamQRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamQRcodeViewController.h; sourceTree = "<group>"; };
+		D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepOneViewController.xib; sourceTree = "<group>"; };
+		D7117ED421E71C7D00E601CB /* CamLivestreamStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepOneViewController.h; sourceTree = "<group>"; };
+		D7117EEA21E71CBA00E601CB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7117EEB21E71CBA00E601CB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7117EEC21E71CBA00E601CB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D7117EEF21E71CE500E601CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7117EF121E71CE500E601CB /* invite_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = invite_loading.gif; sourceTree = "<group>"; };
+		D7117EF221E71CE500E601CB /* MaintainTool.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MaintainTool.entitlements; sourceTree = "<group>"; };
+		D7117EF521E71D3100E601CB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7117EF621E71D3100E601CB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7117EFA21E71D4800E601CB /* Feasd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feasd.m; sourceTree = "<group>"; };
+		D7117EFB21E71D4800E601CB /* FeWifiManHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeWifiManHub.m; sourceTree = "<group>"; };
+		D7117EFC21E71D4800E601CB /* FeVietNamBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeVietNamBar.h; sourceTree = "<group>"; };
+		D7117EFD21E71D4800E601CB /* FeZeroLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeZeroLoader.h; sourceTree = "<group>"; };
+		D7117EFE21E71D4800E601CB /* FeHourGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeHourGlass.h; sourceTree = "<group>"; };
+		D7117EFF21E71D4800E601CB /* FeThreeDotGlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeThreeDotGlow.m; sourceTree = "<group>"; };
+		D7117F0021E71D4800E601CB /* FeTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeTenDot.m; sourceTree = "<group>"; };
+		D7117F0121E71D4800E601CB /* FeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeViewController.h; sourceTree = "<group>"; };
+		D7117F0221E71D4800E601CB /* FeEqualize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeEqualize.h; sourceTree = "<group>"; };
+		D7117F0321E71D4800E601CB /* FeVietNamLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeVietNamLoader.m; sourceTree = "<group>"; };
+		D7117F0421E71D4800E601CB /* FeRollingLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeRollingLoader.m; sourceTree = "<group>"; };
+		D7117F0521E71D4800E601CB /* FeHandwriting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeHandwriting.m; sourceTree = "<group>"; };
+		D7117F0621E71D4800E601CB /* FeSpinnerTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeSpinnerTenDot.m; sourceTree = "<group>"; };
+		D7117F0721E71D4800E601CB /* FeLoadingIconBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeLoadingIconBox.m; sourceTree = "<group>"; };
+		D7117F0821E71D4800E601CB /* FeLoadingIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeLoadingIcon.m; sourceTree = "<group>"; };
+		D7117F0921E71D4800E601CB /* FeThreeDotGlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeThreeDotGlow.h; sourceTree = "<group>"; };
+		D7117F0A21E71D4800E601CB /* FeHourGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeHourGlass.m; sourceTree = "<group>"; };
+		D7117F0B21E71D4800E601CB /* FeVietNamBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeVietNamBar.m; sourceTree = "<group>"; };
+		D7117F0C21E71D4800E601CB /* FeZeroLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeZeroLoader.m; sourceTree = "<group>"; };
+		D7117F0D21E71D4800E601CB /* FeWifiManHub.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeWifiManHub.xib; sourceTree = "<group>"; };
+		D7117F0E21E71D4800E601CB /* Feasd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feasd.h; sourceTree = "<group>"; };
+		D7117F0F21E71D4800E601CB /* FeWifiManHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeWifiManHub.h; sourceTree = "<group>"; };
+		D7117F1021E71D4800E601CB /* FeEqualize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeEqualize.m; sourceTree = "<group>"; };
+		D7117F1121E71D4800E601CB /* FeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeViewController.m; sourceTree = "<group>"; };
+		D7117F1221E71D4800E601CB /* FeTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeTenDot.h; sourceTree = "<group>"; };
+		D7117F1321E71D4800E601CB /* FeSpinnerTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeSpinnerTenDot.h; sourceTree = "<group>"; };
+		D7117F1421E71D4800E601CB /* FeHandwriting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeHandwriting.h; sourceTree = "<group>"; };
+		D7117F1521E71D4800E601CB /* FeRollingLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeRollingLoader.h; sourceTree = "<group>"; };
+		D7117F1721E71D4800E601CB /* CabinCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CabinCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		D7117F1821E71D4800E601CB /* WifiMan_Sign_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_1@2x.png"; sourceTree = "<group>"; };
+		D7117F1921E71D4800E601CB /* Neou-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neou-Thin.ttf"; sourceTree = "<group>"; };
+		D7117F1A21E71D4800E601CB /* WifiMan_Sign_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_3@2x.png"; sourceTree = "<group>"; };
+		D7117F1B21E71D4800E601CB /* WifiMan_Sign_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_4@2x.png"; sourceTree = "<group>"; };
+		D7117F1C21E71D4800E601CB /* wifimanhub@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifimanhub@2x.png"; sourceTree = "<group>"; };
+		D7117F1D21E71D4800E601CB /* wifimanhub_grayscale@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifimanhub_grayscale@2x.png"; sourceTree = "<group>"; };
+		D7117F1E21E71D4800E601CB /* WifiMan_Sign_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WifiMan_Sign_2@2x.png"; sourceTree = "<group>"; };
+		D7117F1F21E71D4800E601CB /* FeVietNamLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeVietNamLoader.h; sourceTree = "<group>"; };
+		D7117F2121E71D4800E601CB /* UIColor+flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flat.h"; sourceTree = "<group>"; };
+		D7117F2221E71D4800E601CB /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		D7117F2321E71D4800E601CB /* UIColor+flat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flat.m"; sourceTree = "<group>"; };
+		D7117F2421E71D4800E601CB /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		D7117F2521E71D4800E601CB /* FeLoadingIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIcon.h; sourceTree = "<group>"; };
+		D7117F2621E71D4800E601CB /* FeLoadingIconBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIconBox.h; sourceTree = "<group>"; };
 		D718611B21BF4CB7002A709E /* MacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MaintainTool-Prefix.pch"; sourceTree = "<group>"; };
-		D718612521BF5451002A709E /* MTCameraOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionCell.h; sourceTree = "<group>"; };
-		D718612621BF5451002A709E /* MTCameraOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionCell.m; sourceTree = "<group>"; };
-		D718612721BF5451002A709E /* MTCameraOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTCameraOptionCell.xib; sourceTree = "<group>"; };
-		D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepOneViewController.m; sourceTree = "<group>"; };
-		D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamQRcodeViewController.m; sourceTree = "<group>"; };
-		D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepOneViewController.h; sourceTree = "<group>"; };
-		D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepOneViewController.xib; sourceTree = "<group>"; };
-		D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController.xib; sourceTree = "<group>"; };
-		D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepTwoViewController.m; sourceTree = "<group>"; };
-		D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepTwoViewController.h; sourceTree = "<group>"; };
-		D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamQRcodeViewController.h; sourceTree = "<group>"; };
-		D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController.xib; sourceTree = "<group>"; };
 		D718614421BF6014002A709E /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		D718614521BF6015002A709E /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
 		D718618121BF9D92002A709E /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -205,29 +230,15 @@
 		D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCreateSessionApi.m; sourceTree = "<group>"; };
 		D71B31BB21C0F4AC005CFC53 /* MTCloseSesstionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCloseSesstionApi.h; sourceTree = "<group>"; };
 		D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCloseSesstionApi.m; sourceTree = "<group>"; };
-		D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaintainTool.entitlements; sourceTree = "<group>"; };
-		D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
-		D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTLiveConversationViewController.h; sourceTree = "<group>"; };
-		D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
-		D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MTLiveConversationViewController.xib; path = SubCells/MTLiveConversationViewController.xib; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BDE52C21B90A9B005D1A7E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		D7BDE53121B90AA3005D1A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7BDE53421B90AA3005D1A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D7BDE53621B90AA3005D1A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7BDE53721B90AA3005D1A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7BDE53F21B90AD9005D1A7E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D7BDE54121B90AE4005D1A7E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D7BDE54321B90AED005D1A7E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		D7BDE54521B90AFB005D1A7E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D7BDE54721B90B06005D1A7E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D7BDE54E21B90DC8005D1A7E /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
-		D7E5EA7221D5F17300BE37DB /* MTUserInfoInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTUserInfoInputViewController.h; sourceTree = "<group>"; };
-		D7E5EA7321D5F17300BE37DB /* MTUserInfoInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTUserInfoInputViewController.m; sourceTree = "<group>"; };
-		D7E5EA7421D5F17300BE37DB /* MTUserInfoInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTUserInfoInputViewController.xib; sourceTree = "<group>"; };
-		D7E5EA7721D5F33500BE37DB /* MTScanQRcodeShotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTScanQRcodeShotViewController.h; sourceTree = "<group>"; };
-		D7E5EA7821D5F33500BE37DB /* MTScanQRcodeShotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTScanQRcodeShotViewController.m; sourceTree = "<group>"; };
-		D7E5EA7921D5F33500BE37DB /* MTScanQRcodeShotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTScanQRcodeShotViewController.xib; sourceTree = "<group>"; };
 		EE191D99DDD51F66B7045E14 /* libPods-MaintainTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MaintainTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -258,87 +269,149 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D713FA0721D31E4E009C0001 /* FeSpinner */ = {
+		D7117EB221E71C7D00E601CB /* ScanShot */ = {
 			isa = PBXGroup;
 			children = (
-				D713FA0821D31E4E009C0001 /* Feasd.m */,
-				D713FA0921D31E4E009C0001 /* FeWifiManHub.m */,
-				D713FA0A21D31E4E009C0001 /* FeVietNamBar.h */,
-				D713FA0B21D31E4E009C0001 /* FeZeroLoader.h */,
-				D713FA0C21D31E4E009C0001 /* FeHourGlass.h */,
-				D713FA0D21D31E4E009C0001 /* FeThreeDotGlow.m */,
-				D713FA0E21D31E4E009C0001 /* FeTenDot.m */,
-				D713FA0F21D31E4E009C0001 /* FeViewController.h */,
-				D713FA1021D31E4E009C0001 /* FeEqualize.h */,
-				D713FA1121D31E4E009C0001 /* FeVietNamLoader.m */,
-				D713FA1221D31E4E009C0001 /* FeRollingLoader.m */,
-				D713FA1321D31E4E009C0001 /* FeHandwriting.m */,
-				D713FA1421D31E4E009C0001 /* FeSpinnerTenDot.m */,
-				D713FA1521D31E4E009C0001 /* FeLoadingIconBox.m */,
-				D713FA1621D31E4E009C0001 /* FeLoadingIcon.m */,
-				D713FA1721D31E4E009C0001 /* FeThreeDotGlow.h */,
-				D713FA1821D31E4E009C0001 /* FeHourGlass.m */,
-				D713FA1921D31E4E009C0001 /* FeVietNamBar.m */,
-				D713FA1A21D31E4E009C0001 /* FeZeroLoader.m */,
-				D713FA1B21D31E4E009C0001 /* FeWifiManHub.xib */,
-				D713FA1C21D31E4E009C0001 /* Feasd.h */,
-				D713FA3321D31E4E009C0001 /* FeLoadingIcon.h */,
-				D713FA1D21D31E4E009C0001 /* FeWifiManHub.h */,
-				D713FA1E21D31E4E009C0001 /* FeEqualize.m */,
-				D713FA1F21D31E4E009C0001 /* FeViewController.m */,
-				D713FA3421D31E4E009C0001 /* FeLoadingIconBox.h */,
-				D713FA2021D31E4E009C0001 /* FeTenDot.h */,
-				D713FA2121D31E4E009C0001 /* FeSpinnerTenDot.h */,
-				D713FA2D21D31E4E009C0001 /* FeVietNamLoader.h */,
-				D713FA2221D31E4E009C0001 /* FeHandwriting.h */,
-				D713FA2321D31E4E009C0001 /* FeRollingLoader.h */,
-				D713FA2421D31E4E009C0001 /* Resource */,
-				D713FA2E21D31E4E009C0001 /* Tool */,
+				D7117EB321E71C7D00E601CB /* MTManualInputViewController.h */,
+				D7117EB421E71C7D00E601CB /* MTAvCaptureViewController.m */,
+				D7117EB521E71C7D00E601CB /* MTScanQRcodeShotViewController.h */,
+				D7117EB621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib */,
+				D7117EB721E71C7D00E601CB /* MTUserInfoInputViewController.h */,
+				D7117EB821E71C7D00E601CB /* MTManualInputViewController.m */,
+				D7117EB921E71C7D00E601CB /* MTManualInputViewController.xib */,
+				D7117EBA21E71C7D00E601CB /* MTAvCaptureViewController.h */,
+				D7117EBB21E71C7D00E601CB /* MTUserInfoInputViewController.xib */,
+				D7117EBC21E71C7D00E601CB /* MTScanQRcodeShotViewController.m */,
+				D7117EBD21E71C7D00E601CB /* MTUserInfoInputViewController.m */,
+			);
+			path = ScanShot;
+			sourceTree = "<group>";
+		};
+		D7117EBE21E71C7D00E601CB /* LiveVideoConversation */ = {
+			isa = PBXGroup;
+			children = (
+				D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */,
+				D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */,
+				D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */,
+				D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */,
+				D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */,
+				D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */,
+				D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */,
+				D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */,
+				D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */,
+				D7117EC821E71C7D00E601CB /* SubCells */,
+				D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */,
+				D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */,
+				D7117ECF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.h */,
+				D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */,
+				D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */,
+				D7117ED221E71C7D00E601CB /* CamLivestreamQRcodeViewController.h */,
+				D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */,
+				D7117ED421E71C7D00E601CB /* CamLivestreamStepOneViewController.h */,
+			);
+			path = LiveVideoConversation;
+			sourceTree = "<group>";
+		};
+		D7117EC821E71C7D00E601CB /* SubCells */ = {
+			isa = PBXGroup;
+			children = (
+				D7117EC921E71C7D00E601CB /* MTCameraOptionCell.h */,
+				D7117ECA21E71C7D00E601CB /* MTLiveConversationViewController.xib */,
+				D7117ECB21E71C7D00E601CB /* MTCameraOptionCell.m */,
+				D7117ECC21E71C7D00E601CB /* MTCameraOptionCell.xib */,
+			);
+			path = SubCells;
+			sourceTree = "<group>";
+		};
+		D7117EEE21E71CE500E601CB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D7117EF221E71CE500E601CB /* MaintainTool.entitlements */,
+				D7117EEF21E71CE500E601CB /* Assets.xcassets */,
+				D7117EF021E71CE500E601CB /* Gifs */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D7117EF021E71CE500E601CB /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				D7117EF121E71CE500E601CB /* invite_loading.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		D7117EF921E71D4800E601CB /* FeSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				D7117EFA21E71D4800E601CB /* Feasd.m */,
+				D7117EFB21E71D4800E601CB /* FeWifiManHub.m */,
+				D7117EFC21E71D4800E601CB /* FeVietNamBar.h */,
+				D7117EFD21E71D4800E601CB /* FeZeroLoader.h */,
+				D7117EFE21E71D4800E601CB /* FeHourGlass.h */,
+				D7117EFF21E71D4800E601CB /* FeThreeDotGlow.m */,
+				D7117F0021E71D4800E601CB /* FeTenDot.m */,
+				D7117F0121E71D4800E601CB /* FeViewController.h */,
+				D7117F0221E71D4800E601CB /* FeEqualize.h */,
+				D7117F0321E71D4800E601CB /* FeVietNamLoader.m */,
+				D7117F0421E71D4800E601CB /* FeRollingLoader.m */,
+				D7117F0521E71D4800E601CB /* FeHandwriting.m */,
+				D7117F0621E71D4800E601CB /* FeSpinnerTenDot.m */,
+				D7117F0721E71D4800E601CB /* FeLoadingIconBox.m */,
+				D7117F0821E71D4800E601CB /* FeLoadingIcon.m */,
+				D7117F0921E71D4800E601CB /* FeThreeDotGlow.h */,
+				D7117F0A21E71D4800E601CB /* FeHourGlass.m */,
+				D7117F0B21E71D4800E601CB /* FeVietNamBar.m */,
+				D7117F0C21E71D4800E601CB /* FeZeroLoader.m */,
+				D7117F0D21E71D4800E601CB /* FeWifiManHub.xib */,
+				D7117F0E21E71D4800E601CB /* Feasd.h */,
+				D7117F0F21E71D4800E601CB /* FeWifiManHub.h */,
+				D7117F1021E71D4800E601CB /* FeEqualize.m */,
+				D7117F1121E71D4800E601CB /* FeViewController.m */,
+				D7117F1221E71D4800E601CB /* FeTenDot.h */,
+				D7117F1321E71D4800E601CB /* FeSpinnerTenDot.h */,
+				D7117F1421E71D4800E601CB /* FeHandwriting.h */,
+				D7117F1521E71D4800E601CB /* FeRollingLoader.h */,
+				D7117F1621E71D4800E601CB /* Resource */,
+				D7117F1F21E71D4800E601CB /* FeVietNamLoader.h */,
+				D7117F2021E71D4800E601CB /* Tool */,
+				D7117F2521E71D4800E601CB /* FeLoadingIcon.h */,
+				D7117F2621E71D4800E601CB /* FeLoadingIconBox.h */,
 			);
 			path = FeSpinner;
 			sourceTree = "<group>";
 		};
-		D713FA2421D31E4E009C0001 /* Resource */ = {
+		D7117F1621E71D4800E601CB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D713FA2521D31E4E009C0001 /* CabinCondensed-Bold.ttf */,
-				D713FA2621D31E4E009C0001 /* WifiMan_Sign_1@2x.png */,
-				D713FA2721D31E4E009C0001 /* Neou-Thin.ttf */,
-				D713FA2821D31E4E009C0001 /* WifiMan_Sign_3@2x.png */,
-				D713FA2921D31E4E009C0001 /* WifiMan_Sign_4@2x.png */,
-				D713FA2A21D31E4E009C0001 /* wifimanhub@2x.png */,
-				D713FA2B21D31E4E009C0001 /* wifimanhub_grayscale@2x.png */,
-				D713FA2C21D31E4E009C0001 /* WifiMan_Sign_2@2x.png */,
+				D7117F1721E71D4800E601CB /* CabinCondensed-Bold.ttf */,
+				D7117F1821E71D4800E601CB /* WifiMan_Sign_1@2x.png */,
+				D7117F1921E71D4800E601CB /* Neou-Thin.ttf */,
+				D7117F1A21E71D4800E601CB /* WifiMan_Sign_3@2x.png */,
+				D7117F1B21E71D4800E601CB /* WifiMan_Sign_4@2x.png */,
+				D7117F1C21E71D4800E601CB /* wifimanhub@2x.png */,
+				D7117F1D21E71D4800E601CB /* wifimanhub_grayscale@2x.png */,
+				D7117F1E21E71D4800E601CB /* WifiMan_Sign_2@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		D713FA2E21D31E4E009C0001 /* Tool */ = {
+		D7117F2021E71D4800E601CB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				D713FA2F21D31E4E009C0001 /* UIColor+flat.h */,
-				D713FA3021D31E4E009C0001 /* FXBlurView.h */,
-				D713FA3121D31E4E009C0001 /* UIColor+flat.m */,
-				D713FA3221D31E4E009C0001 /* FXBlurView.m */,
+				D7117F2121E71D4800E601CB /* UIColor+flat.h */,
+				D7117F2221E71D4800E601CB /* FXBlurView.h */,
+				D7117F2321E71D4800E601CB /* UIColor+flat.m */,
+				D7117F2421E71D4800E601CB /* FXBlurView.m */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		D717184B21CB25510089181C /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */,
-				D7BDE53121B90AA3005D1A7E /* Assets.xcassets */,
-				D75D2F9021C898DC00AB9530 /* Gifs */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		D718611421BF4A88002A709E /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				D747047521DEFC84002680C5 /* LiveVideoConversation */,
-				D747047621DEFCB4002680C5 /* ScanShot */,
+				D7117EBE21E71C7D00E601CB /* LiveVideoConversation */,
+				D7117EB221E71C7D00E601CB /* ScanShot */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -356,9 +429,9 @@
 			children = (
 				D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */,
 				D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */,
+				D7117EF521E71D3100E601CB /* Info.plist */,
+				D7117EF621E71D3100E601CB /* main.m */,
 				D71B317621C0A50E005CFC53 /* Localizable.strings */,
-				D7BDE53621B90AA3005D1A7E /* Info.plist */,
-				D7BDE53721B90AA3005D1A7E /* main.m */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -366,7 +439,7 @@
 		D71B317921C0DE9E005CFC53 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				D713FA0721D31E4E009C0001 /* FeSpinner */,
+				D7117EF921E71D4800E601CB /* FeSpinner */,
 				D71B317A21C0DE9E005CFC53 /* TPKeyboardAvoiding */,
 				D71B318321C0DE9E005CFC53 /* KxMenu */,
 				D71B318621C0DE9E005CFC53 /* libqrencode */,
@@ -454,68 +527,6 @@
 			path = MaintainTool/YTKNetworkApi;
 			sourceTree = SOURCE_ROOT;
 		};
-		D747047521DEFC84002680C5 /* LiveVideoConversation */ = {
-			isa = PBXGroup;
-			children = (
-				D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */,
-				D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */,
-				D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */,
-				D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */,
-				D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */,
-				D747047721DEFCDC002680C5 /* MTLiveConversationViewController.xib */,
-				D778C63B21CCDAB900157106 /* MTCameraPlayerContainerView.h */,
-				D778C63C21CCDAB900157106 /* MTCameraPlayerContainerView.m */,
-				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
-				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
-				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
-				D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */,
-				D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */,
-				D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */,
-				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
-				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
-				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
-				D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */,
-				D7519BC121C2074000A5C9EC /* SubCells */,
-			);
-			path = LiveVideoConversation;
-			sourceTree = "<group>";
-		};
-		D747047621DEFCB4002680C5 /* ScanShot */ = {
-			isa = PBXGroup;
-			children = (
-				D7E5EA7221D5F17300BE37DB /* MTUserInfoInputViewController.h */,
-				D7E5EA7321D5F17300BE37DB /* MTUserInfoInputViewController.m */,
-				D7E5EA7421D5F17300BE37DB /* MTUserInfoInputViewController.xib */,
-				D70428DA21D71E39001C1ABC /* MTAvCaptureViewController.h */,
-				D70428DB21D71E39001C1ABC /* MTAvCaptureViewController.m */,
-				D7E5EA7721D5F33500BE37DB /* MTScanQRcodeShotViewController.h */,
-				D7E5EA7821D5F33500BE37DB /* MTScanQRcodeShotViewController.m */,
-				D7E5EA7921D5F33500BE37DB /* MTScanQRcodeShotViewController.xib */,
-				D70428DD21D7214E001C1ABC /* MTManualInputViewController.h */,
-				D70428DE21D7214E001C1ABC /* MTManualInputViewController.m */,
-				D70428DF21D7214E001C1ABC /* MTManualInputViewController.xib */,
-			);
-			path = ScanShot;
-			sourceTree = "<group>";
-		};
-		D7519BC121C2074000A5C9EC /* SubCells */ = {
-			isa = PBXGroup;
-			children = (
-				D718612521BF5451002A709E /* MTCameraOptionCell.h */,
-				D718612621BF5451002A709E /* MTCameraOptionCell.m */,
-				D718612721BF5451002A709E /* MTCameraOptionCell.xib */,
-			);
-			path = SubCells;
-			sourceTree = "<group>";
-		};
-		D75D2F9021C898DC00AB9530 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				D75D2F9321C8C0B500AB9530 /* invite_loading.gif */,
-			);
-			path = Gifs;
-			sourceTree = "<group>";
-		};
 		D7BDE51C21B90A9B005D1A7E = {
 			isa = PBXGroup;
 			children = (
@@ -538,15 +549,17 @@
 		D7BDE52721B90A9B005D1A7E /* MaintainTool */ = {
 			isa = PBXGroup;
 			children = (
-				D71B31BE21C10977005CFC53 /* MaintainTool.entitlements */,
+				D7117EEB21E71CBA00E601CB /* AppDelegate.h */,
+				D7117EEA21E71CBA00E601CB /* AppDelegate.m */,
 				D718614421BF6014002A709E /* AppDelegateHelper.h */,
 				D718614521BF6015002A709E /* AppDelegateHelper.m */,
+				D7117EEC21E71CBA00E601CB /* RootViewController.h */,
 				D7BDE52C21B90A9B005D1A7E /* RootViewController.m */,
 				D718618121BF9D92002A709E /* RootViewController.xib */,
 				D718611421BF4A88002A709E /* Sections */,
 				D718611A21BF4C96002A709E /* Macro */,
 				D71B31AE21C0E7A8005CFC53 /* YTKNetworkApi */,
-				D717184B21CB25510089181C /* Resource */,
+				D7117EEE21E71CE500E601CB /* Resource */,
 				D718611C21BF4D4E002A709E /* Supporting Files */,
 			);
 			path = MaintainTool;
@@ -602,9 +615,6 @@
 							com.apple.AccessWiFi = {
 								enabled = 1;
 							};
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
 						};
 					};
 				};
@@ -633,30 +643,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D747047821DEFCDC002680C5 /* MTLiveConversationViewController.xib in Resources */,
+				D7117F3921E71D4800E601CB /* Neou-Thin.ttf in Resources */,
+				D7117EF721E71D3100E601CB /* Info.plist in Resources */,
 				D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */,
+				D7117F3E21E71D4800E601CB /* WifiMan_Sign_2@2x.png in Resources */,
+				D7117F3821E71D4800E601CB /* WifiMan_Sign_1@2x.png in Resources */,
+				D7117EDC21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib in Resources */,
 				D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */,
+				D7117EE921E71C7D00E601CB /* CamLivestreamStepOneViewController.xib in Resources */,
+				D7117EF321E71CE500E601CB /* Assets.xcassets in Resources */,
+				D7117ED821E71C7D00E601CB /* MTManualInputViewController.xib in Resources */,
+				D7117F3A21E71D4800E601CB /* WifiMan_Sign_3@2x.png in Resources */,
+				D7117F3421E71D4800E601CB /* FeWifiManHub.xib in Resources */,
 				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
-				D718613D21BF5CE5002A709E /* CamLivestreamStepOneViewController.xib in Resources */,
-				D713FA4521D31E4E009C0001 /* CabinCondensed-Bold.ttf in Resources */,
-				D713FA4921D31E4E009C0001 /* WifiMan_Sign_4@2x.png in Resources */,
-				D718612921BF5451002A709E /* MTCameraOptionCell.xib in Resources */,
-				D7E5EA7621D5F17300BE37DB /* MTUserInfoInputViewController.xib in Resources */,
-				D73C4C9C21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
-				D718611921BF4AD1002A709E /* MTCameraOptionsViewController.xib in Resources */,
-				D713FA4C21D31E4E009C0001 /* WifiMan_Sign_2@2x.png in Resources */,
-				D75D2F9421C8C0B500AB9530 /* invite_loading.gif in Resources */,
-				D7BDE53221B90AA3005D1A7E /* Assets.xcassets in Resources */,
-				D713FA4B21D31E4E009C0001 /* wifimanhub_grayscale@2x.png in Resources */,
-				D70428E121D7214E001C1ABC /* MTManualInputViewController.xib in Resources */,
-				D713FA4A21D31E4E009C0001 /* wifimanhub@2x.png in Resources */,
-				D713FA4221D31E4E009C0001 /* FeWifiManHub.xib in Resources */,
-				D718614321BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib in Resources */,
-				D713FA4721D31E4E009C0001 /* Neou-Thin.ttf in Resources */,
-				D713FA4621D31E4E009C0001 /* WifiMan_Sign_1@2x.png in Resources */,
-				D713FA4821D31E4E009C0001 /* WifiMan_Sign_3@2x.png in Resources */,
-				D7E5EA7B21D5F33500BE37DB /* MTScanQRcodeShotViewController.xib in Resources */,
-				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
+				D7117F3D21E71D4800E601CB /* wifimanhub_grayscale@2x.png in Resources */,
+				D7117EE821E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
+				D7117F3C21E71D4800E601CB /* wifimanhub@2x.png in Resources */,
+				D7117ED921E71C7D00E601CB /* MTUserInfoInputViewController.xib in Resources */,
+				D7117EF421E71CE500E601CB /* invite_loading.gif in Resources */,
+				D7117EE521E71C7D00E601CB /* MTLiveConversationViewController.xib in Resources */,
+				D7117F3721E71D4800E601CB /* CabinCondensed-Bold.ttf in Resources */,
+				D7117ED621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib in Resources */,
+				D7117EE121E71C7D00E601CB /* MTCameraOptionsViewController.xib in Resources */,
+				D7117EE721E71C7D00E601CB /* MTCameraOptionCell.xib in Resources */,
+				D7117F3B21E71D4800E601CB /* WifiMan_Sign_4@2x.png in Resources */,
+				D7117EDE21E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,41 +699,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7117F3021E71D4800E601CB /* FeLoadingIcon.m in Sources */,
+				D7117F2E21E71D4800E601CB /* FeSpinnerTenDot.m in Sources */,
+				D7117F3521E71D4800E601CB /* FeEqualize.m in Sources */,
+				D7117EDD21E71C7D00E601CB /* MTLiveConversationViewController.m in Sources */,
+				D7117F3F21E71D4800E601CB /* UIColor+flat.m in Sources */,
+				D7117EE221E71C7D00E601CB /* CamLivestreamQRcodeViewController.m in Sources */,
 				D71B31A021C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */,
 				D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */,
 				D71B31AA21C0DE9E005CFC53 /* rscode.c in Sources */,
 				D71B31B121C0E7D7005CFC53 /* MTGetAppStreamApi.m in Sources */,
-				D718614121BF5CE5002A709E /* CamLivestreamStepTwoViewController.m in Sources */,
-				D7BDE53821B90AA3005D1A7E /* main.m in Sources */,
-				D718613B21BF5CE5002A709E /* CamLivestreamQRcodeViewController.m in Sources */,
-				D7519BC421C207E800A5C9EC /* MTLiveConversationViewController.m in Sources */,
+				D7117F3621E71D4800E601CB /* FeViewController.m in Sources */,
 				D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */,
+				D7117EDF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.m in Sources */,
+				D7117F2D21E71D4800E601CB /* FeHandwriting.m in Sources */,
+				D7117F2721E71D4800E601CB /* Feasd.m in Sources */,
 				D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */,
 				D71B31A321C0DE9E005CFC53 /* bitstream.c in Sources */,
 				D71B31A421C0DE9E005CFC53 /* qrencode.c in Sources */,
+				D7117F2B21E71D4800E601CB /* FeVietNamLoader.m in Sources */,
+				D7117EE321E71C7D00E601CB /* MTCameraPlayerContainerView.m in Sources */,
+				D7117EE621E71C7D00E601CB /* MTCameraOptionCell.m in Sources */,
+				D7117F3121E71D4800E601CB /* FeHourGlass.m in Sources */,
+				D7117F2C21E71D4800E601CB /* FeRollingLoader.m in Sources */,
+				D7117EE421E71C7D00E601CB /* CamLivestreamStepOneViewController.m in Sources */,
 				D71B31B421C0F1D5005CFC53 /* MTCreateLiveRoomApi.m in Sources */,
+				D7117F2821E71D4800E601CB /* FeWifiManHub.m in Sources */,
 				D71B31A221C0DE9E005CFC53 /* KxMenu.m in Sources */,
+				D7117EDA21E71C7D00E601CB /* MTScanQRcodeShotViewController.m in Sources */,
 				D71B319E21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				D718615B21BF8FC2002A709E /* CamConnectFailedViewController.m in Sources */,
+				D7117F2A21E71D4800E601CB /* FeTenDot.m in Sources */,
 				D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */,
+				D7117EE021E71C7D00E601CB /* MTCameraOptionsViewController.m in Sources */,
+				D7117F4021E71D4800E601CB /* FXBlurView.m in Sources */,
 				D71B31A521C0DE9E005CFC53 /* split.c in Sources */,
 				D71B31AB21C0DE9E005CFC53 /* CCMBorderView.m in Sources */,
-				D778C63D21CCDAB900157106 /* MTCameraPlayerContainerView.m in Sources */,
 				D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */,
-				D718612821BF5451002A709E /* MTCameraOptionCell.m in Sources */,
+				D7117ED521E71C7D00E601CB /* MTAvCaptureViewController.m in Sources */,
 				D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */,
 				D71B31A921C0DE9E005CFC53 /* qrspec.c in Sources */,
 				D71B319F21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m in Sources */,
-				D70428E021D7214E001C1ABC /* MTManualInputViewController.m in Sources */,
-				D718611821BF4AD1002A709E /* MTCameraOptionsViewController.m in Sources */,
 				D71B31A721C0DE9E005CFC53 /* qrinput.c in Sources */,
+				D7117ED721E71C7D00E601CB /* MTManualInputViewController.m in Sources */,
 				D71B31A821C0DE9E005CFC53 /* mask.c in Sources */,
-				D718613921BF5CE5002A709E /* CamLivestreamStepOneViewController.m in Sources */,
-				D7E5EA7521D5F17300BE37DB /* MTUserInfoInputViewController.m in Sources */,
+				D7117EDB21E71C7D00E601CB /* MTUserInfoInputViewController.m in Sources */,
 				D71B31A621C0DE9E005CFC53 /* QRCodeGenerator.m in Sources */,
-				D713FA3F21D31E4E009C0001 /* FeHourGlass.m in Sources */,
+				D7117EF821E71D3100E601CB /* main.m in Sources */,
+				D7117EED21E71CBA00E601CB /* AppDelegate.m in Sources */,
+				D7117F3321E71D4800E601CB /* FeZeroLoader.m in Sources */,
+				D7117F3221E71D4800E601CB /* FeVietNamBar.m in Sources */,
+				D7117F2F21E71D4800E601CB /* FeLoadingIconBox.m in Sources */,
+				D7117F2921E71D4800E601CB /* FeThreeDotGlow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,14 +898,11 @@
 			baseConfigurationReference = 0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M823S37QR4;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = J597Y7BB3N;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_C_LANGUAGE_STANDARD = gnu89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -886,9 +912,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.foream.maintaintool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -898,14 +923,11 @@
 			baseConfigurationReference = C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M823S37QR4;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = J597Y7BB3N;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_C_LANGUAGE_STANDARD = gnu89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MaintainTool/Supporting Files/MaintainTool-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -915,9 +937,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.foream.maintaintool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
