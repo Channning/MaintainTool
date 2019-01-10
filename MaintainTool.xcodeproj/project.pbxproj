@@ -60,6 +60,7 @@
 		D7117F3E21E71D4800E601CB /* WifiMan_Sign_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7117F1E21E71D4800E601CB /* WifiMan_Sign_2@2x.png */; };
 		D7117F3F21E71D4800E601CB /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F2321E71D4800E601CB /* UIColor+flat.m */; };
 		D7117F4021E71D4800E601CB /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117F2421E71D4800E601CB /* FXBlurView.m */; };
+		D7117F4321E7272B00E601CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7117F4121E7272B00E601CB /* LaunchScreen.storyboard */; };
 		D718614621BF6015002A709E /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D718614521BF6015002A709E /* AppDelegateHelper.m */; };
 		D718618221BF9D92002A709E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718618121BF9D92002A709E /* RootViewController.xib */; };
 		D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D71B317621C0A50E005CFC53 /* Localizable.strings */; };
@@ -85,7 +86,6 @@
 		D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */; };
 		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
-		D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */; };
 		D7BDE54021B90AD9005D1A7E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE53F21B90AD9005D1A7E /* libz.tbd */; };
 		D7BDE54221B90AE4005D1A7E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54121B90AE4005D1A7E /* libc++.tbd */; };
 		D7BDE54421B90AED005D1A7E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54321B90AED005D1A7E /* libresolv.tbd */; };
@@ -180,13 +180,13 @@
 		D7117F2421E71D4800E601CB /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		D7117F2521E71D4800E601CB /* FeLoadingIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIcon.h; sourceTree = "<group>"; };
 		D7117F2621E71D4800E601CB /* FeLoadingIconBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeLoadingIconBox.h; sourceTree = "<group>"; };
+		D7117F4221E7272B00E601CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D718611B21BF4CB7002A709E /* MacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MaintainTool-Prefix.pch"; sourceTree = "<group>"; };
 		D718614421BF6014002A709E /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateHelper.h; sourceTree = "<group>"; };
 		D718614521BF6015002A709E /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateHelper.m; sourceTree = "<group>"; };
 		D718618121BF9D92002A709E /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		D71B317521C0A50E005CFC53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D71B317721C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D71B317821C0A587005CFC53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D71B317B21C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		D71B317C21C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 		D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCloseSesstionApi.m; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BDE52C21B90A9B005D1A7E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		D7BDE53421B90AA3005D1A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7BDE53F21B90AD9005D1A7E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D7BDE54121B90AE4005D1A7E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D7BDE54321B90AED005D1A7E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
@@ -427,7 +426,7 @@
 		D718611C21BF4D4E002A709E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */,
+				D7117F4121E7272B00E601CB /* LaunchScreen.storyboard */,
 				D718611E21BF4EBD002A709E /* MaintainTool-Prefix.pch */,
 				D7117EF521E71D3100E601CB /* Info.plist */,
 				D7117EF621E71D3100E601CB /* main.m */,
@@ -649,9 +648,9 @@
 				D7117F3E21E71D4800E601CB /* WifiMan_Sign_2@2x.png in Resources */,
 				D7117F3821E71D4800E601CB /* WifiMan_Sign_1@2x.png in Resources */,
 				D7117EDC21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib in Resources */,
-				D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */,
 				D7117EE921E71C7D00E601CB /* CamLivestreamStepOneViewController.xib in Resources */,
 				D7117EF321E71CE500E601CB /* Assets.xcassets in Resources */,
+				D7117F4321E7272B00E601CB /* LaunchScreen.storyboard in Resources */,
 				D7117ED821E71C7D00E601CB /* MTManualInputViewController.xib in Resources */,
 				D7117F3A21E71D4800E601CB /* WifiMan_Sign_3@2x.png in Resources */,
 				D7117F3421E71D4800E601CB /* FeWifiManHub.xib in Resources */,
@@ -758,6 +757,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D7117F4121E7272B00E601CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7117F4221E7272B00E601CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		D71B317621C0A50E005CFC53 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -765,15 +772,6 @@
 				D71B317821C0A587005CFC53 /* zh-Hans */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		D7BDE53321B90AA3005D1A7E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7BDE53421B90AA3005D1A7E /* Base */,
-				D71B317721C0A587005CFC53 /* zh-Hans */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -898,7 +896,8 @@
 			baseConfigurationReference = 0DD9C9AA13FCA23F962CDF3A /* Pods-MaintainTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = YES;
@@ -923,7 +922,8 @@
 			baseConfigurationReference = C60BF79D1289AD9214E8899F /* Pods-MaintainTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MaintainTool/MaintainTool.entitlements;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J597Y7BB3N;
 				ENABLE_BITCODE = YES;
