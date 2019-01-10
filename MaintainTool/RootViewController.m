@@ -56,7 +56,6 @@
     [super viewWillAppear:animated];
 }
 
-
 #pragma mark - initialization
 - (void)initNavgationItemSubviews
 {

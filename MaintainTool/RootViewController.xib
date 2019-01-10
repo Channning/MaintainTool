@@ -33,7 +33,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RootView_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-ju-HGB">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-Ot-GdH">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-Ot-GdH">
                     <rect key="frame" x="62.5" y="303" width="250" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqk-nx-qLo">
@@ -167,7 +167,7 @@
     <resources>
         <image name="RootView_bg" width="750" height="1334"/>
         <image name="RootView_camera_on" width="50" height="37"/>
-        <image name="RootView_icon" width="353" height="353"/>
+        <image name="RootView_icon" width="238" height="238"/>
         <image name="RootView_scan_icon" width="43" height="43"/>
     </resources>
 </document>

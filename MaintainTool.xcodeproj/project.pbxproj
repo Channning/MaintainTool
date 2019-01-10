@@ -337,36 +337,8 @@
 		D718611421BF4A88002A709E /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */,
-				D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */,
-				D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */,
-				D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */,
-				D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */,
-				D7519BC521C207F900A5C9EC /* MTLiveConversationViewController.xib */,
-				D778C63B21CCDAB900157106 /* MTCameraPlayerContainerView.h */,
-				D778C63C21CCDAB900157106 /* MTCameraPlayerContainerView.m */,
-				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
-				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
-				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
-				D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */,
-				D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */,
-				D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */,
-				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
-				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
-				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
-				D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */,
-				D7519BC121C2074000A5C9EC /* SubCells */,
-				D7E5EA7221D5F17300BE37DB /* MTUserInfoInputViewController.h */,
-				D7E5EA7321D5F17300BE37DB /* MTUserInfoInputViewController.m */,
-				D7E5EA7421D5F17300BE37DB /* MTUserInfoInputViewController.xib */,
-				D70428DA21D71E39001C1ABC /* MTAvCaptureViewController.h */,
-				D70428DB21D71E39001C1ABC /* MTAvCaptureViewController.m */,
-				D7E5EA7721D5F33500BE37DB /* MTScanQRcodeShotViewController.h */,
-				D7E5EA7821D5F33500BE37DB /* MTScanQRcodeShotViewController.m */,
-				D7E5EA7921D5F33500BE37DB /* MTScanQRcodeShotViewController.xib */,
-				D70428DD21D7214E001C1ABC /* MTManualInputViewController.h */,
-				D70428DE21D7214E001C1ABC /* MTManualInputViewController.m */,
-				D70428DF21D7214E001C1ABC /* MTManualInputViewController.xib */,
+				D747047521DEFC84002680C5 /* LiveVideoConversation */,
+				D747047621DEFCB4002680C5 /* ScanShot */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -481,6 +453,50 @@
 			name = YTKNetworkApi;
 			path = MaintainTool/YTKNetworkApi;
 			sourceTree = SOURCE_ROOT;
+		};
+		D747047521DEFC84002680C5 /* LiveVideoConversation */ = {
+			isa = PBXGroup;
+			children = (
+				D718611521BF4AD1002A709E /* MTCameraOptionsViewController.h */,
+				D718611621BF4AD1002A709E /* MTCameraOptionsViewController.m */,
+				D718611721BF4AD1002A709E /* MTCameraOptionsViewController.xib */,
+				D7519BC221C207E800A5C9EC /* MTLiveConversationViewController.h */,
+				D7519BC321C207E800A5C9EC /* MTLiveConversationViewController.m */,
+				D747047721DEFCDC002680C5 /* MTLiveConversationViewController.xib */,
+				D778C63B21CCDAB900157106 /* MTCameraPlayerContainerView.h */,
+				D778C63C21CCDAB900157106 /* MTCameraPlayerContainerView.m */,
+				D718612D21BF5CE2002A709E /* CamLivestreamStepOneViewController.h */,
+				D718612A21BF5CE2002A709E /* CamLivestreamStepOneViewController.m */,
+				D718612F21BF5CE3002A709E /* CamLivestreamStepOneViewController.xib */,
+				D718613621BF5CE4002A709E /* CamLivestreamStepTwoViewController.h */,
+				D718613421BF5CE4002A709E /* CamLivestreamStepTwoViewController.m */,
+				D718613821BF5CE5002A709E /* CamLivestreamStepTwoViewController.xib */,
+				D718613721BF5CE4002A709E /* CamLivestreamQRcodeViewController.h */,
+				D718612C21BF5CE2002A709E /* CamLivestreamQRcodeViewController.m */,
+				D718613121BF5CE3002A709E /* CamLivestreamQRcodeViewController.xib */,
+				D73C4C9B21CA1F2500D3F986 /* CamLivestreamQRcodeViewController_4.0.xib */,
+				D7519BC121C2074000A5C9EC /* SubCells */,
+			);
+			path = LiveVideoConversation;
+			sourceTree = "<group>";
+		};
+		D747047621DEFCB4002680C5 /* ScanShot */ = {
+			isa = PBXGroup;
+			children = (
+				D7E5EA7221D5F17300BE37DB /* MTUserInfoInputViewController.h */,
+				D7E5EA7321D5F17300BE37DB /* MTUserInfoInputViewController.m */,
+				D7E5EA7421D5F17300BE37DB /* MTUserInfoInputViewController.xib */,
+				D70428DA21D71E39001C1ABC /* MTAvCaptureViewController.h */,
+				D70428DB21D71E39001C1ABC /* MTAvCaptureViewController.m */,
+				D7E5EA7721D5F33500BE37DB /* MTScanQRcodeShotViewController.h */,
+				D7E5EA7821D5F33500BE37DB /* MTScanQRcodeShotViewController.m */,
+				D7E5EA7921D5F33500BE37DB /* MTScanQRcodeShotViewController.xib */,
+				D70428DD21D7214E001C1ABC /* MTManualInputViewController.h */,
+				D70428DE21D7214E001C1ABC /* MTManualInputViewController.m */,
+				D70428DF21D7214E001C1ABC /* MTManualInputViewController.xib */,
+			);
+			path = ScanShot;
+			sourceTree = "<group>";
 		};
 		D7519BC121C2074000A5C9EC /* SubCells */ = {
 			isa = PBXGroup;
@@ -617,6 +633,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D747047821DEFCDC002680C5 /* MTLiveConversationViewController.xib in Resources */,
 				D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */,
 				D7BDE53521B90AA3005D1A7E /* LaunchScreen.storyboard in Resources */,
 				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
@@ -640,7 +657,6 @@
 				D713FA4821D31E4E009C0001 /* WifiMan_Sign_3@2x.png in Resources */,
 				D7E5EA7B21D5F33500BE37DB /* MTScanQRcodeShotViewController.xib in Resources */,
 				D718613F21BF5CE5002A709E /* CamLivestreamQRcodeViewController.xib in Resources */,
-				D7519BC621C207F900A5C9EC /* MTLiveConversationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,7 +873,7 @@
 				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J597Y7BB3N;
+				DEVELOPMENT_TEAM = M823S37QR4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu89;
@@ -870,7 +886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foream.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -886,7 +902,7 @@
 				CODE_SIGN_ENTITLEMENTS = MaintainTool/Resource/MaintainTool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J597Y7BB3N;
+				DEVELOPMENT_TEAM = M823S37QR4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu89;
@@ -899,7 +915,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.driftinnovation.maintaintool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foream.maintaintool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
