@@ -1,15 +1,15 @@
 //
-//  CamLivestreamStepTwoViewController.m
-//  Foream
+//  MTScanGuideViewController.m
+//  MaintainTool
 //
-//  Created by rongbaohong on 16/4/18.
-//  Copyright © 2016年 Foream. All rights reserved.
+//  Created by Channing_rong on 2018/12/21.
+//  Copyright © 2018 Channing_rong. All rights reserved.
 //
 
-#import "CamLivestreamStepTwoViewController.h"
-#import "CamLivestreamQRcodeViewController.h"
+#import "MTScanGuideViewController.h"
+#import "MTQRcodeScanViewController.h"
 #import "MTCameraOptionsViewController.h"
-@interface CamLivestreamStepTwoViewController ()
+@interface MTScanGuideViewController ()
 
 @property (nonatomic,weak) IBOutlet UIImageView *bgImageView;
 @property (nonatomic,weak) IBOutlet UIButton *nextButton;
@@ -19,20 +19,8 @@
 @property (nonatomic,weak) IBOutlet UIImageView *bgX1ImageView;
 @end
 
-@implementation CamLivestreamStepTwoViewController
+@implementation MTScanGuideViewController
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -118,66 +106,17 @@
 }
 
 #pragma mark - IBAction
--(IBAction)returnButtonDidClick:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-
--(IBAction)closeButtonDidClick:(id)sender
-{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
 
 -(IBAction)nextButtonDidClick:(id)sender
 {
 
-    if (_tryQRcode) {
-        
-        CamLivestreamQRcodeViewController * qrcodeView = [[CamLivestreamQRcodeViewController alloc]init];
-        [qrcodeView setContentInfo:_contentinfo];
-        [qrcodeView setSsidInfo:_ssidInfo];
-        [qrcodeView setPasswordInfo:_passwordInfo];
-        [self.navigationController pushViewController:qrcodeView animated:YES];
-        
-    }
-    else if (_isGhostX)
-    {
-        CamLivestreamQRcodeViewController * qrcodeView = [[CamLivestreamQRcodeViewController alloc]init];
-        [qrcodeView setContentInfo:_contentinfo];
-        [qrcodeView setSsidInfo:_ssidInfo];
-        [qrcodeView setPasswordInfo:_passwordInfo];
-        [qrcodeView setStreamCreatTime:_streamCreatTime];
-        [self.navigationController pushViewController:qrcodeView animated:YES];
-    }
-    else
-    {
-//        CamLivestreamStepThreeViewController *scanQRcodeView = [[CamLivestreamStepThreeViewController alloc]init];
-//        [scanQRcodeView setConnectType:ConnectingTypeSmartconfig];
-//        [scanQRcodeView setContentInfo:_contentinfo];
-//        [scanQRcodeView setSsidInfo:_ssidInfo];
-//        [scanQRcodeView setPasswordInfo:_passwordInfo];
-//        [self.navigationController pushViewController:scanQRcodeView animated:YES];
-    
-    }
+    MTQRcodeScanViewController * qrcodeView = [[MTQRcodeScanViewController alloc]init];
+    [qrcodeView setContentInfo:_contentinfo];
+    [qrcodeView setSsidInfo:_ssidInfo];
+    [qrcodeView setPasswordInfo:_passwordInfo];
+    [self.navigationController pushViewController:qrcodeView animated:YES];
     
 }
 
--(IBAction)chosseAnotherCameraModal:(id)sender
-{
-    MTCameraOptionsViewController *chooseCameraView = [[MTCameraOptionsViewController alloc]init];
-    [self.navigationController pushViewController:chooseCameraView animated:YES];
-}
 
-
-#pragma mark - Screen rotation
-- (BOOL)shouldAutorotate
-{       //IOS6
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
 @end

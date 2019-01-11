@@ -1,12 +1,12 @@
 //
-//  CamLivestreamQRcodeViewController.m
-//  Foream
+//  MTQRcodeScanViewController.m
+//  MaintainTool
 //
-//  Created by rongbaohong on 16/4/19.
-//  Copyright © 2016年 Foream. All rights reserved.
+//  Created by Channing_rong on 2018/12/21.
+//  Copyright © 2018 Channing_rong. All rights reserved.
 //
 
-#import "CamLivestreamQRcodeViewController.h"
+#import "MTQRcodeScanViewController.h"
 #import "MTLiveConversationViewController.h"
 #import "UIViewController+MaryPopin.h"
 #import "QRCodeGenerator.h"
@@ -15,15 +15,9 @@
 #import "MTOwnerRoomInfoApi.h"
 #import "MTCreateLiveRoomApi.h"
 
-@interface CamLivestreamQRcodeViewController ()<SRWebSocketDelegate>
+@interface MTQRcodeScanViewController ()<SRWebSocketDelegate>
 {
-    NSTimer *checkCameraRegisterTimer;
-    long tag;
-    BOOL didReceiveData;
-    BOOL didPushViewController;
-    BOOL didDeleteMessage;
     BOOL didEnterLivepReviewPage;
-    NSString *messageId;
     
     NSString *pushUrlString;
     NSString *playRtmpUrlString;
@@ -50,14 +44,14 @@
 
 @end
 
-@implementation CamLivestreamQRcodeViewController
+@implementation MTQRcodeScanViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 
     if(iPhone5 || isRetina)
     {
-        self = [super initWithNibName:@"CamLivestreamQRcodeViewController_4.0" bundle:nibBundleOrNil];
+        self = [super initWithNibName:@"MTQRcodeScanViewController_4.0" bundle:nibBundleOrNil];
         
     }else
     {
@@ -623,16 +617,5 @@
      }];
 }
 
-
-#pragma mark - Screen rotation
-- (BOOL)shouldAutorotate
-{       //IOS6
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
 
 @end

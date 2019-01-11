@@ -12,12 +12,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MTManualInputViewController.h"
 
-/**
- *  屏幕 高 宽 边界
- */
-//#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-//#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
-#define SCREEN_BOUNDS  [UIScreen mainScreen].bounds
 
 #define TOP (SCREEN_HEIGHT-220)/2
 #define LEFT (SCREEN_WIDTH-220)/2
@@ -78,9 +72,7 @@
     [_inputButton setTitle:@"手动输入" forState:UIControlStateNormal];
     [_inputButton addTarget:self action:@selector(enterManualInputView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_inputButton];
-    
-    //    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
-    
+ 
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -93,9 +85,16 @@
     
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
         
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:MyLocal(@"温馨提示") message:MyLocal(@"请在iPhone的\"设置\"-\"隐私\"-\"相机\"功能中，找到\"维修印记\"打开相机访问权限") delegate:nil cancelButtonTitle:MyLocal(@"确定") otherButtonTitles: nil];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                       message:@"请在iPhone的\"设置\"-\"隐私\"-\"相机\"功能中，找到\"维修印记\"打开相机访问权限"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert show];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
+                          
+                          {
+                          }]];
+        [self presentViewController:alert animated:YES completion:nil];
+
         
         return;
     }
@@ -112,6 +111,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [timer invalidate];
+    timer = nil;
 }
 
 - (void)initNavgationItemSubviews
@@ -248,16 +248,7 @@
             NSLog(@"%@",temp);
         }
         
-        
-        //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"扫描结果" message:stringValue preferredStyle:UIAlertControllerStyleAlert];
-        //        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //            if (_session != nil && timer != nil) {
-        //                [_session startRunning];
-        //                [timer setFireDate:[NSDate date]];
-        //            }
-        //
-        //        }]];
-        //        [self presentViewController:alert animated:YES completion:nil];
+
         //需要对数据进行加工
         //1 先取出数据
         NSArray *array =[stringValue componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"?=&"]];
@@ -274,7 +265,6 @@
         MTScanQRcodeShotViewController * qrcodeView = [[MTScanQRcodeShotViewController alloc]init];
         [qrcodeView setBOnlyForScan:YES];
         [qrcodeView setSsidInfo:searialNum];
-        //        [qrcodeView setContentInfo:qrCodeString];
         [self.navigationController pushViewController:qrcodeView animated:YES];
     } else {
         NSLog(@"无扫描信息");

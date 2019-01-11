@@ -66,12 +66,16 @@
         BOOL isValid = [self isValidateRegex: _userIDTextField.text Regex: format];
         if(!isValid)
         {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示",nil)
-                                                           message:NSLocalizedString(@"用户ID只能含有英文字母、数字和'-'，并且符合ID要求的格式",nil)
-                                                          delegate:self
-                                                 cancelButtonTitle:NSLocalizedString(@"OK",nil)
-                                                 otherButtonTitles:nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                           message:@"用户ID只能含有英文字母、数字和'-'，并且符合ID要求的格式"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
+                              
+                              {
+                              }]];
+            [self presentViewController:alert animated:YES completion:nil];
+      
             return;
         }
     }
@@ -89,9 +93,7 @@
 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-
 {
-    
     if (string.length==0)
     {
         return YES;
@@ -103,13 +105,9 @@
         
     {
         //小写变成大写
-        
         NSString * uppercaseString = string.uppercaseString;
-        
         NSString * str1 = [textField.text substringToIndex:range.location];
-        
         NSString * str2 = [textField.text substringFromIndex:range.location];
-        
         textField.text = [NSString stringWithFormat:@"%@%@%@",str1,uppercaseString,str2];
         
         return NO;

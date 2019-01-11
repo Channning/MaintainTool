@@ -7,7 +7,7 @@
 //
 
 #import "MTCameraOptionsViewController.h"
-#import "CamLivestreamStepOneViewController.h"
+#import "MTWiFiPasswordViewController.h"
 #import "MTCameraOptionCell.h"
 
 #define CellWidthHeigthRatio 375/138
@@ -130,14 +130,14 @@
         case 0:
         {
             [AppDelegateHelper saveData:GhostX forKey:DidChooseTheCamera];
-            CamLivestreamStepOneViewController *cameraModalView = [[CamLivestreamStepOneViewController alloc]init];
+            MTWiFiPasswordViewController *cameraModalView = [[MTWiFiPasswordViewController alloc]init];
             [self.navigationController pushViewController:cameraModalView animated:YES];
         }
             break;
         case 1:
         {
             [AppDelegateHelper saveData:ForeamX1 forKey:DidChooseTheCamera];
-            CamLivestreamStepOneViewController *cameraModalView = [[CamLivestreamStepOneViewController alloc]init];
+            MTWiFiPasswordViewController *cameraModalView = [[MTWiFiPasswordViewController alloc]init];
             [self.navigationController pushViewController:cameraModalView animated:YES];
             
         }

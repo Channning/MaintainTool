@@ -12,9 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTScanQRcodeShotViewController : UIViewController
 
-@property (nonatomic) BOOL bOnlyForScan;
-@property (nonatomic,copy) NSString *contentInfo;
-@property (nonatomic, strong) NSString *registerCameraId;
+@property (nonatomic,assign) BOOL bOnlyForScan;
+@property (nonatomic,copy)  NSString *contentInfo;
 @property (nonatomic,copy)  NSString * ssidInfo;
 @property (nonatomic,copy)  NSString * passwordInfo;
 @end

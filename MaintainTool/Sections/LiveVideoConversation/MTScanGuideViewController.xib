@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CamLivestreamStepTwoViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTScanGuideViewController">
             <connections>
                 <outlet property="bgImageView" destination="oT9-xQ-k2W" id="1j1-hf-bb0"/>
                 <outlet property="bgX1ImageView" destination="ey3-SH-8gp" id="Azq-Nt-GuP"/>

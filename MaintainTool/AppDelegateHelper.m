@@ -1,9 +1,9 @@
 //
 //  AppDelegateHelper.m
-//  Foream
+//  MaintainTool
 //
-//  Created by Channing_rong on 14-5-5.
-//  Copyright (c) 2014年 Foneric. All rights reserved.
+//  Created by Channing_rong on 2018/12/11.
+//  Copyright © 2018 Channing_rong. All rights reserved.
 //
 
 #import "AppDelegateHelper.h"

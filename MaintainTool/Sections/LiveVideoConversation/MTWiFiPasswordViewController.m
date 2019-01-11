@@ -1,18 +1,18 @@
 //
-//  CamLivestreamStepOneViewController.m
-//  Foream
+//  MTWiFiPasswordViewController.m
+//  MaintainTool
 //
-//  Created by rongbaohong on 16/4/18.
-//  Copyright © 2016年 Foream. All rights reserved.
+//  Created by Channing_rong on 2018/12/21.
+//  Copyright © 2018 Channing_rong. All rights reserved.
 //
 
-#import "CamLivestreamStepOneViewController.h"
+#import "MTWiFiPasswordViewController.h"
 #import "TPKeyboardAvoidingScrollView.h"
-#import "CamLivestreamStepTwoViewController.h"
+#import "MTScanGuideViewController.h"
 #import "AFNetworkReachabilityManager.h"
 #import "KxMenu.h"
 
-@interface CamLivestreamStepOneViewController ()
+@interface MTWiFiPasswordViewController ()
 {
     CGFloat parentViewHeight;
     CGFloat parentViewWidth;
@@ -24,7 +24,6 @@
 @property (nonatomic,weak) IBOutlet UITextField *passwordTextfield;
 @property (nonatomic,weak) IBOutlet UITextField *ssidTextfield;
 @property (nonatomic,weak) IBOutlet UIButton *nextButton;
-@property (nonatomic,weak) IBOutlet UIButton *changewifiButton;
 @property (nonatomic,weak) IBOutlet UIButton *dropButton;
 
 @property (nonatomic,weak) IBOutlet UILabel *descriptionLabel;
@@ -40,7 +39,7 @@
 
 @end
 
-@implementation CamLivestreamStepOneViewController
+@implementation MTWiFiPasswordViewController
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -247,9 +246,6 @@
     
     _ssidTextfield.clearButtonMode = UITextFieldViewModeNever;  //全部删除按钮
     _passwordTextfield.clearButtonMode = UITextFieldViewModeAlways;
-    
-    [_changewifiButton setTitle:MyLocal(@"Change Wi-Fi Network") forState:UIControlStateNormal];
-    [_changewifiButton setTitleColor:UIColorFromRGB(0x808080) forState:UIControlStateNormal];
 
     [_dropButton addTarget:self action:@selector(showPopover:forEvent:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -258,16 +254,6 @@
 
 
 #pragma mark - IBAction
-
--(IBAction)returnButtonDidClick:(id)sender
-{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
--(IBAction)closeButtonDidClick:(id)sender
-{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
 
 -(IBAction)nextButtonDidClick:(id)sender
 {
@@ -285,21 +271,6 @@
         
     }
 
-//    else if([self containsChinese:_ssidTextfield.text])
-//    {
-//
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"SSID can't contain Chinese") preferredStyle:UIAlertControllerStyleAlert];
-//
-//        UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
-//        }];
-//
-//        [alert addAction:cancelAct];
-//
-//        [self presentViewController:alert animated:YES completion:^{}];
-//
-//        return;
-//
-//    }
     else
     {
         
@@ -311,8 +282,7 @@
         DLog(@"LastLoginUserId is %@",[AppDelegateHelper readData:@"LastLoginUserId"]);
         if (isStringNotNil([AppDelegateHelper readData:@"LastLoginUserId"]))
         {
-            CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
-            [scanQRcodeView setTryQRcode:YES];
+            MTScanGuideViewController *scanQRcodeView = [[MTScanGuideViewController alloc]init];
             NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
             [scanQRcodeView setContentinfo:contentinfo];
             [scanQRcodeView setSsidInfo:_ssidTextfield.text];
@@ -338,8 +308,7 @@
                 //输出 检查是否正确无误
                 NSLog(@"你输入的文本%@",envirnmentNameTextField.text);
                 
-                CamLivestreamStepTwoViewController *scanQRcodeView = [[CamLivestreamStepTwoViewController alloc]init];
-                [scanQRcodeView setTryQRcode:YES];
+                MTScanGuideViewController *scanQRcodeView = [[MTScanGuideViewController alloc]init];
                 NSString *contentinfo = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|%@",@"1",LastLoginUserId,self->_ssidTextfield.text,self.passwordTextfield.text,ServerAddress,@"443",[AppDelegateHelper getIPAddress:@"en0"]];
                 [scanQRcodeView setContentinfo:contentinfo];
                 [scanQRcodeView setSsidInfo:self->_ssidTextfield.text];
@@ -357,28 +326,6 @@
     }
 }
 
--(IBAction)changeToAnotherWifi:(id)sender
-{
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:MyLocal(@"Prompt") message:MyLocal(@"Please go to your mobile phone's Settings Menu to change your Wi-Fi network") preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *cancelAct = [UIAlertAction actionWithTitle:MyLocal(@"OK") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
-    }];
-    
-    [alert addAction:cancelAct];
-    
-    [self presentViewController:alert animated:YES completion:^{}];
-
-}
-
--(IBAction)usingMobileDataToLivestream:(id)sender
-{
-    
-//    CamConnectStepOneViewController *cameraModalView = [[CamConnectStepOneViewController alloc]init];
-//    [cameraModalView setTypeIndex:_modelType];
-//    cameraModalView.connectType = kMobileDateLiveType;
-//    [self.navigationController pushViewController:cameraModalView animated:YES];
-}
 
 -(void)showPopover:(UIButton *)sender forEvent:(UIEvent*)event
 {
@@ -515,49 +462,22 @@
         return;
     }
     DLog(@"json string is %@ /r  %@",jsonString,@"");
-//    if (isStringNotNil([FOMAPPDELEGATE loginUser].sid))
-//    {
-//        UserSetWifiListApi *setWifiListApi = [[UserSetWifiListApi alloc] initWithSessionId:[FOMAPPDELEGATE loginUser].sid token:[FOMAPPDELEGATE loginUser].token lastTime:[NSString stringWithFormat:@"%ld",timeStamp+mistiming] ssid_password:[_ssidlistArray JSONString] camera_ids:nil];
-//        [setWifiListApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-//
-//            NSDictionary *wifilistResponse = [request.responseString objectFromJSONStringWithParseOptions:JKParseOptionLooseUnicode];
-//            DLog(@"responseStr is %@",request.responseString);
-//            if([[NSNumber numberWithInt:1]isEqual:[wifilistResponse objectForKey:@"status"]])
-//            {
-//
-                NSDictionary *dic =[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",timeStamp+mistiming],@"Last_modify",_ssidlistArray,@"WifiLists",[AppDelegateHelper readData:SavedOpenID],@"uid",nil];
 
-                NSFileManager *fm = [NSFileManager defaultManager];
-                if(![fm fileExistsAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]]]){
-                    [fm createFileAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] contents:nil attributes:nil];
-                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
-                    DLog(@"wifilists is %@",dic);
-                }else{
-                    DLog(@"wifilists is %@",dic);
-                    [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
-                }
-//            }
-//            [AppDelegateHelper removLoadingMessage:self.view];
-//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-//            [AppDelegateHelper removLoadingMessage:self.view];
-//        }];
-//    }
+    NSDictionary *dic =[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",timeStamp+mistiming],@"Last_modify",_ssidlistArray,@"WifiLists",[AppDelegateHelper readData:SavedOpenID],@"uid",nil];
+
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if(![fm fileExistsAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]]]){
+        [fm createFileAtPath:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] contents:nil attributes:nil];
+        [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
+        DLog(@"wifilists is %@",dic);
+    }else{
+        DLog(@"wifilists is %@",dic);
+        [dic writeToFile:[AppDelegateHelper getWifiArrayPlistDocumentPathWithUid:[NSString stringWithFormat:@"%@",[AppDelegateHelper readData:SavedOpenID]]] atomically:YES];
+    }
+
     
     
 }
-
-#pragma mark - Screen rotation
-
-- (BOOL)shouldAutorotate
-{       //IOS6
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
 
 
 #pragma mark - FOMBTScanViewControllerDelegate
@@ -566,7 +486,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     [_ssidTextfield resignFirstResponder];
     [_passwordTextfield resignFirstResponder];
     return YES;
