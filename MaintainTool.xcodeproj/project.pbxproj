@@ -15,20 +15,13 @@
 		D7117ED921E71C7D00E601CB /* MTUserInfoInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EBB21E71C7D00E601CB /* MTUserInfoInputViewController.xib */; };
 		D7117EDA21E71C7D00E601CB /* MTScanQRcodeShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EBC21E71C7D00E601CB /* MTScanQRcodeShotViewController.m */; };
 		D7117EDB21E71C7D00E601CB /* MTUserInfoInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EBD21E71C7D00E601CB /* MTUserInfoInputViewController.m */; };
-		D7117EDC21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */; };
 		D7117EDD21E71C7D00E601CB /* MTLiveConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */; };
-		D7117EDE21E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */; };
-		D7117EDF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */; };
 		D7117EE021E71C7D00E601CB /* MTCameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */; };
 		D7117EE121E71C7D00E601CB /* MTCameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */; };
-		D7117EE221E71C7D00E601CB /* CamLivestreamQRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */; };
 		D7117EE321E71C7D00E601CB /* MTCameraPlayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */; };
-		D7117EE421E71C7D00E601CB /* CamLivestreamStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */; };
 		D7117EE521E71C7D00E601CB /* MTLiveConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ECA21E71C7D00E601CB /* MTLiveConversationViewController.xib */; };
 		D7117EE621E71C7D00E601CB /* MTCameraOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117ECB21E71C7D00E601CB /* MTCameraOptionCell.m */; };
 		D7117EE721E71C7D00E601CB /* MTCameraOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ECC21E71C7D00E601CB /* MTCameraOptionCell.xib */; };
-		D7117EE821E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */; };
-		D7117EE921E71C7D00E601CB /* CamLivestreamStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */; };
 		D7117EED21E71CBA00E601CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7117EEA21E71CBA00E601CB /* AppDelegate.m */; };
 		D7117EF321E71CE500E601CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7117EEF21E71CE500E601CB /* Assets.xcassets */; };
 		D7117EF421E71CE500E601CB /* invite_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7117EF121E71CE500E601CB /* invite_loading.gif */; };
@@ -85,6 +78,13 @@
 		D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B621C0F25A005CFC53 /* MTOwnerRoomInfoApi.m */; };
 		D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */; };
 		D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */; };
+		D75F179921E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F178F21E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib */; };
+		D75F179A21E839B1004FBADF /* MTQRcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F179121E839B1004FBADF /* MTQRcodeScanViewController.m */; };
+		D75F179B21E839B1004FBADF /* MTScanGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F179221E839B1004FBADF /* MTScanGuideViewController.m */; };
+		D75F179C21E839B1004FBADF /* MTQRcodeScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F179321E839B1004FBADF /* MTQRcodeScanViewController.xib */; };
+		D75F179D21E839B1004FBADF /* MTWiFiPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F179521E839B1004FBADF /* MTWiFiPasswordViewController.xib */; };
+		D75F179E21E839B1004FBADF /* MTWiFiPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F179621E839B1004FBADF /* MTWiFiPasswordViewController.m */; };
+		D75F179F21E839B1004FBADF /* MTScanGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F179721E839B1004FBADF /* MTScanGuideViewController.xib */; };
 		D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BDE52C21B90A9B005D1A7E /* RootViewController.m */; };
 		D7BDE54021B90AD9005D1A7E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE53F21B90AD9005D1A7E /* libz.tbd */; };
 		D7BDE54221B90AE4005D1A7E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BDE54121B90AE4005D1A7E /* libc++.tbd */; };
@@ -108,27 +108,17 @@
 		D7117EBB21E71C7D00E601CB /* MTUserInfoInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTUserInfoInputViewController.xib; sourceTree = "<group>"; };
 		D7117EBC21E71C7D00E601CB /* MTScanQRcodeShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScanQRcodeShotViewController.m; sourceTree = "<group>"; };
 		D7117EBD21E71C7D00E601CB /* MTUserInfoInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUserInfoInputViewController.m; sourceTree = "<group>"; };
-		D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepTwoViewController.xib; sourceTree = "<group>"; };
 		D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLiveConversationViewController.m; sourceTree = "<group>"; };
-		D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController.xib; sourceTree = "<group>"; };
-		D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepTwoViewController.m; sourceTree = "<group>"; };
 		D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionsViewController.m; sourceTree = "<group>"; };
 		D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCameraOptionsViewController.xib; sourceTree = "<group>"; };
-		D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamQRcodeViewController.m; sourceTree = "<group>"; };
 		D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraPlayerContainerView.m; sourceTree = "<group>"; };
-		D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamLivestreamStepOneViewController.m; sourceTree = "<group>"; };
 		D7117EC921E71C7D00E601CB /* MTCameraOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionCell.h; sourceTree = "<group>"; };
 		D7117ECA21E71C7D00E601CB /* MTLiveConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTLiveConversationViewController.xib; sourceTree = "<group>"; };
 		D7117ECB21E71C7D00E601CB /* MTCameraOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCameraOptionCell.m; sourceTree = "<group>"; };
 		D7117ECC21E71C7D00E601CB /* MTCameraOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCameraOptionCell.xib; sourceTree = "<group>"; };
 		D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLiveConversationViewController.h; sourceTree = "<group>"; };
 		D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraOptionsViewController.h; sourceTree = "<group>"; };
-		D7117ECF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepTwoViewController.h; sourceTree = "<group>"; };
-		D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamQRcodeViewController_4.0.xib; sourceTree = "<group>"; };
 		D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCameraPlayerContainerView.h; sourceTree = "<group>"; };
-		D7117ED221E71C7D00E601CB /* CamLivestreamQRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamQRcodeViewController.h; sourceTree = "<group>"; };
-		D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamLivestreamStepOneViewController.xib; sourceTree = "<group>"; };
-		D7117ED421E71C7D00E601CB /* CamLivestreamStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamLivestreamStepOneViewController.h; sourceTree = "<group>"; };
 		D7117EEA21E71CBA00E601CB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D7117EEB21E71CBA00E601CB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7117EEC21E71CBA00E601CB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -230,6 +220,16 @@
 		D71B31B921C0F372005CFC53 /* MTCreateSessionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCreateSessionApi.m; sourceTree = "<group>"; };
 		D71B31BB21C0F4AC005CFC53 /* MTCloseSesstionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCloseSesstionApi.h; sourceTree = "<group>"; };
 		D71B31BC21C0F4AD005CFC53 /* MTCloseSesstionApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCloseSesstionApi.m; sourceTree = "<group>"; };
+		D75F178F21E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTQRcodeScanViewController_4.0.xib; sourceTree = "<group>"; };
+		D75F179021E839B1004FBADF /* MTScanGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScanGuideViewController.h; sourceTree = "<group>"; };
+		D75F179121E839B1004FBADF /* MTQRcodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTQRcodeScanViewController.m; sourceTree = "<group>"; };
+		D75F179221E839B1004FBADF /* MTScanGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScanGuideViewController.m; sourceTree = "<group>"; };
+		D75F179321E839B1004FBADF /* MTQRcodeScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTQRcodeScanViewController.xib; sourceTree = "<group>"; };
+		D75F179421E839B1004FBADF /* MTWiFiPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTWiFiPasswordViewController.h; sourceTree = "<group>"; };
+		D75F179521E839B1004FBADF /* MTWiFiPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTWiFiPasswordViewController.xib; sourceTree = "<group>"; };
+		D75F179621E839B1004FBADF /* MTWiFiPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTWiFiPasswordViewController.m; sourceTree = "<group>"; };
+		D75F179721E839B1004FBADF /* MTScanGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTScanGuideViewController.xib; sourceTree = "<group>"; };
+		D75F179821E839B1004FBADF /* MTQRcodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTQRcodeScanViewController.h; sourceTree = "<group>"; };
 		D7BDE52521B90A9B005D1A7E /* MaintainTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaintainTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BDE52C21B90A9B005D1A7E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D7BDE53F21B90AD9005D1A7E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -289,24 +289,24 @@
 		D7117EBE21E71C7D00E601CB /* LiveVideoConversation */ = {
 			isa = PBXGroup;
 			children = (
-				D7117EBF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib */,
-				D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */,
-				D7117EC121E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib */,
-				D7117EC221E71C7D00E601CB /* CamLivestreamStepTwoViewController.m */,
+				D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */,
 				D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */,
 				D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */,
-				D7117EC521E71C7D00E601CB /* CamLivestreamQRcodeViewController.m */,
-				D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */,
-				D7117EC721E71C7D00E601CB /* CamLivestreamStepOneViewController.m */,
-				D7117EC821E71C7D00E601CB /* SubCells */,
+				D75F179421E839B1004FBADF /* MTWiFiPasswordViewController.h */,
+				D75F179621E839B1004FBADF /* MTWiFiPasswordViewController.m */,
+				D75F179521E839B1004FBADF /* MTWiFiPasswordViewController.xib */,
+				D75F179021E839B1004FBADF /* MTScanGuideViewController.h */,
+				D75F179221E839B1004FBADF /* MTScanGuideViewController.m */,
+				D75F179721E839B1004FBADF /* MTScanGuideViewController.xib */,
+				D75F179821E839B1004FBADF /* MTQRcodeScanViewController.h */,
+				D75F179121E839B1004FBADF /* MTQRcodeScanViewController.m */,
+				D75F179321E839B1004FBADF /* MTQRcodeScanViewController.xib */,
+				D75F178F21E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib */,
 				D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */,
-				D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */,
-				D7117ECF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.h */,
-				D7117ED021E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib */,
+				D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */,
 				D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */,
-				D7117ED221E71C7D00E601CB /* CamLivestreamQRcodeViewController.h */,
-				D7117ED321E71C7D00E601CB /* CamLivestreamStepOneViewController.xib */,
-				D7117ED421E71C7D00E601CB /* CamLivestreamStepOneViewController.h */,
+				D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */,
+				D7117EC821E71C7D00E601CB /* SubCells */,
 			);
 			path = LiveVideoConversation;
 			sourceTree = "<group>";
@@ -647,26 +647,26 @@
 				D71B317421C0A50E005CFC53 /* Localizable.strings in Resources */,
 				D7117F3E21E71D4800E601CB /* WifiMan_Sign_2@2x.png in Resources */,
 				D7117F3821E71D4800E601CB /* WifiMan_Sign_1@2x.png in Resources */,
-				D7117EDC21E71C7D00E601CB /* CamLivestreamStepTwoViewController.xib in Resources */,
-				D7117EE921E71C7D00E601CB /* CamLivestreamStepOneViewController.xib in Resources */,
 				D7117EF321E71CE500E601CB /* Assets.xcassets in Resources */,
 				D7117F4321E7272B00E601CB /* LaunchScreen.storyboard in Resources */,
+				D75F179F21E839B1004FBADF /* MTScanGuideViewController.xib in Resources */,
 				D7117ED821E71C7D00E601CB /* MTManualInputViewController.xib in Resources */,
 				D7117F3A21E71D4800E601CB /* WifiMan_Sign_3@2x.png in Resources */,
 				D7117F3421E71D4800E601CB /* FeWifiManHub.xib in Resources */,
 				D718618221BF9D92002A709E /* RootViewController.xib in Resources */,
 				D7117F3D21E71D4800E601CB /* wifimanhub_grayscale@2x.png in Resources */,
-				D7117EE821E71C7D00E601CB /* CamLivestreamQRcodeViewController_4.0.xib in Resources */,
 				D7117F3C21E71D4800E601CB /* wifimanhub@2x.png in Resources */,
 				D7117ED921E71C7D00E601CB /* MTUserInfoInputViewController.xib in Resources */,
 				D7117EF421E71CE500E601CB /* invite_loading.gif in Resources */,
 				D7117EE521E71C7D00E601CB /* MTLiveConversationViewController.xib in Resources */,
 				D7117F3721E71D4800E601CB /* CabinCondensed-Bold.ttf in Resources */,
+				D75F179C21E839B1004FBADF /* MTQRcodeScanViewController.xib in Resources */,
 				D7117ED621E71C7D00E601CB /* MTScanQRcodeShotViewController.xib in Resources */,
 				D7117EE121E71C7D00E601CB /* MTCameraOptionsViewController.xib in Resources */,
+				D75F179921E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib in Resources */,
 				D7117EE721E71C7D00E601CB /* MTCameraOptionCell.xib in Resources */,
+				D75F179D21E839B1004FBADF /* MTWiFiPasswordViewController.xib in Resources */,
 				D7117F3B21E71D4800E601CB /* WifiMan_Sign_4@2x.png in Resources */,
-				D7117EDE21E71C7D00E601CB /* CamLivestreamQRcodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +703,6 @@
 				D7117F3521E71D4800E601CB /* FeEqualize.m in Sources */,
 				D7117EDD21E71C7D00E601CB /* MTLiveConversationViewController.m in Sources */,
 				D7117F3F21E71D4800E601CB /* UIColor+flat.m in Sources */,
-				D7117EE221E71C7D00E601CB /* CamLivestreamQRcodeViewController.m in Sources */,
 				D71B31A021C0DE9E005CFC53 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D7BDE52D21B90A9B005D1A7E /* RootViewController.m in Sources */,
 				D71B31BA21C0F372005CFC53 /* MTCreateSessionApi.m in Sources */,
@@ -712,7 +711,6 @@
 				D7117F3621E71D4800E601CB /* FeViewController.m in Sources */,
 				D71B31A121C0DE9E005CFC53 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				D71B31B721C0F25A005CFC53 /* MTOwnerRoomInfoApi.m in Sources */,
-				D7117EDF21E71C7D00E601CB /* CamLivestreamStepTwoViewController.m in Sources */,
 				D7117F2D21E71D4800E601CB /* FeHandwriting.m in Sources */,
 				D7117F2721E71D4800E601CB /* Feasd.m in Sources */,
 				D71B31AD21C0DE9E005CFC53 /* UIViewController+MaryPopin.m in Sources */,
@@ -723,12 +721,13 @@
 				D7117EE621E71C7D00E601CB /* MTCameraOptionCell.m in Sources */,
 				D7117F3121E71D4800E601CB /* FeHourGlass.m in Sources */,
 				D7117F2C21E71D4800E601CB /* FeRollingLoader.m in Sources */,
-				D7117EE421E71C7D00E601CB /* CamLivestreamStepOneViewController.m in Sources */,
+				D75F179A21E839B1004FBADF /* MTQRcodeScanViewController.m in Sources */,
 				D71B31B421C0F1D5005CFC53 /* MTCreateLiveRoomApi.m in Sources */,
 				D7117F2821E71D4800E601CB /* FeWifiManHub.m in Sources */,
 				D71B31A221C0DE9E005CFC53 /* KxMenu.m in Sources */,
 				D7117EDA21E71C7D00E601CB /* MTScanQRcodeShotViewController.m in Sources */,
 				D71B319E21C0DE9E005CFC53 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				D75F179B21E839B1004FBADF /* MTScanGuideViewController.m in Sources */,
 				D7117F2A21E71D4800E601CB /* FeTenDot.m in Sources */,
 				D71B31BD21C0F4AD005CFC53 /* MTCloseSesstionApi.m in Sources */,
 				D7117EE021E71C7D00E601CB /* MTCameraOptionsViewController.m in Sources */,
@@ -739,6 +738,7 @@
 				D7117ED521E71C7D00E601CB /* MTAvCaptureViewController.m in Sources */,
 				D71B31AC21C0DE9E005CFC53 /* CCMPlayNDropView.m in Sources */,
 				D71B31A921C0DE9E005CFC53 /* qrspec.c in Sources */,
+				D75F179E21E839B1004FBADF /* MTWiFiPasswordViewController.m in Sources */,
 				D71B319F21C0DE9E005CFC53 /* TPKeyboardAvoidingTableView.m in Sources */,
 				D71B31A721C0DE9E005CFC53 /* qrinput.c in Sources */,
 				D7117ED721E71C7D00E601CB /* MTManualInputViewController.m in Sources */,
