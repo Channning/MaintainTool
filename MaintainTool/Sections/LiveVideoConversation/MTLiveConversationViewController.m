@@ -20,6 +20,7 @@
 #import "WXApi.h"
 
 #define kCharCount 6
+#define kCameraContainerTopMargin 108
 
 @interface MTLiveConversationViewController ()<TXLivePlayListener,SRWebSocketDelegate>
 {
@@ -44,7 +45,7 @@
 @property (nonatomic,weak) IBOutlet UIView *controlView;
 @property (nonatomic,weak) IBOutlet UIView *topVolumeView;
 
-@property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
+//@property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 @property (nonatomic,strong) TXLivePlayer * phoneLivePlayer;
 
 @property (nonatomic,strong) SRWebSocket *socket;
@@ -66,6 +67,7 @@
     if (_guestRtmpLiveUrlString)
     {
         isExistGuestLiveStream = YES;
+        [_cameraPlayerView.cameraLivePlayer setMute:YES];
         [self updateControlsStatusWith:YES];
         [UIView animateWithDuration:1 animations:^{
             [self updateViewConstraintsWith:YES];
@@ -95,8 +97,8 @@
     [_phoneLivePlayer stopPlay];
     [_phoneLivePlayer removeVideoWidget];
     
-    [_cameraLivePlayer stopPlay];
-    [_cameraLivePlayer removeVideoWidget];
+    [_cameraPlayerView.cameraLivePlayer stopPlay];
+    [_cameraPlayerView.cameraLivePlayer removeVideoWidget];
     [super viewWillDisappear:animated];
 }
 
@@ -107,8 +109,8 @@
     [_phoneLivePlayer stopPlay];
     [_phoneLivePlayer removeVideoWidget];
     
-    [_cameraLivePlayer stopPlay];
-    [_cameraLivePlayer removeVideoWidget];
+    [_cameraPlayerView.cameraLivePlayer stopPlay];
+    [_cameraPlayerView.cameraLivePlayer removeVideoWidget];
 #if !__has_feature(objc_arc)
     [super dealloc];
 #endif
@@ -118,10 +120,11 @@
 -(void)setConstraintsForSubviews
 {
     float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
+    float playerContrainerTop = IS_iPhoneX_Series ? 108 : 88;
     [self.cameraPlayerView mas_makeConstraints:^(MASConstraintMaker *make)
      {
          make.left.and.right.equalTo(self.view);
-         make.top.equalTo(self.view).offset(SafeAreaTopHeight);
+         make.top.equalTo(self.view).offset(playerContrainerTop);
          make.height.mas_equalTo(playerContrainerHeight);
      }];
     
@@ -185,7 +188,7 @@
          make.height.mas_equalTo(70);
      }];
     
-    float cameraVolumeY = SafeAreaTopHeight+20+85;
+    float cameraVolumeY = playerContrainerTop+85;
     [self.cameraVolumeButton mas_makeConstraints:^(MASConstraintMaker *make)
      {
          make.right.equalTo(self.view.mas_right).offset(-30);
@@ -203,11 +206,12 @@
     if (needUpdate)
     {
         float topPlayerViewLeftX = SCREEN_WIDTH-240-10;
+        float playerContrainerTop = IS_iPhoneX_Series ? 108 : 88;
         [self.cameraPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
          {
              make.right.equalTo(self.view.mas_right).offset(-20);
              make.left.equalTo(self.view.mas_left).offset(topPlayerViewLeftX);
-             make.top.equalTo(self.view.mas_top).offset(SafeAreaTopHeight+20);
+             make.top.equalTo(self.view.mas_top).offset(playerContrainerTop);
              make.width.mas_equalTo(240);
              make.height.mas_equalTo(135);
          }];
@@ -231,7 +235,7 @@
         [self.cameraPlayerView mas_updateConstraints:^(MASConstraintMaker *make)
          {
              make.left.and.right.equalTo(self.view);
-             make.top.equalTo(self.view).offset(SafeAreaTopHeight);
+             make.top.equalTo(self.view).offset(kCameraContainerTopMargin);
              make.height.mas_equalTo(playerContrainerHeight);
          }];
         
@@ -334,7 +338,7 @@
 -(void)initCameraLivePlayer
 {
     float playerContrainerHeight = (SCREEN_HEIGHT-SafeAreaTopHeight)/2;
-    _cameraPlayerView = [[MTCameraPlayerContainerView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, playerContrainerHeight) PlayUrl:_rtmpLiveUrlString];
+    _cameraPlayerView = [[MTCameraPlayerContainerView alloc] initWithFrame:CGRectMake(0, kCameraContainerTopMargin, SCREEN_WIDTH, playerContrainerHeight) PlayUrl:_rtmpLiveUrlString];
     [self.view insertSubview:_cameraPlayerView aboveSubview:_bottomPlayerView];
     
 }
@@ -435,31 +439,67 @@
 #pragma mark - IBActions
 -(IBAction)inviteWechatFriend:(UIButton *)sender
 {
-    if (!_liveSessionKey)
+    if (!self->_liveSessionKey)
     {
         [self generateSessionKey];
     }
+    NSString *inviteCode = [NSString stringWithFormat:@"%@&%@",_roomid,_liveSessionKey];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
     
-    WXMiniProgramObject *object = [WXMiniProgramObject object];
-    object.webpageUrl = @"www.foream.com";
-    object.userName = @"gh_885fb1cdacb2";
-    object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",_roomid,[AppDelegateHelper readData:SavedOpenID],_liveSessionKey];
-
-    object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
-    object.withShareTicket = YES;
-
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
-    message.description = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
-    message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
-    //使用WXMiniProgramObject的hdImageData属性
-    message.mediaObject = object;
-
-    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = WXSceneSession;  //目前只支持会话
-    [WXApi sendReq:req];
+    [alert addAction:[UIAlertAction actionWithTitle:@"邀请微信好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                      
+                      {
+                        
+                          
+                          WXMiniProgramObject *object = [WXMiniProgramObject object];
+                          object.webpageUrl = @"www.foream.com";
+                          object.userName = @"gh_885fb1cdacb2";
+                          object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",self->_roomid,[AppDelegateHelper readData:SavedOpenID],self->_liveSessionKey];
+                          
+                          object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
+                          object.withShareTicket = YES;
+                          
+                          WXMediaMessage *message = [WXMediaMessage message];
+                          message.title = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
+                          message.description = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
+                          message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
+                          //使用WXMiniProgramObject的hdImageData属性
+                          message.mediaObject = object;
+                          
+                          SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+                          req.bText = NO;
+                          req.message = message;
+                          req.scene = WXSceneSession;  //目前只支持会话
+                          [WXApi sendReq:req];
+                      }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"邀请PC用户" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                      
+                      {
+                          UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                          pasteboard.string = inviteCode;
+                          UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                                         message:@"已复制到粘贴板，请将口令发给您的好友"
+                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                          
+               
+                          [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                                            
+                                            {
+                                                
+                                            }]];
+                          [self presentViewController:alert animated:YES completion:nil];
+                      }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
+                      
+                      {
+              
+                      }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
     
  
 
@@ -484,12 +524,12 @@
     if (sender.selected)
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_on"] forState:UIControlStateNormal];
-        [_cameraLivePlayer setMute:NO];
+        [_cameraPlayerView.cameraLivePlayer setMute:NO];
     }
     else
     {
         [sender setBackgroundImage:[UIImage imageNamed:@"Conversation_volume_off"] forState:UIControlStateNormal];
-        [_cameraLivePlayer setMute:YES];
+        [_cameraPlayerView.cameraLivePlayer setMute:YES];
         
     }
 }
@@ -531,14 +571,14 @@
              self.cameraVolumeButton.hidden = YES;
              [UIView animateWithDuration:1 animations:^
               {
-                  [self.cameraPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
+                  [self.cameraPlayerView setFrame:CGRectMake(0, kCameraContainerTopMargin, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
                   [self.bottomPlayerView setFrame:CGRectMake(0, SafeAreaTopHeight+(SCREEN_HEIGHT-SafeAreaTopHeight)/2, SCREEN_WIDTH, (SCREEN_HEIGHT-SafeAreaTopHeight)/2)];
                   //[self.cameraVolumeButton setFrame:CGRectMake(180, 85, 40,40)];
               } completion:^(BOOL finished)
               {
                   if (finished)
                   {
-                      [self->_cameraLivePlayer setupVideoWidget:CGRectMake(0, 0, 0, 0) containView:self->_cameraPlayerView insertIndex:2];
+                 
                       [self->_phoneLivePlayer removeVideoWidget];
                       self->_liveSessionKey = nil;
                   }

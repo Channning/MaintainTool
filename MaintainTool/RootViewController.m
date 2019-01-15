@@ -140,24 +140,24 @@
              self->playFlvUrlString = owner_streamDic[@"flv"];
              self->roomid = roomDic[@"room_id"];
              self->session_key = roomDic[@"session_key"];
-             
+
              NSNumber *status = userDic[@"stream_status"];
              if (status.intValue == 2)
              {
                  self->isExistLiveRoom = YES;
              }
-             
+
              NSDictionary *guest_streamDic = roomDic[@"guest_stream"];
              NSNumber *guest_status = guest_streamDic[@"status"];
-             
+
              self->guestPlayRtmpUrlString = guest_streamDic[@"rtmp"];
              self->guestPlayFlvUrlString = guest_streamDic[@"flv"];
-             
+
              if (guest_status.intValue == 2)
              {
                  self->isExistGuestLiveRoom = YES;
              }
-             
+
              if (self->isExistLiveRoom)
              {
                  MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
@@ -176,7 +176,7 @@
              {
                  MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
                  [self.navigationController pushViewController:cameraOptionsVC animated:YES];
-                 
+
              }
          }
          else
@@ -184,7 +184,7 @@
              MTCameraOptionsViewController *cameraOptionsVC = [[MTCameraOptionsViewController alloc]init];
              [self.navigationController pushViewController:cameraOptionsVC animated:YES];
          }
-         
+
      } failure:^(__kindof YTKBaseRequest * _Nonnull request)
     {
          DLog(@"failure!%@",request.responseObject);
@@ -193,11 +193,11 @@
      }];
     
     
-    //    isExistLiveRoom = YES;
-    //    isExistGuestLiveRoom = YES;
-    //    guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
-    //    playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
-    //    roomid = @"f8ucVWyz";
+//        isExistLiveRoom = YES;
+//        isExistGuestLiveRoom = YES;
+//        guestPlayRtmpUrlString = @"rtmp://media3.sinovision.net:1935/live/livestream";
+//        playRtmpUrlString = @"rtmp://58.200.131.2:1935/livetv/hunantv";
+//        roomid = @"f8ucVWyz";
 //    if (isExistLiveRoom)
 //    {
 //        MTLiveConversationViewController *liveConversationView = [[MTLiveConversationViewController alloc]init];
@@ -218,7 +218,7 @@
 //       [self.navigationController pushViewController:cameraOptionsVC animated:YES];
 //
 //   }
-    
+//
 }
 
 -(IBAction)scanQRcodeAndShot:(id)sender

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TXLivePlayer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MTCameraPlayerContainerView : UIView
-
+@property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 -(id)initWithFrame:(CGRect)frame PlayUrl:(NSString *)rtmpUrl;
 @end
 

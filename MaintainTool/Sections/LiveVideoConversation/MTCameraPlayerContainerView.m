@@ -7,12 +7,10 @@
 //
 
 #import "MTCameraPlayerContainerView.h"
-#import "TXLivePlayer.h"
 #import "FeThreeDotGlow.h"
 
 @interface MTCameraPlayerContainerView ()<TXLivePlayListener>
 
-@property (nonatomic,strong) TXLivePlayer * cameraLivePlayer;
 @property (nonatomic,copy) NSString *rtmpLiveUrlString;
 @property (strong, nonatomic) FeThreeDotGlow *threeDot;
 @property (nonatomic,strong) UIImageView *bgimageView;
