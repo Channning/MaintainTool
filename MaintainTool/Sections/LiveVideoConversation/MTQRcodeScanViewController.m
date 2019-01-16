@@ -188,21 +188,21 @@
              self->session_key = roomDic[@"session_key"];
              DLog(@"pushUrlString is %@,roomIDString is %@,session_key is %@",self->pushUrlString,self->roomIDString,self->session_key);
              
-             if ([[AppDelegateHelper readData:DidChooseTheCamera] isEqualToString:ForeamX1])
-             {
-                 self.contentInfo = [NSString stringWithFormat:@"6|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
-                 
-                 
-             }else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:Compass])
-             {
-                 self.contentInfo = [NSString stringWithFormat:@"6|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,self->pushUrlString];
-             }
-             else if ([[AppDelegateHelper readData:DidChooseTheCamera] hasPrefix:GhostX])
-             {
-                 self.contentInfo = [NSString stringWithFormat:@"3|%@|%@|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,@"720P",@"2000000",self->pushUrlString];
-                 
-             }
-
+             /*例如之前显示的二维码为：
+             6|foream_test|foream.test|rtmp://livepush.driftlife.co/live/Tzu3JLvWFqct?txSecret=1aebdd547808c3261eecf67290e0def4&txTime=5C3C0BFF
+             将标识6改为8，将蓝色字符(rtmp://livepush.driftlife.co/live/)去掉，将红色部分(?txSecret=)替换为“#”
+             则最终生成二维码为：
+             8|foream_test|foream.test|Tzu3JLvWFqct#1aebdd547808c3261eecf67290e0def4#5C3C0BFF
+              */
+             NSString *pushUrlString1 = [self->pushUrlString substringFromIndex:34];
+             DLog(@"pushUrlString1 is %@",pushUrlString1);
+             NSString *pushUrlString2 = [pushUrlString1 stringByReplacingOccurrencesOfString:@"?txSecret=" withString:@"#"];
+             DLog(@"pushUrlString2 is %@",pushUrlString2);
+             NSString *pushUrlString3 = [pushUrlString2 stringByReplacingOccurrencesOfString:@"&txTime=" withString:@"#"];
+             DLog(@"pushUrlString3 is %@",pushUrlString3);
+             self.contentInfo = [NSString stringWithFormat:@"8|%@|%@|%@",self->_ssidInfo,self->_passwordInfo,pushUrlString3];
+             DLog(@"current contentinfo is %@",self->_contentInfo);
+             
              NSString *tips = obj[@"tips"];
              if ([tips isEqualToString:@"no room"])
              {
@@ -213,7 +213,7 @@
                  [self initSRWebSocket];
              }
              
-             DLog(@"current contentinfo is %@",self->_contentInfo);
+             
              MAIN(^{
                  self.QRcodeImageView.image = [QRCodeGenerator qrImageForString:self->_contentInfo imageSize:self->_QRcodeImageView.bounds.size.width];
              });
