@@ -33,7 +33,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RootView_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-ju-HGB">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-Ot-GdH">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-Ot-GdH">
                     <rect key="frame" x="62.5" y="303" width="250" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqk-nx-qLo">
