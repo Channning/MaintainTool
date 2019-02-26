@@ -392,25 +392,15 @@
 
 - (void)generateSessionKey
 {
-    //字符串素材
-    NSArray *_dataArray = [[NSArray alloc] initWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z",nil];
-    
-    //Step one
-    NSMutableString *_authCodeStr = [[NSMutableString alloc] initWithString:@"IOS_"];
-    //Step Two
-    //随机从数组中选取需要个数的字符串，拼接为验证码字符串
-    for (int i = 0; i < kCharCount; i++)
+    //至2019-02-26起邀请码即liveSessionKey改为6位随机数字
+    _liveSessionKey = @"";
+    for(int i=0; i < 6; i++)
     {
-        NSInteger index = arc4random() % (_dataArray.count-1);
-        NSString *tempStr = [_dataArray objectAtIndex:index];
-        _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:tempStr];
+        _liveSessionKey = [_liveSessionKey stringByAppendingFormat:@"%i",(arc4random() % 9)];
     }
-    //Step Three
-    NSDate *datenow = [NSDate date];
-    NSString *timeNowString = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
-    _authCodeStr = (NSMutableString *)[_authCodeStr stringByAppendingString:[NSString stringWithFormat:@"_%@",timeNowString]];
-    DLog(@"SessionKey is %@",_authCodeStr);
-    _liveSessionKey = _authCodeStr;
+    
+    DLog(@"随机数: %@", _liveSessionKey);
+    
     
     if (_liveSessionKey)
     {
@@ -443,7 +433,9 @@
     {
         [self generateSessionKey];
     }
-    NSString *inviteCode = [NSString stringWithFormat:@"%@&%@",_roomid,_liveSessionKey];
+    //至2019-02-26起邀请码改为6位随机数字
+    //NSString *inviteCode = [NSString stringWithFormat:@"%@&%@",_roomid,_liveSessionKey];
+
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
@@ -456,7 +448,7 @@
                           WXMiniProgramObject *object = [WXMiniProgramObject object];
                           object.webpageUrl = @"www.foream.com";
                           object.userName = @"gh_885fb1cdacb2";
-                          object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@",self->_roomid,[AppDelegateHelper readData:SavedOpenID],self->_liveSessionKey];
+                          object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@&share_type=share_wechat",self->_roomid,[AppDelegateHelper readData:SavedOpenID],self->_liveSessionKey];
                           
                           object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
                           object.withShareTicket = YES;
@@ -478,19 +470,27 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"邀请PC用户" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
                       
                       {
-                          UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-                          pasteboard.string = inviteCode;
-                          UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                                         message:@"已复制到粘贴板，请将口令发给您的好友"
-                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                          WXMiniProgramObject *object = [WXMiniProgramObject object];
+                          object.webpageUrl = @"www.foream.com";
+                          object.userName = @"gh_885fb1cdacb2";
+                          object.path = [NSString stringWithFormat:@"/pages/livestart/playpush/playpush?room_id=%@&open_id=%@&session_key=%@&share_type=share_pc",self->_roomid,[AppDelegateHelper readData:SavedOpenID],self->_liveSessionKey];
                           
-               
-                          [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-                                            
-                                            {
-                                                
-                                            }]];
-                          [self presentViewController:alert animated:YES completion:nil];
+                          object.hdImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Live_Share_bg"]);
+                          object.withShareTicket = YES;
+                          
+                          WXMediaMessage *message = [WXMediaMessage message];
+                          message.title = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
+                          message.description = [NSString stringWithFormat:@"%@%@",LastLoginUserId,@"邀请你进行视频通话"];
+                          message.thumbData = nil;  //兼容旧版本节点的图片，小于32KB，新版本优先
+                          //使用WXMiniProgramObject的hdImageData属性
+                          message.mediaObject = object;
+                          
+                          SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+                          req.bText = NO;
+                          req.message = message;
+                          req.scene = WXSceneSession;  //目前只支持会话
+                          [WXApi sendReq:req];
+    
                       }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action)
                       
