@@ -30,6 +30,8 @@
     
     NSTimer * heartBeat;
     NSTimeInterval reConnectTime;
+    NSString *cameraStreamKey;
+    NSString *phoneStreamKey;
 }
 @property (nonatomic,strong) MTCameraPlayerContainerView *cameraPlayerView;
 @property (nonatomic,weak) IBOutlet UIView *topPlayerView;
@@ -718,6 +720,21 @@
         }
         else if([dataDic[@"stream_status"] intValue] == 1)
         {
+            if ([cameraStreamKey isEqualToString: dataDic[@"stream_key"]])
+            {
+                __weak __typeof(self) weakSelf = self;
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"通话中断"
+                                                                               message:@"相机已经离线或者关机"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                [alert addAction:[UIAlertAction actionWithTitle:@"离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                                  
+                                  {
+                                      [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                                  }]];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+          
             self.inviteLabel.text = @"还未有人参与进来，快来邀请Ta吧~";
             
             _gifImageView.hidden = YES;
@@ -731,9 +748,13 @@
         NSDictionary *dataDic2 = dataDic[@"data"];
         NSDictionary *roomDic = dataDic2[@"room"];
         NSDictionary *guestStreamDic = roomDic[@"guest_stream"];
+        NSDictionary *ownerStreamDic = roomDic[@"owner_stream"];
         self.roomid = roomDic[@"room_id"];
         self.guestRtmpLiveUrlString = guestStreamDic[@"rtmp"];
         self.guestFlvLiveUrlString = guestStreamDic[@"flv"];
+        phoneStreamKey = guestStreamDic[@"stream_key"];
+        cameraStreamKey = ownerStreamDic[@"stream_key"];
+        
         
         DLog(@"guestRtmpLiveUrlString is %@, and self.roomid is %@",self.guestRtmpLiveUrlString,self.roomid);
         [self updateControlsStatusWith:YES];
