@@ -289,6 +289,10 @@
 		D7117EBE21E71C7D00E601CB /* LiveVideoConversation */ = {
 			isa = PBXGroup;
 			children = (
+				D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */,
+				D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */,
+				D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */,
+				D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */,
 				D7117ECE21E71C7D00E601CB /* MTCameraOptionsViewController.h */,
 				D7117EC321E71C7D00E601CB /* MTCameraOptionsViewController.m */,
 				D7117EC421E71C7D00E601CB /* MTCameraOptionsViewController.xib */,
@@ -302,10 +306,6 @@
 				D75F179121E839B1004FBADF /* MTQRcodeScanViewController.m */,
 				D75F179321E839B1004FBADF /* MTQRcodeScanViewController.xib */,
 				D75F178F21E839B1004FBADF /* MTQRcodeScanViewController_4.0.xib */,
-				D7117ECD21E71C7D00E601CB /* MTLiveConversationViewController.h */,
-				D7117EC021E71C7D00E601CB /* MTLiveConversationViewController.m */,
-				D7117ED121E71C7D00E601CB /* MTCameraPlayerContainerView.h */,
-				D7117EC621E71C7D00E601CB /* MTCameraPlayerContainerView.m */,
 				D7117EC821E71C7D00E601CB /* SubCells */,
 			);
 			path = LiveVideoConversation;
