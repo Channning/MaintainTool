@@ -594,19 +594,23 @@
 
 -(void)liveCloseSessionRequest
 {
-    MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:_liveSessionKey];
-    [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
-     {
-         id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
-         NSNumber *status = obj[@"status"];
-         DLog(@"regResponse is %@",request.responseString);
-         if(status.intValue == 1)
+    if (_liveSessionKey)
+    {
+        MTCloseSesstionApi *generalCmdApi = [[MTCloseSesstionApi alloc] initWithKey:MTLiveApiKey roomID:_roomid sessionKey:_liveSessionKey];
+        [generalCmdApi startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request)
          {
-             [self.navigationController popToRootViewControllerAnimated:YES];
-         }
-     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-         DLog(@"failure!%@",request.responseObject);
-     }];
+             id obj = [NSJSONSerialization JSONObjectWithData:request.responseData options:0 error:NULL];
+             NSNumber *status = obj[@"status"];
+             DLog(@"regResponse is %@",request.responseString);
+             if(status.intValue == 1)
+             {
+                 [self.navigationController popToRootViewControllerAnimated:YES];
+             }
+         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+             DLog(@"failure!%@",request.responseObject);
+         }];
+    }
+ 
 }
 
 -(void)shareLiveTicketRespond:(NSNotification *)resp
